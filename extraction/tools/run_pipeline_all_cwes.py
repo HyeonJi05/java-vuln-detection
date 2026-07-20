@@ -41,10 +41,13 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 # --- pipeline stage scripts (relative to repo root) ---
-STAGE1 = "tools/generate_juliet_manifest.py"
-STAGE2 = "experiments/epic001_manifest_comment_scan/scripts/scan_manifest_comments.py"
-STAGE3 = "experiments/epic001c_testcase_flow_partition/scripts/add_flow_tags_to_testcase.py"
-STAGE4 = "experiments/epic002/classify_flow_comments_by_function_name.py"
+# Resolve stage-script paths relative to this file's project root
+# (extraction/tools/run_pipeline_all_cwes.py -> project root is two levels up)
+_ROOT = Path(__file__).resolve().parent.parent   # .../extraction
+STAGE1 = str(_ROOT / "tools/generate_juliet_manifest.py")
+STAGE2 = str(_ROOT / "experiments/epic001_manifest_comment_scan/scripts/scan_manifest_comments.py")
+STAGE3 = str(_ROOT / "experiments/epic001c_testcase_flow_partition/scripts/add_flow_tags_to_testcase.py")
+STAGE4 = str(_ROOT / "experiments/epic002/classify_flow_comments_by_function_name.py")
 
 
 def run(cmd: list[str]) -> tuple[int, str, str]:

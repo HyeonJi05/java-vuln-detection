@@ -2,130 +2,49 @@
 
 Software code vulnerability detection project — Java track.
 
-This repository builds a **trace-unit (source → sink) dataset** from the
-Java SARD (Juliet) test suite, as the front-end stage of an AI-based
-vulnerability detection pipeline. Extraction and verification of source/sink
-pairs are complete; downstream stages (joern-based trace slicing, LLM/RAG
-detection) will be added later.
+The goal is an AI-based vulnerability detector trained on **trace-unit
+(source → sink) data** rather than function-level labels. The pipeline turns
+the Java SARD (Juliet) test suite into labeled source/sink traces, slices the
+relevant code with joern, and (later) detects vulnerabilities with an
+LLM/RAG model.
 
-## Current stage
+> 한국어 README: [README.ko.md](README.ko.md)
 
-Complete. Two scripts are provided:
+## Pipeline
 
-- `tools/run_pipeline_all_cwes.py` — runs the source/sink extraction pipeline
-  over all CWEs in the Juliet Java test suite, collects per-CWE result XMLs,
-  and writes run logs.
-- `tools/verify_source_sink.py` — verifies that extracted source/sink line
-  numbers match the original `.java` sources, and writes verification logs.
-
-## Requirements
-
-- **Python 3.9–3.11** (tree_sitter_languages 1.10.2 does not support 3.12+)
-- Dependencies in `requirements.txt`
-
-```bash
-# Create a virtual environment with Python 3.11
-# Windows:
-py -3.11 -m venv .venv
-.venv\Scripts\Activate.ps1
-# Linux/Mac:
-python3.11 -m venv .venv
-source .venv/bin/activate
-
-pip install -r requirements.txt
+```
+extraction  ->  slicing  ->  detection
 ```
 
-The dataset is a git submodule. After cloning:
+| Stage | Folder | What it does | Status |
+| --- | --- | --- | --- |
+| **Extraction** | [`extraction/`](extraction/) | Extract and verify source/sink pairs from the Juliet Java test suite (per CWE) | Done |
+| **Slicing** | [`joern-juliet-slicer`](joern-juliet-slicer/) | Build joern CPGs and slice code around each source/sink using its line numbers and keywords | In progress |
+| **Detection** | `detection/` | LLM + RAG vulnerability detection | Planned |
+
+Each stage has its own README with detailed setup and usage.
+
+## Data flow
+
+- **Extraction** writes per-CWE classified XMLs to
+  `java_sard_source_sink/source_sink_dataset/` (`cwe{N}_source_sink_classified.xml`).
+- **Slicing** reads those XMLs as its input.
+
+The dataset itself lives in `juliet-java-test-suite/` (a git submodule).
+After cloning:
 
 ```bash
 git submodule update --init
 ```
 
-## Usage
-
-### 1. Extract source/sink pairs (all CWEs)
-
-```bash
-python tools/run_pipeline_all_cwes.py
-```
-
-Options:
-
-- `--only 78 190` — run only specific CWEs
-- `--skip 113` — skip specific CWEs
-- `--output-dir <path>` — where classified XMLs are collected
-  (default: `java_sard_source_sink/source_sink_dataset/`)
-- `--log-dir <path>` — where run logs are written
-  (default: `java_sard_source_sink/logs/`)
-
-Per-CWE outputs are written under `artifacts/pipeline-runs/java-cwe{N}-source-sink/`,
-and the final classified XML for each CWE is collected into the output folder
-`java_sard_source_sink/source_sink_dataset/` as
-`cwe{N}_source_sink_classified.xml`.
-
-### 2. Verify extracted line numbers
-
-```bash
-python tools/verify_source_sink.py
-```
-
-Options:
-
-- `--cwe 78 113` — verify only specific CWEs
-- `--xml <path> --source-root <path>` — verify a single XML against a source root
-
-Verification logs are written to `java_sard_source_sink/logs/`
-(`verify_summary.txt`, `verify_report.csv`, `verify_mismatches.txt`,
-`verify_known_warnings.txt`).
-
-## How extraction works
-
-Each CWE is processed through four stages:
-
-1. **manifest** (`generate_juliet_manifest.py`) — build an XML list (manifest)
-   of the test-case files to analyze
-2. **comment scan** (`scan_manifest_comments.py`) — find `POTENTIAL FLAW` / `FIX`
-   comments and the code they refer to
-3. **flow tagging** (`add_flow_tags_to_testcase.py`) — group candidates into
-   flows (b2b / b2g / g2b)
-4. **classification** (`classify_flow_comments_by_function_name.py`) — assign
-   each item a role (source / sink) and safety label (bad / good)
-
-The result is one `source_sink_classified.xml` per CWE, where each `<flow>`
-lists its source and sink with line, code, role, and safety.
-
-The line numbers and vulnerable function/variable keywords in this result are
-used as anchors for joern-based code slicing in the next stage.
-
-## Notes
-
-- CWEs whose vulnerability is not a source→sink data flow (resource management,
-  concurrency, design issues, unsafe-API use, etc.) produce **empty** output.
-  This is expected — they are outside the scope of a source/sink dataset.
-- A small number of items are recorded as `WARNING_NOT_FOUND`: another comment
-  (e.g. a NOTE) containing an extraction keyword such as `flaw` is scanned by
-  mistake, and no real code is found beneath it. This is a known extractor
-  limitation. Such items are tallied separately during verification and are
-  not counted as errors.
-- In some cases the item extracted below a comment is another comment
-  (`/* ... */`), an opening brace (`{`), a variable declaration, etc. The line
-  number is still correct, but extracting the vulnerable function/variable
-  keyword from such items may be difficult.
-
 ## Repository layout
 
 ```
-tools/
-  run_pipeline_all_cwes.py       # batch runner (all CWEs)
-  verify_source_sink.py          # line-number verification
-  generate_juliet_manifest.py    # stage 1
-  stage/                         # stage modules
-  shared/                        # shared helpers
-experiments/
-  epic001_manifest_comment_scan/ # stage 2 script
-  epic001c_testcase_flow_partition/ # stage 3 script
-  epic002/                       # stage 4 script
-juliet-java-test-suite/          # dataset (git submodule)
+extraction/               # stage 1: source/sink extraction + verification
+joern-juliet-slicer/      # stage 2: joern slicing (submodule)
+detection/                # stage 3: LLM + RAG detection (planned)
+juliet-java-test-suite/   # dataset (git submodule)
+java_sard_source_sink/    # extraction output (consumed by slicing)
 ```
 
 ## Roadmap
@@ -137,5 +56,4 @@ juliet-java-test-suite/          # dataset (git submodule)
 
 ## License
 
-This project reuses code from the upstream pipeline and is distributed under
-the **GNU AGPL v3** (see `LICENSE`).
+Distributed under the **GNU AGPL v3** (see `LICENSE`).
