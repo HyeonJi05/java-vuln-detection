@@ -1,3 +1,6 @@
 [submodule "juliet-java-test-suite"]
 	path = juliet-java-test-suite
 	url = https://github.com/UnitTestBot/juliet-java-test-suite
+[submodule "joern-juliet-slicer"]
+	path = joern-juliet-slicer
+	url = https://github.com/SAN2G1/joern-juliet-slicer.git
