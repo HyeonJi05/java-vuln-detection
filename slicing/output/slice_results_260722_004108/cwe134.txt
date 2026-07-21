@@ -1,0 +1,1589 @@
+# CWE-134: 15 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe134_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-4ecbffc8-9f05-4bb3-8e80-80c8abb3bdfa/cpg.bin.tmp)
+
+########## FLOW tc605_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:52 (4 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:124 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.352 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=52 | readerBuffered.readLine()
+        ↓
+[1] line=52 | data = readerBuffered.readLine()
+        ↓
+[2] line=121 | data != null
+        ↓
+[3] line=124 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=52 | data = readerBuffered.readLine()
+        ↓
+[1] line=121 | data != null
+        ↓
+[2] line=124 | System.out.format(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=52 | readerBuffered.readLine()
+        ↓
+[1] line=52 | data = readerBuffered.readLine()
+        ↓
+[2] line=121 | data != null
+        ↓
+[3] line=124 | System.out.format(data)
+        ↓
+[4] line=124 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=52 | data = readerBuffered.readLine()
+        ↓
+[1] line=121 | data != null
+        ↓
+[2] line=124 | System.out.format(data)
+        ↓
+[3] line=124 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=34, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=34, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=34, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=34, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=44, col=17 | try
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=46, col=21 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=46, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=46, col=49 | 39543
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=47, col=21 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=47, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=47, col=30 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=49, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=49, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=49, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=49, col=63 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=49, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=50, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=50, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=50, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=52, col=21 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=52, col=28 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=52, col=28 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=116, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=116, col=20 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=119, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=119, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=119, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=119, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=121, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=121, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=121, col=17 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=121, col=25 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=124, col=17 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=124, col=17 | System.out.format(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=124, col=17 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=124, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 28
+Control nodes     : 3
+Control DDG nodes : 31
+AST controls      : 4
+Final slice nodes : 39
+Slice time        : 0.074 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.352 seconds
+
+########## FLOW tc605_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:205 (4 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:283 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.071 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=205 | readerBuffered.readLine()
+        ↓
+[1] line=205 | data = readerBuffered.readLine()
+        ↓
+[2] line=280 | data != null
+        ↓
+[3] line=283 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=205 | readerBuffered.readLine()
+        ↓
+[1] line=205 | data = readerBuffered.readLine()
+        ↓
+[2] line=280 | data != null
+        ↓
+[3] line=283 | <operator>.arrayInitializer
+        ↓
+[4] line=283 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=205 | data = readerBuffered.readLine()
+        ↓
+[1] line=280 | data != null
+        ↓
+[2] line=283 | <operator>.arrayInitializer
+        ↓
+[3] line=283 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=205 | data = readerBuffered.readLine()
+        ↓
+[1] line=280 | data != null
+        ↓
+[2] line=283 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=187, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=187, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=187, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=187, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=197, col=17 | try
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=199, col=21 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=199, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=199, col=49 | 39543
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=200, col=21 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=200, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=200, col=30 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=202, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=202, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=202, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=202, col=63 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=202, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=203, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=203, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=203, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=205, col=21 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=205, col=28 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=205, col=28 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=269, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=269, col=20 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=272, col=9 | if (IO.STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=272, col=13 | IO.STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=272, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=272, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=280, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=280, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=280, col=17 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=280, col=25 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=283, col=17 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=283, col=17 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=283, col=17 | System.out.format("%s%n", data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=283, col=35 | "%s%n"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=283, col=43 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 29
+Control nodes     : 3
+Control DDG nodes : 31
+AST controls      : 4
+Final slice nodes : 40
+Slice time        : 0.028 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.071 seconds
+
+########## FLOW tc605_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:311 (4 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:383 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.058 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=311 | readerBuffered.readLine()
+        ↓
+[1] line=311 | data = readerBuffered.readLine()
+        ↓
+[2] line=380 | data != null
+        ↓
+[3] line=383 | <operator>.arrayInitializer
+        ↓
+[4] line=383 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=311 | readerBuffered.readLine()
+        ↓
+[1] line=311 | data = readerBuffered.readLine()
+        ↓
+[2] line=380 | data != null
+        ↓
+[3] line=383 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=311 | data = readerBuffered.readLine()
+        ↓
+[1] line=380 | data != null
+        ↓
+[2] line=383 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=311 | data = readerBuffered.readLine()
+        ↓
+[1] line=380 | data != null
+        ↓
+[2] line=383 | <operator>.arrayInitializer
+        ↓
+[3] line=383 | System.out.format("%s%n", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=293, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=293, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=293, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=293, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=303, col=17 | try
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=305, col=21 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=305, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=305, col=49 | 39543
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=306, col=21 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=306, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=306, col=30 | listener
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=308, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=308, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=308, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=308, col=63 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=308, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=309, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=309, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=309, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=311, col=21 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=311, col=28 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=311, col=28 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=375, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=375, col=20 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=378, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=378, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=378, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=378, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=380, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=380, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=380, col=17 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=380, col=25 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=383, col=17 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=383, col=17 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=383, col=17 | System.out.format("%s%n", data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=383, col=35 | "%s%n"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=383, col=43 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 29
+Control nodes     : 3
+Control DDG nodes : 31
+AST controls      : 4
+Final slice nodes : 40
+Slice time        : 0.017 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.058 seconds
+
+########## FLOW tc605_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:143 (3 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:152 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.115 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=143 | data = "foo"
+        ↓
+[1] line=149 | data != null
+        ↓
+[2] line=152 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=143 | data = "foo"
+        ↓
+[1] line=149 | data != null
+        ↓
+[2] line=152 | System.out.format(data)
+        ↓
+[3] line=152 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=133, col=9 | if (IO.STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=133, col=13 | IO.STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=133, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=133, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=137, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=137, col=20 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=143, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=143, col=20 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=147, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=147, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=147, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=147, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=149, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=149, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=149, col=17 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=149, col=25 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=152, col=17 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=152, col=17 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=152, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.010 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.115 seconds
+
+########## FLOW tc605_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:164 (3 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java:178 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.047 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=164 | data = "foo"
+        ↓
+[1] line=175 | data != null
+        ↓
+[2] line=178 | System.out.format(data)
+        ↓
+[3] line=178 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=164 | data = "foo"
+        ↓
+[1] line=175 | data != null
+        ↓
+[2] line=178 | System.out.format(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=161, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=161, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=161, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=161, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=164, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=164, col=20 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=170, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=170, col=20 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=173, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=173, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=173, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=173, col=35 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=175, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=175, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=175, col=17 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=175, col=25 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=178, col=17 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=178, col=17 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__listen_tcp_format_13.java | line=178, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.047 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-433-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-85abd5f6-92fd-4638-8ab8-05ebc4df082f/cpg.bin.tmp)
+
+########## FLOW tc433_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-433-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java:53 (4 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java:29 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.083 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=53 | data = readerBuffered.readLine()
+        ↓
+[1] line=101 | this.badSink(data)
+        ↓
+[2] line=23 | badSink(this, String data)
+        ↓
+[3] line=25 | this.badSink(data)
+        ↓
+[4] line=23 | badSink(this, String data)
+        ↓
+[5] line=25 | this.badSink(data)
+        ↓
+[6] line=23 | badSink(this, String data)
+        ↓
+[7] line=26 | data != null
+        ↓
+[8] line=29 | System.out.printf(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=53 | readerBuffered.readLine()
+        ↓
+[1] line=53 | data = readerBuffered.readLine()
+        ↓
+[2] line=101 | this.badSink(data)
+        ↓
+[3] line=23 | badSink(this, String data)
+        ↓
+[4] line=25 | this.badSink(data)
+        ↓
+[5] line=23 | badSink(this, String data)
+        ↓
+[6] line=25 | this.badSink(data)
+        ↓
+[7] line=23 | badSink(this, String data)
+        ↓
+[8] line=26 | data != null
+        ↓
+[9] line=29 | System.out.printf(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=53 | readerBuffered.readLine()
+        ↓
+[1] line=53 | data = readerBuffered.readLine()
+        ↓
+[2] line=101 | this.badSink(data)
+        ↓
+[3] line=23 | badSink(this, String data)
+        ↓
+[4] line=25 | this.badSink(data)
+        ↓
+[5] line=23 | badSink(this, String data)
+        ↓
+[6] line=25 | this.badSink(data)
+        ↓
+[7] line=23 | badSink(this, String data)
+        ↓
+[8] line=26 | data != null
+        ↓
+[9] line=29 | System.out.printf(data)
+        ↓
+[10] line=29 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=53 | data = readerBuffered.readLine()
+        ↓
+[1] line=101 | this.badSink(data)
+        ↓
+[2] line=23 | badSink(this, String data)
+        ↓
+[3] line=25 | this.badSink(data)
+        ↓
+[4] line=23 | badSink(this, String data)
+        ↓
+[5] line=25 | this.badSink(data)
+        ↓
+[6] line=23 | badSink(this, String data)
+        ↓
+[7] line=26 | data != null
+        ↓
+[8] line=29 | System.out.printf(data)
+        ↓
+[9] line=29 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=42, col=13 | try
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=45, col=17 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=45, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=45, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=45, col=57 | 39544
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=49, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=49, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=49, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=49, col=59 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=49, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=50, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=50, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=50, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=53, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=53, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=53, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=101, col=83 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=23, col=25 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=25, col=83 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=23, col=25 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=25, col=83 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=23, col=25 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=26, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=26, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=26, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=26, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=29, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=29, col=13 | System.out.printf(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=29, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=29, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 30
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 33
+Slice time        : 0.015 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.083 seconds
+
+########## FLOW tc433_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-433-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java:145 (4 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java:53 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.085 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=145 | readerBuffered.readLine()
+        ↓
+[1] line=145 | data = readerBuffered.readLine()
+        ↓
+[2] line=193 | this.goodB2GSink(data)
+        ↓
+[3] line=35 | goodB2GSink(this, String data)
+        ↓
+[4] line=37 | this.goodB2GSink(data)
+        ↓
+[5] line=35 | goodB2GSink(this, String data)
+        ↓
+[6] line=37 | this.goodB2GSink(data)
+        ↓
+[7] line=47 | goodB2GSink(this, String data)
+        ↓
+[8] line=50 | data != null
+        ↓
+[9] line=53 | <operator>.arrayInitializer
+        ↓
+[10] line=53 | System.out.printf("%s%n", data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=145 | readerBuffered.readLine()
+        ↓
+[1] line=145 | data = readerBuffered.readLine()
+        ↓
+[2] line=193 | this.goodB2GSink(data)
+        ↓
+[3] line=35 | goodB2GSink(this, String data)
+        ↓
+[4] line=37 | this.goodB2GSink(data)
+        ↓
+[5] line=35 | goodB2GSink(this, String data)
+        ↓
+[6] line=37 | this.goodB2GSink(data)
+        ↓
+[7] line=47 | goodB2GSink(this, String data)
+        ↓
+[8] line=50 | data != null
+        ↓
+[9] line=53 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=145 | data = readerBuffered.readLine()
+        ↓
+[1] line=193 | this.goodB2GSink(data)
+        ↓
+[2] line=35 | goodB2GSink(this, String data)
+        ↓
+[3] line=37 | this.goodB2GSink(data)
+        ↓
+[4] line=35 | goodB2GSink(this, String data)
+        ↓
+[5] line=37 | this.goodB2GSink(data)
+        ↓
+[6] line=47 | goodB2GSink(this, String data)
+        ↓
+[7] line=50 | data != null
+        ↓
+[8] line=53 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=145 | data = readerBuffered.readLine()
+        ↓
+[1] line=193 | this.goodB2GSink(data)
+        ↓
+[2] line=35 | goodB2GSink(this, String data)
+        ↓
+[3] line=37 | this.goodB2GSink(data)
+        ↓
+[4] line=35 | goodB2GSink(this, String data)
+        ↓
+[5] line=37 | this.goodB2GSink(data)
+        ↓
+[6] line=47 | goodB2GSink(this, String data)
+        ↓
+[7] line=50 | data != null
+        ↓
+[8] line=53 | <operator>.arrayInitializer
+        ↓
+[9] line=53 | System.out.printf("%s%n", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=134, col=13 | try
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=137, col=17 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=137, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=137, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=137, col=57 | 39544
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=141, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=141, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=141, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=141, col=59 | socket
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=141, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=142, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=142, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=142, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=145, col=17 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=145, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=145, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=193, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=35, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=37, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=35, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=37, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=47, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=50, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=50, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=50, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=50, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=53, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=53, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=53, col=13 | System.out.printf("%s%n", data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=53, col=31 | "%s%n"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=53, col=39 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 31
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 34
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.085 seconds
+
+########## FLOW tc433_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-433-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java:116 (3 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java:41 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=116 | data = "foo"
+        ↓
+[1] line=118 | this.goodG2BSink(data)
+        ↓
+[2] line=29 | goodG2BSink(this, String data)
+        ↓
+[3] line=31 | this.goodG2BSink(data)
+        ↓
+[4] line=29 | goodG2BSink(this, String data)
+        ↓
+[5] line=31 | this.goodG2BSink(data)
+        ↓
+[6] line=35 | goodG2BSink(this, String data)
+        ↓
+[7] line=38 | data != null
+        ↓
+[8] line=41 | System.out.printf(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=116 | data = "foo"
+        ↓
+[1] line=118 | this.goodG2BSink(data)
+        ↓
+[2] line=29 | goodG2BSink(this, String data)
+        ↓
+[3] line=31 | this.goodG2BSink(data)
+        ↓
+[4] line=29 | goodG2BSink(this, String data)
+        ↓
+[5] line=31 | this.goodG2BSink(data)
+        ↓
+[6] line=35 | goodG2BSink(this, String data)
+        ↓
+[7] line=38 | data != null
+        ↓
+[8] line=41 | System.out.printf(data)
+        ↓
+[9] line=41 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=116, col=9 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=116, col=16 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53a.java | line=118, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=29, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53b.java | line=31, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=29, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53c.java | line=31, col=87 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=35, col=29 | String data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=38, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=38, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=38, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=38, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=41, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=41, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_53d.java | line=41, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 13
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 15
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.039 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-33-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b32e192d-2850-49ec-87ef-e4307e89e34d/cpg.bin.tmp)
+
+########## FLOW tc33_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-33-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_72a.java:30 (5 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_72b.java:31 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.089 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=30 | System.getenv("ADD")
+        ↓
+[1] line=30 | data = System.getenv("ADD")
+        ↓
+[2] line=33 | dataVector.add(0, data)
+        ↓
+[3] line=34 | dataVector.add(1, data)
+        ↓
+[4] line=35 | dataVector.add(2, data)
+        ↓
+[5] line=36 | this.badSink(dataVector)
+        ↓
+[6] line=24 | badSink(this, Vector<String> dataVector)
+        ↓
+[7] line=26 | dataVector.remove(2)
+        ↓
+[8] line=26 | String data = dataVector.remove(2)
+        ↓
+[9] line=28 | data != null
+        ↓
+[10] line=31 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=30 | data = System.getenv("ADD")
+        ↓
+[1] line=33 | dataVector.add(0, data)
+        ↓
+[2] line=34 | dataVector.add(1, data)
+        ↓
+[3] line=35 | dataVector.add(2, data)
+        ↓
+[4] line=36 | this.badSink(dataVector)
+        ↓
+[5] line=24 | badSink(this, Vector<String> dataVector)
+        ↓
+[6] line=26 | dataVector.remove(2)
+        ↓
+[7] line=26 | String data = dataVector.remove(2)
+        ↓
+[8] line=28 | data != null
+        ↓
+[9] line=31 | System.out.format(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=30 | data = System.getenv("ADD")
+        ↓
+[1] line=33 | dataVector.add(0, data)
+        ↓
+[2] line=34 | dataVector.add(1, data)
+        ↓
+[3] line=35 | dataVector.add(2, data)
+        ↓
+[4] line=36 | this.badSink(dataVector)
+        ↓
+[5] line=24 | badSink(this, Vector<String> dataVector)
+        ↓
+[6] line=26 | dataVector.remove(2)
+        ↓
+[7] line=26 | String data = dataVector.remove(2)
+        ↓
+[8] line=28 | data != null
+        ↓
+[9] line=31 | System.out.format(data)
+        ↓
+[10] line=31 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=30 | System.getenv("ADD")
+        ↓
+[1] line=30 | data = System.getenv("ADD")
+        ↓
+[2] line=33 | dataVector.add(0, data)
+        ↓
+[3] line=34 | dataVector.add(1, data)
+        ↓
+[4] line=35 | dataVector.add(2, data)
+        ↓
+[5] line=36 | this.badSink(dataVector)
+        ↓
+[6] line=24 | badSink(this, Vector<String> dataVector)
+        ↓
+[7] line=26 | dataVector.remove(2)
+        ↓
+[8] line=26 | String data = dataVector.remove(2)
+        ↓
+[9] line=28 | data != null
+        ↓
+[10] line=31 | System.out.format(data)
+        ↓
+[11] line=31 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=30, col=9 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=30, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=30, col=16 | System
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=30, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=32, col=24 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=32, col=37 | new Vector<String>(5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=32, col=56 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=33, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=33, col=24 | 0
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=33, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=34, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=34, col=24 | 1
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=34, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=35, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=35, col=24 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=35, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=36, col=83 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=24, col=25 | Vector<String> dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=26, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=26, col=23 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=26, col=23 | dataVector.remove(2)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=26, col=41 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=28, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=28, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=28, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=28, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=31, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=31, col=13 | System.out.format(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=31, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=31, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 29
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 1
+Final slice nodes : 31
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.089 seconds
+
+########## FLOW tc33_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-33-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_72a.java:67 (5 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_72b.java:57 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.059 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=67 | System.getenv("ADD")
+        ↓
+[1] line=67 | data = System.getenv("ADD")
+        ↓
+[2] line=70 | dataVector.add(0, data)
+        ↓
+[3] line=71 | dataVector.add(1, data)
+        ↓
+[4] line=72 | dataVector.add(2, data)
+        ↓
+[5] line=73 | this.goodB2GSink(dataVector)
+        ↓
+[6] line=50 | goodB2GSink(this, Vector<String> dataVector)
+        ↓
+[7] line=52 | dataVector.remove(2)
+        ↓
+[8] line=52 | String data = dataVector.remove(2)
+        ↓
+[9] line=54 | data != null
+        ↓
+[10] line=57 | <operator>.arrayInitializer
+        ↓
+[11] line=57 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=67 | System.getenv("ADD")
+        ↓
+[1] line=67 | data = System.getenv("ADD")
+        ↓
+[2] line=70 | dataVector.add(0, data)
+        ↓
+[3] line=71 | dataVector.add(1, data)
+        ↓
+[4] line=72 | dataVector.add(2, data)
+        ↓
+[5] line=73 | this.goodB2GSink(dataVector)
+        ↓
+[6] line=50 | goodB2GSink(this, Vector<String> dataVector)
+        ↓
+[7] line=52 | dataVector.remove(2)
+        ↓
+[8] line=52 | String data = dataVector.remove(2)
+        ↓
+[9] line=54 | data != null
+        ↓
+[10] line=57 | <operator>.arrayInitializer
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=67 | data = System.getenv("ADD")
+        ↓
+[1] line=70 | dataVector.add(0, data)
+        ↓
+[2] line=71 | dataVector.add(1, data)
+        ↓
+[3] line=72 | dataVector.add(2, data)
+        ↓
+[4] line=73 | this.goodB2GSink(dataVector)
+        ↓
+[5] line=50 | goodB2GSink(this, Vector<String> dataVector)
+        ↓
+[6] line=52 | dataVector.remove(2)
+        ↓
+[7] line=52 | String data = dataVector.remove(2)
+        ↓
+[8] line=54 | data != null
+        ↓
+[9] line=57 | <operator>.arrayInitializer
+        ↓
+[10] line=57 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=67 | data = System.getenv("ADD")
+        ↓
+[1] line=70 | dataVector.add(0, data)
+        ↓
+[2] line=71 | dataVector.add(1, data)
+        ↓
+[3] line=72 | dataVector.add(2, data)
+        ↓
+[4] line=73 | this.goodB2GSink(dataVector)
+        ↓
+[5] line=50 | goodB2GSink(this, Vector<String> dataVector)
+        ↓
+[6] line=52 | dataVector.remove(2)
+        ↓
+[7] line=52 | String data = dataVector.remove(2)
+        ↓
+[8] line=54 | data != null
+        ↓
+[9] line=57 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=67, col=9 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=67, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=67, col=16 | System
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=67, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=69, col=24 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=69, col=37 | new Vector<String>(5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=69, col=56 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=70, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=70, col=24 | 0
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=70, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=71, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=71, col=24 | 1
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=71, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=72, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=72, col=24 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=72, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=73, col=87 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=50, col=29 | Vector<String> dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=52, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=52, col=23 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=52, col=23 | dataVector.remove(2)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=52, col=41 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=54, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=54, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=54, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=54, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=57, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=57, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=57, col=13 | System.out.format("%s%n", data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=57, col=31 | "%s%n"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=57, col=39 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 17
+Data nodes        : 30
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 1
+Final slice nodes : 32
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.059 seconds
+
+########## FLOW tc33_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-33-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_72a.java:51 (3 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_72b.java:44 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=51 | data = "foo"
+        ↓
+[1] line=54 | dataVector.add(0, data)
+        ↓
+[2] line=55 | dataVector.add(1, data)
+        ↓
+[3] line=56 | dataVector.add(2, data)
+        ↓
+[4] line=57 | this.goodG2BSink(dataVector)
+        ↓
+[5] line=37 | goodG2BSink(this, Vector<String> dataVector)
+        ↓
+[6] line=39 | dataVector.remove(2)
+        ↓
+[7] line=39 | String data = dataVector.remove(2)
+        ↓
+[8] line=41 | data != null
+        ↓
+[9] line=44 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=51 | data = "foo"
+        ↓
+[1] line=54 | dataVector.add(0, data)
+        ↓
+[2] line=55 | dataVector.add(1, data)
+        ↓
+[3] line=56 | dataVector.add(2, data)
+        ↓
+[4] line=57 | this.goodG2BSink(dataVector)
+        ↓
+[5] line=37 | goodG2BSink(this, Vector<String> dataVector)
+        ↓
+[6] line=39 | dataVector.remove(2)
+        ↓
+[7] line=39 | String data = dataVector.remove(2)
+        ↓
+[8] line=41 | data != null
+        ↓
+[9] line=44 | System.out.format(data)
+        ↓
+[10] line=44 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=51, col=9 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=51, col=16 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=53, col=24 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=53, col=37 | new Vector<String>(5)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=53, col=56 | 5
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=54, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=54, col=24 | 0
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=54, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=55, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=55, col=24 | 1
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=55, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=56, col=9 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=56, col=24 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=56, col=27 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72a.java | line=57, col=87 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=37, col=29 | Vector<String> dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=39, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=39, col=23 | dataVector
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=39, col=23 | dataVector.remove(2)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=39, col=41 | 2
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=41, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=41, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=41, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=44, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=44, col=13 | System.out.format(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=44, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_72b.java | line=44, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 16
+Data nodes        : 27
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 1
+Final slice nodes : 29
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.037 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-31-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8d7ce005-3f12-4001-9b98-7ac50e73d3ac/cpg.bin.tmp)
+
+########## FLOW tc31_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-31-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_68a.java:30 (7 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_68b.java:30 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.053 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=30 | System.getenv("ADD")
+        ↓
+[1] line=25 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=27 | data != null
+        ↓
+[3] line=30 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=30 | System.getenv("ADD")
+        ↓
+[1] line=25 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=27 | data != null
+        ↓
+[3] line=30 | System.out.format(data)
+        ↓
+[4] line=30 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68a.java | line=30, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=25, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=25, col=23 | CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=27, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=27, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=27, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=27, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=30, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=30, col=13 | System.out.format(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=30, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=30, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 2
+Flow time    : 0.053 seconds
+
+########## FLOW tc31_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-31-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_68a.java:57 (7 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_68b.java:56 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=57 | System.getenv("ADD")
+        ↓
+[1] line=51 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=53 | data != null
+        ↓
+[3] line=56 | <operator>.arrayInitializer
+        ↓
+[4] line=56 | System.out.format("%s%n", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=57 | System.getenv("ADD")
+        ↓
+[1] line=51 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=53 | data != null
+        ↓
+[3] line=56 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68a.java | line=57, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=51, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=51, col=23 | CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=53, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=53, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=53, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=53, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=56, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=56, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=56, col=13 | System.out.format("%s%n", data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=56, col=31 | "%s%n"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=56, col=39 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 10
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 2
+Flow time    : 0.028 seconds
+
+########## FLOW tc31_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-31-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__Environment_format_68a.java:46 (5 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__Environment_format_68b.java:43 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=46 | CWE134_Uncontrolled_Format_String__Environment_format_68a.data = "foo"
+        ↓
+[1] line=38 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=40 | data != null
+        ↓
+[3] line=43 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=46 | CWE134_Uncontrolled_Format_String__Environment_format_68a.data = "foo"
+        ↓
+[1] line=38 | String data = CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+        ↓
+[2] line=40 | data != null
+        ↓
+[3] line=43 | System.out.format(data)
+        ↓
+[4] line=43 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68a.java | line=46, col=16 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=38, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=38, col=23 | CWE134_Uncontrolled_Format_String__Environment_format_68a.data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=40, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=40, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=40, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=43, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=43, col=13 | System.out.format(data)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=43, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__Environment_format_68b.java | line=43, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 2
+Flow time    : 0.024 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-96-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3cd0d33a-d226-4075-87c3-b600b7579fbb/cpg.bin.tmp)
+
+########## FLOW tc96_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-96-cpg-resolved.bin
+Source      : CWE134_Uncontrolled_Format_String__File_format_42.java:120 (3 CFG node(s))
+Sink        : CWE134_Uncontrolled_Format_String__File_format_42.java:132 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.063 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=120 | data = "foo"
+        ↓
+[1] line=122 | return data;
+        ↓
+[2] line=115 | RET
+        ↓
+[3] line=127 | this.goodG2BSource()
+        ↓
+[4] line=127 | String data = goodG2BSource()
+        ↓
+[5] line=129 | data != null
+        ↓
+[6] line=132 | System.out.format(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=120 | data = "foo"
+        ↓
+[1] line=122 | return data;
+        ↓
+[2] line=115 | RET
+        ↓
+[3] line=127 | this.goodG2BSource()
+        ↓
+[4] line=127 | String data = goodG2BSource()
+        ↓
+[5] line=129 | data != null
+        ↓
+[6] line=132 | System.out.format(data)
+        ↓
+[7] line=132 | <operator>.arrayInitializer
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=115, col=5 | this
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=115, col=13 | RET
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=120, col=9 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=120, col=9 | data = "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=120, col=16 | "foo"
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=122, col=9 | return data;
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=122, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=125, col=5 | this
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=127, col=16 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=127, col=23 | this.goodG2BSource()
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=127, col=23 | this
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=129, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=129, col=13 | data
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=129, col=13 | data != null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=129, col=21 | null
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=132, col=13 | System.out
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=132, col=13 | <operator>.arrayInitializer
+src/main/java/juliet/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__File_format_42.java | line=132, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 16
+Control nodes     : 1
+Control DDG nodes : 7
+AST controls      : 1
+Final slice nodes : 18
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.063 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe134_jobs.tsv)
+Creating project `joern-trace-4ecbffc8-9f05-4bb3-8e80-80c8abb3bdfa` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-605-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-4ecbffc8-9f05-4bb3-8e80-80c8abb3bdfa/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-85abd5f6-92fd-4638-8ab8-05ebc4df082f` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-433-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-85abd5f6-92fd-4638-8ab8-05ebc4df082f/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b32e192d-2850-49ec-87ef-e4307e89e34d` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-33-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b32e192d-2850-49ec-87ef-e4307e89e34d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8d7ce005-3f12-4001-9b98-7ac50e73d3ac` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-31-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8d7ce005-3f12-4001-9b98-7ac50e73d3ac/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-3cd0d33a-d226-4075-87c3-b600b7579fbb` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe134_cpg/cwe134-96-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3cd0d33a-d226-4075-87c3-b600b7579fbb/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

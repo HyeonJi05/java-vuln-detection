@@ -1,0 +1,77 @@
+== java-vuln-detection slicing runner ==
+[joern] using: /home/hyeonjijang/bin/joern/joern-cli
+[servlet] present: javax.servlet-api-3.1.0.jar
+[support] present: juliet-support-only.jar
+[env] wrote /home/hyeonjijang/java-vuln-detection/slicing/.env
+[filter] reusing 32 filtered XML(s) (use --refilter to redo)
+[batch] 32 CWE(s), per-cwe=5, select=random(seed=42)
+[batch] results -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108
+===== CWE-113 =====
+  CWE-113 done: 21 flows.
+===== CWE-129 =====
+  CWE-129 done: 15 flows.
+===== CWE-134 =====
+  CWE-134 done: 15 flows.
+===== CWE-15 =====
+  CWE-15 done: 13 flows.
+===== CWE-190 =====
+  CWE-190 done: 17 flows.
+===== CWE-191 =====
+  CWE-191 done: 16 flows.
+===== CWE-197 =====
+  CWE-197 done: 9 flows.
+===== CWE-23 =====
+  CWE-23 done: 8 flows.
+===== CWE-256 =====
+  CWE-256 done: 13 flows.
+===== CWE-259 =====
+  CWE-259 done: 10 flows.
+===== CWE-315 =====
+  CWE-315 done: 18 flows.
+===== CWE-319 =====
+  CWE-319 done: 7 flows.
+===== CWE-321 =====
+  CWE-321 done: 11 flows.
+===== CWE-369 =====
+  CWE-369 done: 18 flows.
+===== CWE-36 =====
+  CWE-36 done: 11 flows.
+===== CWE-400 =====
+  CWE-400 done: 13 flows.
+===== CWE-470 =====
+  CWE-470 done: 14 flows.
+===== CWE-476 =====
+  CWE-476 done: 19 flows.
+===== CWE-563 =====
+  CWE-563 done: 10 flows.
+===== CWE-566 =====
+  CWE-566 done: 13 flows.
+===== CWE-601 =====
+  CWE-601 done: 11 flows.
+===== CWE-606 =====
+  CWE-606 done: 13 flows.
+===== CWE-643 =====
+  CWE-643 done: 14 flows.
+===== CWE-690 =====
+  CWE-690 done: 17 flows.
+===== CWE-789 =====
+  CWE-789 done: 11 flows.
+===== CWE-78 =====
+  CWE-78 done: 11 flows.
+===== CWE-80 =====
+  CWE-80 done: 10 flows.
+===== CWE-81 =====
+  CWE-81 done: 13 flows.
+===== CWE-832 =====
+  CWE-832 done: 1 flows.
+===== CWE-83 =====
+  CWE-83 done: 10 flows.
+===== CWE-89 =====
+  CWE-89 done: 21 flows.
+===== CWE-90 =====
+  CWE-90 done: 11 flows.
+=== Done: 32 CWEs, 414 flows, 0 failures ===
+Results: /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108
+real    42m47.421s
+user    148m15.647s
+sys     12m56.541s

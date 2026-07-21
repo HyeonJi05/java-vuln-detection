@@ -1,0 +1,1017 @@
+# CWE-321: 11 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe321_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-6-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c6ee199b-d40b-4d50-8621-69cb473bcad2/cpg.bin.tmp)
+
+########## FLOW tc6_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-6-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:44 (3 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:58 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.362 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=44 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=53 | data != null
+        ↓
+[2] line=58 | data.getBytes("UTF-8")
+        ↓
+[3] line=58 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=44 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=53 | data != null
+        ↓
+[2] line=58 | data.getBytes("UTF-8")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=41, col=9 | if (PRIVATE_STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=41, col=13 | PRIVATE_STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=41, col=13 | CWE321_Hard_Coded_Cryptographic_Key__basic_06.PRIVATE_STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=41, col=42 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=44, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=44, col=20 | "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=50, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=50, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=53, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=53, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=53, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=53, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=58, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 14
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 2
+Final slice nodes : 20
+Slice time        : 0.039 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.362 seconds
+
+########## FLOW tc6_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-6-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:89 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:104 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.071 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=89 | data = readerBuffered.readLine()
+        ↓
+[1] line=99 | data != null
+        ↓
+[2] line=104 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=89 | readerBuffered.readLine()
+        ↓
+[1] line=89 | data = readerBuffered.readLine()
+        ↓
+[2] line=99 | data != null
+        ↓
+[3] line=104 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=89 | readerBuffered.readLine()
+        ↓
+[1] line=89 | data = readerBuffered.readLine()
+        ↓
+[2] line=99 | data != null
+        ↓
+[3] line=104 | data.getBytes("UTF-8")
+        ↓
+[4] line=104 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=89 | data = readerBuffered.readLine()
+        ↓
+[1] line=99 | data != null
+        ↓
+[2] line=104 | data.getBytes("UTF-8")
+        ↓
+[3] line=104 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=71, col=9 | if (PRIVATE_STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=71, col=13 | PRIVATE_STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=71, col=13 | CWE321_Hard_Coded_Cryptographic_Key__basic_06.PRIVATE_STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=71, col=42 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=75, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=83, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=85, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=85, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=85, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=85, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=86, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=86, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=86, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=89, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=89, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=89, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=99, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=99, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=99, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=104, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 24
+Control nodes     : 2
+Control DDG nodes : 20
+AST controls      : 3
+Final slice nodes : 31
+Slice time        : 0.032 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.071 seconds
+
+########## FLOW tc6_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-6-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:126 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_06.java:146 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.063 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=126 | data = readerBuffered.readLine()
+        ↓
+[1] line=141 | data != null
+        ↓
+[2] line=146 | data.getBytes("UTF-8")
+        ↓
+[3] line=146 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=126 | readerBuffered.readLine()
+        ↓
+[1] line=126 | data = readerBuffered.readLine()
+        ↓
+[2] line=141 | data != null
+        ↓
+[3] line=146 | data.getBytes("UTF-8")
+        ↓
+[4] line=146 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=126 | readerBuffered.readLine()
+        ↓
+[1] line=126 | data = readerBuffered.readLine()
+        ↓
+[2] line=141 | data != null
+        ↓
+[3] line=146 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=126 | data = readerBuffered.readLine()
+        ↓
+[1] line=141 | data != null
+        ↓
+[2] line=146 | data.getBytes("UTF-8")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=117, col=9 | if (PRIVATE_STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=117, col=13 | PRIVATE_STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=117, col=13 | CWE321_Hard_Coded_Cryptographic_Key__basic_06.PRIVATE_STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=117, col=42 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=121, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=123, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=123, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=123, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=123, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=124, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=124, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=124, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=126, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=126, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=126, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=138, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=141, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=141, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=141, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=141, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java | line=146, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 24
+Control nodes     : 2
+Control DDG nodes : 20
+AST controls      : 3
+Final slice nodes : 31
+Slice time        : 0.023 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.063 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-15-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1e3411a7-e6cd-4322-8dc4-15416fa6838d/cpg.bin.tmp)
+
+########## FLOW tc15_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-15-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:40 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:54 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.067 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=40 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=49 | data != null
+        ↓
+[2] line=54 | data.getBytes("UTF-8")
+        ↓
+[3] line=54 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=40 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=49 | data != null
+        ↓
+[2] line=54 | data.getBytes("UTF-8")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=36, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=36, col=17 | 6
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=40, col=20 | "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=45, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=45, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=49, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=49, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=49, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=49, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=54, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 14
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 18
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.067 seconds
+
+########## FLOW tc15_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-15-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:83 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:98 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.056 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=83 | data = readerBuffered.readLine()
+        ↓
+[1] line=93 | data != null
+        ↓
+[2] line=98 | data.getBytes("UTF-8")
+        ↓
+[3] line=98 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=83 | readerBuffered.readLine()
+        ↓
+[1] line=83 | data = readerBuffered.readLine()
+        ↓
+[2] line=93 | data != null
+        ↓
+[3] line=98 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=83 | readerBuffered.readLine()
+        ↓
+[1] line=83 | data = readerBuffered.readLine()
+        ↓
+[2] line=93 | data != null
+        ↓
+[3] line=98 | data.getBytes("UTF-8")
+        ↓
+[4] line=98 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=83 | data = readerBuffered.readLine()
+        ↓
+[1] line=93 | data != null
+        ↓
+[2] line=98 | data.getBytes("UTF-8")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=68, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=68, col=17 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=73, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=73, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=78, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=80, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=80, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=80, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=80, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=81, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=81, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=81, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=83, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=83, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=83, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=93, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=93, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=93, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=98, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 24
+Control nodes     : 2
+Control DDG nodes : 18
+AST controls      : 3
+Final slice nodes : 29
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.056 seconds
+
+########## FLOW tc15_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-15-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:122 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_15.java:142 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.038 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=122 | data = readerBuffered.readLine()
+        ↓
+[1] line=137 | data != null
+        ↓
+[2] line=142 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=122 | readerBuffered.readLine()
+        ↓
+[1] line=122 | data = readerBuffered.readLine()
+        ↓
+[2] line=137 | data != null
+        ↓
+[3] line=142 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=122 | readerBuffered.readLine()
+        ↓
+[1] line=122 | data = readerBuffered.readLine()
+        ↓
+[2] line=137 | data != null
+        ↓
+[3] line=142 | data.getBytes("UTF-8")
+        ↓
+[4] line=142 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=122 | data = readerBuffered.readLine()
+        ↓
+[1] line=137 | data != null
+        ↓
+[2] line=142 | data.getBytes("UTF-8")
+        ↓
+[3] line=142 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=112, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=112, col=17 | 6
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=117, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=119, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=119, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=119, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=119, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=120, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=120, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=120, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=122, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=122, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=122, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=133, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=133, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=137, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=137, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=137, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=137, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_15.java | line=142, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 24
+Control nodes     : 2
+Control DDG nodes : 18
+AST controls      : 3
+Final slice nodes : 29
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.038 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-7-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c8ab029e-0564-4516-8fae-9ef3fbb2be6a/cpg.bin.tmp)
+
+########## FLOW tc7_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-7-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:44 (3 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:58 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=44 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=53 | data != null
+        ↓
+[2] line=58 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=44 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=53 | data != null
+        ↓
+[2] line=58 | data.getBytes("UTF-8")
+        ↓
+[3] line=58 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=38, col=5 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=41, col=9 | if (privateFive == 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=41, col=13 | privateFive == 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=41, col=13 | this.privateFive
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=41, col=28 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=44, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=44, col=20 | "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=50, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=50, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=53, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=53, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=53, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=53, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=58, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 14
+Control nodes     : 2
+Control DDG nodes : 11
+AST controls      : 2
+Final slice nodes : 21
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.034 seconds
+
+########## FLOW tc7_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-7-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:89 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:104 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=89 | readerBuffered.readLine()
+        ↓
+[1] line=89 | data = readerBuffered.readLine()
+        ↓
+[2] line=99 | data != null
+        ↓
+[3] line=104 | data.getBytes("UTF-8")
+        ↓
+[4] line=104 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=89 | data = readerBuffered.readLine()
+        ↓
+[1] line=99 | data != null
+        ↓
+[2] line=104 | data.getBytes("UTF-8")
+        ↓
+[3] line=104 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=89 | data = readerBuffered.readLine()
+        ↓
+[1] line=99 | data != null
+        ↓
+[2] line=104 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=89 | readerBuffered.readLine()
+        ↓
+[1] line=89 | data = readerBuffered.readLine()
+        ↓
+[2] line=99 | data != null
+        ↓
+[3] line=104 | data.getBytes("UTF-8")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=68, col=5 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=71, col=9 | if (privateFive != 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=71, col=13 | privateFive != 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=71, col=13 | this.privateFive
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=71, col=28 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=75, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=83, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=85, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=85, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=85, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=85, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=86, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=86, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=86, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=89, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=89, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=89, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=99, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=99, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=99, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=104, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 23
+Control nodes     : 2
+Control DDG nodes : 21
+AST controls      : 3
+Final slice nodes : 31
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.031 seconds
+
+########## FLOW tc7_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-7-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:126 (4 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_07.java:146 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=126 | readerBuffered.readLine()
+        ↓
+[1] line=126 | data = readerBuffered.readLine()
+        ↓
+[2] line=141 | data != null
+        ↓
+[3] line=146 | data.getBytes("UTF-8")
+        ↓
+[4] line=146 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=126 | readerBuffered.readLine()
+        ↓
+[1] line=126 | data = readerBuffered.readLine()
+        ↓
+[2] line=141 | data != null
+        ↓
+[3] line=146 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=126 | data = readerBuffered.readLine()
+        ↓
+[1] line=141 | data != null
+        ↓
+[2] line=146 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=126 | data = readerBuffered.readLine()
+        ↓
+[1] line=141 | data != null
+        ↓
+[2] line=146 | data.getBytes("UTF-8")
+        ↓
+[3] line=146 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=114, col=5 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=117, col=9 | if (privateFive == 5)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=117, col=13 | privateFive == 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=117, col=13 | this.privateFive
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=117, col=28 | 5
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=121, col=13 | try
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=123, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=123, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=123, col=77 | System.in
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=123, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=124, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=124, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=124, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=126, col=17 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=126, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=126, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=138, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=141, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=141, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=141, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=141, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_07.java | line=146, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 24
+Control nodes     : 2
+Control DDG nodes : 21
+AST controls      : 3
+Final slice nodes : 32
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.030 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-25-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-df33cfce-bd29-4ffb-9713-5cf4dfe19830/cpg.bin.tmp)
+
+########## FLOW tc25_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-25-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_52a.java:34 (3 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java:34 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.064 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=36 | this.badSink(data)
+        ↓
+[2] line=23 | badSink(this, String data)
+        ↓
+[3] line=25 | this.badSink(data)
+        ↓
+[4] line=26 | badSink(this, String data)
+        ↓
+[5] line=29 | data != null
+        ↓
+[6] line=34 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=36 | this.badSink(data)
+        ↓
+[2] line=23 | badSink(this, String data)
+        ↓
+[3] line=25 | this.badSink(data)
+        ↓
+[4] line=26 | badSink(this, String data)
+        ↓
+[5] line=29 | data != null
+        ↓
+[6] line=34 | data.getBytes("UTF-8")
+        ↓
+[7] line=34 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52a.java | line=34, col=9 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52a.java | line=34, col=16 | "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52a.java | line=36, col=72 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52b.java | line=23, col=25 | String data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52b.java | line=25, col=72 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=26, col=25 | String data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=29, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=29, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=29, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=29, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_52c.java | line=34, col=85 | "AES"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 16
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 18
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.064 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-18-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c1a60f51-5408-4f87-a8bc-2d63fc0d21d8/cpg.bin.tmp)
+
+########## FLOW tc18_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-18-cpg-resolved.bin
+Source      : CWE321_Hard_Coded_Cryptographic_Key__basic_21.java:63 (3 CFG node(s))
+Sink        : CWE321_Hard_Coded_Cryptographic_Key__basic_21.java:47 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.059 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=63 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=72 | return data;
+        ↓
+[2] line=56 | RET
+        ↓
+[3] line=40 | this.bad_source()
+        ↓
+[4] line=40 | data = bad_source()
+        ↓
+[5] line=42 | data != null
+        ↓
+[6] line=47 | data.getBytes("UTF-8")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=63 | data = "23 ~j;asn!@#/>as"
+        ↓
+[1] line=72 | return data;
+        ↓
+[2] line=56 | RET
+        ↓
+[3] line=40 | this.bad_source()
+        ↓
+[4] line=40 | data = bad_source()
+        ↓
+[5] line=42 | data != null
+        ↓
+[6] line=47 | data.getBytes("UTF-8")
+        ↓
+[7] line=47 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=35, col=5 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=39, col=9 | this.badPrivate
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=39, col=22 | true
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=40, col=9 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=40, col=16 | this.bad_source()
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=40, col=16 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=42, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=42, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=42, col=13 | data != null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=42, col=21 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=-1 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=27 | secretKeySpec
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=43 | new SecretKeySpec(data.getBytes("UTF-8"), "AES")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=61 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=61 | data.getBytes("UTF-8")
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=75 | "UTF-8"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=47, col=85 | "AES"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=56, col=5 | this
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=56, col=13 | RET
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=60, col=9 | if (this.badPrivate)
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=60, col=13 | this.badPrivate
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=63, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=63, col=13 | data = "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=63, col=20 | "23 ~j;asn!@#/>as"
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=69, col=13 | data
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=69, col=13 | data = null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=69, col=20 | null
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=72, col=9 | return data;
+src/main/java/juliet/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_21.java | line=72, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 26
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 2
+Final slice nodes : 30
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.059 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe321_jobs.tsv)
+Creating project `joern-trace-c6ee199b-d40b-4d50-8621-69cb473bcad2` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-6-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c6ee199b-d40b-4d50-8621-69cb473bcad2/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1e3411a7-e6cd-4322-8dc4-15416fa6838d` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-15-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1e3411a7-e6cd-4322-8dc4-15416fa6838d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c8ab029e-0564-4516-8fae-9ef3fbb2be6a` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-7-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c8ab029e-0564-4516-8fae-9ef3fbb2be6a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-df33cfce-bd29-4ffb-9713-5cf4dfe19830` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-25-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-df33cfce-bd29-4ffb-9713-5cf4dfe19830/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c1a60f51-5408-4f87-a8bc-2d63fc0d21d8` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe321_cpg/cwe321-18-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c1a60f51-5408-4f87-a8bc-2d63fc0d21d8/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

@@ -38,11 +38,13 @@ from __future__ import annotations
 
 import argparse
 import os
+import random
 import re
 import shutil
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
+from datetime import datetime
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -57,8 +59,6 @@ DEPS_DIR = SLICING_DIR / "deps"
 OUTPUT_DIR = SLICING_DIR / "output"
 FILTERED_DIR = OUTPUT_DIR / "filtered_source_sink_dataset"
 CPG_DIR = OUTPUT_DIR / "CPG"
-RESULT_DIR = OUTPUT_DIR / "slice_results"
-JOBS_DIR = OUTPUT_DIR / "jobs"
 
 CPG_BUILDER = SLICING_DIR / "cpg_builder.py"
 FLOW_FILTER = SLICING_DIR / "flow_filter.py"
@@ -220,17 +220,22 @@ def filter_xmls(only, refilter):
     print(out.strip().splitlines()[-1] if out.strip() else "[filter] done")
 
 
-def run_batch(env_path, per_cwe, only, force):
+def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir):
     xmls = sorted(FILTERED_DIR.glob("cwe*_source_sink_classified.xml"))
     if only:
         xmls = [x for x in xmls if cwe_num(x) in only]
     if not xmls:
         sys.exit(f"[batch] no filtered XMLs in {FILTERED_DIR}")
 
-    RESULT_DIR.mkdir(parents=True, exist_ok=True)
-    JOBS_DIR.mkdir(parents=True, exist_ok=True)
+    jobs_dir = result_dir / "jobs"
+    result_dir.mkdir(parents=True, exist_ok=True)
+    jobs_dir.mkdir(parents=True, exist_ok=True)
     per_cwe_label = "all" if per_cwe <= 0 else str(per_cwe)
-    print(f"[batch] {len(xmls)} CWE(s), per-cwe={per_cwe_label}\n")
+    mode = f"random(seed={seed})" if sample else "first"
+    print(f"[batch] {len(xmls)} CWE(s), per-cwe={per_cwe_label}, select={mode}")
+    print(f"[batch] results -> {result_dir}\n")
+
+    rng = random.Random(seed) if sample else None
 
     total_cwe = total_flows = total_fail = 0
     for xml_path in xmls:
@@ -241,9 +246,15 @@ def run_batch(env_path, per_cwe, only, force):
         except Exception as e:
             print(f"  [skip] parse error: {e}")
             continue
-        # per_cwe <= 0 means "all testcases"
         all_tc = root.findall(".//testcase")
-        testcases = all_tc if per_cwe <= 0 else all_tc[:per_cwe]
+        if per_cwe <= 0:
+            testcases = all_tc                 # all testcases
+        elif sample:
+            # random N (without replacement); reproducible via --seed
+            k = min(per_cwe, len(all_tc))
+            testcases = rng.sample(all_tc, k)
+        else:
+            testcases = all_tc[:per_cwe]        # first N in XML order
         job_lines = []
         for tc in testcases:
             idx = tc.get("testcase_index")
@@ -277,9 +288,9 @@ def run_batch(env_path, per_cwe, only, force):
         if not job_lines:
             print("  [skip] no valid flows")
             continue
-        jobs_file = JOBS_DIR / f"cwe{cwe}_jobs.tsv"
+        jobs_file = jobs_dir / f"cwe{cwe}_jobs.tsv"
         jobs_file.write_text("\n".join(job_lines) + "\n")
-        log_path = RESULT_DIR / f"cwe{cwe}.txt"
+        log_path = result_dir / f"cwe{cwe}.txt"
         rc, out = sh(["bash", str(RUN_SLICE_BATCH), str(jobs_file)])
         with log_path.open("w") as fh:
             fh.write(f"# CWE-{cwe}: {len(job_lines)} flow(s), one joern session\n\n")
@@ -293,7 +304,7 @@ def run_batch(env_path, per_cwe, only, force):
             print(f"  [CWE-{cwe}] joern rc={rc}")
 
     print(f"\n=== Done: {total_cwe} CWEs, {total_flows} flows, {total_fail} failures ===")
-    print(f"Results: {RESULT_DIR}")
+    print(f"Results: {result_dir}")
 
 
 def main():
@@ -306,10 +317,28 @@ def main():
     ap.add_argument("--only", type=int, nargs="*", default=None)
     ap.add_argument("--force", action="store_true",
                     help="Rebuild CPGs even if present")
+    ap.add_argument("--sample", action="store_true",
+                    help="Pick testcases randomly instead of the first N "
+                         "(ignored when --per-cwe 0)")
+    ap.add_argument("--seed", type=int, default=0,
+                    help="Random seed for --sample (default 0, for reproducibility)")
     ap.add_argument("--refilter", action="store_true",
                     help="Re-run flow_filter even if filtered XMLs already exist "
                          "(default: reuse them)")
+    ap.add_argument("--output-dir", default=None,
+                    help="Directory to write results into. If omitted, a new "
+                         "timestamped folder output/slice_results_YYMMDD_HHMMSS/ "
+                         "is created (never overwrites previous runs).")
     args = ap.parse_args()
+
+    # Decide result directory: explicit --output-dir, else timestamped folder.
+    if args.output_dir:
+        result_dir = Path(args.output_dir)
+        if not result_dir.is_absolute():
+            result_dir = SLICING_DIR / result_dir
+    else:
+        stamp = datetime.now().strftime("%y%m%d_%H%M%S")
+        result_dir = OUTPUT_DIR / f"slice_results_{stamp}"
 
     print("== java-vuln-detection slicing runner ==")
     joern_cli = find_joern(args.joern)
@@ -318,7 +347,8 @@ def main():
     ensure_support_jar()
     env_path = write_env(joern_cli)
     filter_xmls(args.only, args.refilter)
-    run_batch(env_path, args.per_cwe, args.only, args.force)
+    run_batch(env_path, args.per_cwe, args.only, args.force,
+              args.sample, args.seed, result_dir)
 
 
 if __name__ == "__main__":

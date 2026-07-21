@@ -1,0 +1,1353 @@
+# CWE-89: 21 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe89_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0060c0f2-9779-42a3-97fe-76b15db013b0/cpg.bin.tmp)
+
+########## FLOW tc457_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:50 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:90 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.297 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=90 | "select * from users where name='" + data + "'"
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=90 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=90 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=90 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=90 | "select * from users where name='" + data + "'"
+        ↓
+[3] line=90 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[4] line=90 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=90 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=90 | "select * from users where name='" + data + "'"
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=90 | "select * from users where name='" + data + "'"
+        ↓
+[3] line=90 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=90 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=90 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[3] line=90 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=38, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=38, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=38, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=38, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=43, col=28 | properties
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=43, col=41 | new Properties()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=45, col=17 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=47, col=21 | streamFileInput
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=47, col=39 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=47, col=59 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=48, col=21 | properties
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=48, col=37 | streamFileInput
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=50, col=21 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=50, col=21 | data = properties.getProperty("data")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=50, col=28 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=50, col=28 | properties
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=50, col=51 | "data"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=52, col=17 | catch
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=54, col=21 | IO.logger
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=54, col=35 | Level.WARNING
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=54, col=50 | "Error with stream reading"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=54, col=79 | exceptIO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=57, col=17 | finally
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=59, col=21 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=61, col=25 | if (streamFileInput != null)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=61, col=29 | streamFileInput != null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=61, col=29 | streamFileInput
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=61, col=48 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=63, col=29 | streamFileInput.close()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=63, col=29 | streamFileInput
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=66, col=21 | catch
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=68, col=25 | IO.logger
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=68, col=39 | Level.WARNING
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=68, col=54 | "Error closing FileInputStream"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=68, col=87 | exceptIO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=77, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=77, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=80, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=80, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=80, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=80, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=85, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=87, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=87, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=87, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=88, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=88, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=88, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=17 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=90, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 39
+Control nodes     : 5
+Control DDG nodes : 25
+AST controls      : 9
+Final slice nodes : 56
+Slice time        : 0.083 seconds
+
+=== Summary ===
+Raw paths    : 28
+Unique traces: 8
+Flow time    : 0.297 seconds
+
+########## FLOW tc457_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:304 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:349 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.085 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.085 seconds
+
+########## FLOW tc457_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:419 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:457 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.034 seconds
+
+########## FLOW tc457_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:152 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:166 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=152 | data = "foo"
+        ↓
+[1] line=166 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=166 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=152 | data = "foo"
+        ↓
+[1] line=166 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=152 | data = "foo"
+        ↓
+[1] line=166 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=166 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[3] line=166 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=152 | data = "foo"
+        ↓
+[1] line=166 | "select * from users where name='" + data + "'"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=142, col=9 | if (IO.STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=142, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=142, col=13 | IO.STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=142, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=146, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=146, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=152, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=152, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=156, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=156, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=156, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=156, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=161, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=163, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=163, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=163, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=164, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=164, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=164, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=166, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=166, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=166, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=166, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=166, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 19
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 24
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.037 seconds
+
+########## FLOW tc457_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:221 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java:240 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=240 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=240 | "select * from users where name='" + data + "'"
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=240 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=240 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=240 | "select * from users where name='" + data + "'"
+        ↓
+[2] line=240 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[3] line=240 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=218, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=218, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=218, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=218, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=221, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=221, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=227, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=227, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=230, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=230, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=230, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=230, col=35 | 5
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=235, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=237, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=237, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=237, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=238, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=238, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=238, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=240, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=240, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=240, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=240, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__PropertiesFile_executeQuery_13.java | line=240, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 19
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 24
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.031 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1203-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3069f36a-622b-409a-9103-60c4e89ff688/cpg.bin.tmp)
+
+########## FLOW tc1203_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1203-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__console_readLine_executeQuery_22b.java:41 (9 CFG node(s))
+Sink        : CWE89_SQL_Injection__console_readLine_executeQuery_22a.java:87 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.031 seconds
+
+########## FLOW tc1203_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1203-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__console_readLine_executeQuery_22a.java:224 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__console_readLine_executeQuery_22b.java:249 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.112 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=224 | data = "foo"
+        ↓
+[1] line=227 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=224 | data = "foo"
+        ↓
+[1] line=227 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=249 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[5] line=249 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=224 | data = "foo"
+        ↓
+[1] line=227 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=249 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=224 | data = "foo"
+        ↓
+[1] line=227 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22a.java | line=224, col=9 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22a.java | line=224, col=16 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22a.java | line=227, col=84 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=237, col=29 | String data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=239, col=9 | if (CWE89_SQL_Injection__console_readLine_executeQuery_22a.goodG2BPublicStatic)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=239, col=13 | CWE89_SQL_Injection__console_readLine_executeQuery_22a.goodG2BPublicStatic
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=244, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=246, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=246, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=246, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=247, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=247, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=247, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=249, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=249, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=249, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=249, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__console_readLine_executeQuery_22b.java | line=249, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 15
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 18
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.112 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ff2460b7-8a7c-40c2-8262-4d710e5f4cdb/cpg.bin.tmp)
+
+########## FLOW tc1781_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:43 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:61 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.055 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=43 | request.getParameter("name")
+        ↓
+[1] line=43 | data = request.getParameter("name")
+        ↓
+[2] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=43 | data = request.getParameter("name")
+        ↓
+[1] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=43 | request.getParameter("name")
+        ↓
+[1] line=43 | data = request.getParameter("name")
+        ↓
+[2] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[3] line=61 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=43 | data = request.getParameter("name")
+        ↓
+[1] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=61 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[3] line=61 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=43 | request.getParameter("name")
+        ↓
+[1] line=43 | data = request.getParameter("name")
+        ↓
+[2] line=61 | "insert into users (status) values ('updated') where name='" + data
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=43 | request.getParameter("name")
+        ↓
+[1] line=43 | data = request.getParameter("name")
+        ↓
+[2] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[3] line=61 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[4] line=61 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=43 | data = request.getParameter("name")
+        ↓
+[1] line=61 | "insert into users (status) values ('updated') where name='" + data
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=43 | data = request.getParameter("name")
+        ↓
+[1] line=61 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=61 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=37, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=40, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=40, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=43, col=20 | request.getParameter("name")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=43, col=20 | request
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=43, col=41 | "name"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=49, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=49, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=52, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=52, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=56, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=58, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=58, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=58, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=59, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=59, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=59, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=21 | rowCount
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=21 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=32 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=32 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=59 | "insert into users (status) values ('updated') where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=59 | "insert into users (status) values ('updated') where name='" + data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=61, col=120 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 20
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 25
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 28
+Unique traces: 8
+Flow time    : 0.055 seconds
+
+########## FLOW tc1781_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:229 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:252 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.011 seconds
+
+########## FLOW tc1781_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:301 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:317 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc1781_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:111 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:124 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=111 | data = "foo"
+        ↓
+[1] line=124 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=111 | data = "foo"
+        ↓
+[1] line=124 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=124 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[3] line=124 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=111 | data = "foo"
+        ↓
+[1] line=124 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=124 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=111 | data = "foo"
+        ↓
+[1] line=124 | "insert into users (status) values ('updated') where name='" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=101, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=101, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=105, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=105, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=111, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=111, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=115, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=115, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=119, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=121, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=121, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=121, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=122, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=122, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=122, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=124, col=21 | rowCount
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=124, col=32 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=124, col=32 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=124, col=59 | "insert into users (status) values ('updated') where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=124, col=59 | "insert into users (status) values ('updated') where name='" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 15
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.019 seconds
+
+########## FLOW tc1781_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:167 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java:185 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=167 | data = "foo"
+        ↓
+[1] line=185 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=185 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=167 | data = "foo"
+        ↓
+[1] line=185 | "insert into users (status) values ('updated') where name='" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=167 | data = "foo"
+        ↓
+[1] line=185 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=167 | data = "foo"
+        ↓
+[1] line=185 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=185 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[3] line=185 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=164, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=164, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=167, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=167, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=173, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=173, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=176, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=176, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=180, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=182, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=182, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=182, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=183, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=183, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=183, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=21 | rowCount
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=21 | int rowCount = sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=32 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=32 | sqlStatement.executeUpdate("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=59 | "insert into users (status) values ('updated') where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getParameter_Servlet_executeUpdate_05.java | line=185, col=59 | "insert into users (status) values ('updated') where name='" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 16
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.023 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin (4 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3fcdc19a-1046-457a-85e2-dcbb562fa231/cpg.bin.tmp)
+
+########## FLOW tc648_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__Property_executeQuery_22a.java:35 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__Property_executeQuery_22b.java:41 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=35 | System.getProperty("user.home")
+        ↓
+[1] line=35 | data = System.getProperty("user.home")
+        ↓
+[2] line=38 | this.badSink(data)
+        ↓
+[3] line=29 | badSink(this, String data)
+        ↓
+[4] line=41 | "select * from users where name='" + data + "'"
+        ↓
+[5] line=41 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[6] line=41 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=35 | System.getProperty("user.home")
+        ↓
+[1] line=35 | data = System.getProperty("user.home")
+        ↓
+[2] line=38 | this.badSink(data)
+        ↓
+[3] line=29 | badSink(this, String data)
+        ↓
+[4] line=41 | "select * from users where name='" + data + "'"
+        ↓
+[5] line=41 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=35 | data = System.getProperty("user.home")
+        ↓
+[1] line=38 | this.badSink(data)
+        ↓
+[2] line=29 | badSink(this, String data)
+        ↓
+[3] line=41 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=35 | System.getProperty("user.home")
+        ↓
+[1] line=35 | data = System.getProperty("user.home")
+        ↓
+[2] line=38 | this.badSink(data)
+        ↓
+[3] line=29 | badSink(this, String data)
+        ↓
+[4] line=41 | "select * from users where name='" + data + "'"
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=35 | System.getProperty("user.home")
+        ↓
+[1] line=35 | data = System.getProperty("user.home")
+        ↓
+[2] line=38 | this.badSink(data)
+        ↓
+[3] line=29 | badSink(this, String data)
+        ↓
+[4] line=41 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=35 | data = System.getProperty("user.home")
+        ↓
+[1] line=38 | this.badSink(data)
+        ↓
+[2] line=29 | badSink(this, String data)
+        ↓
+[3] line=41 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=41 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[5] line=41 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=35 | data = System.getProperty("user.home")
+        ↓
+[1] line=38 | this.badSink(data)
+        ↓
+[2] line=29 | badSink(this, String data)
+        ↓
+[3] line=41 | "select * from users where name='" + data + "'"
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=35 | data = System.getProperty("user.home")
+        ↓
+[1] line=38 | this.badSink(data)
+        ↓
+[2] line=29 | badSink(this, String data)
+        ↓
+[3] line=41 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=41 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=35, col=9 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=35, col=16 | System.getProperty("user.home")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=35, col=16 | System
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=35, col=35 | "user.home"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=38, col=72 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=29, col=25 | String data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=31, col=9 | if (CWE89_SQL_Injection__Property_executeQuery_22a.badPublicStatic)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=31, col=13 | CWE89_SQL_Injection__Property_executeQuery_22a.badPublicStatic
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=36, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=38, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=38, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=38, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=39, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=39, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=39, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=17 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=55 | "select * from users where name='" + data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=41, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 19
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 22
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 28
+Unique traces: 8
+Flow time    : 0.034 seconds
+
+########## FLOW tc648_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__Property_executeQuery_22a.java:61 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__Property_executeQuery_22b.java:114 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.014 seconds
+
+########## FLOW tc648_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__Property_executeQuery_22a.java:74 (5 CFG node(s))
+Sink        : CWE89_SQL_Injection__Property_executeQuery_22b.java:179 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.012 seconds
+
+########## FLOW tc648_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__Property_executeQuery_22a.java:86 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__Property_executeQuery_22b.java:249 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=86 | data = "foo"
+        ↓
+[1] line=89 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=249 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=86 | data = "foo"
+        ↓
+[1] line=89 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+        ↓
+[4] line=249 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+        ↓
+[5] line=249 | resultSet = sqlStatement.executeQuery("select * from users where name='" + data + "'")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=86 | data = "foo"
+        ↓
+[1] line=89 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=86 | data = "foo"
+        ↓
+[1] line=89 | this.goodG2BSink(data)
+        ↓
+[2] line=237 | goodG2BSink(this, String data)
+        ↓
+[3] line=249 | "select * from users where name='" + data + "'"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=86, col=9 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=86, col=16 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22a.java | line=89, col=76 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=237, col=29 | String data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=239, col=9 | if (CWE89_SQL_Injection__Property_executeQuery_22a.goodG2BPublicStatic)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=239, col=13 | CWE89_SQL_Injection__Property_executeQuery_22a.goodG2BPublicStatic
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=244, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=246, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=246, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=246, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=247, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=247, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=247, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=249, col=17 | resultSet
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=249, col=29 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=249, col=29 | sqlStatement.executeQuery("select * from users where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=249, col=55 | "select * from users where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__Property_executeQuery_22b.java | line=249, col=90 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 15
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 18
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.022 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-60554db1-102f-4c71-a17b-2329a09ef12e/cpg.bin.tmp)
+
+########## FLOW tc1859_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:38 (1 CFG node(s))
+Sink        : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:67 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.019 seconds
+
+########## FLOW tc1859_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:256 (1 CFG node(s))
+Sink        : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:290 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+########## FLOW tc1859_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:347 (1 CFG node(s))
+Sink        : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:374 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.015 seconds
+
+########## FLOW tc1859_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:124 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:137 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=124 | data = "foo"
+        ↓
+[1] line=137 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=137 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=124 | data = "foo"
+        ↓
+[1] line=137 | "insert into users (status) values ('updated') where name='" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=124 | data = "foo"
+        ↓
+[1] line=137 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=124 | data = "foo"
+        ↓
+[1] line=137 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=137 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[3] line=137 | Boolean result = sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=114, col=9 | if (IO.STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=114, col=13 | IO.STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=118, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=124, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=124, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=128, col=9 | if (IO.STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=128, col=13 | IO.STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=132, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=134, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=134, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=134, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=135, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=135, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=135, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=137, col=25 | result
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=137, col=34 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=137, col=34 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=137, col=55 | "insert into users (status) values ('updated') where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=137, col=116 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 15
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.024 seconds
+
+########## FLOW tc1859_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin
+Source      : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:187 (3 CFG node(s))
+Sink        : CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java:205 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=187 | data = "foo"
+        ↓
+[1] line=205 | "insert into users (status) values ('updated') where name='" + data + "'"
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=187 | data = "foo"
+        ↓
+[1] line=205 | "insert into users (status) values ('updated') where name='" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=187 | data = "foo"
+        ↓
+[1] line=205 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=205 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+        ↓
+[3] line=205 | Boolean result = sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=187 | data = "foo"
+        ↓
+[1] line=205 | "insert into users (status) values ('updated') where name='" + data + "'"
+        ↓
+[2] line=205 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=184, col=9 | if (IO.STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=184, col=13 | IO.STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=187, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=187, col=20 | "foo"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=193, col=13 | data
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=193, col=20 | null
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=196, col=9 | if (IO.STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=196, col=13 | IO.STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=200, col=13 | try
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=202, col=17 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=202, col=32 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=202, col=32 | IO
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=203, col=17 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=203, col=32 | dbConnection.createStatement()
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=203, col=32 | dbConnection
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=25 | result
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=25 | Boolean result = sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=34 | sqlStatement
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=34 | sqlStatement.execute("insert into users (status) values ('updated') where name='" + data + "'")
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=55 | "insert into users (status) values ('updated') where name='" + data + "'"
+src/main/java/juliet/testcases/CWE89_SQL_Injection/s03/CWE89_SQL_Injection__getQueryString_Servlet_execute_09.java | line=205, col=116 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 16
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 14
+Unique traces: 4
+Flow time    : 0.021 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe89_jobs.tsv)
+Creating project `joern-trace-0060c0f2-9779-42a3-97fe-76b15db013b0` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-457-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0060c0f2-9779-42a3-97fe-76b15db013b0/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-3069f36a-622b-409a-9103-60c4e89ff688` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1203-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3069f36a-622b-409a-9103-60c4e89ff688/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ff2460b7-8a7c-40c2-8262-4d710e5f4cdb` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1781-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ff2460b7-8a7c-40c2-8262-4d710e5f4cdb/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-3fcdc19a-1046-457a-85e2-dcbb562fa231` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-648-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-3fcdc19a-1046-457a-85e2-dcbb562fa231/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-60554db1-102f-4c71-a17b-2329a09ef12e` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe89_cpg/cwe89-1859-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-60554db1-102f-4c71-a17b-2329a09ef12e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

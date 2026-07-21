@@ -1,0 +1,672 @@
+# CWE-23: 8 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe23_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-111-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-884841ae-a519-49e2-ac16-7255a538448a/cpg.bin.tmp)
+
+########## FLOW tc111_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-111-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__PropertiesFile_81a.java:50 (5 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java:46 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.440 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=74 | baseObject.action(data)
+        ↓
+[3] line=28 | action(this, String data)
+        ↓
+[4] line=43 | data != null
+        ↓
+[5] line=46 | root + data
+        ↓
+[6] line=46 | new File(root + data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=50 | properties.getProperty("data")
+        ↓
+[1] line=50 | data = properties.getProperty("data")
+        ↓
+[2] line=74 | baseObject.action(data)
+        ↓
+[3] line=28 | action(this, String data)
+        ↓
+[4] line=43 | data != null
+        ↓
+[5] line=46 | root + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=74 | baseObject.action(data)
+        ↓
+[2] line=28 | action(this, String data)
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | root + data
+        ↓
+[5] line=46 | new File(root + data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=50 | data = properties.getProperty("data")
+        ↓
+[1] line=74 | baseObject.action(data)
+        ↓
+[2] line=28 | action(this, String data)
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | root + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=28, col=24 | String data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=32, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=35, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=35, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=40, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=40, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=43, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=43, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=43, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=46, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=46, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=46, col=34 | root + data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_bad.java | line=46, col=41 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=41, col=24 | properties
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=41, col=37 | new Properties()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=44, col=13 | try
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=46, col=17 | streamFileInput
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=46, col=35 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=46, col=55 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=47, col=17 | properties
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=47, col=33 | streamFileInput
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=50, col=17 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=50, col=24 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=50, col=24 | properties
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=50, col=47 | "data"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=74, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 26
+Control nodes     : 2
+Control DDG nodes : 12
+AST controls      : 3
+Final slice nodes : 38
+Slice time        : 0.039 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.440 seconds
+
+########## FLOW tc111_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-111-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__PropertiesFile_81a.java:88 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java:46 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.052 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=91 | baseObject.action(data)
+        ↓
+[2] line=28 | action(this, String data)
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | root + data
+        ↓
+[5] line=46 | new File(root + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=91 | baseObject.action(data)
+        ↓
+[2] line=28 | action(this, String data)
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | root + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=28, col=24 | String data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=32, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=35, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=35, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=40, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=40, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=43, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=43, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=43, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=46, col=-1 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=46, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=46, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=46, col=34 | root + data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81_goodG2B.java | line=46, col=41 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=88, col=9 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=88, col=16 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_81a.java | line=91, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 16
+Control nodes     : 2
+Control DDG nodes : 12
+AST controls      : 2
+Final slice nodes : 27
+Slice time        : 0.014 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.052 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-391-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-aa97d0df-4d59-45cb-817e-8d10cb052a12/cpg.bin.tmp)
+
+########## FLOW tc391_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-391-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java:115 (1 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java:47 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.051 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.051 seconds
+
+########## FLOW tc391_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-391-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java:221 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java:154 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.033 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=223 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=136 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=151 | data != null
+        ↓
+[4] line=154 | root + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=221 | data = "foo"
+        ↓
+[1] line=223 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=136 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=151 | data != null
+        ↓
+[4] line=154 | root + data
+        ↓
+[5] line=154 | new File(root + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=136, col=30 | String data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=140, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=143, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=143, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=148, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=148, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=151, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=151, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=151, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=151, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=154, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=154, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=154, col=34 | root + data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=154, col=41 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=221, col=9 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=221, col=16 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getQueryString_Servlet_41.java | line=223, col=21 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 15
+Control nodes     : 2
+Control DDG nodes : 12
+AST controls      : 2
+Final slice nodes : 26
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.033 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-173-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-45aa400d-57b7-48a1-9ef9-2f383023c912/cpg.bin.tmp)
+
+########## FLOW tc173_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-173-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__URLConnection_52a.java:103 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__URLConnection_52c.java:126 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.044 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=103 | data = "foo"
+        ↓
+[1] line=105 | this.goodG2BSink(data)
+        ↓
+[2] line=32 | goodG2BSink(this, String data)
+        ↓
+[3] line=34 | this.goodG2BSink(data)
+        ↓
+[4] line=108 | goodG2BSink(this, String data)
+        ↓
+[5] line=123 | data != null
+        ↓
+[6] line=126 | root + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=103 | data = "foo"
+        ↓
+[1] line=105 | this.goodG2BSink(data)
+        ↓
+[2] line=32 | goodG2BSink(this, String data)
+        ↓
+[3] line=34 | this.goodG2BSink(data)
+        ↓
+[4] line=108 | goodG2BSink(this, String data)
+        ↓
+[5] line=123 | data != null
+        ↓
+[6] line=126 | root + data
+        ↓
+[7] line=126 | new File(root + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52a.java | line=103, col=9 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52a.java | line=103, col=16 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52a.java | line=105, col=78 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52b.java | line=32, col=29 | String data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52b.java | line=34, col=78 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=108, col=29 | String data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=112, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=115, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=115, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=120, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=120, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=123, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=123, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=123, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=123, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=126, col=-1 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=126, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=126, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__URLConnection_52c.java | line=126, col=34 | root + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 17
+Control nodes     : 2
+Control DDG nodes : 12
+AST controls      : 2
+Final slice nodes : 28
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.044 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-53-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a07c5f54-52c6-40bd-8c05-85fa77b8c5ff/cpg.bin.tmp)
+
+########## FLOW tc53_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-53-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__File_16.java:189 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__File_16.java:208 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=189 | data = "foo"
+        ↓
+[1] line=205 | data != null
+        ↓
+[2] line=208 | root + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=189 | data = "foo"
+        ↓
+[1] line=205 | data != null
+        ↓
+[2] line=208 | root + data
+        ↓
+[3] line=208 | new File(root + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=186, col=9 | while (true)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=186, col=16 | true
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=189, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=189, col=20 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=194, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=197, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=197, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=202, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=202, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=205, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=205, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=205, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=205, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=208, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=208, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_16.java | line=208, col=34 | root + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 12
+Control nodes     : 3
+Control DDG nodes : 14
+AST controls      : 3
+Final slice nodes : 25
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.025 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-48-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-82c7e4d3-9691-4888-9104-dfe30ad60c09/cpg.bin.tmp)
+
+########## FLOW tc48_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-48-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__File_11.java:199 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__File_11.java:218 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.046 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=199 | data = "foo"
+        ↓
+[1] line=215 | data != null
+        ↓
+[2] line=218 | root + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=199 | data = "foo"
+        ↓
+[1] line=215 | data != null
+        ↓
+[2] line=218 | root + data
+        ↓
+[3] line=218 | new File(root + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=189, col=9 | if (IO.staticReturnsFalse())
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=189, col=13 | IO.staticReturnsFalse()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=189, col=13 | IO
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=193, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=193, col=20 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=199, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=199, col=20 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=204, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=207, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=207, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=212, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=212, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=215, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=215, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=215, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=215, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=218, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=218, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=218, col=34 | root + data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=218, col=41 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 15
+Control nodes     : 3
+Control DDG nodes : 17
+AST controls      : 3
+Final slice nodes : 29
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.046 seconds
+
+########## FLOW tc48_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-48-cpg-resolved.bin
+Source      : CWE23_Relative_Path_Traversal__File_11.java:286 (3 CFG node(s))
+Sink        : CWE23_Relative_Path_Traversal__File_11.java:310 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.043 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=286 | data = "foo"
+        ↓
+[1] line=307 | data != null
+        ↓
+[2] line=310 | root + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=286 | data = "foo"
+        ↓
+[1] line=307 | data != null
+        ↓
+[2] line=310 | root + data
+        ↓
+[3] line=310 | new File(root + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=283, col=9 | if (IO.staticReturnsTrue())
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=283, col=13 | IO.staticReturnsTrue()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=283, col=13 | IO
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=286, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=286, col=20 | "foo"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=292, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=292, col=20 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=12 | System
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=64 | "win"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=296, col=74 | 0
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=299, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=299, col=20 | "C:\\uploads\\"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=304, col=13 | root
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=304, col=20 | "/home/user/uploads/"
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=307, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=307, col=13 | data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=307, col=13 | data != null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=307, col=21 | null
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=310, col=18 | file
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=310, col=25 | new File(root + data)
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=310, col=34 | root + data
+src/main/java/juliet/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__File_11.java | line=310, col=41 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 15
+Control nodes     : 3
+Control DDG nodes : 17
+AST controls      : 3
+Final slice nodes : 29
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.043 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe23_jobs.tsv)
+Creating project `joern-trace-884841ae-a519-49e2-ac16-7255a538448a` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-111-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-884841ae-a519-49e2-ac16-7255a538448a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-aa97d0df-4d59-45cb-817e-8d10cb052a12` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-391-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-aa97d0df-4d59-45cb-817e-8d10cb052a12/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-45aa400d-57b7-48a1-9ef9-2f383023c912` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-173-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-45aa400d-57b7-48a1-9ef9-2f383023c912/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-a07c5f54-52c6-40bd-8c05-85fa77b8c5ff` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-53-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a07c5f54-52c6-40bd-8c05-85fa77b8c5ff/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-82c7e4d3-9691-4888-9104-dfe30ad60c09` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe23_cpg/cwe23-48-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-82c7e4d3-9691-4888-9104-dfe30ad60c09/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

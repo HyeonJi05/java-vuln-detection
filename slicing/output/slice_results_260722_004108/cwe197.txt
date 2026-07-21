@@ -1,0 +1,647 @@
+# CWE-197: 9 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe197_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-327-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-5fb6c098-886d-490f-a3f2-d17f4302c197/cpg.bin.tmp)
+
+########## FLOW tc327_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-327-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.java:110 (5 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java:39 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.343 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=110 | CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.data = 2
+        ↓
+[1] line=35 | int data = CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.data
+        ↓
+[2] line=39 | (byte) data
+        ↓
+[3] line=39 | IO.writeLine((byte) data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=110 | CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.data = 2
+        ↓
+[1] line=35 | int data = CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.data
+        ↓
+[2] line=39 | (byte) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.java | line=110, col=16 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=35, col=20 | CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68a.data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=39, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=39, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=39, col=26 | (byte) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_68b.java | line=39, col=32 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 7
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 7
+Slice time        : 0.016 seconds
+
+=== Summary ===
+Raw paths    : 3
+Unique traces: 2
+Flow time    : 0.343 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-866-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8e7013cb-65df-4268-9cd4-6da9e4f38be0/cpg.bin.tmp)
+
+########## FLOW tc866_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-866-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__short_File_15.java:138 (4 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__short_File_15.java:144 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.068 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=138 | data = 2
+        ↓
+[1] line=144 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=138 | data = 2
+        ↓
+[1] line=144 | (byte) data
+        ↓
+[2] line=144 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=129, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=129, col=17 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=134, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=134, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=138, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=144, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=144, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=144, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.068 seconds
+
+########## FLOW tc866_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-866-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__short_File_15.java:158 (4 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__short_File_15.java:169 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.038 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=158 | data = 2
+        ↓
+[1] line=169 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=158 | data = 2
+        ↓
+[1] line=169 | (byte) data
+        ↓
+[2] line=169 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=154, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=154, col=17 | 6
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=158, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=158, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=163, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=163, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=169, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=169, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_File_15.java | line=169, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.038 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-697-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-34e0ec23-ef4e-4f3d-9757-471f0877515c/cpg.bin.tmp)
+
+########## FLOW tc697_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-697-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.java:54 (4 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java:27 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.027 seconds
+
+########## FLOW tc697_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-697-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.java:138 (5 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java:39 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=138 | CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.data = 2
+        ↓
+[1] line=35 | int data = CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.data
+        ↓
+[2] line=39 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=138 | CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.data = 2
+        ↓
+[1] line=35 | int data = CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.data
+        ↓
+[2] line=39 | (byte) data
+        ↓
+[3] line=39 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.java | line=138, col=16 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=35, col=20 | CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68a.data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=39, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=39, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=39, col=26 | (byte) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_listen_tcp_to_byte_68b.java | line=39, col=32 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 7
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 7
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 3
+Unique traces: 2
+Flow time    : 0.037 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-570-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-addba500-5b36-444d-bfe3-7f0e133d5adb/cpg.bin.tmp)
+
+########## FLOW tc570_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-570-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:50 (5 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:117 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.114 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=50 | resultSet.getString(1)
+        ↓
+[1] line=50 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=51 | stringNumber != null
+        ↓
+[3] line=55 | stringNumber.trim()
+        ↓
+[4] line=55 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=55 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=117 | (short) data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=50 | resultSet.getString(1)
+        ↓
+[1] line=50 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=51 | stringNumber != null
+        ↓
+[3] line=55 | stringNumber.trim()
+        ↓
+[4] line=55 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=55 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=117 | (short) data
+        ↓
+[7] line=117 | IO.writeLine((short) data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=50 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=51 | stringNumber != null
+        ↓
+[2] line=55 | stringNumber.trim()
+        ↓
+[3] line=55 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=55 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=117 | (short) data
+        ↓
+[6] line=117 | IO.writeLine((short) data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=50 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=51 | stringNumber != null
+        ↓
+[2] line=55 | stringNumber.trim()
+        ↓
+[3] line=55 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=55 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=117 | (short) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=33, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=33, col=17 | 6
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=36, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=42, col=17 | try
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=45, col=21 | connection
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=45, col=34 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=45, col=34 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=47, col=21 | preparedStatement
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=47, col=41 | connection.prepareStatement("select name from users where id=0")
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=47, col=41 | connection
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=47, col=69 | "select name from users where id=0"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=48, col=21 | resultSet
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=48, col=33 | preparedStatement.executeQuery()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=48, col=33 | preparedStatement
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=50, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=50, col=43 | resultSet.getString(1)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=50, col=43 | resultSet
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=50, col=63 | 1
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=51, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=51, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=51, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=51, col=41 | null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=53, col=25 | try
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=29 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=29 | data = Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=36 | Integer
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=55, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=57, col=25 | catch
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=59, col=29 | IO.logger
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=59, col=29 | IO.logger.log(Level.WARNING, "Number format exception parsing data from string", exceptNumberFormat)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=59, col=43 | Level.WARNING
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=59, col=58 | "Number format exception parsing data from string"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=59, col=110 | exceptNumberFormat
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=63, col=17 | catch
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=65, col=21 | IO.logger
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=65, col=35 | Level.WARNING
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=65, col=50 | "Error with SQL statement"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=65, col=78 | exceptSql
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=68, col=17 | finally
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=70, col=21 | try
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=72, col=25 | if (resultSet != null)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=72, col=29 | resultSet != null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=72, col=29 | resultSet
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=72, col=42 | null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=74, col=29 | resultSet.close()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=74, col=29 | resultSet
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=77, col=21 | catch
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=79, col=25 | IO.logger
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=79, col=39 | Level.WARNING
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=79, col=54 | "Error closing ResultSet"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=79, col=81 | exceptSql
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=82, col=21 | try
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=84, col=25 | if (preparedStatement != null)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=84, col=29 | preparedStatement != null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=84, col=29 | preparedStatement
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=84, col=50 | null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=86, col=29 | preparedStatement.close()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=86, col=29 | preparedStatement
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=89, col=21 | catch
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=91, col=25 | IO.logger
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=91, col=39 | Level.WARNING
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=91, col=54 | "Error closing PreparedStatement"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=91, col=89 | exceptSql
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=94, col=21 | try
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=96, col=25 | if (connection != null)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=96, col=29 | connection != null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=96, col=29 | connection
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=96, col=43 | null
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=98, col=29 | connection.close()
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=98, col=29 | connection
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=101, col=21 | catch
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=103, col=25 | IO.logger
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=103, col=39 | Level.WARNING
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=103, col=54 | "Error closing Connection"
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=103, col=82 | exceptSql
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=111, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=111, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=117, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=117, col=13 | IO.writeLine((short) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=117, col=26 | (short) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=117, col=33 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 49
+Control nodes     : 10
+Control DDG nodes : 44
+AST controls      : 16
+Final slice nodes : 84
+Slice time        : 0.049 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.114 seconds
+
+########## FLOW tc570_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-570-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:136 (4 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:142 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.036 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=136 | data = 2
+        ↓
+[1] line=142 | (short) data
+        ↓
+[2] line=142 | IO.writeLine((short) data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=136 | data = 2
+        ↓
+[1] line=142 | (short) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=127, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=127, col=17 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=132, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=132, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=136, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=136, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=142, col=13 | IO.writeLine((short) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=142, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=142, col=26 | (short) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=142, col=33 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.036 seconds
+
+########## FLOW tc570_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-570-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:156 (4 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_database_to_short_15.java:167 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=156 | data = 2
+        ↓
+[1] line=167 | (short) data
+        ↓
+[2] line=167 | IO.writeLine((short) data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=156 | data = 2
+        ↓
+[1] line=167 | (short) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=152, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=152, col=17 | 6
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=156, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=156, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=161, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=167, col=13 | IO.writeLine((short) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=167, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_database_to_short_15.java | line=167, col=26 | (short) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.028 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-319-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-df0f8115-e4a1-4755-ae96-06c2cbdf705b/cpg.bin.tmp)
+
+########## FLOW tc319_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-319-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java:138 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java:127 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.073 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=138 | data = 2
+        ↓
+[1] line=140 | this.dataGoodG2B = data
+        ↓
+[2] line=141 | this.goodG2BSink()
+        ↓
+[3] line=121 | goodG2BSink(this)
+        ↓
+[4] line=123 | int data = dataGoodG2B
+        ↓
+[5] line=127 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=138 | data = 2
+        ↓
+[1] line=140 | this.dataGoodG2B = data
+        ↓
+[2] line=141 | this.goodG2BSink()
+        ↓
+[3] line=121 | goodG2BSink(this)
+        ↓
+[4] line=123 | int data = dataGoodG2B
+        ↓
+[5] line=127 | (byte) data
+        ↓
+[6] line=127 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=121, col=5 | this
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=123, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=123, col=20 | this.dataGoodG2B
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=127, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=127, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=127, col=26 | (byte) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=133, col=5 | this
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=138, col=9 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=138, col=16 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=140, col=9 | this.dataGoodG2B
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=140, col=23 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__int_URLConnection_to_byte_45.java | line=141, col=9 | this
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 12
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 12
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.073 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe197_jobs.tsv)
+Creating project `joern-trace-5fb6c098-886d-490f-a3f2-d17f4302c197` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-327-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-5fb6c098-886d-490f-a3f2-d17f4302c197/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8e7013cb-65df-4268-9cd4-6da9e4f38be0` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-866-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8e7013cb-65df-4268-9cd4-6da9e4f38be0/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-34e0ec23-ef4e-4f3d-9757-471f0877515c` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-697-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-34e0ec23-ef4e-4f3d-9757-471f0877515c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-addba500-5b36-444d-bfe3-7f0e133d5adb` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-570-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-addba500-5b36-444d-bfe3-7f0e133d5adb/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-df0f8115-e4a1-4755-ae96-06c2cbdf705b` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe197_cpg/cwe197-319-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-df0f8115-e4a1-4755-ae96-06c2cbdf705b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

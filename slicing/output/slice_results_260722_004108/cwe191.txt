@@ -1,0 +1,3098 @@
+# CWE-191: 16 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe191_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-920-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8a2bc426-2f49-4326-8b25-efad0fb53512/cpg.bin.tmp)
+
+########## FLOW tc920_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-920-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java:35 (1 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java:32 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.301 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.301 seconds
+
+########## FLOW tc920_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-920-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java:76 (1 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java:60 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.064 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.064 seconds
+
+########## FLOW tc920_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-920-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java:63 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java:46 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.119 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=63 | data = 2
+        ↓
+[1] line=65 | (Object) data
+        ↓
+[2] line=39 | goodG2BSink(this, Object dataObject, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=41 | (Integer) dataObject
+        ↓
+[4] line=41 | int data = (Integer) dataObject
+        ↓
+[5] line=43 | data < 0
+        ↓
+[6] line=46 | data * 2
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=63 | data = 2
+        ↓
+[1] line=65 | (Object) data
+        ↓
+[2] line=39 | goodG2BSink(this, Object dataObject, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=41 | (Integer) dataObject
+        ↓
+[4] line=41 | int data = (Integer) dataObject
+        ↓
+[5] line=43 | data < 0
+        ↓
+[6] line=46 | data * 2
+        ↓
+[7] line=46 | (int) (data * 2)
+        ↓
+[8] line=46 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=63 | data = 2
+        ↓
+[1] line=65 | (Object) data
+        ↓
+[2] line=39 | goodG2BSink(this, Object dataObject, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=41 | (Integer) dataObject
+        ↓
+[4] line=41 | int data = (Integer) dataObject
+        ↓
+[5] line=43 | data < 0
+        ↓
+[6] line=46 | data * 2
+        ↓
+[7] line=46 | (int) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java | line=63, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java | line=63, col=16 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71a.java | line=65, col=93 | (Object) data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=39, col=29 | Object dataObject
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=41, col=20 | (Integer) dataObject
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=43, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=43, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=43, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=43, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=46, col=17 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=46, col=26 | (int) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=46, col=32 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=46, col=32 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_getParameter_Servlet_multiply_71b.java | line=46, col=39 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 13
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 15
+Slice time        : 0.031 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.119 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1207-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e0af614b-f555-43bf-bc36-36042cea37a7/cpg.bin.tmp)
+
+########## FLOW tc1207_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1207-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_random_multiply_45.java:49 (10 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_random_multiply_45.java:38 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.095 seconds
+
+=== Source-to-Sink Trace 1/18 ===
+
+[0] line=49 | this.nextInt()
+        ↓
+[1] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[2] line=51 | this.dataBad = data
+        ↓
+[3] line=52 | this.badSink()
+        ↓
+[4] line=31 | badSink(this)
+        ↓
+[5] line=33 | int data = dataBad
+        ↓
+[6] line=35 | data < 0
+        ↓
+[7] line=38 | data * 2
+        ↓
+[8] line=38 | (int) (data * 2)
+        ↓
+[9] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 2/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0
+        ↓
+[2] line=49 | this.nextInt()
+        ↓
+[3] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[4] line=51 | this.dataBad = data
+        ↓
+[5] line=52 | this.badSink()
+        ↓
+[6] line=31 | badSink(this)
+        ↓
+[7] line=33 | int data = dataBad
+        ↓
+[8] line=35 | data < 0
+        ↓
+[9] line=38 | data * 2
+
+=== Source-to-Sink Trace 3/18 ===
+
+[0] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[1] line=51 | this.dataBad = data
+        ↓
+[2] line=52 | this.badSink()
+        ↓
+[3] line=31 | badSink(this)
+        ↓
+[4] line=33 | int data = dataBad
+        ↓
+[5] line=35 | data < 0
+        ↓
+[6] line=38 | data * 2
+        ↓
+[7] line=38 | (int) (data * 2)
+
+=== Source-to-Sink Trace 4/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0 = new SecureRandom()
+        ↓
+[2] line=49 | new SecureRandom()
+        ↓
+[3] line=49 | $obj0
+        ↓
+[4] line=49 | this.nextInt()
+        ↓
+[5] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[6] line=51 | this.dataBad = data
+        ↓
+[7] line=52 | this.badSink()
+        ↓
+[8] line=31 | badSink(this)
+        ↓
+[9] line=33 | int data = dataBad
+        ↓
+[10] line=35 | data < 0
+        ↓
+[11] line=38 | data * 2
+        ↓
+[12] line=38 | (int) (data * 2)
+
+=== Source-to-Sink Trace 5/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0 = new SecureRandom()
+        ↓
+[2] line=49 | new SecureRandom()
+        ↓
+[3] line=49 | $obj0
+        ↓
+[4] line=49 | this.nextInt()
+        ↓
+[5] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[6] line=51 | this.dataBad = data
+        ↓
+[7] line=52 | this.badSink()
+        ↓
+[8] line=31 | badSink(this)
+        ↓
+[9] line=33 | int data = dataBad
+        ↓
+[10] line=35 | data < 0
+        ↓
+[11] line=38 | data * 2
+        ↓
+[12] line=38 | (int) (data * 2)
+        ↓
+[13] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 6/18 ===
+
+[0] line=49 | $obj0 = new SecureRandom()
+        ↓
+[1] line=49 | new SecureRandom()
+        ↓
+[2] line=49 | $obj0
+        ↓
+[3] line=49 | this.nextInt()
+        ↓
+[4] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[5] line=51 | this.dataBad = data
+        ↓
+[6] line=52 | this.badSink()
+        ↓
+[7] line=31 | badSink(this)
+        ↓
+[8] line=33 | int data = dataBad
+        ↓
+[9] line=35 | data < 0
+        ↓
+[10] line=38 | data * 2
+        ↓
+[11] line=38 | (int) (data * 2)
+        ↓
+[12] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 7/18 ===
+
+[0] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[1] line=51 | this.dataBad = data
+        ↓
+[2] line=52 | this.badSink()
+        ↓
+[3] line=31 | badSink(this)
+        ↓
+[4] line=33 | int data = dataBad
+        ↓
+[5] line=35 | data < 0
+        ↓
+[6] line=38 | data * 2
+
+=== Source-to-Sink Trace 8/18 ===
+
+[0] line=49 | $obj0 = new SecureRandom()
+        ↓
+[1] line=49 | new SecureRandom()
+        ↓
+[2] line=49 | $obj0
+        ↓
+[3] line=49 | this.nextInt()
+        ↓
+[4] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[5] line=51 | this.dataBad = data
+        ↓
+[6] line=52 | this.badSink()
+        ↓
+[7] line=31 | badSink(this)
+        ↓
+[8] line=33 | int data = dataBad
+        ↓
+[9] line=35 | data < 0
+        ↓
+[10] line=38 | data * 2
+
+=== Source-to-Sink Trace 9/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0
+        ↓
+[2] line=49 | this.nextInt()
+        ↓
+[3] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[4] line=51 | this.dataBad = data
+        ↓
+[5] line=52 | this.badSink()
+        ↓
+[6] line=31 | badSink(this)
+        ↓
+[7] line=33 | int data = dataBad
+        ↓
+[8] line=35 | data < 0
+        ↓
+[9] line=38 | data * 2
+        ↓
+[10] line=38 | (int) (data * 2)
+        ↓
+[11] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 10/18 ===
+
+[0] line=49 | $obj0
+        ↓
+[1] line=49 | this.nextInt()
+        ↓
+[2] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[3] line=51 | this.dataBad = data
+        ↓
+[4] line=52 | this.badSink()
+        ↓
+[5] line=31 | badSink(this)
+        ↓
+[6] line=33 | int data = dataBad
+        ↓
+[7] line=35 | data < 0
+        ↓
+[8] line=38 | data * 2
+        ↓
+[9] line=38 | (int) (data * 2)
+
+=== Source-to-Sink Trace 11/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0 = new SecureRandom()
+        ↓
+[2] line=49 | new SecureRandom()
+        ↓
+[3] line=49 | $obj0
+        ↓
+[4] line=49 | this.nextInt()
+        ↓
+[5] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[6] line=51 | this.dataBad = data
+        ↓
+[7] line=52 | this.badSink()
+        ↓
+[8] line=31 | badSink(this)
+        ↓
+[9] line=33 | int data = dataBad
+        ↓
+[10] line=35 | data < 0
+        ↓
+[11] line=38 | data * 2
+
+=== Source-to-Sink Trace 12/18 ===
+
+[0] line=49 | this.nextInt()
+        ↓
+[1] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[2] line=51 | this.dataBad = data
+        ↓
+[3] line=52 | this.badSink()
+        ↓
+[4] line=31 | badSink(this)
+        ↓
+[5] line=33 | int data = dataBad
+        ↓
+[6] line=35 | data < 0
+        ↓
+[7] line=38 | data * 2
+
+=== Source-to-Sink Trace 13/18 ===
+
+[0] line=49 | new SecureRandom()
+        ↓
+[1] line=49 | $obj0
+        ↓
+[2] line=49 | this.nextInt()
+        ↓
+[3] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[4] line=51 | this.dataBad = data
+        ↓
+[5] line=52 | this.badSink()
+        ↓
+[6] line=31 | badSink(this)
+        ↓
+[7] line=33 | int data = dataBad
+        ↓
+[8] line=35 | data < 0
+        ↓
+[9] line=38 | data * 2
+        ↓
+[10] line=38 | (int) (data * 2)
+
+=== Source-to-Sink Trace 14/18 ===
+
+[0] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[1] line=51 | this.dataBad = data
+        ↓
+[2] line=52 | this.badSink()
+        ↓
+[3] line=31 | badSink(this)
+        ↓
+[4] line=33 | int data = dataBad
+        ↓
+[5] line=35 | data < 0
+        ↓
+[6] line=38 | data * 2
+        ↓
+[7] line=38 | (int) (data * 2)
+        ↓
+[8] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 15/18 ===
+
+[0] line=49 | this.nextInt()
+        ↓
+[1] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[2] line=51 | this.dataBad = data
+        ↓
+[3] line=52 | this.badSink()
+        ↓
+[4] line=31 | badSink(this)
+        ↓
+[5] line=33 | int data = dataBad
+        ↓
+[6] line=35 | data < 0
+        ↓
+[7] line=38 | data * 2
+        ↓
+[8] line=38 | (int) (data * 2)
+
+=== Source-to-Sink Trace 16/18 ===
+
+[0] line=49 | $obj0
+        ↓
+[1] line=49 | this.nextInt()
+        ↓
+[2] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[3] line=51 | this.dataBad = data
+        ↓
+[4] line=52 | this.badSink()
+        ↓
+[5] line=31 | badSink(this)
+        ↓
+[6] line=33 | int data = dataBad
+        ↓
+[7] line=35 | data < 0
+        ↓
+[8] line=38 | data * 2
+        ↓
+[9] line=38 | (int) (data * 2)
+        ↓
+[10] line=38 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 17/18 ===
+
+[0] line=49 | $obj0
+        ↓
+[1] line=49 | this.nextInt()
+        ↓
+[2] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[3] line=51 | this.dataBad = data
+        ↓
+[4] line=52 | this.badSink()
+        ↓
+[5] line=31 | badSink(this)
+        ↓
+[6] line=33 | int data = dataBad
+        ↓
+[7] line=35 | data < 0
+        ↓
+[8] line=38 | data * 2
+
+=== Source-to-Sink Trace 18/18 ===
+
+[0] line=49 | $obj0 = new SecureRandom()
+        ↓
+[1] line=49 | new SecureRandom()
+        ↓
+[2] line=49 | $obj0
+        ↓
+[3] line=49 | this.nextInt()
+        ↓
+[4] line=49 | data = (new SecureRandom()).nextInt()
+        ↓
+[5] line=51 | this.dataBad = data
+        ↓
+[6] line=52 | this.badSink()
+        ↓
+[7] line=31 | badSink(this)
+        ↓
+[8] line=33 | int data = dataBad
+        ↓
+[9] line=35 | data < 0
+        ↓
+[10] line=38 | data * 2
+        ↓
+[11] line=38 | (int) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=31, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=33, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=33, col=20 | this.dataBad
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=35, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=35, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=35, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=35, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=17 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=17 | int result = (int) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=26 | (int) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=32 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=32 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=38, col=39 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=44, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=49, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=49, col=16 | this.nextInt()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=49, col=17 | $obj0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=49, col=17 | <empty>
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=49, col=17 | new SecureRandom()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=51, col=9 | this.dataBad
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=51, col=19 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=52, col=9 | this
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 21
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 23
+Slice time        : 0.011 seconds
+
+=== Summary ===
+Raw paths    : 30
+Unique traces: 18
+Flow time    : 0.095 seconds
+
+########## FLOW tc1207_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1207-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_random_multiply_45.java:112 (10 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_random_multiply_45.java:93 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.045 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=112 | $obj1 = new SecureRandom()
+        ↓
+[1] line=112 | new SecureRandom()
+        ↓
+[2] line=112 | $obj1
+        ↓
+[3] line=112 | this.nextInt()
+        ↓
+[4] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[5] line=114 | this.dataGoodB2G = data
+        ↓
+[6] line=115 | this.goodB2GSink()
+        ↓
+[7] line=86 | goodB2GSink(this)
+        ↓
+[8] line=88 | int data = dataGoodB2G
+        ↓
+[9] line=90 | data < 0
+        ↓
+[10] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=112 | new SecureRandom()
+        ↓
+[1] line=112 | $obj1 = new SecureRandom()
+        ↓
+[2] line=112 | new SecureRandom()
+        ↓
+[3] line=112 | $obj1
+        ↓
+[4] line=112 | this.nextInt()
+        ↓
+[5] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[6] line=114 | this.dataGoodB2G = data
+        ↓
+[7] line=115 | this.goodB2GSink()
+        ↓
+[8] line=86 | goodB2GSink(this)
+        ↓
+[9] line=88 | int data = dataGoodB2G
+        ↓
+[10] line=90 | data < 0
+        ↓
+[11] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=112 | $obj1
+        ↓
+[1] line=112 | this.nextInt()
+        ↓
+[2] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[3] line=114 | this.dataGoodB2G = data
+        ↓
+[4] line=115 | this.goodB2GSink()
+        ↓
+[5] line=86 | goodB2GSink(this)
+        ↓
+[6] line=88 | int data = dataGoodB2G
+        ↓
+[7] line=90 | data < 0
+        ↓
+[8] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=112 | this.nextInt()
+        ↓
+[1] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[2] line=114 | this.dataGoodB2G = data
+        ↓
+[3] line=115 | this.goodB2GSink()
+        ↓
+[4] line=86 | goodB2GSink(this)
+        ↓
+[5] line=88 | int data = dataGoodB2G
+        ↓
+[6] line=90 | data < 0
+        ↓
+[7] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=112 | $obj1
+        ↓
+[1] line=112 | this.nextInt()
+        ↓
+[2] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[3] line=114 | this.dataGoodB2G = data
+        ↓
+[4] line=115 | this.goodB2GSink()
+        ↓
+[5] line=86 | goodB2GSink(this)
+        ↓
+[6] line=88 | int data = dataGoodB2G
+        ↓
+[7] line=90 | data < 0
+        ↓
+[8] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[9] line=93 | Integer.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=112 | this.nextInt()
+        ↓
+[1] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[2] line=114 | this.dataGoodB2G = data
+        ↓
+[3] line=115 | this.goodB2GSink()
+        ↓
+[4] line=86 | goodB2GSink(this)
+        ↓
+[5] line=88 | int data = dataGoodB2G
+        ↓
+[6] line=90 | data < 0
+        ↓
+[7] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[8] line=93 | Integer.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=112 | new SecureRandom()
+        ↓
+[1] line=112 | $obj1
+        ↓
+[2] line=112 | this.nextInt()
+        ↓
+[3] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[4] line=114 | this.dataGoodB2G = data
+        ↓
+[5] line=115 | this.goodB2GSink()
+        ↓
+[6] line=86 | goodB2GSink(this)
+        ↓
+[7] line=88 | int data = dataGoodB2G
+        ↓
+[8] line=90 | data < 0
+        ↓
+[9] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=112 | new SecureRandom()
+        ↓
+[1] line=112 | $obj1 = new SecureRandom()
+        ↓
+[2] line=112 | new SecureRandom()
+        ↓
+[3] line=112 | $obj1
+        ↓
+[4] line=112 | this.nextInt()
+        ↓
+[5] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[6] line=114 | this.dataGoodB2G = data
+        ↓
+[7] line=115 | this.goodB2GSink()
+        ↓
+[8] line=86 | goodB2GSink(this)
+        ↓
+[9] line=88 | int data = dataGoodB2G
+        ↓
+[10] line=90 | data < 0
+        ↓
+[11] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[12] line=93 | Integer.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=112 | new SecureRandom()
+        ↓
+[1] line=112 | $obj1
+        ↓
+[2] line=112 | this.nextInt()
+        ↓
+[3] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[4] line=114 | this.dataGoodB2G = data
+        ↓
+[5] line=115 | this.goodB2GSink()
+        ↓
+[6] line=86 | goodB2GSink(this)
+        ↓
+[7] line=88 | int data = dataGoodB2G
+        ↓
+[8] line=90 | data < 0
+        ↓
+[9] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[10] line=93 | Integer.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[1] line=114 | this.dataGoodB2G = data
+        ↓
+[2] line=115 | this.goodB2GSink()
+        ↓
+[3] line=86 | goodB2GSink(this)
+        ↓
+[4] line=88 | int data = dataGoodB2G
+        ↓
+[5] line=90 | data < 0
+        ↓
+[6] line=93 | data > (Integer.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=112 | $obj1 = new SecureRandom()
+        ↓
+[1] line=112 | new SecureRandom()
+        ↓
+[2] line=112 | $obj1
+        ↓
+[3] line=112 | this.nextInt()
+        ↓
+[4] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[5] line=114 | this.dataGoodB2G = data
+        ↓
+[6] line=115 | this.goodB2GSink()
+        ↓
+[7] line=86 | goodB2GSink(this)
+        ↓
+[8] line=88 | int data = dataGoodB2G
+        ↓
+[9] line=90 | data < 0
+        ↓
+[10] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[11] line=93 | Integer.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=112 | data = (new SecureRandom()).nextInt()
+        ↓
+[1] line=114 | this.dataGoodB2G = data
+        ↓
+[2] line=115 | this.goodB2GSink()
+        ↓
+[3] line=86 | goodB2GSink(this)
+        ↓
+[4] line=88 | int data = dataGoodB2G
+        ↓
+[5] line=90 | data < 0
+        ↓
+[6] line=93 | data > (Integer.MIN_VALUE / 2)
+        ↓
+[7] line=93 | Integer.MIN_VALUE / 2
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=86, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=88, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=88, col=20 | this.dataGoodB2G
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=90, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=90, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=90, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=90, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=13 | if (data > (Integer.MIN_VALUE / 2))
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=17 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=17 | data > (Integer.MIN_VALUE / 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=25 | Integer.MIN_VALUE / 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=25 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=93, col=43 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=107, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=112, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=112, col=16 | this.nextInt()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=112, col=17 | $obj1
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=112, col=17 | <empty>
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=112, col=17 | new SecureRandom()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=114, col=9 | this.dataGoodB2G
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=114, col=23 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=115, col=9 | this
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 16
+Data nodes        : 20
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 23
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 18
+Unique traces: 12
+Flow time    : 0.045 seconds
+
+########## FLOW tc1207_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1207-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_random_multiply_45.java:80 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_random_multiply_45.java:68 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.042 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=80 | data = 2
+        ↓
+[1] line=82 | this.dataGoodG2B = data
+        ↓
+[2] line=83 | this.goodG2BSink()
+        ↓
+[3] line=61 | goodG2BSink(this)
+        ↓
+[4] line=63 | int data = dataGoodG2B
+        ↓
+[5] line=65 | data < 0
+        ↓
+[6] line=68 | data * 2
+        ↓
+[7] line=68 | (int) (data * 2)
+        ↓
+[8] line=68 | int result = (int) (data * 2)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=80 | data = 2
+        ↓
+[1] line=82 | this.dataGoodG2B = data
+        ↓
+[2] line=83 | this.goodG2BSink()
+        ↓
+[3] line=61 | goodG2BSink(this)
+        ↓
+[4] line=63 | int data = dataGoodG2B
+        ↓
+[5] line=65 | data < 0
+        ↓
+[6] line=68 | data * 2
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=80 | data = 2
+        ↓
+[1] line=82 | this.dataGoodG2B = data
+        ↓
+[2] line=83 | this.goodG2BSink()
+        ↓
+[3] line=61 | goodG2BSink(this)
+        ↓
+[4] line=63 | int data = dataGoodG2B
+        ↓
+[5] line=65 | data < 0
+        ↓
+[6] line=68 | data * 2
+        ↓
+[7] line=68 | (int) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=61, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=63, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=63, col=20 | this.dataGoodG2B
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=65, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=65, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=65, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=65, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=68, col=17 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=68, col=26 | (int) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=68, col=32 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=68, col=32 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=68, col=39 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=75, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=80, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=80, col=16 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=82, col=9 | this.dataGoodG2B
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=82, col=23 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s02/CWE191_Integer_Underflow__int_random_multiply_45.java | line=83, col=9 | this
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 16
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 18
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.042 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-570-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-09699f5e-881f-4e60-abe4-7ed5cdc155dc/cpg.bin.tmp)
+
+########## FLOW tc570_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-570-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_URLConnection_sub_15.java:134 (4 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_URLConnection_sub_15.java:142 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=134 | data = 2
+        ↓
+[1] line=142 | data - 1
+        ↓
+[2] line=142 | (int) (data - 1)
+        ↓
+[3] line=142 | int result = (int) (data - 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=134 | data = 2
+        ↓
+[1] line=142 | data - 1
+        ↓
+[2] line=142 | (int) (data - 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=134 | data = 2
+        ↓
+[1] line=142 | data - 1
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=125, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=125, col=17 | 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=130, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=130, col=20 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=134, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=134, col=20 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=138, col=9 | switch(7)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=138, col=17 | 7
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=142, col=17 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=142, col=26 | (int) (data - 1)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=142, col=32 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=142, col=39 | 1
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.031 seconds
+
+########## FLOW tc570_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-570-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__int_URLConnection_sub_15.java:161 (4 CFG node(s))
+Sink        : CWE191_Integer_Underflow__int_URLConnection_sub_15.java:174 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=161 | data = 2
+        ↓
+[1] line=174 | data - 1
+        ↓
+[2] line=174 | (int) (data - 1)
+        ↓
+[3] line=174 | int result = (int) (data - 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=161 | data = 2
+        ↓
+[1] line=174 | data - 1
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=161 | data = 2
+        ↓
+[1] line=174 | data - 1
+        ↓
+[2] line=174 | (int) (data - 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=157, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=157, col=17 | 6
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=161, col=20 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=166, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=166, col=20 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=170, col=9 | switch(7)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=170, col=17 | 7
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=174, col=17 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=174, col=26 | (int) (data - 1)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=174, col=32 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=174, col=32 | data - 1
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__int_URLConnection_sub_15.java | line=174, col=39 | 1
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.026 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1658-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-087217c3-59a4-4486-826e-307e79a95400/cpg.bin.tmp)
+
+########## FLOW tc1658_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1658-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__short_rand_multiply_67a.java:33 (25 CFG node(s))
+Sink        : CWE191_Integer_Underflow__short_rand_multiply_67b.java:30 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.063 seconds
+
+=== Source-to-Sink Trace 1/33 ===
+
+[0] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[1] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=36 | dataContainer.containerOne = data
+        ↓
+[4] line=37 | this.badSink(dataContainer)
+        ↓
+[5] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[6] line=25 | short data = dataContainer.containerOne
+        ↓
+[7] line=27 | data < 0
+        ↓
+[8] line=30 | data * 2
+        ↓
+[9] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 2/33 ===
+
+[0] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[1] line=33 | new java.security.SecureRandom()
+        ↓
+[2] line=33 | $obj0
+        ↓
+[3] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[4] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[5] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[6] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=36 | dataContainer.containerOne = data
+        ↓
+[9] line=37 | this.badSink(dataContainer)
+        ↓
+[10] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[11] line=25 | short data = dataContainer.containerOne
+        ↓
+[12] line=27 | data < 0
+        ↓
+[13] line=30 | data * 2
+        ↓
+[14] line=30 | (short) (data * 2)
+        ↓
+[15] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 3/33 ===
+
+[0] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=36 | dataContainer.containerOne = data
+        ↓
+[3] line=37 | this.badSink(dataContainer)
+        ↓
+[4] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[5] line=25 | short data = dataContainer.containerOne
+        ↓
+[6] line=27 | data < 0
+        ↓
+[7] line=30 | data * 2
+
+=== Source-to-Sink Trace 4/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[2] line=33 | new java.security.SecureRandom()
+        ↓
+[3] line=33 | $obj0
+        ↓
+[4] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[5] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[6] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[7] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[9] line=36 | dataContainer.containerOne = data
+        ↓
+[10] line=37 | this.badSink(dataContainer)
+        ↓
+[11] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[12] line=25 | short data = dataContainer.containerOne
+        ↓
+[13] line=27 | data < 0
+        ↓
+[14] line=30 | data * 2
+        ↓
+[15] line=30 | (short) (data * 2)
+        ↓
+[16] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 5/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[2] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[3] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=36 | dataContainer.containerOne = data
+        ↓
+[6] line=37 | this.badSink(dataContainer)
+        ↓
+[7] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[8] line=25 | short data = dataContainer.containerOne
+        ↓
+[9] line=27 | data < 0
+        ↓
+[10] line=30 | data * 2
+        ↓
+[11] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 6/33 ===
+
+[0] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[1] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=36 | dataContainer.containerOne = data
+        ↓
+[4] line=37 | this.badSink(dataContainer)
+        ↓
+[5] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[6] line=25 | short data = dataContainer.containerOne
+        ↓
+[7] line=27 | data < 0
+        ↓
+[8] line=30 | data * 2
+
+=== Source-to-Sink Trace 7/33 ===
+
+[0] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[1] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[2] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=36 | dataContainer.containerOne = data
+        ↓
+[5] line=37 | this.badSink(dataContainer)
+        ↓
+[6] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[7] line=25 | short data = dataContainer.containerOne
+        ↓
+[8] line=27 | data < 0
+        ↓
+[9] line=30 | data * 2
+        ↓
+[10] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 8/33 ===
+
+[0] line=33 | $obj0
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+
+=== Source-to-Sink Trace 9/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+        ↓
+[12] line=30 | (short) (data * 2)
+        ↓
+[13] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 10/33 ===
+
+[0] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=36 | dataContainer.containerOne = data
+        ↓
+[3] line=37 | this.badSink(dataContainer)
+        ↓
+[4] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[5] line=25 | short data = dataContainer.containerOne
+        ↓
+[6] line=27 | data < 0
+        ↓
+[7] line=30 | data * 2
+        ↓
+[8] line=30 | (short) (data * 2)
+        ↓
+[9] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 11/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[2] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[3] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=36 | dataContainer.containerOne = data
+        ↓
+[6] line=37 | this.badSink(dataContainer)
+        ↓
+[7] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[8] line=25 | short data = dataContainer.containerOne
+        ↓
+[9] line=27 | data < 0
+        ↓
+[10] line=30 | data * 2
+        ↓
+[11] line=30 | (short) (data * 2)
+        ↓
+[12] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 12/33 ===
+
+[0] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=36 | dataContainer.containerOne = data
+        ↓
+[2] line=37 | this.badSink(dataContainer)
+        ↓
+[3] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=25 | short data = dataContainer.containerOne
+        ↓
+[5] line=27 | data < 0
+        ↓
+[6] line=30 | data * 2
+        ↓
+[7] line=30 | (short) (data * 2)
+        ↓
+[8] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 13/33 ===
+
+[0] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[1] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[2] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=36 | dataContainer.containerOne = data
+        ↓
+[5] line=37 | this.badSink(dataContainer)
+        ↓
+[6] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[7] line=25 | short data = dataContainer.containerOne
+        ↓
+[8] line=27 | data < 0
+        ↓
+[9] line=30 | data * 2
+        ↓
+[10] line=30 | (short) (data * 2)
+        ↓
+[11] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 14/33 ===
+
+[0] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=36 | dataContainer.containerOne = data
+        ↓
+[3] line=37 | this.badSink(dataContainer)
+        ↓
+[4] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[5] line=25 | short data = dataContainer.containerOne
+        ↓
+[6] line=27 | data < 0
+        ↓
+[7] line=30 | data * 2
+        ↓
+[8] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 15/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+
+=== Source-to-Sink Trace 16/33 ===
+
+[0] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[1] line=33 | new java.security.SecureRandom()
+        ↓
+[2] line=33 | $obj0
+        ↓
+[3] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[4] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[5] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[6] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=36 | dataContainer.containerOne = data
+        ↓
+[9] line=37 | this.badSink(dataContainer)
+        ↓
+[10] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[11] line=25 | short data = dataContainer.containerOne
+        ↓
+[12] line=27 | data < 0
+        ↓
+[13] line=30 | data * 2
+        ↓
+[14] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 17/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+
+=== Source-to-Sink Trace 18/33 ===
+
+[0] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[1] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[2] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=36 | dataContainer.containerOne = data
+        ↓
+[5] line=37 | this.badSink(dataContainer)
+        ↓
+[6] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[7] line=25 | short data = dataContainer.containerOne
+        ↓
+[8] line=27 | data < 0
+        ↓
+[9] line=30 | data * 2
+
+=== Source-to-Sink Trace 19/33 ===
+
+[0] line=33 | $obj0
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+        ↓
+[12] line=30 | (short) (data * 2)
+        ↓
+[13] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 20/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[2] line=33 | new java.security.SecureRandom()
+        ↓
+[3] line=33 | $obj0
+        ↓
+[4] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[5] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[6] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[7] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[9] line=36 | dataContainer.containerOne = data
+        ↓
+[10] line=37 | this.badSink(dataContainer)
+        ↓
+[11] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[12] line=25 | short data = dataContainer.containerOne
+        ↓
+[13] line=27 | data < 0
+        ↓
+[14] line=30 | data * 2
+        ↓
+[15] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 21/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+        ↓
+[13] line=30 | (short) (data * 2)
+        ↓
+[14] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 22/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+        ↓
+[12] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 23/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+        ↓
+[13] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 24/33 ===
+
+[0] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=36 | dataContainer.containerOne = data
+        ↓
+[2] line=37 | this.badSink(dataContainer)
+        ↓
+[3] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=25 | short data = dataContainer.containerOne
+        ↓
+[5] line=27 | data < 0
+        ↓
+[6] line=30 | data * 2
+
+=== Source-to-Sink Trace 25/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+        ↓
+[13] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 26/33 ===
+
+[0] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[1] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=36 | dataContainer.containerOne = data
+        ↓
+[4] line=37 | this.badSink(dataContainer)
+        ↓
+[5] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[6] line=25 | short data = dataContainer.containerOne
+        ↓
+[7] line=27 | data < 0
+        ↓
+[8] line=30 | data * 2
+        ↓
+[9] line=30 | (short) (data * 2)
+        ↓
+[10] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 27/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[2] line=33 | new java.security.SecureRandom()
+        ↓
+[3] line=33 | $obj0
+        ↓
+[4] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[5] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[6] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[7] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[9] line=36 | dataContainer.containerOne = data
+        ↓
+[10] line=37 | this.badSink(dataContainer)
+        ↓
+[11] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[12] line=25 | short data = dataContainer.containerOne
+        ↓
+[13] line=27 | data < 0
+        ↓
+[14] line=30 | data * 2
+
+=== Source-to-Sink Trace 28/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+        ↓
+[13] line=30 | (short) (data * 2)
+        ↓
+[14] line=30 | short result = (short) (data * 2)
+
+=== Source-to-Sink Trace 29/33 ===
+
+[0] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=36 | dataContainer.containerOne = data
+        ↓
+[2] line=37 | this.badSink(dataContainer)
+        ↓
+[3] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=25 | short data = dataContainer.containerOne
+        ↓
+[5] line=27 | data < 0
+        ↓
+[6] line=30 | data * 2
+        ↓
+[7] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 30/33 ===
+
+[0] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[2] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[3] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=36 | dataContainer.containerOne = data
+        ↓
+[6] line=37 | this.badSink(dataContainer)
+        ↓
+[7] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[8] line=25 | short data = dataContainer.containerOne
+        ↓
+[9] line=27 | data < 0
+        ↓
+[10] line=30 | data * 2
+
+=== Source-to-Sink Trace 31/33 ===
+
+[0] line=33 | $obj0
+        ↓
+[1] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=36 | dataContainer.containerOne = data
+        ↓
+[7] line=37 | this.badSink(dataContainer)
+        ↓
+[8] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=25 | short data = dataContainer.containerOne
+        ↓
+[10] line=27 | data < 0
+        ↓
+[11] line=30 | data * 2
+        ↓
+[12] line=30 | (short) (data * 2)
+
+=== Source-to-Sink Trace 32/33 ===
+
+[0] line=33 | new java.security.SecureRandom()
+        ↓
+[1] line=33 | $obj0
+        ↓
+[2] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=36 | dataContainer.containerOne = data
+        ↓
+[8] line=37 | this.badSink(dataContainer)
+        ↓
+[9] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=25 | short data = dataContainer.containerOne
+        ↓
+[11] line=27 | data < 0
+        ↓
+[12] line=30 | data * 2
+
+=== Source-to-Sink Trace 33/33 ===
+
+[0] line=33 | $obj0 = new java.security.SecureRandom()
+        ↓
+[1] line=33 | new java.security.SecureRandom()
+        ↓
+[2] line=33 | $obj0
+        ↓
+[3] line=33 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[4] line=33 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[5] line=33 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[6] line=33 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=33 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=36 | dataContainer.containerOne = data
+        ↓
+[9] line=37 | this.badSink(dataContainer)
+        ↓
+[10] line=23 | badSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[11] line=25 | short data = dataContainer.containerOne
+        ↓
+[12] line=27 | data < 0
+        ↓
+[13] line=30 | data * 2
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=28, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=16 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=16 | short
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=24 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=24 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=25 | $obj0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=25 | <empty>
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=25 | new java.security.SecureRandom()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=67 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=67 | 1 + Short.MAX_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=67 | 1
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=85 | Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=33, col=102 | Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=35, col=19 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=35, col=35 | new Container()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=36, col=9 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=36, col=38 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=37, col=75 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=23, col=25 | CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=25, col=15 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=25, col=22 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=27, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=27, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=27, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=27, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=19 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=19 | short result = (short) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=28 | (short) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=36 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=36 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=30, col=43 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 26
+Data nodes        : 32
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 34
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 75
+Unique traces: 33
+Flow time    : 0.063 seconds
+
+########## FLOW tc1658_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1658-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__short_rand_multiply_67a.java:65 (25 CFG node(s))
+Sink        : CWE191_Integer_Underflow__short_rand_multiply_67b.java:58 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.053 seconds
+
+=== Source-to-Sink Trace 1/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=68 | dataContainer.containerOne = data
+        ↓
+[7] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[8] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=53 | short data = dataContainer.containerOne
+        ↓
+[10] line=55 | data < 0
+        ↓
+[11] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[12] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 2/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=68 | dataContainer.containerOne = data
+        ↓
+[7] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[8] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=53 | short data = dataContainer.containerOne
+        ↓
+[10] line=55 | data < 0
+        ↓
+[11] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 3/22 ===
+
+[0] line=65 | $obj3
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=68 | dataContainer.containerOne = data
+        ↓
+[7] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[8] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=53 | short data = dataContainer.containerOne
+        ↓
+[10] line=55 | data < 0
+        ↓
+[11] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[12] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 4/22 ===
+
+[0] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=68 | dataContainer.containerOne = data
+        ↓
+[2] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[3] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=53 | short data = dataContainer.containerOne
+        ↓
+[5] line=55 | data < 0
+        ↓
+[6] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 5/22 ===
+
+[0] line=65 | new java.security.SecureRandom()
+        ↓
+[1] line=65 | $obj3
+        ↓
+[2] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=68 | dataContainer.containerOne = data
+        ↓
+[8] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[9] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=53 | short data = dataContainer.containerOne
+        ↓
+[11] line=55 | data < 0
+        ↓
+[12] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 6/22 ===
+
+[0] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=68 | dataContainer.containerOne = data
+        ↓
+[3] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[4] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[5] line=53 | short data = dataContainer.containerOne
+        ↓
+[6] line=55 | data < 0
+        ↓
+[7] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 7/22 ===
+
+[0] line=65 | $obj3 = new java.security.SecureRandom()
+        ↓
+[1] line=65 | new java.security.SecureRandom()
+        ↓
+[2] line=65 | $obj3
+        ↓
+[3] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[4] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[5] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[6] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=68 | dataContainer.containerOne = data
+        ↓
+[9] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[10] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[11] line=53 | short data = dataContainer.containerOne
+        ↓
+[12] line=55 | data < 0
+        ↓
+[13] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 8/22 ===
+
+[0] line=65 | $obj3 = new java.security.SecureRandom()
+        ↓
+[1] line=65 | new java.security.SecureRandom()
+        ↓
+[2] line=65 | $obj3
+        ↓
+[3] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[4] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[5] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[6] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=68 | dataContainer.containerOne = data
+        ↓
+[9] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[10] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[11] line=53 | short data = dataContainer.containerOne
+        ↓
+[12] line=55 | data < 0
+        ↓
+[13] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[14] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 9/22 ===
+
+[0] line=65 | $obj3
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[2] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[3] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[4] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=68 | dataContainer.containerOne = data
+        ↓
+[7] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[8] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[9] line=53 | short data = dataContainer.containerOne
+        ↓
+[10] line=55 | data < 0
+        ↓
+[11] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 10/22 ===
+
+[0] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[1] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=68 | dataContainer.containerOne = data
+        ↓
+[4] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[5] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[6] line=53 | short data = dataContainer.containerOne
+        ↓
+[7] line=55 | data < 0
+        ↓
+[8] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 11/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE
+        ↓
+[2] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=68 | dataContainer.containerOne = data
+        ↓
+[8] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[9] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=53 | short data = dataContainer.containerOne
+        ↓
+[11] line=55 | data < 0
+        ↓
+[12] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 12/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[2] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[3] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=68 | dataContainer.containerOne = data
+        ↓
+[6] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[7] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[8] line=53 | short data = dataContainer.containerOne
+        ↓
+[9] line=55 | data < 0
+        ↓
+[10] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 13/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=65 | 1 + Short.MAX_VALUE
+        ↓
+[2] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=68 | dataContainer.containerOne = data
+        ↓
+[8] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[9] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=53 | short data = dataContainer.containerOne
+        ↓
+[11] line=55 | data < 0
+        ↓
+[12] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[13] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 14/22 ===
+
+[0] line=65 | new java.security.SecureRandom()
+        ↓
+[1] line=65 | $obj3 = new java.security.SecureRandom()
+        ↓
+[2] line=65 | new java.security.SecureRandom()
+        ↓
+[3] line=65 | $obj3
+        ↓
+[4] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[5] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[6] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[7] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[9] line=68 | dataContainer.containerOne = data
+        ↓
+[10] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[11] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[12] line=53 | short data = dataContainer.containerOne
+        ↓
+[13] line=55 | data < 0
+        ↓
+[14] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 15/22 ===
+
+[0] line=65 | new java.security.SecureRandom()
+        ↓
+[1] line=65 | $obj3
+        ↓
+[2] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[3] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[4] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[5] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[6] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[7] line=68 | dataContainer.containerOne = data
+        ↓
+[8] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[9] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[10] line=53 | short data = dataContainer.containerOne
+        ↓
+[11] line=55 | data < 0
+        ↓
+[12] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[13] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 16/22 ===
+
+[0] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[1] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[2] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=68 | dataContainer.containerOne = data
+        ↓
+[5] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[6] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[7] line=53 | short data = dataContainer.containerOne
+        ↓
+[8] line=55 | data < 0
+        ↓
+[9] line=58 | data > (Short.MIN_VALUE / 2)
+
+=== Source-to-Sink Trace 17/22 ===
+
+[0] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[1] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[2] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[3] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[5] line=68 | dataContainer.containerOne = data
+        ↓
+[6] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[7] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[8] line=53 | short data = dataContainer.containerOne
+        ↓
+[9] line=55 | data < 0
+        ↓
+[10] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[11] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 18/22 ===
+
+[0] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[1] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=68 | dataContainer.containerOne = data
+        ↓
+[4] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[5] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[6] line=53 | short data = dataContainer.containerOne
+        ↓
+[7] line=55 | data < 0
+        ↓
+[8] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[9] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 19/22 ===
+
+[0] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[1] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[2] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[3] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[4] line=68 | dataContainer.containerOne = data
+        ↓
+[5] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[6] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[7] line=53 | short data = dataContainer.containerOne
+        ↓
+[8] line=55 | data < 0
+        ↓
+[9] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[10] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 20/22 ===
+
+[0] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[2] line=68 | dataContainer.containerOne = data
+        ↓
+[3] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[4] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[5] line=53 | short data = dataContainer.containerOne
+        ↓
+[6] line=55 | data < 0
+        ↓
+[7] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[8] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 21/22 ===
+
+[0] line=65 | new java.security.SecureRandom()
+        ↓
+[1] line=65 | $obj3 = new java.security.SecureRandom()
+        ↓
+[2] line=65 | new java.security.SecureRandom()
+        ↓
+[3] line=65 | $obj3
+        ↓
+[4] line=65 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+        ↓
+[5] line=65 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+        ↓
+[6] line=65 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+        ↓
+[7] line=65 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[8] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[9] line=68 | dataContainer.containerOne = data
+        ↓
+[10] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[11] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[12] line=53 | short data = dataContainer.containerOne
+        ↓
+[13] line=55 | data < 0
+        ↓
+[14] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[15] line=58 | Short.MIN_VALUE / 2
+
+=== Source-to-Sink Trace 22/22 ===
+
+[0] line=65 | data = (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+        ↓
+[1] line=68 | dataContainer.containerOne = data
+        ↓
+[2] line=69 | this.goodB2GSink(dataContainer)
+        ↓
+[3] line=51 | goodB2GSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=53 | short data = dataContainer.containerOne
+        ↓
+[5] line=55 | data < 0
+        ↓
+[6] line=58 | data > (Short.MIN_VALUE / 2)
+        ↓
+[7] line=58 | Short.MIN_VALUE / 2
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=60, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=16 | (short) ((new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=16 | short
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=24 | this.nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=24 | (new java.security.SecureRandom()).nextInt(1 + Short.MAX_VALUE - Short.MIN_VALUE) + Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=25 | <empty>
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=25 | $obj3
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=25 | new java.security.SecureRandom()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=67 | 1
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=67 | 1 + Short.MAX_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=67 | 1 + Short.MAX_VALUE - Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=85 | Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=65, col=102 | Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=67, col=19 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=67, col=35 | new Container()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=68, col=9 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=68, col=38 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=69, col=79 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=51, col=29 | CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=53, col=15 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=53, col=22 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=55, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=55, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=55, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=55, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=13 | if (data > (Short.MIN_VALUE / 2))
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=17 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=17 | data > (Short.MIN_VALUE / 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=25 | Short.MIN_VALUE / 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=25 | Short.MIN_VALUE
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=58, col=41 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 24
+Data nodes        : 31
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 34
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 45
+Unique traces: 22
+Flow time    : 0.053 seconds
+
+########## FLOW tc1658_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1658-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__short_rand_multiply_67a.java:52 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__short_rand_multiply_67b.java:44 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.043 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=52 | data = 2
+        ↓
+[1] line=55 | dataContainer.containerOne = data
+        ↓
+[2] line=56 | this.goodG2BSink(dataContainer)
+        ↓
+[3] line=37 | goodG2BSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=39 | short data = dataContainer.containerOne
+        ↓
+[5] line=41 | data < 0
+        ↓
+[6] line=44 | data * 2
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=52 | data = 2
+        ↓
+[1] line=55 | dataContainer.containerOne = data
+        ↓
+[2] line=56 | this.goodG2BSink(dataContainer)
+        ↓
+[3] line=37 | goodG2BSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=39 | short data = dataContainer.containerOne
+        ↓
+[5] line=41 | data < 0
+        ↓
+[6] line=44 | data * 2
+        ↓
+[7] line=44 | (short) (data * 2)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=52 | data = 2
+        ↓
+[1] line=55 | dataContainer.containerOne = data
+        ↓
+[2] line=56 | this.goodG2BSink(dataContainer)
+        ↓
+[3] line=37 | goodG2BSink(this, CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer)
+        ↓
+[4] line=39 | short data = dataContainer.containerOne
+        ↓
+[5] line=41 | data < 0
+        ↓
+[6] line=44 | data * 2
+        ↓
+[7] line=44 | (short) (data * 2)
+        ↓
+[8] line=44 | short result = (short) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=47, col=5 | this
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=52, col=9 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=52, col=16 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=54, col=19 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=54, col=35 | new Container()
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=55, col=9 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=55, col=38 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67a.java | line=56, col=79 | dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=37, col=29 | CWE191_Integer_Underflow__short_rand_multiply_67a.Container dataContainer
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=39, col=15 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=39, col=22 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=41, col=9 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=41, col=12 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=41, col=12 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=41, col=19 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=19 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=19 | short result = (short) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=28 | (short) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=36 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=36 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s03/CWE191_Integer_Underflow__short_rand_multiply_67b.java | line=44, col=43 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 20
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 22
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.043 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-17b6eed3-a57a-4228-9435-36ba1f21b749/cpg.bin.tmp)
+
+########## FLOW tc14_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:37 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:99 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.031 seconds
+
+########## FLOW tc14_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:170 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:238 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.026 seconds
+
+########## FLOW tc14_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:261 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:323 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.027 seconds
+
+########## FLOW tc14_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:119 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:128 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=119 | data = 2
+        ↓
+[1] line=125 | data < 0
+        ↓
+[2] line=128 | data * 2
+        ↓
+[3] line=128 | (byte) (data * 2)
+        ↓
+[4] line=128 | byte result = (byte) (data * 2)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=119 | data = 2
+        ↓
+[1] line=125 | data < 0
+        ↓
+[2] line=128 | data * 2
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=119 | data = 2
+        ↓
+[1] line=125 | data < 0
+        ↓
+[2] line=128 | data * 2
+        ↓
+[3] line=128 | (byte) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=109, col=9 | if (IO.staticFive != 5)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=109, col=13 | IO.staticFive != 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=109, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=109, col=28 | 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=113, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=113, col=20 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=119, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=119, col=20 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=123, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=123, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=123, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=123, col=28 | 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=125, col=13 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=125, col=16 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=125, col=16 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=125, col=23 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=22 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=22 | byte result = (byte) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=31 | (byte) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=38 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=38 | data * 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=128, col=45 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 12
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 22
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.030 seconds
+
+########## FLOW tc14_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin
+Source      : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:141 (3 CFG node(s))
+Sink        : CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java:155 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=141 | data = 2
+        ↓
+[1] line=152 | data < 0
+        ↓
+[2] line=155 | data * 2
+        ↓
+[3] line=155 | (byte) (data * 2)
+        ↓
+[4] line=155 | byte result = (byte) (data * 2)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=141 | data = 2
+        ↓
+[1] line=152 | data < 0
+        ↓
+[2] line=155 | data * 2
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=141 | data = 2
+        ↓
+[1] line=152 | data < 0
+        ↓
+[2] line=155 | data * 2
+        ↓
+[3] line=155 | (byte) (data * 2)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=138, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=138, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=138, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=138, col=28 | 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=141, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=141, col=20 | 2
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=147, col=20 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=150, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=150, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=150, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=150, col=28 | 5
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=152, col=13 | if (data < 0)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=152, col=16 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=152, col=16 | data < 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=152, col=23 | 0
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=155, col=22 | result
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=155, col=31 | (byte) (data * 2)
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=155, col=38 | data
+src/main/java/juliet/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_console_readLine_multiply_14.java | line=155, col=45 | 2
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.030 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe191_jobs.tsv)
+Creating project `joern-trace-8a2bc426-2f49-4326-8b25-efad0fb53512` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-920-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8a2bc426-2f49-4326-8b25-efad0fb53512/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e0af614b-f555-43bf-bc36-36042cea37a7` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1207-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e0af614b-f555-43bf-bc36-36042cea37a7/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-09699f5e-881f-4e60-abe4-7ed5cdc155dc` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-570-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-09699f5e-881f-4e60-abe4-7ed5cdc155dc/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-087217c3-59a4-4486-826e-307e79a95400` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-1658-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-087217c3-59a4-4486-826e-307e79a95400/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-17b6eed3-a57a-4228-9435-36ba1f21b749` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe191_cpg/cwe191-14-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-17b6eed3-a57a-4228-9435-36ba1f21b749/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

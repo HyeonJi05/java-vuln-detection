@@ -1,0 +1,2571 @@
+# CWE-315: 18 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe315_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-bbf71861-0963-4b58-b701-c781c4ae809c/cpg.bin.tmp)
+
+########## FLOW tc6_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:43 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:56 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.364 seconds
+
+=== Source-to-Sink Trace 1/30 ===
+
+[0] line=43 | credentials.getPassword()
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 2/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getUserName() + ":"
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 3/30 ===
+
+[0] line=43 | credentials.getPassword()
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+        ↓
+[6] line=56 | $obj1
+        ↓
+[7] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 4/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getPassword()
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 5/30 ===
+
+[0] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 6/30 ===
+
+[0] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 7/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 8/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getPassword()
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+        ↓
+[7] line=56 | $obj1
+        ↓
+[8] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 9/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+        ↓
+[5] line=56 | $obj1
+        ↓
+[6] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 10/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+        ↓
+[7] line=56 | $obj1
+
+=== Source-to-Sink Trace 11/30 ===
+
+[0] line=43 | credentials.getUserName() + ":"
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 12/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+        ↓
+[5] line=56 | $obj1
+
+=== Source-to-Sink Trace 13/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 14/30 ===
+
+[0] line=43 | $obj0
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+        ↓
+[4] line=56 | $obj1
+
+=== Source-to-Sink Trace 15/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getUserName() + ":"
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+        ↓
+[5] line=56 | $obj1
+        ↓
+[6] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 16/30 ===
+
+[0] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 17/30 ===
+
+[0] line=43 | credentials.getPassword()
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+        ↓
+[6] line=56 | $obj1
+
+=== Source-to-Sink Trace 18/30 ===
+
+[0] line=43 | credentials.getUserName() + ":"
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+        ↓
+[4] line=56 | $obj1
+
+=== Source-to-Sink Trace 19/30 ===
+
+[0] line=43 | new String(credentials.getPassword())
+        ↓
+[1] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+        ↓
+[7] line=56 | $obj1
+        ↓
+[8] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 20/30 ===
+
+[0] line=43 | $obj0
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 21/30 ===
+
+[0] line=43 | $obj0
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+        ↓
+[4] line=56 | $obj1
+        ↓
+[5] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 22/30 ===
+
+[0] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+        ↓
+[6] line=56 | $obj1
+        ↓
+[7] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 23/30 ===
+
+[0] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=56 | new Cookie("auth", data)
+        ↓
+[3] line=56 | $obj1
+        ↓
+[4] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 24/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getUserName() + ":"
+        ↓
+[2] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=56 | new Cookie("auth", data)
+        ↓
+[5] line=56 | $obj1
+
+=== Source-to-Sink Trace 25/30 ===
+
+[0] line=43 | credentials.getUserName() + ":"
+        ↓
+[1] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=56 | new Cookie("auth", data)
+        ↓
+[4] line=56 | $obj1
+        ↓
+[5] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 26/30 ===
+
+[0] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=56 | new Cookie("auth", data)
+        ↓
+[2] line=56 | $obj1
+
+=== Source-to-Sink Trace 27/30 ===
+
+[0] line=43 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=43 | new String(credentials.getPassword())
+        ↓
+[2] line=43 | $obj0
+        ↓
+[3] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=56 | new Cookie("auth", data)
+        ↓
+[6] line=56 | $obj1
+
+=== Source-to-Sink Trace 28/30 ===
+
+[0] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=56 | new Cookie("auth", data)
+        ↓
+[2] line=56 | $obj1
+        ↓
+[3] line=56 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 29/30 ===
+
+[0] line=43 | credentials.getUserName()
+        ↓
+[1] line=43 | credentials.getPassword()
+        ↓
+[2] line=43 | new String(credentials.getPassword())
+        ↓
+[3] line=43 | $obj0
+        ↓
+[4] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=56 | new Cookie("auth", data)
+        ↓
+[7] line=56 | $obj1
+
+=== Source-to-Sink Trace 30/30 ===
+
+[0] line=43 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=43 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=56 | new Cookie("auth", data)
+        ↓
+[3] line=56 | $obj1
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=35, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=38, col=9 | if (PRIVATE_STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=38, col=13 | PRIVATE_STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=38, col=13 | CWE315_Plaintext_Storage_in_Cookie__Servlet_06.PRIVATE_STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=38, col=40 | 5
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=41, col=36 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=41, col=50 | new PasswordAuthentication("user", "BP@ssw0rd".toCharArray())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=41, col=77 | "user"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=41, col=85 | this.toCharArray()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=41, col=85 | "BP@ssw0rd"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=20 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=20 | credentials.getUserName()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=20 | credentials.getUserName() + ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=20 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=48 | ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=55 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=55 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=55 | new String(credentials.getPassword())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=66 | credentials.getPassword()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=43, col=66 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=49, col=13 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=49, col=20 | null
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=52, col=9 | if (PRIVATE_STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=52, col=13 | PRIVATE_STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=52, col=13 | CWE315_Plaintext_Storage_in_Cookie__Servlet_06.PRIVATE_STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=52, col=40 | 5
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=-1 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=13 | response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=13 | response.addCookie(new Cookie("auth", data))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=32 | $obj1
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=32 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=32 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=43 | "auth"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java | line=56, col=51 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 30
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 38
+Slice time        : 0.043 seconds
+
+=== Summary ===
+Raw paths    : 72
+Unique traces: 30
+Flow time    : 0.364 seconds
+
+########## FLOW tc6_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:138 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:156 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.024 seconds
+
+########## FLOW tc6_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:178 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:190 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.022 seconds
+
+########## FLOW tc6_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:77 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:92 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.059 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.059 seconds
+
+########## FLOW tc6_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:105 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_06.java:125 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.082 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.082 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-36-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-5d9a37d3-e8f8-4da7-86ea-caef36d920ae/cpg.bin.tmp)
+
+########## FLOW tc36_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-36-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_75a.java:43 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_75b.java:47 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.075 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.075 seconds
+
+########## FLOW tc36_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-36-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_75a.java:168 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_75b.java:156 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.031 seconds
+
+########## FLOW tc36_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-36-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_75a.java:105 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_75b.java:102 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.043 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.043 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin (4 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-52db78cb-2b12-430d-af9c-355193613edc/cpg.bin.tmp)
+
+########## FLOW tc19_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java:42 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java:34 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.072 seconds
+
+=== Source-to-Sink Trace 1/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 2/30 ===
+
+[0] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 3/30 ===
+
+[0] line=42 | credentials.getPassword()
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 4/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 5/30 ===
+
+[0] line=42 | $obj0
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 6/30 ===
+
+[0] line=42 | $obj0
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 7/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getPassword()
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 8/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getPassword()
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 9/30 ===
+
+[0] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=45 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 10/30 ===
+
+[0] line=42 | credentials.getPassword()
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 11/30 ===
+
+[0] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=45 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+
+=== Source-to-Sink Trace 12/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 13/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== Source-to-Sink Trace 14/30 ===
+
+[0] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 15/30 ===
+
+[0] line=42 | credentials.getUserName() + ":"
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 16/30 ===
+
+[0] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=45 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 17/30 ===
+
+[0] line=42 | credentials.getPassword()
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 18/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getPassword()
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 19/30 ===
+
+[0] line=42 | credentials.getUserName() + ":"
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 20/30 ===
+
+[0] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=45 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+        ↓
+[5] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 21/30 ===
+
+[0] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=45 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+
+=== Source-to-Sink Trace 22/30 ===
+
+[0] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=45 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+        ↓
+[6] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 23/30 ===
+
+[0] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=42 | new String(credentials.getPassword())
+        ↓
+[2] line=42 | $obj0
+        ↓
+[3] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=45 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 24/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getUserName() + ":"
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 25/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getUserName() + ":"
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 26/30 ===
+
+[0] line=42 | $obj0
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 27/30 ===
+
+[0] line=42 | credentials.getUserName() + ":"
+        ↓
+[1] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=45 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 28/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=42 | new String(credentials.getPassword())
+        ↓
+[3] line=42 | $obj0
+        ↓
+[4] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=45 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 29/30 ===
+
+[0] line=42 | credentials.getUserName()
+        ↓
+[1] line=42 | credentials.getUserName() + ":"
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== Source-to-Sink Trace 30/30 ===
+
+[0] line=42 | new String(credentials.getPassword())
+        ↓
+[1] line=42 | $obj0
+        ↓
+[2] line=42 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=42 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=45 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=39, col=32 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=39, col=46 | new PasswordAuthentication("user", "BP@ssw0rd".toCharArray())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=39, col=73 | "user"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=39, col=81 | this.toCharArray()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=39, col=81 | "BP@ssw0rd"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=9 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=16 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=16 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=16 | credentials.getUserName() + ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=16 | credentials.getUserName()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=44 | ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=51 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=51 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=51 | new String(credentials.getPassword())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=62 | credentials.getPassword()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=42, col=62 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java | line=45, col=73 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=28, col=25 | String data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=28, col=67 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=30, col=9 | if (CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.badPublicStatic)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=30, col=13 | CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.badPublicStatic
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=-1 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=13 | response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=13 | response.addCookie(new Cookie("auth", data))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=32 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=32 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=32 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=43 | "auth"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java | line=34, col=51 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 20
+Data nodes        : 30
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 32
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 72
+Unique traces: 30
+Flow time    : 0.072 seconds
+
+########## FLOW tc19_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java:70 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java:57 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.012 seconds
+
+########## FLOW tc19_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java:85 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java:76 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.007 seconds
+
+########## FLOW tc19_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_22a.java:100 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_22b.java:100 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.022 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-24-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-08ae8f32-4b8c-4e14-aefc-1fdb296e45c5/cpg.bin.tmp)
+
+########## FLOW tc24_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-24-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java:38 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java:34 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.046 seconds
+
+=== Source-to-Sink Trace 1/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 2/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 3/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== Source-to-Sink Trace 4/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 5/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 6/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 7/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 8/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 9/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=40 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+
+=== Source-to-Sink Trace 10/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 11/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 12/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 13/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 14/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=40 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 15/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== Source-to-Sink Trace 16/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=40 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+        ↓
+[5] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 17/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 18/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 19/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=40 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 20/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=40 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+
+=== Source-to-Sink Trace 21/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 22/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 23/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=40 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+        ↓
+[6] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 24/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 25/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 26/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 27/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=40 | this.badSink(data, request, response)
+        ↓
+[6] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 28/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=40 | this.badSink(data, request, response)
+        ↓
+[7] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 29/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=40 | this.badSink(data, request, response)
+        ↓
+[4] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 30/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=40 | this.badSink(data, request, response)
+        ↓
+[5] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=35, col=32 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=35, col=46 | new PasswordAuthentication("user", "BP@ssw0rd".toCharArray())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=35, col=73 | "user"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=35, col=81 | this.toCharArray()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=35, col=81 | "BP@ssw0rd"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=9 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=16 | credentials.getUserName()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=16 | credentials.getUserName() + ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=16 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=16 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=44 | ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=51 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=51 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=51 | new String(credentials.getPassword())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=62 | credentials.getPassword()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=38, col=62 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java | line=40, col=73 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=28, col=25 | String data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=28, col=67 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=-1 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=9 | response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=9 | response.addCookie(new Cookie("auth", data))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=28 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=28 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=28 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=39 | "auth"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java | line=34, col=47 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 20
+Data nodes        : 30
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 30
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 72
+Unique traces: 30
+Flow time    : 0.046 seconds
+
+########## FLOW tc24_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-24-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java:79 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java:54 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc24_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-24-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_51a.java:58 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_51b.java:45 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.016 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-37-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c5c9e6c4-d98e-43ee-b1e0-dae108629dc3/cpg.bin.tmp)
+
+########## FLOW tc37_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-37-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java:38 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java:34 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.052 seconds
+
+=== Source-to-Sink Trace 1/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 2/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 3/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 4/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=41 | baseObject.action(data, request, response)
+        ↓
+[2] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 5/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 6/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 7/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 8/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 9/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 10/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+        ↓
+[7] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 11/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 12/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+        ↓
+[9] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 13/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=41 | baseObject.action(data, request, response)
+        ↓
+[3] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+
+=== Source-to-Sink Trace 14/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 15/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 16/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=41 | baseObject.action(data, request, response)
+        ↓
+[3] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 17/30 ===
+
+[0] line=38 | credentials.getUserName() + ":"
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 18/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getPassword()
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 19/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+        ↓
+[8] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 20/30 ===
+
+[0] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=41 | baseObject.action(data, request, response)
+        ↓
+[3] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=34 | new Cookie("auth", data)
+        ↓
+[5] line=34 | $obj0
+        ↓
+[6] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 21/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+        ↓
+[10] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 22/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=41 | baseObject.action(data, request, response)
+        ↓
+[2] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+        ↓
+[5] line=34 | response.addCookie(new Cookie("auth", data))
+
+=== Source-to-Sink Trace 23/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 24/30 ===
+
+[0] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[1] line=41 | baseObject.action(data, request, response)
+        ↓
+[2] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=34 | new Cookie("auth", data)
+        ↓
+[4] line=34 | $obj0
+
+=== Source-to-Sink Trace 25/30 ===
+
+[0] line=38 | credentials.getPassword()
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+
+=== Source-to-Sink Trace 26/30 ===
+
+[0] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[1] line=38 | new String(credentials.getPassword())
+        ↓
+[2] line=38 | $obj0
+        ↓
+[3] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=41 | baseObject.action(data, request, response)
+        ↓
+[6] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=34 | new Cookie("auth", data)
+        ↓
+[8] line=34 | $obj0
+
+=== Source-to-Sink Trace 27/30 ===
+
+[0] line=38 | $obj0
+        ↓
+[1] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[2] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=41 | baseObject.action(data, request, response)
+        ↓
+[4] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=34 | new Cookie("auth", data)
+        ↓
+[6] line=34 | $obj0
+
+=== Source-to-Sink Trace 28/30 ===
+
+[0] line=38 | credentials.getUserName()
+        ↓
+[1] line=38 | credentials.getUserName() + ":"
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== Source-to-Sink Trace 29/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0 = new String(credentials.getPassword())
+        ↓
+[2] line=38 | new String(credentials.getPassword())
+        ↓
+[3] line=38 | $obj0
+        ↓
+[4] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[5] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[6] line=41 | baseObject.action(data, request, response)
+        ↓
+[7] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=34 | new Cookie("auth", data)
+        ↓
+[9] line=34 | $obj0
+
+=== Source-to-Sink Trace 30/30 ===
+
+[0] line=38 | new String(credentials.getPassword())
+        ↓
+[1] line=38 | $obj0
+        ↓
+[2] line=38 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[3] line=38 | data = credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+        ↓
+[4] line=41 | baseObject.action(data, request, response)
+        ↓
+[5] line=28 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=34 | new Cookie("auth", data)
+        ↓
+[7] line=34 | $obj0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=28, col=24 | String data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=28, col=66 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=-1 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=9 | response
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=9 | response.addCookie(new Cookie("auth", data))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=28 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=28 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=28 | new Cookie("auth", data)
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=39 | "auth"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81_bad.java | line=34, col=47 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=35, col=32 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=35, col=46 | new PasswordAuthentication("user", "BP@ssw0rd".toCharArray())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=35, col=73 | "user"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=35, col=81 | this.toCharArray()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=35, col=81 | "BP@ssw0rd"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=9 | data
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=16 | credentials.getUserName() + ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=16 | credentials.getUserName() + ":" + (new String(credentials.getPassword()))
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=16 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=16 | credentials.getUserName()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=44 | ":"
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=51 | $obj0
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=51 | <empty>
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=51 | new String(credentials.getPassword())
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=62 | credentials
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=38, col=62 | credentials.getPassword()
+src/main/java/juliet/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java | line=41, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 20
+Data nodes        : 30
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 30
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 72
+Unique traces: 30
+Flow time    : 0.052 seconds
+
+########## FLOW tc37_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-37-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java:81 (16 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_81_goodB2G.java:32 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.016 seconds
+
+########## FLOW tc37_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-37-cpg-resolved.bin
+Source      : CWE315_Plaintext_Storage_in_Cookie__Servlet_81a.java:59 (1 CFG node(s))
+Sink        : CWE315_Plaintext_Storage_in_Cookie__Servlet_81_goodG2B.java:34 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.022 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe315_jobs.tsv)
+Creating project `joern-trace-bbf71861-0963-4b58-b701-c781c4ae809c` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-6-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-bbf71861-0963-4b58-b701-c781c4ae809c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-5d9a37d3-e8f8-4da7-86ea-caef36d920ae` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-36-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-5d9a37d3-e8f8-4da7-86ea-caef36d920ae/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-52db78cb-2b12-430d-af9c-355193613edc` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-19-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-52db78cb-2b12-430d-af9c-355193613edc/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-08ae8f32-4b8c-4e14-aefc-1fdb296e45c5` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-24-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-08ae8f32-4b8c-4e14-aefc-1fdb296e45c5/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c5c9e6c4-d98e-43ee-b1e0-dae108629dc3` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe315_cpg/cwe315-37-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c5c9e6c4-d98e-43ee-b1e0-dae108629dc3/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
