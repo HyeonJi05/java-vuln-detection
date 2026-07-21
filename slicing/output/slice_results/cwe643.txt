@@ -1,0 +1,3621 @@
+# CWE-643: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe643_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-19ac85cd-44f5-496f-9e57-e3693cdbd9b5/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-1-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_01.java:38 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_01.java:68 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.183 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=68 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[7] line=68 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=55 | data.split("||")
+        ↓
+[4] line=55 | String[] tokens = data.split("||")
+        ↓
+[5] line=60 | String username = tokens[0]
+        ↓
+[6] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=55 | data.split("||")
+        ↓
+[3] line=55 | String[] tokens = data.split("||")
+        ↓
+[4] line=60 | String username = tokens[0]
+        ↓
+[5] line=68 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=38, col=9 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=38, col=16 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=38, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=38, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=52, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=52, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=52, col=13 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=52, col=21 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=55, col=23 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=55, col=32 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=55, col=32 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=55, col=43 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=56, col=13 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=56, col=17 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=56, col=33 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=60, col=20 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=60, col=31 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=61, col=20 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=61, col=31 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=20 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=20 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=28 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=68, col=59 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 22
+Control nodes     : 2
+Control DDG nodes : 9
+AST controls      : 2
+Final slice nodes : 27
+Slice time        : 0.023 seconds
+
+=== Summary ===
+Raw paths    : 32
+Unique traces: 12
+Flow time    : 0.183 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-1-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_01.java:133 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_01.java:156 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.038 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=133 | System.getenv("ADD")
+        ↓
+[1] line=133 | data = System.getenv("ADD")
+        ↓
+[2] line=147 | data != null
+        ↓
+[3] line=150 | data.split("||")
+        ↓
+[4] line=150 | String[] tokens = data.split("||")
+        ↓
+[5] line=156 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=133 | System.getenv("ADD")
+        ↓
+[1] line=133 | data = System.getenv("ADD")
+        ↓
+[2] line=147 | data != null
+        ↓
+[3] line=150 | data.split("||")
+        ↓
+[4] line=150 | String[] tokens = data.split("||")
+        ↓
+[5] line=156 | escapeXml(tokens[0])
+        ↓
+[6] line=156 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=133 | data = System.getenv("ADD")
+        ↓
+[1] line=147 | data != null
+        ↓
+[2] line=150 | data.split("||")
+        ↓
+[3] line=150 | String[] tokens = data.split("||")
+        ↓
+[4] line=156 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=133 | data = System.getenv("ADD")
+        ↓
+[1] line=147 | data != null
+        ↓
+[2] line=150 | data.split("||")
+        ↓
+[3] line=150 | String[] tokens = data.split("||")
+        ↓
+[4] line=156 | escapeXml(tokens[0])
+        ↓
+[5] line=156 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=133, col=9 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=133, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=133, col=16 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=133, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=147, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=147, col=13 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=147, col=21 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=150, col=23 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=150, col=32 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=150, col=32 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=150, col=43 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=151, col=13 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=151, col=17 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=151, col=33 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=156, col=20 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=156, col=31 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=156, col=31 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=156, col=59 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=156, col=59 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 15
+Control nodes     : 2
+Control DDG nodes : 9
+AST controls      : 2
+Final slice nodes : 20
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.038 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-1-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_01.java:88 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_01.java:118 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=118 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=88 | data = "foo"
+        ↓
+[1] line=102 | data != null
+        ↓
+[2] line=105 | data.split("||")
+        ↓
+[3] line=105 | String[] tokens = data.split("||")
+        ↓
+[4] line=110 | String username = tokens[0]
+        ↓
+[5] line=118 | "//users/user[name/text()='" + username
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=88, col=9 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=88, col=16 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=102, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=102, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=102, col=13 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=102, col=21 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=105, col=23 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=105, col=32 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=105, col=32 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=105, col=43 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=106, col=13 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=106, col=17 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=106, col=33 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=110, col=20 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=110, col=31 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=111, col=20 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=111, col=31 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=20 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=28 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_01.java | line=118, col=28 | "//users/user[name/text()='" + username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 18
+Control nodes     : 2
+Control DDG nodes : 7
+AST controls      : 2
+Final slice nodes : 23
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.034 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-373cbfbc-9604-4625-b9b9-6f44243ab811/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_02.java:39 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_02.java:77 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[7] line=77 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=77 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=35, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=35, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=39, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=39, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=39, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=45, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=45, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=48, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=48, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=61, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=61, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=61, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=61, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=64, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=64, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=64, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=64, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=65, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=65, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=65, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=69, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=69, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=70, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=70, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=77, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 17
+Data nodes        : 23
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 32
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 32
+Unique traces: 12
+Flow time    : 0.028 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_02.java:201 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_02.java:239 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=201 | System.getenv("ADD")
+        ↓
+[1] line=201 | data = System.getenv("ADD")
+        ↓
+[2] line=230 | data != null
+        ↓
+[3] line=233 | data.split("||")
+        ↓
+[4] line=233 | String[] tokens = data.split("||")
+        ↓
+[5] line=239 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=201 | System.getenv("ADD")
+        ↓
+[1] line=201 | data = System.getenv("ADD")
+        ↓
+[2] line=230 | data != null
+        ↓
+[3] line=233 | data.split("||")
+        ↓
+[4] line=233 | String[] tokens = data.split("||")
+        ↓
+[5] line=239 | escapeXml(tokens[0])
+        ↓
+[6] line=239 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=201 | data = System.getenv("ADD")
+        ↓
+[1] line=230 | data != null
+        ↓
+[2] line=233 | data.split("||")
+        ↓
+[3] line=233 | String[] tokens = data.split("||")
+        ↓
+[4] line=239 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=201 | data = System.getenv("ADD")
+        ↓
+[1] line=230 | data != null
+        ↓
+[2] line=233 | data.split("||")
+        ↓
+[3] line=233 | String[] tokens = data.split("||")
+        ↓
+[4] line=239 | escapeXml(tokens[0])
+        ↓
+[5] line=239 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=197, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=197, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=201, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=201, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=201, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=201, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=207, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=207, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=210, col=9 | if (false)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=210, col=13 | false
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=230, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=230, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=230, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=230, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=233, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=233, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=233, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=233, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=234, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=234, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=234, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=239, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=239, col=24 | String username = StringEscapeUtils.escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=239, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=239, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=239, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 17
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 26
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.025 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_02.java:261 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_02.java:292 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=261 | System.getenv("ADD")
+        ↓
+[1] line=261 | data = System.getenv("ADD")
+        ↓
+[2] line=283 | data != null
+        ↓
+[3] line=286 | data.split("||")
+        ↓
+[4] line=286 | String[] tokens = data.split("||")
+        ↓
+[5] line=292 | escapeXml(tokens[0])
+        ↓
+[6] line=292 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=261 | System.getenv("ADD")
+        ↓
+[1] line=261 | data = System.getenv("ADD")
+        ↓
+[2] line=283 | data != null
+        ↓
+[3] line=286 | data.split("||")
+        ↓
+[4] line=286 | String[] tokens = data.split("||")
+        ↓
+[5] line=292 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=261 | data = System.getenv("ADD")
+        ↓
+[1] line=283 | data != null
+        ↓
+[2] line=286 | data.split("||")
+        ↓
+[3] line=286 | String[] tokens = data.split("||")
+        ↓
+[4] line=292 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=261 | data = System.getenv("ADD")
+        ↓
+[1] line=283 | data != null
+        ↓
+[2] line=286 | data.split("||")
+        ↓
+[3] line=286 | String[] tokens = data.split("||")
+        ↓
+[4] line=292 | escapeXml(tokens[0])
+        ↓
+[5] line=292 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=257, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=257, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=261, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=261, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=261, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=261, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=267, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=267, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=270, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=270, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=283, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=283, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=283, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=283, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=286, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=286, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=286, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=286, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=287, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=287, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=287, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=292, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=292, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=292, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=292, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 16
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 25
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.024 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_02.java:99 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_02.java:132 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=132 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=89, col=9 | if (false)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=89, col=13 | false
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=93, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=99, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=103, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=103, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=116, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=116, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=116, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=116, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=119, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=119, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=119, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=119, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=120, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=120, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=120, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=124, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=124, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=125, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=125, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 20
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 29
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.018 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_02.java:147 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_02.java:185 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=185 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=144, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=144, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=147, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=153, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=156, col=9 | if (true)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=156, col=13 | true
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=169, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=169, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=169, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=169, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=172, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=172, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=172, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=172, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=173, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=173, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=173, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=177, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=177, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=178, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=178, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_02.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 20
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 29
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.018 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b628afe0-fa8e-41e9-af18-d909ed7e3e2d/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_03.java:39 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_03.java:77 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[7] line=77 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=39 | System.getenv("ADD")
+        ↓
+[1] line=39 | data = System.getenv("ADD")
+        ↓
+[2] line=61 | data != null
+        ↓
+[3] line=64 | data.split("||")
+        ↓
+[4] line=64 | String[] tokens = data.split("||")
+        ↓
+[5] line=69 | String username = tokens[0]
+        ↓
+[6] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=77 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=39 | data = System.getenv("ADD")
+        ↓
+[1] line=61 | data != null
+        ↓
+[2] line=64 | data.split("||")
+        ↓
+[3] line=64 | String[] tokens = data.split("||")
+        ↓
+[4] line=69 | String username = tokens[0]
+        ↓
+[5] line=77 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=35, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=35, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=35, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=35, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=39, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=39, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=39, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=45, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=45, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=48, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=48, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=48, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=48, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=61, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=61, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=61, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=61, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=64, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=64, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=64, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=64, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=65, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=65, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=65, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=69, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=69, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=70, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=70, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=77, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 24
+Control nodes     : 4
+Control DDG nodes : 17
+AST controls      : 4
+Final slice nodes : 37
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 32
+Unique traces: 12
+Flow time    : 0.024 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_03.java:201 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_03.java:239 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=201 | System.getenv("ADD")
+        ↓
+[1] line=201 | data = System.getenv("ADD")
+        ↓
+[2] line=230 | data != null
+        ↓
+[3] line=233 | data.split("||")
+        ↓
+[4] line=233 | String[] tokens = data.split("||")
+        ↓
+[5] line=239 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=201 | System.getenv("ADD")
+        ↓
+[1] line=201 | data = System.getenv("ADD")
+        ↓
+[2] line=230 | data != null
+        ↓
+[3] line=233 | data.split("||")
+        ↓
+[4] line=233 | String[] tokens = data.split("||")
+        ↓
+[5] line=239 | escapeXml(tokens[0])
+        ↓
+[6] line=239 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=201 | data = System.getenv("ADD")
+        ↓
+[1] line=230 | data != null
+        ↓
+[2] line=233 | data.split("||")
+        ↓
+[3] line=233 | String[] tokens = data.split("||")
+        ↓
+[4] line=239 | escapeXml(tokens[0])
+        ↓
+[5] line=239 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=201 | data = System.getenv("ADD")
+        ↓
+[1] line=230 | data != null
+        ↓
+[2] line=233 | data.split("||")
+        ↓
+[3] line=233 | String[] tokens = data.split("||")
+        ↓
+[4] line=239 | escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=197, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=197, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=197, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=197, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=201, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=201, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=201, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=201, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=207, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=207, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=210, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=210, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=210, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=210, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=230, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=230, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=230, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=230, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=233, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=233, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=233, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=233, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=234, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=234, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=234, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=239, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=239, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=239, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=239, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 16
+Control nodes     : 4
+Control DDG nodes : 17
+AST controls      : 4
+Final slice nodes : 29
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.018 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_03.java:261 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_03.java:292 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=261 | System.getenv("ADD")
+        ↓
+[1] line=261 | data = System.getenv("ADD")
+        ↓
+[2] line=283 | data != null
+        ↓
+[3] line=286 | data.split("||")
+        ↓
+[4] line=286 | String[] tokens = data.split("||")
+        ↓
+[5] line=292 | escapeXml(tokens[0])
+        ↓
+[6] line=292 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=261 | System.getenv("ADD")
+        ↓
+[1] line=261 | data = System.getenv("ADD")
+        ↓
+[2] line=283 | data != null
+        ↓
+[3] line=286 | data.split("||")
+        ↓
+[4] line=286 | String[] tokens = data.split("||")
+        ↓
+[5] line=292 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=261 | data = System.getenv("ADD")
+        ↓
+[1] line=283 | data != null
+        ↓
+[2] line=286 | data.split("||")
+        ↓
+[3] line=286 | String[] tokens = data.split("||")
+        ↓
+[4] line=292 | escapeXml(tokens[0])
+        ↓
+[5] line=292 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=261 | data = System.getenv("ADD")
+        ↓
+[1] line=283 | data != null
+        ↓
+[2] line=286 | data.split("||")
+        ↓
+[3] line=286 | String[] tokens = data.split("||")
+        ↓
+[4] line=292 | escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=257, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=257, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=257, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=257, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=261, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=261, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=261, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=261, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=267, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=267, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=270, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=270, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=270, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=270, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=283, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=283, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=283, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=283, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=286, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=286, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=286, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=286, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=287, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=287, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=287, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=292, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=292, col=24 | String username = StringEscapeUtils.escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=292, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=292, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=292, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 17
+Control nodes     : 4
+Control DDG nodes : 17
+AST controls      : 4
+Final slice nodes : 30
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.018 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_03.java:99 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_03.java:132 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=132 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=99 | data = "foo"
+        ↓
+[1] line=116 | data != null
+        ↓
+[2] line=119 | data.split("||")
+        ↓
+[3] line=119 | String[] tokens = data.split("||")
+        ↓
+[4] line=124 | String username = tokens[0]
+        ↓
+[5] line=132 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=89, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=89, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=89, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=89, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=93, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=99, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=103, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=103, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=103, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=103, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=116, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=116, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=116, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=116, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=119, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=119, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=119, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=119, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=120, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=120, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=120, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=124, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=124, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=125, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=125, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=132, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 21
+Control nodes     : 4
+Control DDG nodes : 15
+AST controls      : 4
+Final slice nodes : 34
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.014 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_03.java:147 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_03.java:185 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=185 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=147 | data = "foo"
+        ↓
+[1] line=169 | data != null
+        ↓
+[2] line=172 | data.split("||")
+        ↓
+[3] line=172 | String[] tokens = data.split("||")
+        ↓
+[4] line=177 | String username = tokens[0]
+        ↓
+[5] line=185 | "//users/user[name/text()='" + username
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=144, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=144, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=144, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=144, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=147, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=153, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=156, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=156, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=156, col=13 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=156, col=16 | 5
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=169, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=169, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=169, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=169, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=172, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=172, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=172, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=172, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=173, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=173, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=173, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=177, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=177, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=178, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=178, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_03.java | line=185, col=32 | "//users/user[name/text()='" + username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 21
+Control nodes     : 4
+Control DDG nodes : 15
+AST controls      : 4
+Final slice nodes : 34
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.011 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ec504ce4-d2f8-4991-85bb-7891b949694c/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_04.java:46 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_04.java:84 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=84 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[7] line=84 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=42, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=42, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=46, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=46, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=46, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=46, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=52, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=52, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=55, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=55, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=68, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=68, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=68, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=68, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=71, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=71, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=71, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=71, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=72, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=72, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=72, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=76, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=76, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=77, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=77, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=84, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 17
+Data nodes        : 23
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 32
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 32
+Unique traces: 12
+Flow time    : 0.013 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_04.java:208 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_04.java:246 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=208 | System.getenv("ADD")
+        ↓
+[1] line=208 | data = System.getenv("ADD")
+        ↓
+[2] line=237 | data != null
+        ↓
+[3] line=240 | data.split("||")
+        ↓
+[4] line=240 | String[] tokens = data.split("||")
+        ↓
+[5] line=246 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=208 | System.getenv("ADD")
+        ↓
+[1] line=208 | data = System.getenv("ADD")
+        ↓
+[2] line=237 | data != null
+        ↓
+[3] line=240 | data.split("||")
+        ↓
+[4] line=240 | String[] tokens = data.split("||")
+        ↓
+[5] line=246 | escapeXml(tokens[0])
+        ↓
+[6] line=246 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=208 | data = System.getenv("ADD")
+        ↓
+[1] line=237 | data != null
+        ↓
+[2] line=240 | data.split("||")
+        ↓
+[3] line=240 | String[] tokens = data.split("||")
+        ↓
+[4] line=246 | escapeXml(tokens[0])
+        ↓
+[5] line=246 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=208 | data = System.getenv("ADD")
+        ↓
+[1] line=237 | data != null
+        ↓
+[2] line=240 | data.split("||")
+        ↓
+[3] line=240 | String[] tokens = data.split("||")
+        ↓
+[4] line=246 | escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=204, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=204, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=208, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=208, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=208, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=208, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=214, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=214, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=217, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=217, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=237, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=237, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=237, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=237, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=240, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=240, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=240, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=240, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=241, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=241, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=241, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=24 | String username = StringEscapeUtils.escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=63 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=246, col=63 | tokens
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 18
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 27
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.012 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_04.java:268 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_04.java:299 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=268 | System.getenv("ADD")
+        ↓
+[1] line=268 | data = System.getenv("ADD")
+        ↓
+[2] line=290 | data != null
+        ↓
+[3] line=293 | data.split("||")
+        ↓
+[4] line=293 | String[] tokens = data.split("||")
+        ↓
+[5] line=299 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=268 | data = System.getenv("ADD")
+        ↓
+[1] line=290 | data != null
+        ↓
+[2] line=293 | data.split("||")
+        ↓
+[3] line=293 | String[] tokens = data.split("||")
+        ↓
+[4] line=299 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=268 | System.getenv("ADD")
+        ↓
+[1] line=268 | data = System.getenv("ADD")
+        ↓
+[2] line=290 | data != null
+        ↓
+[3] line=293 | data.split("||")
+        ↓
+[4] line=293 | String[] tokens = data.split("||")
+        ↓
+[5] line=299 | escapeXml(tokens[0])
+        ↓
+[6] line=299 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=268 | data = System.getenv("ADD")
+        ↓
+[1] line=290 | data != null
+        ↓
+[2] line=293 | data.split("||")
+        ↓
+[3] line=293 | String[] tokens = data.split("||")
+        ↓
+[4] line=299 | escapeXml(tokens[0])
+        ↓
+[5] line=299 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=264, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=264, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=268, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=268, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=268, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=268, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=274, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=274, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=277, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=277, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=290, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=290, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=290, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=290, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=293, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=293, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=293, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=293, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=294, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=294, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=294, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=299, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=299, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=299, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=299, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 16
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 25
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.012 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_04.java:106 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_04.java:139 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=139 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=96, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=96, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=100, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=106, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=110, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=110, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=123, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=123, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=123, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=123, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=126, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=126, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=126, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=126, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=127, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=127, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=127, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=131, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=131, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=132, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=132, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=139, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 21
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 30
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.011 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_04.java:154 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_04.java:192 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=192 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=151, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=151, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=154, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=154, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=160, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=160, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=163, col=9 | if (CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=163, col=13 | CWE643_Xpath_Injection__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=176, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=176, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=176, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=176, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=179, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=179, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=179, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=179, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=180, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=180, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=180, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=184, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=184, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=185, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=185, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_04.java | line=192, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 21
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 30
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.014 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-0719eb1e-1d33-47e6-b366-cb957b5df827/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_05.java:46 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_05.java:84 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[7] line=84 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 2/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 3/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 4/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 5/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 6/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 7/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 8/12 ===
+
+[0] line=46 | System.getenv("ADD")
+        ↓
+[1] line=46 | data = System.getenv("ADD")
+        ↓
+[2] line=68 | data != null
+        ↓
+[3] line=71 | data.split("||")
+        ↓
+[4] line=71 | String[] tokens = data.split("||")
+        ↓
+[5] line=76 | String username = tokens[0]
+        ↓
+[6] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 9/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 10/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 11/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=84 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 12/12 ===
+
+[0] line=46 | data = System.getenv("ADD")
+        ↓
+[1] line=68 | data != null
+        ↓
+[2] line=71 | data.split("||")
+        ↓
+[3] line=71 | String[] tokens = data.split("||")
+        ↓
+[4] line=76 | String username = tokens[0]
+        ↓
+[5] line=84 | "//users/user[name/text()='" + username
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=42, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=42, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=46, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=46, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=46, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=46, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=52, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=52, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=55, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=55, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=68, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=68, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=68, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=68, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=71, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=71, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=71, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=71, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=72, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=72, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=72, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=76, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=76, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=77, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=77, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=84, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 17
+Data nodes        : 23
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 32
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 32
+Unique traces: 12
+Flow time    : 0.014 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_05.java:209 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_05.java:247 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=209 | data = System.getenv("ADD")
+        ↓
+[1] line=238 | data != null
+        ↓
+[2] line=241 | data.split("||")
+        ↓
+[3] line=241 | String[] tokens = data.split("||")
+        ↓
+[4] line=247 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=209 | System.getenv("ADD")
+        ↓
+[1] line=209 | data = System.getenv("ADD")
+        ↓
+[2] line=238 | data != null
+        ↓
+[3] line=241 | data.split("||")
+        ↓
+[4] line=241 | String[] tokens = data.split("||")
+        ↓
+[5] line=247 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=209 | System.getenv("ADD")
+        ↓
+[1] line=209 | data = System.getenv("ADD")
+        ↓
+[2] line=238 | data != null
+        ↓
+[3] line=241 | data.split("||")
+        ↓
+[4] line=241 | String[] tokens = data.split("||")
+        ↓
+[5] line=247 | escapeXml(tokens[0])
+        ↓
+[6] line=247 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=209 | data = System.getenv("ADD")
+        ↓
+[1] line=238 | data != null
+        ↓
+[2] line=241 | data.split("||")
+        ↓
+[3] line=241 | String[] tokens = data.split("||")
+        ↓
+[4] line=247 | escapeXml(tokens[0])
+        ↓
+[5] line=247 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=205, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=205, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=209, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=209, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=209, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=209, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=215, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=215, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=218, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=218, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=238, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=238, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=238, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=238, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=241, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=241, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=241, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=241, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=242, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=242, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=242, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=24 | String username = StringEscapeUtils.escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=63 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=247, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 18
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 27
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_05.java:269 (5 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_05.java:300 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=269 | System.getenv("ADD")
+        ↓
+[1] line=269 | data = System.getenv("ADD")
+        ↓
+[2] line=291 | data != null
+        ↓
+[3] line=294 | data.split("||")
+        ↓
+[4] line=294 | String[] tokens = data.split("||")
+        ↓
+[5] line=300 | escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=269 | System.getenv("ADD")
+        ↓
+[1] line=269 | data = System.getenv("ADD")
+        ↓
+[2] line=291 | data != null
+        ↓
+[3] line=294 | data.split("||")
+        ↓
+[4] line=294 | String[] tokens = data.split("||")
+        ↓
+[5] line=300 | escapeXml(tokens[0])
+        ↓
+[6] line=300 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=269 | data = System.getenv("ADD")
+        ↓
+[1] line=291 | data != null
+        ↓
+[2] line=294 | data.split("||")
+        ↓
+[3] line=294 | String[] tokens = data.split("||")
+        ↓
+[4] line=300 | escapeXml(tokens[0])
+        ↓
+[5] line=300 | String username = StringEscapeUtils.escapeXml(tokens[0])
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=269 | data = System.getenv("ADD")
+        ↓
+[1] line=291 | data != null
+        ↓
+[2] line=294 | data.split("||")
+        ↓
+[3] line=294 | String[] tokens = data.split("||")
+        ↓
+[4] line=300 | escapeXml(tokens[0])
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=265, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=265, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=269, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=269, col=20 | System
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=269, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=269, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=275, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=275, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=278, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=278, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=291, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=291, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=291, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=291, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=294, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=294, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=294, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=294, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=295, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=295, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=295, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=300, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=300, col=24 | String username = StringEscapeUtils.escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=300, col=35 | StringEscapeUtils
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=300, col=35 | escapeXml(tokens[0])
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=300, col=63 | tokens[0]
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 17
+Control nodes     : 4
+Control DDG nodes : 13
+AST controls      : 4
+Final slice nodes : 26
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 4
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_05.java:106 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_05.java:139 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=139 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=123 | data != null
+        ↓
+[2] line=126 | data.split("||")
+        ↓
+[3] line=126 | String[] tokens = data.split("||")
+        ↓
+[4] line=131 | String username = tokens[0]
+        ↓
+[5] line=139 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=96, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=96, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=100, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=106, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=110, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=110, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=123, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=123, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=123, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=123, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=126, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=126, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=126, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=126, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=127, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=127, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=127, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=131, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=131, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=132, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=132, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=139, col=63 | username
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 20
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 29
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin
+Source      : CWE643_Xpath_Injection__Environment_05.java:154 (3 CFG node(s))
+Sink        : CWE643_Xpath_Injection__Environment_05.java:192 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+        ↓
+[6] line=192 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=176 | data != null
+        ↓
+[2] line=179 | data.split("||")
+        ↓
+[3] line=179 | String[] tokens = data.split("||")
+        ↓
+[4] line=184 | String username = tokens[0]
+        ↓
+[5] line=192 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=151, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=151, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=154, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=154, col=20 | "foo"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=160, col=13 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=160, col=20 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=163, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=163, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=176, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=176, col=17 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=176, col=17 | data != null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=176, col=25 | null
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=179, col=27 | tokens
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=179, col=36 | data
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=179, col=36 | data.split("||")
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=179, col=47 | "||"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=180, col=17 | if (tokens.length < 2)
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=180, col=21 | tokens.length < 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=180, col=37 | 2
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=184, col=24 | username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=184, col=35 | tokens[0]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=185, col=24 | password
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=185, col=35 | tokens[1]
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=24 | query
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=24 | String query = "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=32 | "//users/user[name/text()='" + username
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']" + "/secret/text()"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password + "']"
+src/main/java/juliet/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__Environment_05.java | line=192, col=32 | "//users/user[name/text()='" + username + "' and pass/text()='" + password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 21
+Control nodes     : 4
+Control DDG nodes : 11
+AST controls      : 4
+Final slice nodes : 30
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.015 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe643_jobs.tsv)
+Creating project `joern-trace-19ac85cd-44f5-496f-9e57-e3693cdbd9b5` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-19ac85cd-44f5-496f-9e57-e3693cdbd9b5/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-373cbfbc-9604-4625-b9b9-6f44243ab811` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-373cbfbc-9604-4625-b9b9-6f44243ab811/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b628afe0-fa8e-41e9-af18-d909ed7e3e2d` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b628afe0-fa8e-41e9-af18-d909ed7e3e2d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ec504ce4-d2f8-4991-85bb-7891b949694c` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ec504ce4-d2f8-4991-85bb-7891b949694c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-0719eb1e-1d33-47e6-b366-cb957b5df827` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe643_cpg/cwe643-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-0719eb1e-1d33-47e6-b366-cb957b5df827/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

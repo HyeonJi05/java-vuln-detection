@@ -1,0 +1,12 @@
+# run_slicing.py가 자동 준비 (커밋 안 함)
+deps/
+workspace/
+
+# output 안에서 재생성 가능한 것만 제외 (slice_results는 커밋)
+output/CPG/
+output/jobs/
+output/pairs/
+output/filtered_source_sink_dataset/
+
+# setting.sh가 중복 clone할 수 있는 juliet (혹시 생기면)
+juliet-java-test-suite/

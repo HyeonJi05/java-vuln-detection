@@ -1,0 +1,1120 @@
+# CWE-319: 5 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe319_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-112-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ae6f52f6-8dc0-49d4-83bc-11a061e76f3b/cpg.bin.tmp)
+
+########## FLOW tc112_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-112-cpg-resolved.bin
+Source      : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java:57 (8 CFG node(s))
+Sink        : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java:114 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.212 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=57 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=60 | readerBuffered.readLine()
+        ↓
+[4] line=60 | password = readerBuffered.readLine()
+        ↓
+[5] line=114 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=114 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=57 | socket.getInputStream()
+        ↓
+[1] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=60 | readerBuffered.readLine()
+        ↓
+[4] line=60 | password = readerBuffered.readLine()
+        ↓
+[5] line=114 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=114 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | socket.getInputStream()
+        ↓
+[2] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=60 | readerBuffered.readLine()
+        ↓
+[5] line=60 | password = readerBuffered.readLine()
+        ↓
+[6] line=114 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=60 | readerBuffered.readLine()
+        ↓
+[3] line=60 | password = readerBuffered.readLine()
+        ↓
+[4] line=114 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=60 | readerBuffered.readLine()
+        ↓
+[5] line=60 | password = readerBuffered.readLine()
+        ↓
+[6] line=114 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=114 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | socket.getInputStream()
+        ↓
+[2] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=60 | readerBuffered.readLine()
+        ↓
+[5] line=60 | password = readerBuffered.readLine()
+        ↓
+[6] line=114 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=114 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=60 | readerBuffered.readLine()
+        ↓
+[3] line=60 | password = readerBuffered.readLine()
+        ↓
+[4] line=114 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[5] line=114 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=57 | socket.getInputStream()
+        ↓
+[1] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=60 | readerBuffered.readLine()
+        ↓
+[4] line=60 | password = readerBuffered.readLine()
+        ↓
+[5] line=114 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=60 | readerBuffered.readLine()
+        ↓
+[5] line=60 | password = readerBuffered.readLine()
+        ↓
+[6] line=114 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=57 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=57 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=58 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=60 | readerBuffered.readLine()
+        ↓
+[4] line=60 | password = readerBuffered.readLine()
+        ↓
+[5] line=114 | DriverManager.getConnection("data-url", "root", password)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=49, col=13 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=52, col=17 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=52, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=52, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=52, col=57 | 39544
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=57, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=57, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=57, col=59 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=57, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=57, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=58, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=58, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=58, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=60, col=17 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=60, col=28 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=60, col=28 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=111, col=9 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=13 | connection
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=13 | connection = DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=26 | DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=26 | DriverManager
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=54 | "data-url"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=66 | "root"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_01.java | line=114, col=74 | password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 25
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 2
+Final slice nodes : 27
+Slice time        : 0.033 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.212 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-113-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cd74fd56-c587-43bb-96c4-7ddc7b6f2326/cpg.bin.tmp)
+
+########## FLOW tc113_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-113-cpg-resolved.bin
+Source      : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java:55 (8 CFG node(s))
+Sink        : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java:120 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.049 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | socket.getInputStream()
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=57 | readerBuffered.readLine()
+        ↓
+[3] line=57 | password = readerBuffered.readLine()
+        ↓
+[4] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[5] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=55 | socket.getInputStream()
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=55 | socket.getInputStream()
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | socket.getInputStream()
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=57 | readerBuffered.readLine()
+        ↓
+[3] line=57 | password = readerBuffered.readLine()
+        ↓
+[4] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=41, col=9 | if (true)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=41, col=13 | true
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=49, col=17 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=52, col=21 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=52, col=30 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=52, col=41 | "host.example.org"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=52, col=61 | 39544
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=55, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=55, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=55, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=55, col=63 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=55, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=56, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=56, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=56, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=57, col=21 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=57, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=57, col=32 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=109, col=13 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=109, col=24 | null
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=112, col=9 | if (true)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=112, col=13 | true
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=117, col=13 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=17 | connection
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=17 | connection = DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=30 | DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=70 | "root"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_02.java | line=120, col=78 | password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 27
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 4
+Final slice nodes : 33
+Slice time        : 0.014 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.049 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-114-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7cdd83db-261e-4ee9-a5ea-3593d7e26173/cpg.bin.tmp)
+
+########## FLOW tc114_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-114-cpg-resolved.bin
+Source      : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java:55 (8 CFG node(s))
+Sink        : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java:120 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.033 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | socket.getInputStream()
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | socket.getInputStream()
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=55 | socket.getInputStream()
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=57 | readerBuffered.readLine()
+        ↓
+[5] line=57 | password = readerBuffered.readLine()
+        ↓
+[6] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=55 | socket.getInputStream()
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=57 | readerBuffered.readLine()
+        ↓
+[3] line=57 | password = readerBuffered.readLine()
+        ↓
+[4] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[5] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=57 | readerBuffered.readLine()
+        ↓
+[3] line=57 | password = readerBuffered.readLine()
+        ↓
+[4] line=120 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=55 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=55 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=56 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=57 | readerBuffered.readLine()
+        ↓
+[4] line=57 | password = readerBuffered.readLine()
+        ↓
+[5] line=120 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=120 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=41, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=41, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=41, col=13 | 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=41, col=16 | 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=49, col=17 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=52, col=21 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=52, col=30 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=52, col=41 | "host.example.org"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=52, col=61 | 39544
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=55, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=55, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=55, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=55, col=63 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=55, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=56, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=56, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=56, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=57, col=21 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=57, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=57, col=32 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=109, col=13 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=109, col=24 | null
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=112, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=112, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=112, col=13 | 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=112, col=16 | 5
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=117, col=13 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=17 | connection
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=17 | connection = DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=30 | DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=70 | "root"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_03.java | line=120, col=78 | password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 27
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 4
+Final slice nodes : 37
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.033 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-115-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-71baf27a-03ca-4d3b-8148-d57e6b67d43e/cpg.bin.tmp)
+
+########## FLOW tc115_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-115-cpg-resolved.bin
+Source      : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java:62 (8 CFG node(s))
+Sink        : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java:127 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=62 | socket.getInputStream()
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | socket.getInputStream()
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=64 | readerBuffered.readLine()
+        ↓
+[3] line=64 | password = readerBuffered.readLine()
+        ↓
+[4] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[5] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=62 | socket.getInputStream()
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=64 | readerBuffered.readLine()
+        ↓
+[3] line=64 | password = readerBuffered.readLine()
+        ↓
+[4] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | socket.getInputStream()
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=48, col=9 | if (CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=48, col=13 | CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=56, col=17 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=59, col=21 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=59, col=30 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=59, col=41 | "host.example.org"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=59, col=61 | 39544
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=62, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=62, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=62, col=63 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=62, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=62, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=63, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=63, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=63, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=64, col=21 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=64, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=64, col=32 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=116, col=13 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=116, col=24 | null
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=119, col=9 | if (CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=119, col=13 | CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=124, col=13 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=17 | connection
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=17 | connection = DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=30 | DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=70 | "root"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_04.java | line=127, col=78 | password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 27
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 4
+Final slice nodes : 33
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.039 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-116-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-860da599-64a4-49ce-b337-82a7a1d1220a/cpg.bin.tmp)
+
+########## FLOW tc116_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-116-cpg-resolved.bin
+Source      : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java:62 (8 CFG node(s))
+Sink        : CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java:127 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=62 | socket.getInputStream()
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=64 | readerBuffered.readLine()
+        ↓
+[3] line=64 | password = readerBuffered.readLine()
+        ↓
+[4] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=62 | socket.getInputStream()
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[6] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | socket.getInputStream()
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[7] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[2] line=64 | readerBuffered.readLine()
+        ↓
+[3] line=64 | password = readerBuffered.readLine()
+        ↓
+[4] line=127 | DriverManager.getConnection("data-url", "root", password)
+        ↓
+[5] line=127 | connection = DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | socket.getInputStream()
+        ↓
+[2] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[3] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[4] line=64 | readerBuffered.readLine()
+        ↓
+[5] line=64 | password = readerBuffered.readLine()
+        ↓
+[6] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=62 | readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[1] line=62 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+        ↓
+[2] line=63 | new BufferedReader(readerInputStream)
+        ↓
+[3] line=64 | readerBuffered.readLine()
+        ↓
+[4] line=64 | password = readerBuffered.readLine()
+        ↓
+[5] line=127 | DriverManager.getConnection("data-url", "root", password)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=48, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=48, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=56, col=17 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=59, col=21 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=59, col=30 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=59, col=41 | "host.example.org"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=59, col=61 | 39544
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=62, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=62, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=62, col=63 | socket
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=62, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=62, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=63, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=63, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=63, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=64, col=21 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=64, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=64, col=32 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=116, col=13 | password
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=116, col=24 | null
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=119, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=119, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=124, col=13 | try
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=17 | connection
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=17 | connection = DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=30 | DriverManager.getConnection("data-url", "root", password)
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=70 | "root"
+src/main/java/juliet/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_driverManager_05.java | line=127, col=78 | password
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 27
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 4
+Final slice nodes : 33
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.024 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe319_jobs.tsv)
+Creating project `joern-trace-ae6f52f6-8dc0-49d4-83bc-11a061e76f3b` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-112-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ae6f52f6-8dc0-49d4-83bc-11a061e76f3b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-cd74fd56-c587-43bb-96c4-7ddc7b6f2326` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-113-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cd74fd56-c587-43bb-96c4-7ddc7b6f2326/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-7cdd83db-261e-4ee9-a5ea-3593d7e26173` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-114-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7cdd83db-261e-4ee9-a5ea-3593d7e26173/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-71baf27a-03ca-4d3b-8148-d57e6b67d43e` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-115-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-71baf27a-03ca-4d3b-8148-d57e6b67d43e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-860da599-64a4-49ce-b337-82a7a1d1220a` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe319_cpg/cwe319-116-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-860da599-64a4-49ce-b337-82a7a1d1220a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

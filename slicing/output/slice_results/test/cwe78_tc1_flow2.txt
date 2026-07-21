@@ -1,0 +1,101 @@
+# CWE-78 testcase 1 flow 2
+# source=CWE78_OS_Command_Injection__Environment_01.java:62  sink=CWE78_OS_Command_Injection__Environment_01.java:77
+
+=== Joern PDG Slice ===
+CPG path    : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe78_cpg/cwe78-1-cpg-resolved.bin
+Source      : CWE78_OS_Command_Injection__Environment_01.java:62
+Sink        : CWE78_OS_Command_Injection__Environment_01.java:77
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice.sc
+
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-da1debf4-5273-4baf-b6e6-7efa0e079f63/cpg.bin.tmp)
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe78_cpg/cwe78-1-cpg-resolved.bin
+Source      : CWE78_OS_Command_Injection__Environment_01.java:62 (3 CFG node(s))
+Sink        : CWE78_OS_Command_Injection__Environment_01.java:77 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.145 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=62 | data = "foo"
+        ↓
+[1] line=77 | osCommand + data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=62 | data = "foo"
+        ↓
+[1] line=77 | osCommand + data
+        ↓
+[2] line=77 | Runtime.getRuntime()
+        ↓
+[3] line=77 | Runtime.getRuntime().exec(osCommand + data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=62 | data = "foo"
+        ↓
+[1] line=77 | osCommand + data
+        ↓
+[2] line=77 | Runtime.getRuntime()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=62 | data = "foo"
+        ↓
+[1] line=77 | osCommand + data
+        ↓
+[2] line=77 | Runtime.getRuntime()
+        ↓
+[3] line=77 | Runtime.getRuntime().exec(osCommand + data)
+        ↓
+[4] line=77 | Process process = Runtime.getRuntime().exec(osCommand + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=62, col=9 | data
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=62, col=16 | "foo"
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=9 | if (System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win") >= 0
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=12 | System.getProperty("os.name").toLowerCase().indexOf("win")
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=12 | System.getProperty("os.name").toLowerCase()
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=12 | System.getProperty("os.name")
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=12 | System
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=31 | "os.name"
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=64 | "win"
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=65, col=74 | 0
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=68, col=13 | osCommand
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=68, col=25 | "c:\\WINDOWS\\SYSTEM32\\cmd.exe /c dir "
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=73, col=13 | osCommand
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=73, col=25 | "/bin/ls "
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=77, col=17 | process
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=77, col=27 | Runtime.getRuntime()
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=77, col=27 | Runtime.getRuntime().exec(osCommand + data)
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=77, col=27 | Runtime
+src/main/java/juliet/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__Environment_01.java | line=77, col=53 | osCommand + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 11
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 1
+Final slice nodes : 20
+Slice time        : 0.029 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.145 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice.sc with params=HashMap(sinkFile -> CWE78_OS_Command_Injection__Environment_01.java, sourceFile -> CWE78_OS_Command_Injection__Environment_01.java, sinkLine -> 77, cpgPath -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe78_cpg/cwe78-1-cpg-resolved.bin, sourceLine -> 62)
+Creating project `joern-trace-da1debf4-5273-4baf-b6e6-7efa0e079f63` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe78_cpg/cwe78-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-da1debf4-5273-4baf-b6e6-7efa0e079f63/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

@@ -1,0 +1,878 @@
+# CWE-190: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe190_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d247f23a-5a2e-4fe5-b056-cdd7667e81fc/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-1-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:39 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:90 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.134 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.134 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-1-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:126 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:177 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.023 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-1-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:108 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_01.java:111 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.041 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=108 | data = 2
+        ↓
+[1] line=111 | (byte) (data + 1)
+        ↓
+[2] line=111 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=108 | data = 2
+        ↓
+[1] line=111 | (byte) (data + 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=108 | data = 2
+        ↓
+[1] line=111 | data + 1
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=108, col=9 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=108, col=16 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=111, col=14 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=111, col=14 | byte result = (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=111, col=23 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_01.java | line=111, col=30 | data + 1
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 6
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 6
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.041 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-79eb4814-e067-4d2d-ac5c-431da5331fdd/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:39 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:99 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.023 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:163 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:229 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.016 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:251 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:311 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.019 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:118 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:125 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | data + 1
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | (byte) (data + 1)
+        ↓
+[2] line=125 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=108, col=9 | if (false)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=108, col=13 | false
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=112, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=112, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=118, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=122, col=9 | if (true)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=122, col=13 | true
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=125, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=125, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=125, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.025 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:137 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_02.java:149 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | data + 1
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | (byte) (data + 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | (byte) (data + 1)
+        ↓
+[2] line=149 | byte result = (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=134, col=9 | if (true)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=134, col=13 | true
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=137, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=137, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=143, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=143, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=146, col=9 | if (true)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=146, col=13 | true
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=149, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=149, col=18 | byte result = (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=149, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_02.java | line=149, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.019 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-469d17a4-2581-42dd-8a91-be99b1a3acda/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:39 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:99 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.019 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:163 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:229 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.029 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:251 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:311 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:118 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:125 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | (byte) (data + 1)
+        ↓
+[2] line=125 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | data + 1
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=125 | (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=108, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=108, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=108, col=13 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=108, col=16 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=112, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=112, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=118, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=122, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=122, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=122, col=13 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=122, col=16 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=125, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=125, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=125, col=34 | data + 1
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.018 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:137 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_03.java:149 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | data + 1
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | (byte) (data + 1)
+        ↓
+[2] line=149 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=137 | data = 2
+        ↓
+[1] line=149 | (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=134, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=134, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=134, col=13 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=134, col=16 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=137, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=137, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=143, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=143, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=146, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=146, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=146, col=13 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=146, col=16 | 5
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=149, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=149, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_03.java | line=149, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.013 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-35b91cf4-6cc6-4e24-8234-89e57d3f045d/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:46 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:106 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:170 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:236 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.009 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:258 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:318 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:125 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:132 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | data + 1
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | (byte) (data + 1)
+        ↓
+[2] line=132 | byte result = (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=115, col=9 | if (CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=115, col=13 | CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=119, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=119, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=125, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=125, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=129, col=9 | if (CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=129, col=13 | CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=132, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=132, col=18 | byte result = (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=132, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=132, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.015 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:144 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_04.java:156 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.020 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | (byte) (data + 1)
+        ↓
+[2] line=156 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | data + 1
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=141, col=9 | if (CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=141, col=13 | CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=144, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=150, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=153, col=9 | if (CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=153, col=13 | CWE190_Integer_Overflow__byte_console_readLine_add_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=156, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=156, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_04.java | line=156, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.020 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-74e2eb1e-c67d-4c09-9fcf-644d52b85fe6/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:46 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:106 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:171 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:237 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:259 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:319 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.011 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:125 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:132 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | (byte) (data + 1)
+        ↓
+[2] line=132 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | (byte) (data + 1)
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=125 | data = 2
+        ↓
+[1] line=132 | data + 1
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=115, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=115, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=119, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=119, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=125, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=125, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=129, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=129, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=132, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=132, col=18 | byte result = (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=132, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=132, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin
+Source      : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:144 (3 CFG node(s))
+Sink        : CWE190_Integer_Overflow__byte_console_readLine_add_05.java:156 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | (byte) (data + 1)
+        ↓
+[2] line=156 | byte result = (byte) (data + 1)
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | data + 1
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=144 | data = 2
+        ↓
+[1] line=156 | (byte) (data + 1)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=141, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=141, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=144, col=20 | 2
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=150, col=20 | 0
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=153, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=153, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=156, col=18 | result
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=156, col=18 | byte result = (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=156, col=27 | (byte) (data + 1)
+src/main/java/juliet/testcases/CWE190_Integer_Overflow/s01/CWE190_Integer_Overflow__byte_console_readLine_add_05.java | line=156, col=34 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.014 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe190_jobs.tsv)
+Creating project `joern-trace-d247f23a-5a2e-4fe5-b056-cdd7667e81fc` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d247f23a-5a2e-4fe5-b056-cdd7667e81fc/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-79eb4814-e067-4d2d-ac5c-431da5331fdd` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-79eb4814-e067-4d2d-ac5c-431da5331fdd/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-469d17a4-2581-42dd-8a91-be99b1a3acda` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-469d17a4-2581-42dd-8a91-be99b1a3acda/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-35b91cf4-6cc6-4e24-8234-89e57d3f045d` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-35b91cf4-6cc6-4e24-8234-89e57d3f045d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-74e2eb1e-c67d-4c09-9fcf-644d52b85fe6` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe190_cpg/cwe190-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-74e2eb1e-c67d-4c09-9fcf-644d52b85fe6/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

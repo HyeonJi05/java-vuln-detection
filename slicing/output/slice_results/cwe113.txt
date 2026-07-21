@@ -1,0 +1,1700 @@
+# CWE-113: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe113_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-bedfd7df-d3ba-442a-b353-0ff37f4712d2/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-1-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:33 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:39 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.202 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=33 | data = System.getenv("ADD")
+        ↓
+[1] line=35 | data != null
+        ↓
+[2] line=37 | new Cookie("lang", data)
+        ↓
+[3] line=39 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=33 | System.getenv("ADD")
+        ↓
+[1] line=33 | data = System.getenv("ADD")
+        ↓
+[2] line=35 | data != null
+        ↓
+[3] line=37 | new Cookie("lang", data)
+        ↓
+[4] line=39 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=27, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=33, col=9 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=33, col=16 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=33, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=33, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=35, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=35, col=13 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=35, col=21 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=37, col=20 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=37, col=33 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=37, col=44 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=37, col=52 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=39, col=13 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=39, col=13 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=39, col=32 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 15
+Control nodes     : 1
+Control DDG nodes : 7
+AST controls      : 1
+Final slice nodes : 17
+Slice time        : 0.024 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.202 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-1-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:74 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:80 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.038 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=74 | System.getenv("ADD")
+        ↓
+[1] line=74 | data = System.getenv("ADD")
+        ↓
+[2] line=76 | data != null
+        ↓
+[3] line=78 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=78 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=80 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=74 | data = System.getenv("ADD")
+        ↓
+[1] line=76 | data != null
+        ↓
+[2] line=78 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=78 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=80 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=68, col=54 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=74, col=9 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=74, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=74, col=16 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=74, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=76, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=76, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=76, col=13 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=76, col=21 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=20 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=33 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=44 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=52 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=52 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=70 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=78, col=76 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=80, col=13 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=80, col=13 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=80, col=32 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 18
+Control nodes     : 1
+Control DDG nodes : 7
+AST controls      : 1
+Final slice nodes : 20
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.038 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-1-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:56 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java:62 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=56 | data = "foo"
+        ↓
+[1] line=58 | data != null
+        ↓
+[2] line=60 | new Cookie("lang", data)
+        ↓
+[3] line=62 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=51, col=54 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=56, col=9 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=56, col=16 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=58, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=58, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=58, col=13 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=58, col=21 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=60, col=20 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=60, col=33 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=60, col=44 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=60, col=52 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=62, col=13 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_01.java | line=62, col=32 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 12
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 1
+Final slice nodes : 14
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.016 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d3b26ec4-6867-4c22-8965-dd9c1e511389/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:34 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:49 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | data = System.getenv("ADD")
+        ↓
+[1] line=45 | data != null
+        ↓
+[2] line=47 | new Cookie("lang", data)
+        ↓
+[3] line=49 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | System.getenv("ADD")
+        ↓
+[1] line=34 | data = System.getenv("ADD")
+        ↓
+[2] line=45 | data != null
+        ↓
+[3] line=47 | new Cookie("lang", data)
+        ↓
+[4] line=49 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=27, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=30, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=30, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=34, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=34, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=34, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=34, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=40, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=43, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=43, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=45, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=45, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=45, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=45, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=47, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=47, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=47, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=47, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=49, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=49, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 16
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 22
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.022 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:118 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:139 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=118 | System.getenv("ADD")
+        ↓
+[1] line=118 | data = System.getenv("ADD")
+        ↓
+[2] line=135 | data != null
+        ↓
+[3] line=137 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=137 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=139 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=118 | data = System.getenv("ADD")
+        ↓
+[1] line=135 | data != null
+        ↓
+[2] line=137 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=137 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=139 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=111, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=114, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=114, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=118, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=118, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=118, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=124, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=124, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=127, col=9 | if (false)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=127, col=13 | false
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=135, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=135, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=135, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=135, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=137, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=139, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=139, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=139, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 26
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.021 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:153 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:168 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=153 | System.getenv("ADD")
+        ↓
+[1] line=153 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | data != null
+        ↓
+[3] line=166 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=166 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=168 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=153 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | data != null
+        ↓
+[2] line=166 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=166 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=168 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=146, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=149, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=149, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=153, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=153, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=153, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=159, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=159, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=162, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=162, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=164, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=164, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=164, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=164, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=166, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=168, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=168, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=168, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 26
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.019 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:68 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:78 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=68 | data = "foo"
+        ↓
+[1] line=74 | data != null
+        ↓
+[2] line=76 | new Cookie("lang", data)
+        ↓
+[3] line=78 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=55, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=58, col=9 | if (false)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=58, col=13 | false
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=62, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=62, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=68, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=68, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=72, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=72, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=74, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=74, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=74, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=74, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=76, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=76, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=76, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=76, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=78, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=78, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.011 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:90 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java:105 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=90 | data = "foo"
+        ↓
+[1] line=101 | data != null
+        ↓
+[2] line=103 | new Cookie("lang", data)
+        ↓
+[3] line=105 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=84, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=87, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=87, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=90, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=90, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=96, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=96, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=99, col=9 | if (true)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=99, col=13 | true
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=101, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=101, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=101, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=101, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=103, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=103, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=103, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=103, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=105, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_02.java | line=105, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.016 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d5259581-5046-45c3-8bd9-3773d40a5bdf/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:34 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:49 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | System.getenv("ADD")
+        ↓
+[1] line=34 | data = System.getenv("ADD")
+        ↓
+[2] line=45 | data != null
+        ↓
+[3] line=47 | new Cookie("lang", data)
+        ↓
+[4] line=49 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | data = System.getenv("ADD")
+        ↓
+[1] line=45 | data != null
+        ↓
+[2] line=47 | new Cookie("lang", data)
+        ↓
+[3] line=49 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=27, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=30, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=30, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=30, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=30, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=34, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=34, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=34, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=34, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=40, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=43, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=43, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=43, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=43, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=45, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=45, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=45, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=45, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=47, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=47, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=47, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=47, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=49, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=49, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=49, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 17
+Control nodes     : 3
+Control DDG nodes : 15
+AST controls      : 3
+Final slice nodes : 27
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.013 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:118 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:139 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=118 | System.getenv("ADD")
+        ↓
+[1] line=118 | data = System.getenv("ADD")
+        ↓
+[2] line=135 | data != null
+        ↓
+[3] line=137 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=137 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=139 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=118 | data = System.getenv("ADD")
+        ↓
+[1] line=135 | data != null
+        ↓
+[2] line=137 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=137 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=139 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=111, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=114, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=114, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=114, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=114, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=118, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=118, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=118, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=124, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=124, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=127, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=127, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=127, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=127, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=135, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=135, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=135, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=135, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=137, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=139, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=139, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=139, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 15
+AST controls      : 3
+Final slice nodes : 30
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:153 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:168 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=153 | System.getenv("ADD")
+        ↓
+[1] line=153 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | data != null
+        ↓
+[3] line=166 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=166 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=168 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=153 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | data != null
+        ↓
+[2] line=166 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=166 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=168 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=146, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=149, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=149, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=149, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=149, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=153, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=153, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=153, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=159, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=159, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=162, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=162, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=162, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=162, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=164, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=164, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=164, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=164, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=166, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=168, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=168, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 19
+Control nodes     : 3
+Control DDG nodes : 15
+AST controls      : 3
+Final slice nodes : 29
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.028 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:68 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:78 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=68 | data = "foo"
+        ↓
+[1] line=74 | data != null
+        ↓
+[2] line=76 | new Cookie("lang", data)
+        ↓
+[3] line=78 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=55, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=58, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=58, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=58, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=58, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=62, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=62, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=68, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=68, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=72, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=72, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=72, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=72, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=74, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=74, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=74, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=74, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=76, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=76, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=76, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=76, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=78, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=78, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=78, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 15
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 25
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.007 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:90 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java:105 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=90 | data = "foo"
+        ↓
+[1] line=101 | data != null
+        ↓
+[2] line=103 | new Cookie("lang", data)
+        ↓
+[3] line=105 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=84, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=87, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=87, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=87, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=87, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=90, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=90, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=96, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=96, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=99, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=99, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=99, col=13 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=99, col=16 | 5
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=101, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=101, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=101, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=101, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=103, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=103, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=103, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=103, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=105, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=105, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_03.java | line=105, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 15
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 25
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.012 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-e657e0bd-d200-4567-8158-41d873966be2/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:41 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:56 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=41 | System.getenv("ADD")
+        ↓
+[1] line=41 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=54 | new Cookie("lang", data)
+        ↓
+[4] line=56 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=41 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=54 | new Cookie("lang", data)
+        ↓
+[3] line=56 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=34, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=37, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=37, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=41, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=41, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=41, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=47, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=50, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=50, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=52, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=52, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=52, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=52, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=54, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=54, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=54, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=54, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=56, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=56, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=56, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 17
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 23
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.013 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:125 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:146 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=125 | System.getenv("ADD")
+        ↓
+[1] line=125 | data = System.getenv("ADD")
+        ↓
+[2] line=142 | data != null
+        ↓
+[3] line=144 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=144 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=146 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=125 | data = System.getenv("ADD")
+        ↓
+[1] line=142 | data != null
+        ↓
+[2] line=144 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=144 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=146 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=118, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=121, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=121, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=125, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=125, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=125, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=125, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=131, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=131, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=134, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=134, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=142, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=142, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=142, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=142, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=144, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=146, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=146, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=146, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 26
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.016 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:160 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=160 | data = System.getenv("ADD")
+        ↓
+[1] line=171 | data != null
+        ↓
+[2] line=173 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=173 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=175 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=160 | System.getenv("ADD")
+        ↓
+[1] line=160 | data = System.getenv("ADD")
+        ↓
+[2] line=171 | data != null
+        ↓
+[3] line=173 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=173 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=175 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=153, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=156, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=156, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=160, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=160, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=160, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=160, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=166, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=166, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=169, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=169, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=171, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=171, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=171, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=171, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=173, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=175, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=175, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=175, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 26
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.016 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:75 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:85 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=75 | data = "foo"
+        ↓
+[1] line=81 | data != null
+        ↓
+[2] line=83 | new Cookie("lang", data)
+        ↓
+[3] line=85 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=62, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=65, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=65, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=69, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=69, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=75, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=79, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=79, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=81, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=81, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=81, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=81, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=83, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=83, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=83, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=83, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=85, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=85, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.008 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:97 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java:112 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=97 | data = "foo"
+        ↓
+[1] line=108 | data != null
+        ↓
+[2] line=110 | new Cookie("lang", data)
+        ↓
+[3] line=112 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=91, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=94, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=94, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=97, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=97, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=103, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=103, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=106, col=9 | if (CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=106, col=13 | CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=108, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=108, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=108, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=108, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=110, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=110, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=110, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=110, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=112, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_04.java | line=112, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.007 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-fd2f1311-9c6c-43c2-acf0-60e03eeed515/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:41 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:56 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=41 | System.getenv("ADD")
+        ↓
+[1] line=41 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+        ↓
+[3] line=54 | new Cookie("lang", data)
+        ↓
+[4] line=56 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=41 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+        ↓
+[2] line=54 | new Cookie("lang", data)
+        ↓
+[3] line=56 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=34, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=37, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=37, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=41, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=41, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=41, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=47, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=50, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=50, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=52, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=52, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=52, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=52, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=54, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=54, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=54, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=54, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=56, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=56, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 16
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 22
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.009 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:126 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:147 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=126 | System.getenv("ADD")
+        ↓
+[1] line=126 | data = System.getenv("ADD")
+        ↓
+[2] line=143 | data != null
+        ↓
+[3] line=145 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=145 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=147 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=126 | data = System.getenv("ADD")
+        ↓
+[1] line=143 | data != null
+        ↓
+[2] line=145 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=145 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=147 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=118, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=122, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=122, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=126, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=126, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=126, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=126, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=132, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=132, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=135, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=135, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=143, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=143, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=143, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=143, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=145, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=147, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=147, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 19
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 25
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:161 (5 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:176 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=161 | System.getenv("ADD")
+        ↓
+[1] line=161 | data = System.getenv("ADD")
+        ↓
+[2] line=172 | data != null
+        ↓
+[3] line=174 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[4] line=174 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[5] line=176 | response.addCookie(cookieSink)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=161 | data = System.getenv("ADD")
+        ↓
+[1] line=172 | data != null
+        ↓
+[2] line=174 | URLEncoder.encode(data, "UTF-8")
+        ↓
+[3] line=174 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+        ↓
+[4] line=176 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=154, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=157, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=157, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=161, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=161, col=20 | System
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=161, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=167, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=167, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=170, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=170, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=172, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=172, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=172, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=172, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=37 | new Cookie("lang", URLEncoder.encode(data, "UTF-8"))
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=56 | URLEncoder.encode(data, "UTF-8")
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=56 | URLEncoder
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=74 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=174, col=80 | "UTF-8"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=176, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=176, col=17 | response.addCookie(cookieSink)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=176, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 20
+Control nodes     : 3
+Control DDG nodes : 11
+AST controls      : 3
+Final slice nodes : 26
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 2
+Flow time    : 0.015 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:75 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:85 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=75 | data = "foo"
+        ↓
+[1] line=81 | data != null
+        ↓
+[2] line=83 | new Cookie("lang", data)
+        ↓
+[3] line=85 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=62, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=65, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=65, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=69, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=69, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=75, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=79, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=79, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=81, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=81, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=81, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=81, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=83, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=83, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=83, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=83, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=85, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=85, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin
+Source      : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:97 (3 CFG node(s))
+Sink        : CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java:112 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=97 | data = "foo"
+        ↓
+[1] line=108 | data != null
+        ↓
+[2] line=110 | new Cookie("lang", data)
+        ↓
+[3] line=112 | response.addCookie(cookieSink)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=91, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=94, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=94, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=97, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=97, col=20 | "foo"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=103, col=13 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=103, col=20 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=106, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=106, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=108, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=108, col=17 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=108, col=17 | data != null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=108, col=25 | null
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=110, col=24 | cookieSink
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=110, col=37 | new Cookie("lang", data)
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=110, col=48 | "lang"
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=110, col=56 | data
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=112, col=17 | response
+src/main/java/juliet/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__Environment_addCookieServlet_05.java | line=112, col=36 | cookieSink
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 9
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.009 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe113_jobs.tsv)
+Creating project `joern-trace-bedfd7df-d3ba-442a-b353-0ff37f4712d2` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-bedfd7df-d3ba-442a-b353-0ff37f4712d2/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-d3b26ec4-6867-4c22-8965-dd9c1e511389` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d3b26ec4-6867-4c22-8965-dd9c1e511389/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-d5259581-5046-45c3-8bd9-3773d40a5bdf` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d5259581-5046-45c3-8bd9-3773d40a5bdf/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e657e0bd-d200-4567-8158-41d873966be2` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-e657e0bd-d200-4567-8158-41d873966be2/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-fd2f1311-9c6c-43c2-acf0-60e03eeed515` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe113_cpg/cwe113-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-fd2f1311-9c6c-43c2-acf0-60e03eeed515/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

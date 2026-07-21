@@ -1,0 +1,1845 @@
+# CWE-606: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe606_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cb23c151-7d5b-4b57-88b9-c423e0ead99e/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-1-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_01.java:32 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_01.java:48 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.128 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.128 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-1-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_01.java:93 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_01.java:107 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.079 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=93 | System.getenv("ADD")
+        ↓
+[1] line=93 | data = System.getenv("ADD")
+        ↓
+[2] line=98 | Integer.parseInt(data)
+        ↓
+[3] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=107 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=93 | System.getenv("ADD")
+        ↓
+[1] line=93 | data = System.getenv("ADD")
+        ↓
+[2] line=98 | Integer.parseInt(data)
+        ↓
+[3] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=107 | numberOfLoops >= 0
+        ↓
+[5] line=107 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=93 | System.getenv("ADD")
+        ↓
+[1] line=93 | data = System.getenv("ADD")
+        ↓
+[2] line=98 | Integer.parseInt(data)
+        ↓
+[3] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=107 | numberOfLoops >= 0
+        ↓
+[5] line=107 | numberOfLoops <= 5
+        ↓
+[6] line=107 | numberOfLoops >= 0
+        ↓
+[7] line=107 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=93 | data = System.getenv("ADD")
+        ↓
+[1] line=98 | Integer.parseInt(data)
+        ↓
+[2] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=107 | numberOfLoops >= 0
+        ↓
+[4] line=107 | numberOfLoops <= 5
+        ↓
+[5] line=107 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=93 | data = System.getenv("ADD")
+        ↓
+[1] line=98 | Integer.parseInt(data)
+        ↓
+[2] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=107 | numberOfLoops >= 0
+        ↓
+[4] line=107 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=93 | System.getenv("ADD")
+        ↓
+[1] line=93 | data = System.getenv("ADD")
+        ↓
+[2] line=98 | Integer.parseInt(data)
+        ↓
+[3] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=107 | numberOfLoops >= 0
+        ↓
+[5] line=107 | numberOfLoops <= 5
+        ↓
+[6] line=107 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=93 | data = System.getenv("ADD")
+        ↓
+[1] line=98 | Integer.parseInt(data)
+        ↓
+[2] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=107 | numberOfLoops >= 0
+        ↓
+[4] line=107 | numberOfLoops <= 5
+        ↓
+[5] line=107 | numberOfLoops >= 0
+        ↓
+[6] line=107 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=93 | data = System.getenv("ADD")
+        ↓
+[1] line=98 | Integer.parseInt(data)
+        ↓
+[2] line=98 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=107 | numberOfLoops >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=93, col=9 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=93, col=16 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=93, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=93, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=96, col=9 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=98, col=13 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=98, col=13 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=98, col=29 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=98, col=29 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=98, col=46 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=100, col=9 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=103, col=13 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=103, col=29 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=9 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=13 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=13 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=13 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=30 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=35 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=35 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_01.java | line=107, col=52 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 17
+Control nodes     : 2
+Control DDG nodes : 17
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.018 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.079 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-1-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_01.java:65 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_01.java:81 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-775aa33f-4154-4192-8aba-e8a580b7d23b/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_02.java:33 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_02.java:57 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_02.java:144 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_02.java:173 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+        ↓
+[6] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+        ↓
+[6] line=173 | numberOfLoops >= 0
+        ↓
+[7] line=173 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+        ↓
+[5] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+        ↓
+[5] line=173 | numberOfLoops >= 0
+        ↓
+[6] line=173 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=140, col=9 | if (true)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=140, col=13 | true
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=144, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=144, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=144, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=150, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=153, col=9 | if (false)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=153, col=13 | false
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=162, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=164, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=164, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=164, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=164, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=164, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=166, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=169, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=169, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=173, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.026 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_02.java:192 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_02.java:214 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+        ↓
+[6] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+        ↓
+[5] line=214 | numberOfLoops >= 0
+        ↓
+[6] line=214 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+        ↓
+[6] line=214 | numberOfLoops >= 0
+        ↓
+[7] line=214 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+        ↓
+[5] line=214 | numberOfLoops >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=188, col=9 | if (true)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=188, col=13 | true
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=192, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=192, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=192, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=192, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=198, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=198, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=201, col=9 | if (true)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=201, col=13 | true
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=204, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=206, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=206, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=206, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=206, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=206, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=208, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=211, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=211, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_02.java | line=214, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.016 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_02.java:76 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_02.java:95 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.006 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.006 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_02.java:107 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_02.java:131 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.007 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7971e81b-8ddb-471e-b25e-32b9663e0a99/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_03.java:33 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_03.java:57 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.007 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_03.java:144 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_03.java:173 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+        ↓
+[6] line=173 | numberOfLoops >= 0
+        ↓
+[7] line=173 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=144 | System.getenv("ADD")
+        ↓
+[1] line=144 | data = System.getenv("ADD")
+        ↓
+[2] line=164 | Integer.parseInt(data)
+        ↓
+[3] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=173 | numberOfLoops >= 0
+        ↓
+[5] line=173 | numberOfLoops <= 5
+        ↓
+[6] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+        ↓
+[5] line=173 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=144 | data = System.getenv("ADD")
+        ↓
+[1] line=164 | Integer.parseInt(data)
+        ↓
+[2] line=164 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=173 | numberOfLoops >= 0
+        ↓
+[4] line=173 | numberOfLoops <= 5
+        ↓
+[5] line=173 | numberOfLoops >= 0
+        ↓
+[6] line=173 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=140, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=140, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=140, col=13 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=140, col=16 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=144, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=144, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=144, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=150, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=153, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=153, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=153, col=13 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=153, col=16 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=162, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=164, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=164, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=164, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=164, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=164, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=166, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=169, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=169, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=173, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 25
+AST controls      : 5
+Final slice nodes : 31
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.017 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_03.java:192 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_03.java:214 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.020 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+        ↓
+[6] line=214 | numberOfLoops >= 0
+        ↓
+[7] line=214 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+        ↓
+[5] line=214 | numberOfLoops <= 5
+        ↓
+[6] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+        ↓
+[5] line=214 | numberOfLoops >= 0
+        ↓
+[6] line=214 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=192 | System.getenv("ADD")
+        ↓
+[1] line=192 | data = System.getenv("ADD")
+        ↓
+[2] line=206 | Integer.parseInt(data)
+        ↓
+[3] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=214 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=192 | data = System.getenv("ADD")
+        ↓
+[1] line=206 | Integer.parseInt(data)
+        ↓
+[2] line=206 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops >= 0
+        ↓
+[4] line=214 | numberOfLoops <= 5
+        ↓
+[5] line=214 | numberOfLoops >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=188, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=188, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=188, col=13 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=188, col=16 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=192, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=192, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=192, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=192, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=198, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=198, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=201, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=201, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=201, col=13 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=201, col=16 | 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=204, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=206, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=206, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=206, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=206, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=206, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=208, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=211, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=211, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_03.java | line=214, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 25
+AST controls      : 5
+Final slice nodes : 31
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.020 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_03.java:76 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_03.java:95 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.011 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_03.java:107 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_03.java:131 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d8166bce-bff9-4269-bad5-86a41b47504d/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_04.java:40 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_04.java:64 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_04.java:151 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_04.java:180 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=151 | System.getenv("ADD")
+        ↓
+[1] line=151 | data = System.getenv("ADD")
+        ↓
+[2] line=171 | Integer.parseInt(data)
+        ↓
+[3] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=180 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=151 | System.getenv("ADD")
+        ↓
+[1] line=151 | data = System.getenv("ADD")
+        ↓
+[2] line=171 | Integer.parseInt(data)
+        ↓
+[3] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=180 | numberOfLoops >= 0
+        ↓
+[5] line=180 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=151 | data = System.getenv("ADD")
+        ↓
+[1] line=171 | Integer.parseInt(data)
+        ↓
+[2] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=180 | numberOfLoops >= 0
+        ↓
+[4] line=180 | numberOfLoops <= 5
+        ↓
+[5] line=180 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=151 | data = System.getenv("ADD")
+        ↓
+[1] line=171 | Integer.parseInt(data)
+        ↓
+[2] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=180 | numberOfLoops >= 0
+        ↓
+[4] line=180 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=151 | System.getenv("ADD")
+        ↓
+[1] line=151 | data = System.getenv("ADD")
+        ↓
+[2] line=171 | Integer.parseInt(data)
+        ↓
+[3] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=180 | numberOfLoops >= 0
+        ↓
+[5] line=180 | numberOfLoops <= 5
+        ↓
+[6] line=180 | numberOfLoops >= 0
+        ↓
+[7] line=180 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=151 | System.getenv("ADD")
+        ↓
+[1] line=151 | data = System.getenv("ADD")
+        ↓
+[2] line=171 | Integer.parseInt(data)
+        ↓
+[3] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=180 | numberOfLoops >= 0
+        ↓
+[5] line=180 | numberOfLoops <= 5
+        ↓
+[6] line=180 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=151 | data = System.getenv("ADD")
+        ↓
+[1] line=171 | Integer.parseInt(data)
+        ↓
+[2] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=180 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=151 | data = System.getenv("ADD")
+        ↓
+[1] line=171 | Integer.parseInt(data)
+        ↓
+[2] line=171 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=180 | numberOfLoops >= 0
+        ↓
+[4] line=180 | numberOfLoops <= 5
+        ↓
+[5] line=180 | numberOfLoops >= 0
+        ↓
+[6] line=180 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=147, col=9 | if (CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=147, col=13 | CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=151, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=151, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=151, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=151, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=157, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=157, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=160, col=9 | if (CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=160, col=13 | CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=169, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=171, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=171, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=171, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=171, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=171, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=173, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=176, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=176, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=180, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.018 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_04.java:199 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_04.java:221 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=199 | data = System.getenv("ADD")
+        ↓
+[1] line=213 | Integer.parseInt(data)
+        ↓
+[2] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=221 | numberOfLoops >= 0
+        ↓
+[4] line=221 | numberOfLoops <= 5
+        ↓
+[5] line=221 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=199 | System.getenv("ADD")
+        ↓
+[1] line=199 | data = System.getenv("ADD")
+        ↓
+[2] line=213 | Integer.parseInt(data)
+        ↓
+[3] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=221 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=199 | System.getenv("ADD")
+        ↓
+[1] line=199 | data = System.getenv("ADD")
+        ↓
+[2] line=213 | Integer.parseInt(data)
+        ↓
+[3] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=221 | numberOfLoops >= 0
+        ↓
+[5] line=221 | numberOfLoops <= 5
+        ↓
+[6] line=221 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=199 | System.getenv("ADD")
+        ↓
+[1] line=199 | data = System.getenv("ADD")
+        ↓
+[2] line=213 | Integer.parseInt(data)
+        ↓
+[3] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=221 | numberOfLoops >= 0
+        ↓
+[5] line=221 | numberOfLoops <= 5
+        ↓
+[6] line=221 | numberOfLoops >= 0
+        ↓
+[7] line=221 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=199 | data = System.getenv("ADD")
+        ↓
+[1] line=213 | Integer.parseInt(data)
+        ↓
+[2] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=221 | numberOfLoops >= 0
+        ↓
+[4] line=221 | numberOfLoops <= 5
+        ↓
+[5] line=221 | numberOfLoops >= 0
+        ↓
+[6] line=221 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=199 | System.getenv("ADD")
+        ↓
+[1] line=199 | data = System.getenv("ADD")
+        ↓
+[2] line=213 | Integer.parseInt(data)
+        ↓
+[3] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=221 | numberOfLoops >= 0
+        ↓
+[5] line=221 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=199 | data = System.getenv("ADD")
+        ↓
+[1] line=213 | Integer.parseInt(data)
+        ↓
+[2] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=221 | numberOfLoops >= 0
+        ↓
+[4] line=221 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=199 | data = System.getenv("ADD")
+        ↓
+[1] line=213 | Integer.parseInt(data)
+        ↓
+[2] line=213 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=221 | numberOfLoops >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=195, col=9 | if (CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=195, col=13 | CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=199, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=199, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=199, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=199, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=205, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=205, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=208, col=9 | if (CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=208, col=13 | CWE606_Unchecked_Loop_Condition__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=211, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=213, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=213, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=213, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=213, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=213, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=215, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=218, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=218, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_04.java | line=221, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.012 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_04.java:83 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_04.java:102 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.007 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_04.java:114 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_04.java:138 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.005 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.005 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-4f43d712-9c00-4a0b-8c3b-213d356ddbd5/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_05.java:40 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_05.java:64 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.005 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.005 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_05.java:152 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_05.java:181 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=152 | System.getenv("ADD")
+        ↓
+[1] line=152 | data = System.getenv("ADD")
+        ↓
+[2] line=172 | Integer.parseInt(data)
+        ↓
+[3] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=181 | numberOfLoops >= 0
+        ↓
+[5] line=181 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=152 | System.getenv("ADD")
+        ↓
+[1] line=152 | data = System.getenv("ADD")
+        ↓
+[2] line=172 | Integer.parseInt(data)
+        ↓
+[3] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=181 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=152 | System.getenv("ADD")
+        ↓
+[1] line=152 | data = System.getenv("ADD")
+        ↓
+[2] line=172 | Integer.parseInt(data)
+        ↓
+[3] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=181 | numberOfLoops >= 0
+        ↓
+[5] line=181 | numberOfLoops <= 5
+        ↓
+[6] line=181 | numberOfLoops >= 0
+        ↓
+[7] line=181 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=152 | data = System.getenv("ADD")
+        ↓
+[1] line=172 | Integer.parseInt(data)
+        ↓
+[2] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=181 | numberOfLoops >= 0
+        ↓
+[4] line=181 | numberOfLoops <= 5
+        ↓
+[5] line=181 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=152 | System.getenv("ADD")
+        ↓
+[1] line=152 | data = System.getenv("ADD")
+        ↓
+[2] line=172 | Integer.parseInt(data)
+        ↓
+[3] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=181 | numberOfLoops >= 0
+        ↓
+[5] line=181 | numberOfLoops <= 5
+        ↓
+[6] line=181 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=152 | data = System.getenv("ADD")
+        ↓
+[1] line=172 | Integer.parseInt(data)
+        ↓
+[2] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=181 | numberOfLoops >= 0
+        ↓
+[4] line=181 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=152 | data = System.getenv("ADD")
+        ↓
+[1] line=172 | Integer.parseInt(data)
+        ↓
+[2] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=181 | numberOfLoops >= 0
+        ↓
+[4] line=181 | numberOfLoops <= 5
+        ↓
+[5] line=181 | numberOfLoops >= 0
+        ↓
+[6] line=181 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=152 | data = System.getenv("ADD")
+        ↓
+[1] line=172 | Integer.parseInt(data)
+        ↓
+[2] line=172 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=181 | numberOfLoops >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=148, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=148, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=152, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=152, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=152, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=152, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=158, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=158, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=161, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=161, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=170, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=172, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=172, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=172, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=172, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=172, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=174, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=177, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=177, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=181, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.014 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_05.java:200 (5 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_05.java:222 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=200 | data = System.getenv("ADD")
+        ↓
+[1] line=214 | Integer.parseInt(data)
+        ↓
+[2] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=222 | numberOfLoops >= 0
+        ↓
+[4] line=222 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=200 | data = System.getenv("ADD")
+        ↓
+[1] line=214 | Integer.parseInt(data)
+        ↓
+[2] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=222 | numberOfLoops >= 0
+        ↓
+[4] line=222 | numberOfLoops <= 5
+        ↓
+[5] line=222 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=200 | data = System.getenv("ADD")
+        ↓
+[1] line=214 | Integer.parseInt(data)
+        ↓
+[2] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=222 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=200 | System.getenv("ADD")
+        ↓
+[1] line=200 | data = System.getenv("ADD")
+        ↓
+[2] line=214 | Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=222 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=200 | data = System.getenv("ADD")
+        ↓
+[1] line=214 | Integer.parseInt(data)
+        ↓
+[2] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[3] line=222 | numberOfLoops >= 0
+        ↓
+[4] line=222 | numberOfLoops <= 5
+        ↓
+[5] line=222 | numberOfLoops >= 0
+        ↓
+[6] line=222 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=200 | System.getenv("ADD")
+        ↓
+[1] line=200 | data = System.getenv("ADD")
+        ↓
+[2] line=214 | Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=222 | numberOfLoops >= 0
+        ↓
+[5] line=222 | numberOfLoops <= 5
+        ↓
+[6] line=222 | numberOfLoops >= 0
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=200 | System.getenv("ADD")
+        ↓
+[1] line=200 | data = System.getenv("ADD")
+        ↓
+[2] line=214 | Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=222 | numberOfLoops >= 0
+        ↓
+[5] line=222 | numberOfLoops <= 5
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=200 | System.getenv("ADD")
+        ↓
+[1] line=200 | data = System.getenv("ADD")
+        ↓
+[2] line=214 | Integer.parseInt(data)
+        ↓
+[3] line=214 | numberOfLoops = Integer.parseInt(data)
+        ↓
+[4] line=222 | numberOfLoops >= 0
+        ↓
+[5] line=222 | numberOfLoops <= 5
+        ↓
+[6] line=222 | numberOfLoops >= 0
+        ↓
+[7] line=222 | numberOfLoops >= 0 && numberOfLoops <= 5
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=196, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=196, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=200, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=200, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=200, col=20 | System
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=200, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=206, col=13 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=206, col=20 | null
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=209, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=209, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=212, col=13 | try
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=214, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=214, col=17 | numberOfLoops = Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=214, col=33 | Integer.parseInt(data)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=214, col=33 | Integer
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=214, col=50 | data
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=216, col=13 | catch
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=219, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=219, col=33 | 1
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=13 | if (numberOfLoops >= 0 && numberOfLoops <= 5)
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=17 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=17 | numberOfLoops >= 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=17 | numberOfLoops >= 0 && numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=34 | 0
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=39 | numberOfLoops
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=39 | numberOfLoops <= 5
+src/main/java/juliet/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_05.java | line=222, col=56 | 5
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 19
+Control nodes     : 4
+Control DDG nodes : 21
+AST controls      : 5
+Final slice nodes : 27
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_05.java:83 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_05.java:102 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin
+Source      : CWE606_Unchecked_Loop_Condition__Environment_05.java:114 (3 CFG node(s))
+Sink        : CWE606_Unchecked_Loop_Condition__Environment_05.java:138 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe606_jobs.tsv)
+Creating project `joern-trace-cb23c151-7d5b-4b57-88b9-c423e0ead99e` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cb23c151-7d5b-4b57-88b9-c423e0ead99e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-775aa33f-4154-4192-8aba-e8a580b7d23b` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-775aa33f-4154-4192-8aba-e8a580b7d23b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-7971e81b-8ddb-471e-b25e-32b9663e0a99` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7971e81b-8ddb-471e-b25e-32b9663e0a99/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-d8166bce-bff9-4269-bad5-86a41b47504d` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-d8166bce-bff9-4269-bad5-86a41b47504d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-4f43d712-9c00-4a0b-8c3b-213d356ddbd5` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe606_cpg/cwe606-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-4f43d712-9c00-4a0b-8c3b-213d356ddbd5/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

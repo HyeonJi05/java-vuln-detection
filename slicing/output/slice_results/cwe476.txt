@@ -1,0 +1,1721 @@
+# CWE-476: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe476_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1ced59fe-3552-4ac0-9fe0-2cbe89f4be9c/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-1-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_01.java:29 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_01.java:32 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.194 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=29 | data = null
+        ↓
+[1] line=32 | data.toString()
+        ↓
+[2] line=32 | "" + data.toString()
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=29 | data = null
+        ↓
+[1] line=32 | data.toString()
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=29 | data = null
+        ↓
+[1] line=32 | data.toString()
+        ↓
+[2] line=32 | "" + data.toString()
+        ↓
+[3] line=32 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=29, col=9 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=29, col=16 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=32, col=9 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=32, col=9 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=32, col=22 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=32, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 6
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 6
+Slice time        : 0.018 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 3
+Flow time    : 0.194 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-1-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_01.java:61 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_01.java:64 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=61 | data = null
+        ↓
+[1] line=64 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=61, col=9 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=61, col=16 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=64, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=64, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=64, col=13 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=64, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 6
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.014 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-1-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_01.java:48 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_01.java:51 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=48 | Integer.valueOf(5)
+        ↓
+[1] line=48 | data = Integer.valueOf(5)
+        ↓
+[2] line=51 | data.toString()
+        ↓
+[3] line=51 | "" + data.toString()
+        ↓
+[4] line=51 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=48 | Integer.valueOf(5)
+        ↓
+[1] line=48 | data = Integer.valueOf(5)
+        ↓
+[2] line=51 | data.toString()
+        ↓
+[3] line=51 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=48 | Integer.valueOf(5)
+        ↓
+[1] line=48 | data = Integer.valueOf(5)
+        ↓
+[2] line=51 | data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=48 | data = Integer.valueOf(5)
+        ↓
+[1] line=51 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=48 | data = Integer.valueOf(5)
+        ↓
+[1] line=51 | data.toString()
+        ↓
+[2] line=51 | "" + data.toString()
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=48 | data = Integer.valueOf(5)
+        ↓
+[1] line=51 | data.toString()
+        ↓
+[2] line=51 | "" + data.toString()
+        ↓
+[3] line=51 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=48, col=9 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=48, col=16 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=48, col=16 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=48, col=32 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=51, col=9 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=51, col=9 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=51, col=22 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=51, col=27 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_01.java | line=51, col=27 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 9
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.029 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-08dc1818-bc3f-4187-bc6a-fe0ced9d1786/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_02.java:30 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_02.java:42 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+        ↓
+[2] line=42 | "" + data.toString()
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+        ↓
+[2] line=42 | "" + data.toString()
+        ↓
+[3] line=42 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=27, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=27, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=30, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=30, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=36, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=39, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=39, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=42, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=42, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=42, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=42, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=42, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 3
+Flow time    : 0.019 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_02.java:101 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_02.java:119 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=101 | data = null
+        ↓
+[1] line=119 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=98, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=98, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=101, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=101, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=107, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=107, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=110, col=9 | if (false)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=110, col=13 | false
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=119, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=119, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=119, col=17 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=119, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 12
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.015 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_02.java:138 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_02.java:150 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=138 | data = null
+        ↓
+[1] line=150 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=135, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=135, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=138, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=144, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=147, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=147, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=150, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=150, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=150, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 6
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.011 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_02.java:60 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_02.java:67 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+        ↓
+[3] line=67 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+        ↓
+[2] line=67 | "" + data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+        ↓
+[3] line=67 | "" + data.toString()
+        ↓
+[4] line=67 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+        ↓
+[2] line=67 | "" + data.toString()
+        ↓
+[3] line=67 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=50, col=9 | if (false)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=50, col=13 | false
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=54, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=54, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=60, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=60, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=60, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=60, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=64, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=64, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=67, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=67, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=67, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=67, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=67, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.016 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_02.java:78 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_02.java:90 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+        ↓
+[3] line=90 | "" + data.toString()
+        ↓
+[4] line=90 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+        ↓
+[3] line=90 | "" + data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+        ↓
+[2] line=90 | "" + data.toString()
+        ↓
+[3] line=90 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+        ↓
+[2] line=90 | "" + data.toString()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=75, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=75, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=78, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=78, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=78, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=78, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=84, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=84, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=87, col=9 | if (true)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=87, col=13 | true
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=90, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=90, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=90, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=90, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_02.java | line=90, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.018 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-272829ba-08ff-4b7f-8050-99cad7a1f246/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_03.java:30 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_03.java:42 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+        ↓
+[2] line=42 | "" + data.toString()
+        ↓
+[3] line=42 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+        ↓
+[2] line=42 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=30 | data = null
+        ↓
+[1] line=42 | data.toString()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=27, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=27, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=27, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=27, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=30, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=30, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=36, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=39, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=39, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=39, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=39, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=42, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=42, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=42, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=42, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 3
+Flow time    : 0.017 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_03.java:101 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_03.java:119 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=101 | data = null
+        ↓
+[1] line=119 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=98, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=98, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=98, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=98, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=101, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=101, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=107, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=107, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=110, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=110, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=110, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=110, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=119, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=119, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=119, col=17 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=119, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.015 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_03.java:138 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_03.java:150 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=138 | data = null
+        ↓
+[1] line=150 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=135, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=135, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=135, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=135, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=138, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=144, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=147, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=147, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=147, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=147, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=150, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=150, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=150, col=17 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=150, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.010 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_03.java:60 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_03.java:67 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+        ↓
+[3] line=67 | "" + data.toString()
+        ↓
+[4] line=67 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=60 | Integer.valueOf(5)
+        ↓
+[1] line=60 | data = Integer.valueOf(5)
+        ↓
+[2] line=67 | data.toString()
+        ↓
+[3] line=67 | "" + data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+        ↓
+[2] line=67 | "" + data.toString()
+        ↓
+[3] line=67 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=60 | data = Integer.valueOf(5)
+        ↓
+[1] line=67 | data.toString()
+        ↓
+[2] line=67 | "" + data.toString()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=50, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=50, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=50, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=50, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=54, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=54, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=60, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=60, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=60, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=60, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=64, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=64, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=64, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=64, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=67, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=67, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=67, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=67, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=67, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 19
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.015 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_03.java:78 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_03.java:90 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+        ↓
+[3] line=90 | "" + data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+        ↓
+[3] line=90 | "" + data.toString()
+        ↓
+[4] line=90 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+        ↓
+[2] line=90 | "" + data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=78 | Integer.valueOf(5)
+        ↓
+[1] line=78 | data = Integer.valueOf(5)
+        ↓
+[2] line=90 | data.toString()
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=78 | data = Integer.valueOf(5)
+        ↓
+[1] line=90 | data.toString()
+        ↓
+[2] line=90 | "" + data.toString()
+        ↓
+[3] line=90 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=75, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=75, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=75, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=75, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=78, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=78, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=78, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=78, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=84, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=84, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=87, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=87, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=87, col=13 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=87, col=16 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=90, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=90, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=90, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=90, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_03.java | line=90, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 19
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.012 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-79d03f9e-2ece-4007-8d88-ea9051130932/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_04.java:37 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_04.java:49 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+        ↓
+[2] line=49 | "" + data.toString()
+        ↓
+[3] line=49 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+        ↓
+[2] line=49 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=34, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=34, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=37, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=43, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=46, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=46, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=49, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=49, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=49, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=49, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 3
+Flow time    : 0.018 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_04.java:108 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_04.java:126 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=108 | data = null
+        ↓
+[1] line=126 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=105, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=105, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=108, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=108, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=114, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=114, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=117, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=117, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=126, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=126, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=126, col=17 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=126, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.010 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_04.java:145 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_04.java:157 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.005 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=145 | data = null
+        ↓
+[1] line=157 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=142, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=142, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=145, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=145, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=151, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=151, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=154, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=154, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=157, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=157, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=157, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 6
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 11
+Slice time        : 0.000 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.005 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_04.java:67 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_04.java:74 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+        ↓
+[3] line=74 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+        ↓
+[3] line=74 | "" + data.toString()
+        ↓
+[4] line=74 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+        ↓
+[2] line=74 | "" + data.toString()
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+        ↓
+[2] line=74 | "" + data.toString()
+        ↓
+[3] line=74 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=57, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=57, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=61, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=61, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=67, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=67, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=67, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=67, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=71, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=71, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=74, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=74, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=74, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=74, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=74, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.012 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_04.java:85 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_04.java:97 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+        ↓
+[3] line=97 | "" + data.toString()
+        ↓
+[4] line=97 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+        ↓
+[2] line=97 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+        ↓
+[3] line=97 | "" + data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+        ↓
+[2] line=97 | "" + data.toString()
+        ↓
+[3] line=97 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=82, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=82, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=85, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=85, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=85, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=85, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=91, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=91, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=94, col=9 | if (CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=94, col=13 | CWE476_NULL_Pointer_Dereference__Integer_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=97, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=97, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=97, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_04.java | line=97, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.007 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-8980c8d8-ed17-4a03-b966-82a4ae27c56b/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_05.java:37 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_05.java:49 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+        ↓
+[2] line=49 | "" + data.toString()
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=37 | data = null
+        ↓
+[1] line=49 | data.toString()
+        ↓
+[2] line=49 | "" + data.toString()
+        ↓
+[3] line=49 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=34, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=34, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=37, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=43, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=46, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=46, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=49, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=49, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=49, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=49, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 3
+Flow time    : 0.008 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_05.java:109 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_05.java:127 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=109 | data = null
+        ↓
+[1] line=127 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=106, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=106, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=109, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=109, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=115, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=115, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=118, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=118, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=127, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=127, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=127, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 6
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.007 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_05.java:146 (3 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_05.java:158 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=146 | data = null
+        ↓
+[1] line=158 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=143, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=143, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=146, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=146, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=152, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=152, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=155, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=155, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=158, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=158, col=17 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=158, col=17 | data != null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=158, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.009 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_05.java:67 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_05.java:74 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+        ↓
+[2] line=74 | "" + data.toString()
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+        ↓
+[3] line=74 | "" + data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=67 | Integer.valueOf(5)
+        ↓
+[1] line=67 | data = Integer.valueOf(5)
+        ↓
+[2] line=74 | data.toString()
+        ↓
+[3] line=74 | "" + data.toString()
+        ↓
+[4] line=74 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=67 | data = Integer.valueOf(5)
+        ↓
+[1] line=74 | data.toString()
+        ↓
+[2] line=74 | "" + data.toString()
+        ↓
+[3] line=74 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=57, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=57, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=61, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=61, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=67, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=67, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=67, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=67, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=71, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=71, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=74, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=74, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=74, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=74, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.011 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin
+Source      : CWE476_NULL_Pointer_Dereference__Integer_05.java:85 (5 CFG node(s))
+Sink        : CWE476_NULL_Pointer_Dereference__Integer_05.java:97 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+        ↓
+[3] line=97 | "" + data.toString()
+        ↓
+[4] line=97 | IO.writeLine("" + data.toString())
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+        ↓
+[2] line=97 | "" + data.toString()
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+        ↓
+[3] line=97 | "" + data.toString()
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=85 | Integer.valueOf(5)
+        ↓
+[1] line=85 | data = Integer.valueOf(5)
+        ↓
+[2] line=97 | data.toString()
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=85 | data = Integer.valueOf(5)
+        ↓
+[1] line=97 | data.toString()
+        ↓
+[2] line=97 | "" + data.toString()
+        ↓
+[3] line=97 | IO.writeLine("" + data.toString())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=82, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=82, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=85, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=85, col=20 | Integer.valueOf(5)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=85, col=20 | Integer
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=85, col=36 | 5
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=91, col=13 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=91, col=20 | null
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=94, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=94, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=97, col=13 | IO.writeLine("" + data.toString())
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=97, col=13 | IO
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=97, col=26 | "" + data.toString()
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=97, col=31 | data
+src/main/java/juliet/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__Integer_05.java | line=97, col=31 | data.toString()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 6
+Flow time    : 0.011 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe476_jobs.tsv)
+Creating project `joern-trace-1ced59fe-3552-4ac0-9fe0-2cbe89f4be9c` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1ced59fe-3552-4ac0-9fe0-2cbe89f4be9c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-08dc1818-bc3f-4187-bc6a-fe0ced9d1786` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-08dc1818-bc3f-4187-bc6a-fe0ced9d1786/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-272829ba-08ff-4b7f-8050-99cad7a1f246` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-272829ba-08ff-4b7f-8050-99cad7a1f246/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-79d03f9e-2ece-4007-8d88-ea9051130932` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-79d03f9e-2ece-4007-8d88-ea9051130932/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8980c8d8-ed17-4a03-b966-82a4ae27c56b` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe476_cpg/cwe476-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-8980c8d8-ed17-4a03-b966-82a4ae27c56b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

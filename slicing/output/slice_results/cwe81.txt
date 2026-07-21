@@ -1,0 +1,621 @@
+# CWE-81: 9 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe81_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-1-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-37bc6422-d70f-4d7b-9ae0-54bf487906dc/cpg.bin.tmp)
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-1-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_01.java:123 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_01.java:131 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.209 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=123 | data = "foo"
+        ↓
+[1] line=125 | data != null
+        ↓
+[2] line=131 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=131 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=123 | data = "foo"
+        ↓
+[1] line=125 | data != null
+        ↓
+[2] line=131 | "<br>bad() - Parameter name has value " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=118, col=54 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=123, col=9 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=123, col=16 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=125, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=125, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=125, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=125, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=131, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=131, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_01.java | line=131, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.025 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.209 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-2-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-4a3cce5a-494a-4d92-8a37-49d71189bf31/cpg.bin.tmp)
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-2-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_02.java:132 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_02.java:142 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=132 | data = "foo"
+        ↓
+[1] line=136 | data != null
+        ↓
+[2] line=142 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=142 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=132 | data = "foo"
+        ↓
+[1] line=136 | data != null
+        ↓
+[2] line=142 | "<br>bad() - Parameter name has value " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=119, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=122, col=9 | if (false)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=122, col=13 | false
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=126, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=126, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=132, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=132, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=136, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=136, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=136, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=136, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=142, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=142, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=142, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.015 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.037 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-2-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_02.java:154 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_02.java:169 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.058 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=163 | data != null
+        ↓
+[2] line=169 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=169 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=163 | data != null
+        ↓
+[2] line=169 | "<br>bad() - Parameter name has value " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=148, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=151, col=9 | if (true)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=151, col=13 | true
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=154, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=154, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=160, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=160, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=163, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=163, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=163, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=163, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=169, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=169, col=13 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=169, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=169, col=37 | "<br>bad() - Parameter name has value " + data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_02.java | line=169, col=79 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 12
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.058 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-3-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-dae86b07-4ab3-4834-ab0b-4668a10dc46e/cpg.bin.tmp)
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-3-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_03.java:132 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_03.java:142 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=132 | data = "foo"
+        ↓
+[1] line=136 | data != null
+        ↓
+[2] line=142 | "<br>bad() - Parameter name has value " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=132 | data = "foo"
+        ↓
+[1] line=136 | data != null
+        ↓
+[2] line=142 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=142 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=119, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=122, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=122, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=122, col=13 | 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=122, col=18 | 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=126, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=126, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=132, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=132, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=136, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=136, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=136, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=136, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=142, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=142, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=142, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.016 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.050 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-3-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_03.java:154 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_03.java:169 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.038 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=163 | data != null
+        ↓
+[2] line=169 | "<br>bad() - Parameter name has value " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=154 | data = "foo"
+        ↓
+[1] line=163 | data != null
+        ↓
+[2] line=169 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=169 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=148, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=151, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=151, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=151, col=13 | 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=151, col=18 | 5
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=154, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=154, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=160, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=160, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=163, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=163, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=163, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=163, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=169, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=169, col=13 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=169, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=169, col=37 | "<br>bad() - Parameter name has value " + data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_03.java | line=169, col=79 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 12
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 2
+Final slice nodes : 18
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.038 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-4-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-6f2b2783-b08f-4958-8154-32943678c397/cpg.bin.tmp)
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-4-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_04.java:139 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_04.java:149 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=139 | data = "foo"
+        ↓
+[1] line=143 | data != null
+        ↓
+[2] line=149 | "<br>bad() - Parameter name has value " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=139 | data = "foo"
+        ↓
+[1] line=143 | data != null
+        ↓
+[2] line=149 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=149 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=126, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=129, col=9 | if (CWE81_XSS_Error_Message__Servlet_File_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=129, col=13 | CWE81_XSS_Error_Message__Servlet_File_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=133, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=133, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=139, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=139, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=143, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=143, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=143, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=143, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=149, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=149, col=13 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=149, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=149, col=37 | "<br>bad() - Parameter name has value " + data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=149, col=79 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 12
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-4-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_04.java:161 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_04.java:176 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.035 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=161 | data = "foo"
+        ↓
+[1] line=170 | data != null
+        ↓
+[2] line=176 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=176 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=161 | data = "foo"
+        ↓
+[1] line=170 | data != null
+        ↓
+[2] line=176 | "<br>bad() - Parameter name has value " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=155, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=158, col=9 | if (CWE81_XSS_Error_Message__Servlet_File_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=158, col=13 | CWE81_XSS_Error_Message__Servlet_File_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=161, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=167, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=167, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=170, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=170, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=170, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=170, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=176, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=176, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_04.java | line=176, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.035 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-5-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ab8a14ee-859e-429a-90c6-f3c04a46f5e6/cpg.bin.tmp)
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-5-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_05.java:139 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_05.java:149 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=139 | data = "foo"
+        ↓
+[1] line=143 | data != null
+        ↓
+[2] line=149 | "<br>bad() - Parameter name has value " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=139 | data = "foo"
+        ↓
+[1] line=143 | data != null
+        ↓
+[2] line=149 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=149 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=126, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=129, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=129, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=133, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=133, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=139, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=139, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=143, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=143, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=143, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=143, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=149, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=149, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=149, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.029 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-5-cpg-resolved.bin
+Source      : CWE81_XSS_Error_Message__Servlet_File_05.java:161 (3 CFG node(s))
+Sink        : CWE81_XSS_Error_Message__Servlet_File_05.java:176 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=161 | data = "foo"
+        ↓
+[1] line=170 | data != null
+        ↓
+[2] line=176 | "<br>bad() - Parameter name has value " + data
+        ↓
+[3] line=176 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=161 | data = "foo"
+        ↓
+[1] line=170 | data != null
+        ↓
+[2] line=176 | "<br>bad() - Parameter name has value " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=155, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=158, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=158, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=161, col=20 | "foo"
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=167, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=167, col=20 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=170, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=170, col=13 | data
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=170, col=13 | data != null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=170, col=21 | null
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=176, col=13 | response
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=176, col=13 | response.sendError(404, "<br>bad() - Parameter name has value " + data)
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=176, col=32 | 404
+src/main/java/juliet/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_File_05.java | line=176, col=37 | "<br>bad() - Parameter name has value " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.031 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe81_jobs.tsv)
+Creating project `joern-trace-37bc6422-d70f-4d7b-9ae0-54bf487906dc` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-37bc6422-d70f-4d7b-9ae0-54bf487906dc/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-4a3cce5a-494a-4d92-8a37-49d71189bf31` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-4a3cce5a-494a-4d92-8a37-49d71189bf31/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-dae86b07-4ab3-4834-ab0b-4668a10dc46e` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-dae86b07-4ab3-4834-ab0b-4668a10dc46e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-6f2b2783-b08f-4958-8154-32943678c397` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-6f2b2783-b08f-4958-8154-32943678c397/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ab8a14ee-859e-429a-90c6-f3c04a46f5e6` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe81_cpg/cwe81-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ab8a14ee-859e-429a-90c6-f3c04a46f5e6/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

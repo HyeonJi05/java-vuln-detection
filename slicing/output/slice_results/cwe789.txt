@@ -1,0 +1,558 @@
+# CWE-789: 14 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe789_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-1-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-eb5568bb-96ed-4cad-8623-62b3d4d3017a/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-1-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java:36 (1 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java:52 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.141 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.141 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-1-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java:67 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java:70 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.089 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=67 | data = 2
+        ↓
+[1] line=70 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java | line=67, col=9 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java | line=67, col=16 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java | line=70, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java | line=70, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_01.java | line=70, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 6
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 6
+Slice time        : 0.015 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.089 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-2-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-680d9305-8104-472d-bb29-64c38fb74f06/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-2-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:36 (1 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:59 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.022 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-2-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:77 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:82 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=77 | data = 2
+        ↓
+[1] line=82 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=67, col=9 | if (false)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=67, col=13 | false
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=71, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=71, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=77, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=77, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=82, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=82, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=82, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.022 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-2-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:93 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java:103 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=103 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=90, col=9 | if (true)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=90, col=13 | true
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=93, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=99, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=103, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=103, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_02.java | line=103, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.019 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-3-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-3047bb7b-2cd7-4435-b8c3-fb465505d09d/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-3-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:36 (1 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:59 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.014 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-3-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:77 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:82 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=77 | data = 2
+        ↓
+[1] line=82 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=67, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=67, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=67, col=13 | 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=67, col=18 | 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=71, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=71, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=77, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=77, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=82, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=82, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=82, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.013 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-3-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:93 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java:103 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=103 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=90, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=90, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=90, col=13 | 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=90, col=18 | 5
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=93, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=99, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=103, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=103, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_03.java | line=103, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.012 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-4-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-00ad2704-60ee-4bd0-a0d4-926b5bce7443/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-4-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:43 (1 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:66 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.015 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-4-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:84 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:89 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=84 | data = 2
+        ↓
+[1] line=89 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=74, col=9 | if (CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=74, col=13 | CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=78, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=78, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=84, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=84, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=89, col=-1 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=89, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=89, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=89, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.012 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-4-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:100 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java:110 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=110 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=97, col=9 | if (CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=97, col=13 | CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=100, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=106, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=110, col=-1 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=110, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=110, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_04.java | line=110, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.010 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-5-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9659b0b4-3bf6-4dcd-aaf8-9f802a16bc77/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-5-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:43 (1 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:66 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-5-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:84 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:89 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=84 | data = 2
+        ↓
+[1] line=89 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=74, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=74, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=78, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=78, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=84, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=84, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=89, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=89, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=89, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.018 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-5-cpg-resolved.bin
+Source      : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:100 (3 CFG node(s))
+Sink        : CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java:110 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=110 | new ArrayList(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=97, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=97, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=100, col=20 | 2
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=106, col=20 | 0
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=110, col=19 | intArrayList
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=110, col=34 | new ArrayList(data)
+src/main/java/juliet/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__Environment_ArrayList_05.java | line=110, col=48 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.023 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe789_jobs.tsv)
+Creating project `joern-trace-eb5568bb-96ed-4cad-8623-62b3d4d3017a` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-eb5568bb-96ed-4cad-8623-62b3d4d3017a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-680d9305-8104-472d-bb29-64c38fb74f06` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-680d9305-8104-472d-bb29-64c38fb74f06/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-3047bb7b-2cd7-4435-b8c3-fb465505d09d` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-3047bb7b-2cd7-4435-b8c3-fb465505d09d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-00ad2704-60ee-4bd0-a0d4-926b5bce7443` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-00ad2704-60ee-4bd0-a0d4-926b5bce7443/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-9659b0b4-3bf6-4dcd-aaf8-9f802a16bc77` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe789_cpg/cwe789-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9659b0b4-3bf6-4dcd-aaf8-9f802a16bc77/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

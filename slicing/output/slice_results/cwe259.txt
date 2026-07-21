@@ -1,0 +1,549 @@
+# CWE-259: 14 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe259_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-1-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1cd91e01-c1fc-4762-951c-e4ca89405079/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-1-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_01.java:33 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_01.java:44 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.168 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=33 | data = "7e5tc4s3"
+        ↓
+[1] line=39 | data != null
+        ↓
+[2] line=44 | DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=33 | data = "7e5tc4s3"
+        ↓
+[1] line=39 | data != null
+        ↓
+[2] line=44 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=44 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=33, col=9 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=33, col=16 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=39, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=39, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=39, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=41, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_01.java | line=44, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 1
+Control DDG nodes : 5
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.035 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.168 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-1-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_01.java:107 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_01.java:131 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.031 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-2-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c577aba2-f739-4efe-af0f-c531f87ce075/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-2-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_02.java:34 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_02.java:52 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | data = "7e5tc4s3"
+        ↓
+[1] line=47 | data != null
+        ↓
+[2] line=52 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=52 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | data = "7e5tc4s3"
+        ↓
+[1] line=47 | data != null
+        ↓
+[2] line=52 | DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=31, col=9 | if (true)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=31, col=13 | true
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=34, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=34, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=40, col=20 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=47, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=47, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=47, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=49, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=17 | connection = DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_02.java | line=52, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 13
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 3
+Final slice nodes : 18
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.027 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-2-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_02.java:118 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_02.java:144 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.023 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-2-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_02.java:202 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_02.java:231 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.021 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-3-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b7229aa0-3971-4729-a713-3e6eca9abcee/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-3-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_03.java:34 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_03.java:52 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | data = "7e5tc4s3"
+        ↓
+[1] line=47 | data != null
+        ↓
+[2] line=52 | DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | data = "7e5tc4s3"
+        ↓
+[1] line=47 | data != null
+        ↓
+[2] line=52 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=52 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=31, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=31, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=31, col=13 | 5
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=31, col=18 | 5
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=34, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=34, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=40, col=20 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=47, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=47, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=47, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=49, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=17 | connection = DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_03.java | line=52, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 13
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.029 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-3-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_03.java:118 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_03.java:144 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.015 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-3-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_03.java:202 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_03.java:231 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.020 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.020 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-4-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-88d2345f-246f-4356-8f31-65d18b5cbc71/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-4-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_04.java:41 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_04.java:59 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=41 | data = "7e5tc4s3"
+        ↓
+[1] line=54 | data != null
+        ↓
+[2] line=59 | DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=41 | data = "7e5tc4s3"
+        ↓
+[1] line=54 | data != null
+        ↓
+[2] line=59 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=59 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=38, col=9 | if (CWE259_Hard_Coded_Password__driverManager_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=38, col=13 | CWE259_Hard_Coded_Password__driverManager_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=41, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=47, col=20 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=54, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=54, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=54, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=54, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=56, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=17 | connection = DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_04.java | line=59, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 13
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 3
+Final slice nodes : 18
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.017 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-4-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_04.java:125 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_04.java:151 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-4-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_04.java:209 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_04.java:238 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-5-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-0fbcc492-3d9b-4b79-8fb2-99a4533478ed/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-5-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_05.java:41 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_05.java:59 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=41 | data = "7e5tc4s3"
+        ↓
+[1] line=54 | data != null
+        ↓
+[2] line=59 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=59 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=41 | data = "7e5tc4s3"
+        ↓
+[1] line=54 | data != null
+        ↓
+[2] line=59 | DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=38, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=38, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=41, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=47, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=47, col=20 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=54, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=54, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=54, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=54, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=56, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_05.java | line=59, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 12
+Control nodes     : 2
+Control DDG nodes : 8
+AST controls      : 3
+Final slice nodes : 17
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-5-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_05.java:125 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_05.java:151 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-5-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_05.java:209 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_05.java:238 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.008 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe259_jobs.tsv)
+Creating project `joern-trace-1cd91e01-c1fc-4762-951c-e4ca89405079` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1cd91e01-c1fc-4762-951c-e4ca89405079/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c577aba2-f739-4efe-af0f-c531f87ce075` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c577aba2-f739-4efe-af0f-c531f87ce075/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b7229aa0-3971-4729-a713-3e6eca9abcee` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b7229aa0-3971-4729-a713-3e6eca9abcee/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-88d2345f-246f-4356-8f31-65d18b5cbc71` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-88d2345f-246f-4356-8f31-65d18b5cbc71/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-0fbcc492-3d9b-4b79-8fb2-99a4533478ed` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe259_cpg/cwe259-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-0fbcc492-3d9b-4b79-8fb2-99a4533478ed/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

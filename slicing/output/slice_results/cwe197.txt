@@ -1,0 +1,630 @@
+# CWE-197: 14 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe197_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-1-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-5345abc1-ffe6-4c97-a763-d592364783d6/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-1-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java:32 (1 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java:49 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.119 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.119 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-1-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java:65 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java:69 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.062 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=65 | data = 2
+        ↓
+[1] line=69 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=65 | data = 2
+        ↓
+[1] line=69 | (byte) data
+        ↓
+[2] line=69 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java | line=65, col=9 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java | line=65, col=16 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java | line=69, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java | line=69, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_01.java | line=69, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 5
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.062 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-2-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ba8a2c34-7a45-416e-8420-3affbdfef71b/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-2-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:32 (1 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:56 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.018 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-2-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:75 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:81 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=75 | data = 2
+        ↓
+[1] line=81 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=75 | data = 2
+        ↓
+[1] line=81 | (byte) data
+        ↓
+[2] line=81 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=65, col=9 | if (false)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=65, col=13 | false
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=69, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=69, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=75, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=81, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=81, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=81, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.017 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-2-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:93 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java:104 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=104 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=104 | (byte) data
+        ↓
+[2] line=104 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=90, col=9 | if (true)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=90, col=13 | true
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=93, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=99, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=104, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=104, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_02.java | line=104, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.016 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-3-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-3fe3d10f-d2c1-4278-b9e2-9dda0d2bdbfd/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-3-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:32 (1 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:56 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.013 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-3-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:75 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:81 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=75 | data = 2
+        ↓
+[1] line=81 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=75 | data = 2
+        ↓
+[1] line=81 | (byte) data
+        ↓
+[2] line=81 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=65, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=65, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=65, col=13 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=65, col=18 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=69, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=69, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=75, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=75, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=81, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=81, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=81, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.013 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-3-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:93 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java:104 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=104 | (byte) data
+        ↓
+[2] line=104 | IO.writeLine((byte) data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=93 | data = 2
+        ↓
+[1] line=104 | (byte) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=90, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=90, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=90, col=13 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=90, col=18 | 5
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=93, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=99, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=104, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=104, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_03.java | line=104, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.011 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-4-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9dec3379-ba78-4929-8998-5c0b3f04e560/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-4-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:39 (1 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:63 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.017 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-4-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:82 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:88 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=82 | data = 2
+        ↓
+[1] line=88 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=82 | data = 2
+        ↓
+[1] line=88 | (byte) data
+        ↓
+[2] line=88 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=72, col=9 | if (CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=72, col=13 | CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=76, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=76, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=82, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=82, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=88, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=88, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=88, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.018 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-4-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:100 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java:111 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=111 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=111 | (byte) data
+        ↓
+[2] line=111 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=97, col=9 | if (CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=97, col=13 | CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=100, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=106, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=111, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=111, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=111, col=26 | (byte) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_04.java | line=111, col=32 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.015 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-5-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-904484cf-0b53-4af4-a596-694d6842aa51/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-5-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:39 (1 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:63 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.011 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-5-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:82 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:88 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=82 | data = 2
+        ↓
+[1] line=88 | (byte) data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=82 | data = 2
+        ↓
+[1] line=88 | (byte) data
+        ↓
+[2] line=88 | IO.writeLine((byte) data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=72, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=72, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=76, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=76, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=82, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=82, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=88, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=88, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=88, col=26 | (byte) data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.016 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-5-cpg-resolved.bin
+Source      : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:100 (3 CFG node(s))
+Sink        : CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java:111 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=111 | (byte) data
+        ↓
+[2] line=111 | IO.writeLine((byte) data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=100 | data = 2
+        ↓
+[1] line=111 | (byte) data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=97, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=97, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=100, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=100, col=20 | 2
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=106, col=13 | data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=106, col=20 | 0
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=111, col=13 | IO.writeLine((byte) data)
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=111, col=13 | IO
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=111, col=26 | (byte) data
+src/main/java/juliet/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_Environment_to_byte_05.java | line=111, col=32 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.015 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe197_jobs.tsv)
+Creating project `joern-trace-5345abc1-ffe6-4c97-a763-d592364783d6` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-5345abc1-ffe6-4c97-a763-d592364783d6/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ba8a2c34-7a45-416e-8420-3affbdfef71b` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-ba8a2c34-7a45-416e-8420-3affbdfef71b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-3fe3d10f-d2c1-4278-b9e2-9dda0d2bdbfd` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-3fe3d10f-d2c1-4278-b9e2-9dda0d2bdbfd/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-9dec3379-ba78-4929-8998-5c0b3f04e560` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9dec3379-ba78-4929-8998-5c0b3f04e560/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-904484cf-0b53-4af4-a596-694d6842aa51` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe197_cpg/cwe197-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-904484cf-0b53-4af4-a596-694d6842aa51/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

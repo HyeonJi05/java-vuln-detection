@@ -1,0 +1,1631 @@
+# CWE-690: 23 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe690_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-1-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9c6a1447-d5d1-4cd3-9b82-6eed7c0c95f1/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-1-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_01.java:29 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_01.java:32 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.165 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=29 | getStringBad()
+        ↓
+[1] line=29 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=32 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=29 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=32 | data.trim()
+        ↓
+[2] line=32 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=29 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=32 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=29 | getStringBad()
+        ↓
+[1] line=29 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=32 | data.trim()
+        ↓
+[3] line=32 | String stringTrimmed = data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=29, col=9 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=29, col=16 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=29, col=16 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=32, col=16 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=32, col=16 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=32, col=32 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=32, col=32 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 7
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 7
+Slice time        : 0.017 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.165 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-1-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_01.java:65 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_01.java:68 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=65 | getStringBad()
+        ↓
+[1] line=65 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=68 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=65 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=68 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=65, col=9 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=65, col=16 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=65, col=16 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=68, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=68, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=68, col=13 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=68, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 6
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 7
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.017 seconds
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-1-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_01.java:50 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_01.java:53 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=50 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=53 | data.trim()
+        ↓
+[2] line=53 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=50 | getStringGood()
+        ↓
+[1] line=50 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=53 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=50 | getStringGood()
+        ↓
+[1] line=50 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=53 | data.trim()
+        ↓
+[3] line=53 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=50 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=53 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=50, col=9 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=50, col=16 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=50, col=16 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=53, col=16 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=53, col=16 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=53, col=32 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_01.java | line=53, col=32 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 7
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 7
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.024 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-e1c08b1f-7464-4f40-b81a-1a93c3037d27/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_02.java:30 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_02.java:42 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=30 | getStringBad()
+        ↓
+[1] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=42 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=42 | data.trim()
+        ↓
+[2] line=42 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=30 | getStringBad()
+        ↓
+[1] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=42 | data.trim()
+        ↓
+[3] line=42 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=42 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=27, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=27, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=30, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=30, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=30, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=36, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=39, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=39, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=42, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=42, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=42, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=42, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.024 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_02.java:104 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_02.java:122 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=104 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=122 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=104 | getStringBad()
+        ↓
+[1] line=104 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=122 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=101, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=101, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=104, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=104, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=104, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=110, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=110, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=113, col=9 | if (false)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=113, col=13 | false
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=122, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=122, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=122, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=122, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 13
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.014 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_02.java:138 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_02.java:150 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=138 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=150 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=138 | getStringBad()
+        ↓
+[1] line=138 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=150 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=135, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=135, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=138, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=138, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=144, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=147, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=147, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=150, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=150, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=150, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=150, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.013 seconds
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_02.java:61 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_02.java:68 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=68 | data.trim()
+        ↓
+[2] line=68 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=61 | getStringGood()
+        ↓
+[1] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=68 | data.trim()
+        ↓
+[3] line=68 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=68 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=61 | getStringGood()
+        ↓
+[1] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=68 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=51, col=9 | if (false)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=51, col=13 | false
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=55, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=55, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=61, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=61, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=61, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=65, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=65, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=68, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=68, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=68, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=68, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.014 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_02.java:80 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_02.java:92 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=80 | getStringGood()
+        ↓
+[1] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=92 | data.trim()
+        ↓
+[3] line=92 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=80 | getStringGood()
+        ↓
+[1] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=92 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=92 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=92 | data.trim()
+        ↓
+[2] line=92 | String stringTrimmed = data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=77, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=77, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=80, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=80, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=80, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=86, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=86, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=89, col=9 | if (true)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=89, col=13 | true
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=92, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=92, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_02.java | line=92, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.016 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-6f22509f-1185-4ae1-bea7-9bfb1ff8b31a/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_03.java:30 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_03.java:42 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=30 | getStringBad()
+        ↓
+[1] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=42 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=30 | getStringBad()
+        ↓
+[1] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=42 | data.trim()
+        ↓
+[3] line=42 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=42 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=30 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=42 | data.trim()
+        ↓
+[2] line=42 | String stringTrimmed = data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=27, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=27, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=27, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=27, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=30, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=30, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=30, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=36, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=39, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=39, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=39, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=39, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=42, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=42, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=42, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=42, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 17
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.021 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_03.java:104 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_03.java:122 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=104 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=122 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=104 | getStringBad()
+        ↓
+[1] line=104 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=122 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=101, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=101, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=101, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=101, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=104, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=104, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=104, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=110, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=110, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=113, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=113, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=113, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=113, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=122, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=122, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=122, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=122, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 17
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.018 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_03.java:138 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_03.java:150 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=138 | getStringBad()
+        ↓
+[1] line=138 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=150 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=138 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=150 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=135, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=135, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=135, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=135, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=138, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=138, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=138, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=144, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=144, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=147, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=147, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=147, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=147, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=150, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=150, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=150, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.017 seconds
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_03.java:61 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_03.java:68 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=61 | getStringGood()
+        ↓
+[1] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=68 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=61 | getStringGood()
+        ↓
+[1] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=68 | data.trim()
+        ↓
+[3] line=68 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=68 | data.trim()
+        ↓
+[2] line=68 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=61 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=68 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=51, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=51, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=51, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=51, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=55, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=55, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=61, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=61, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=61, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=65, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=65, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=65, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=65, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=68, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=68, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=68, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=68, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 17
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.017 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_03.java:80 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_03.java:92 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=80 | getStringGood()
+        ↓
+[1] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=92 | data.trim()
+        ↓
+[3] line=92 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=80 | getStringGood()
+        ↓
+[1] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=92 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=92 | data.trim()
+        ↓
+[2] line=92 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=80 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=92 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=77, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=77, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=77, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=77, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=80, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=80, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=80, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=86, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=86, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=89, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=89, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=89, col=13 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=89, col=16 | 5
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=92, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=92, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=92, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_03.java | line=92, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 17
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.011 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b7f7f851-15a9-4508-9c00-c2115275f3b5/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_04.java:37 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_04.java:49 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=37 | getStringBad()
+        ↓
+[1] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=49 | data.trim()
+        ↓
+[3] line=49 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=49 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=37 | getStringBad()
+        ↓
+[1] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=49 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=49 | data.trim()
+        ↓
+[2] line=49 | String stringTrimmed = data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=34, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=34, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=37, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=37, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=43, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=46, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=46, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=49, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=49, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=49, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.014 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_04.java:111 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_04.java:129 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=111 | getStringBad()
+        ↓
+[1] line=111 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=129 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=111 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=129 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=108, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=108, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=111, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=111, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=111, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=117, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=117, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=120, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=120, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=129, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=129, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=129, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=129, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_04.java:145 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_04.java:157 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.007 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=145 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=157 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=145 | getStringBad()
+        ↓
+[1] line=145 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=157 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=142, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=142, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=145, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=145, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=145, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=151, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=151, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=154, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=154, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=157, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=157, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=157, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.007 seconds
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_04.java:68 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_04.java:75 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=68 | getStringGood()
+        ↓
+[1] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=75 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=75 | data.trim()
+        ↓
+[2] line=75 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=68 | getStringGood()
+        ↓
+[1] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=75 | data.trim()
+        ↓
+[3] line=75 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=75 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=58, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=58, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=62, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=62, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=68, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=68, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=68, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=72, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=72, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=75, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=75, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=75, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=75, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.009 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_04.java:87 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_04.java:99 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=87 | getStringGood()
+        ↓
+[1] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=99 | data.trim()
+        ↓
+[3] line=99 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=99 | data.trim()
+        ↓
+[2] line=99 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=99 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=87 | getStringGood()
+        ↓
+[1] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=99 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=84, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=84, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=87, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=87, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=87, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=93, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=96, col=9 | if (CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=96, col=13 | CWE690_NULL_Deref_From_Return__Class_String_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=99, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=99, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=99, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_04.java | line=99, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.015 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-8321db1c-0114-44ae-8a70-ee4deb1cdff8/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_05.java:37 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_05.java:49 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.008 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=49 | data.trim()
+        ↓
+[2] line=49 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=37 | getStringBad()
+        ↓
+[1] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=49 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=37 | getStringBad()
+        ↓
+[1] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=49 | data.trim()
+        ↓
+[3] line=49 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=37 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=49 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=34, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=34, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=37, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=37, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=43, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=46, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=46, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=49, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=49, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=49, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=49, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.008 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_05.java:112 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_05.java:130 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=112 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=130 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=112 | getStringBad()
+        ↓
+[1] line=112 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=130 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=109, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=109, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=112, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=112, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=112, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=118, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=121, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=121, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=130, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=130, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=130, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=130, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.010 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_05.java:146 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_05.java:158 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=146 | getStringBad()
+        ↓
+[1] line=146 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[2] line=158 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=146 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringBad()
+        ↓
+[1] line=158 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=143, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=143, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=146, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=146, col=20 | getStringBad()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=146, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=152, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=152, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=155, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=155, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=158, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=158, col=17 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=158, col=17 | data != null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=158, col=25 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 3
+Final slice nodes : 13
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.012 seconds
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_05.java:68 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_05.java:75 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.016 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=68 | getStringGood()
+        ↓
+[1] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=75 | data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=68 | getStringGood()
+        ↓
+[1] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=75 | data.trim()
+        ↓
+[3] line=75 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=75 | data.trim()
+        ↓
+[2] line=75 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=68 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=75 | data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=58, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=58, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=62, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=62, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=68, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=68, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=68, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=72, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=72, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=75, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=75, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=75, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=75, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.016 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin
+Source      : CWE690_NULL_Deref_From_Return__Class_String_05.java:87 (4 CFG node(s))
+Sink        : CWE690_NULL_Deref_From_Return__Class_String_05.java:99 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=99 | data.trim()
+        ↓
+[2] line=99 | String stringTrimmed = data.trim()
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=87 | getStringGood()
+        ↓
+[1] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=99 | data.trim()
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[1] line=99 | data.trim()
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=87 | getStringGood()
+        ↓
+[1] line=87 | data = CWE690_NULL_Deref_From_Return__Class_Helper.getStringGood()
+        ↓
+[2] line=99 | data.trim()
+        ↓
+[3] line=99 | String stringTrimmed = data.trim()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=84, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=84, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=87, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=87, col=20 | getStringGood()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=87, col=20 | CWE690_NULL_Deref_From_Return__Class_Helper
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=93, col=20 | null
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=96, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=96, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=99, col=20 | stringTrimmed
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=99, col=20 | String stringTrimmed = data.trim()
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=99, col=36 | data
+src/main/java/juliet/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_05.java | line=99, col=36 | data.trim()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 2
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.012 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe690_jobs.tsv)
+Creating project `joern-trace-9c6a1447-d5d1-4cd3-9b82-6eed7c0c95f1` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-9c6a1447-d5d1-4cd3-9b82-6eed7c0c95f1/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e1c08b1f-7464-4f40-b81a-1a93c3037d27` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-e1c08b1f-7464-4f40-b81a-1a93c3037d27/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-6f22509f-1185-4ae1-bea7-9bfb1ff8b31a` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-6f22509f-1185-4ae1-bea7-9bfb1ff8b31a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b7f7f851-15a9-4508-9c00-c2115275f3b5` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-b7f7f851-15a9-4508-9c00-c2115275f3b5/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8321db1c-0114-44ae-8a70-ee4deb1cdff8` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe690_cpg/cwe690-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-8321db1c-0114-44ae-8a70-ee4deb1cdff8/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

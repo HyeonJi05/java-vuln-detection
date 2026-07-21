@@ -1,0 +1,747 @@
+# CWE-36: 14 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe36_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-1-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7991d233-2c8a-4c20-9b56-390423b79a0f/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-1-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_01.java:34 (5 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_01.java:37 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.152 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=34 | data = System.getenv("ADD")
+        ↓
+[1] line=37 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=34 | System.getenv("ADD")
+        ↓
+[1] line=34 | data = System.getenv("ADD")
+        ↓
+[2] line=37 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=34, col=9 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=34, col=16 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=34, col=16 | System
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=34, col=30 | "ADD"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=37, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=37, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=37, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 8
+Slice time        : 0.014 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.152 seconds
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-1-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_01.java:111 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_01.java:114 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=111 | data = "foo"
+        ↓
+[1] line=114 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=111, col=9 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=111, col=16 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=114, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=114, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=114, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_01.java | line=114, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 5
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 6
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.022 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-2-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c5e94128-b395-4ab6-8b04-536d53055808/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-2-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_02.java:35 (5 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_02.java:45 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=35 | data = System.getenv("ADD")
+        ↓
+[1] line=45 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=35 | System.getenv("ADD")
+        ↓
+[1] line=35 | data = System.getenv("ADD")
+        ↓
+[2] line=45 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=31, col=9 | if (true)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=31, col=13 | true
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=35, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=35, col=20 | System
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=35, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=41, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=45, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=45, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=45, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.027 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-2-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_02.java:122 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_02.java:127 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=122 | data = "foo"
+        ↓
+[1] line=127 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=112, col=9 | if (false)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=112, col=13 | false
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=116, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=116, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=122, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=122, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=127, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=127, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=127, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=127, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 10
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.021 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-2-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_02.java:197 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_02.java:207 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=197 | data = "foo"
+        ↓
+[1] line=207 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=194, col=9 | if (true)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=194, col=13 | true
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=197, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=197, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=203, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=203, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=207, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=207, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=207, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_02.java | line=207, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 10
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.019 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-3-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-999fe3b7-df4c-487d-bdd2-c3410c7f1de0/cpg.bin.tmp)
+
+########## FLOW tc3_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-3-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_03.java:35 (5 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_03.java:45 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=35 | System.getenv("ADD")
+        ↓
+[1] line=35 | data = System.getenv("ADD")
+        ↓
+[2] line=45 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=35 | data = System.getenv("ADD")
+        ↓
+[1] line=45 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=31, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=31, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=31, col=13 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=31, col=18 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=35, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=35, col=20 | System
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=35, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=41, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=45, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=45, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=45, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=45, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-3-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_03.java:122 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_03.java:127 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=122 | data = "foo"
+        ↓
+[1] line=127 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=112, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=112, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=112, col=13 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=112, col=18 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=116, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=116, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=122, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=122, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=127, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=127, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=127, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 6
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.015 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-3-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_03.java:197 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_03.java:207 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.012 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=197 | data = "foo"
+        ↓
+[1] line=207 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=194, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=194, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=194, col=13 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=194, col=18 | 5
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=197, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=197, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=203, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=203, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=207, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=207, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_03.java | line=207, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 6
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.012 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-4-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-315b6066-c184-4366-97be-3312b64434c9/cpg.bin.tmp)
+
+########## FLOW tc4_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-4-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_04.java:42 (5 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_04.java:52 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=42 | System.getenv("ADD")
+        ↓
+[1] line=42 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=42 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=38, col=9 | if (CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=38, col=13 | CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=42, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=42, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=42, col=20 | System
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=42, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=48, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=48, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=52, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=52, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=52, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.015 seconds
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-4-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_04.java:129 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_04.java:134 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.011 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=129 | data = "foo"
+        ↓
+[1] line=134 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=119, col=9 | if (CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=119, col=13 | CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=123, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=123, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=129, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=129, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=134, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=134, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=134, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 6
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 9
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.011 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-4-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_04.java:204 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_04.java:214 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.015 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=204 | data = "foo"
+        ↓
+[1] line=214 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=201, col=9 | if (CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=201, col=13 | CWE36_Absolute_Path_Traversal__Environment_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=204, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=204, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=210, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=210, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=214, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=214, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=214, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_04.java | line=214, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 10
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.015 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-5-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1c4a92a0-af32-4c4f-a5ef-deee9e6659c9/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-5-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_05.java:42 (5 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_05.java:52 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.013 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=42 | System.getenv("ADD")
+        ↓
+[1] line=42 | data = System.getenv("ADD")
+        ↓
+[2] line=52 | data != null
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=42 | data = System.getenv("ADD")
+        ↓
+[1] line=52 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=38, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=38, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=42, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=42, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=42, col=20 | System
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=42, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=48, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=48, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=52, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=52, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=52, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=52, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.013 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-5-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_05.java:129 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_05.java:134 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=129 | data = "foo"
+        ↓
+[1] line=134 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=119, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=119, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=123, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=123, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=129, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=129, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=134, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=134, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=134, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 6
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 9
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.014 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-5-cpg-resolved.bin
+Source      : CWE36_Absolute_Path_Traversal__Environment_05.java:204 (3 CFG node(s))
+Sink        : CWE36_Absolute_Path_Traversal__Environment_05.java:214 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.014 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=204 | data = "foo"
+        ↓
+[1] line=214 | data != null
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=201, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=201, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=204, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=204, col=20 | "foo"
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=210, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=210, col=20 | null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=214, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=214, col=13 | data
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=214, col=13 | data != null
+src/main/java/juliet/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_05.java | line=214, col=21 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 10
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.014 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe36_jobs.tsv)
+Creating project `joern-trace-7991d233-2c8a-4c20-9b56-390423b79a0f` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-7991d233-2c8a-4c20-9b56-390423b79a0f/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c5e94128-b395-4ab6-8b04-536d53055808` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c5e94128-b395-4ab6-8b04-536d53055808/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-999fe3b7-df4c-487d-bdd2-c3410c7f1de0` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-999fe3b7-df4c-487d-bdd2-c3410c7f1de0/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-315b6066-c184-4366-97be-3312b64434c9` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-315b6066-c184-4366-97be-3312b64434c9/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1c4a92a0-af32-4c4f-a5ef-deee9e6659c9` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe36_cpg/cwe36-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-1c4a92a0-af32-4c4f-a5ef-deee9e6659c9/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

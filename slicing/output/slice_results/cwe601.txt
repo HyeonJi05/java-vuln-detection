@@ -1,0 +1,579 @@
+# CWE-601: 9 flow(s) in one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe601_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-1-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cd87b6a3-bf6d-4442-89a9-61020ee7dca9/cpg.bin.tmp)
+
+########## FLOW tc1_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-1-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_01.java:137 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_01.java:155 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.167 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=137 | data = "foo"
+        ↓
+[1] line=139 | data != null
+        ↓
+[2] line=147 | new URI(data)
+        ↓
+[3] line=155 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=132, col=54 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=137, col=9 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=137, col=16 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=139, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=139, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=139, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=139, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=145, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=147, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=147, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=147, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=147, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=155, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_01.java | line=155, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 11
+Control nodes     : 2
+Control DDG nodes : 10
+AST controls      : 2
+Final slice nodes : 15
+Slice time        : 0.023 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.167 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-2-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-189dd784-f00d-490c-bada-73e28ce66f7e/cpg.bin.tmp)
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-2-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_02.java:146 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_02.java:166 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.022 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=146 | data = "foo"
+        ↓
+[1] line=150 | data != null
+        ↓
+[2] line=158 | new URI(data)
+        ↓
+[3] line=166 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=133, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=136, col=9 | if (false)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=136, col=13 | false
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=140, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=140, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=146, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=146, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=150, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=150, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=150, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=156, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=158, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=158, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=158, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=158, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=166, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=166, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.022 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-2-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_02.java:179 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_02.java:204 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.032 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=179 | data = "foo"
+        ↓
+[1] line=188 | data != null
+        ↓
+[2] line=196 | new URI(data)
+        ↓
+[3] line=204 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=173, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=176, col=9 | if (true)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=176, col=13 | true
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=179, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=179, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=185, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=185, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=188, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=188, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=188, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=188, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=194, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=196, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=196, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=196, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=196, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=204, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_02.java | line=204, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.032 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-3-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-602b4257-6e1f-4564-81f1-f227e246e42f/cpg.bin.tmp)
+
+########## FLOW tc3_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-3-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_03.java:146 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_03.java:166 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.036 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=146 | data = "foo"
+        ↓
+[1] line=150 | data != null
+        ↓
+[2] line=158 | new URI(data)
+        ↓
+[3] line=166 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=133, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=136, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=136, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=136, col=13 | 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=136, col=18 | 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=140, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=140, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=146, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=146, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=150, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=150, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=150, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=156, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=158, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=158, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=158, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=158, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=166, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=166, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 15
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.012 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.036 seconds
+
+########## FLOW tc3_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-3-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_03.java:179 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_03.java:204 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=179 | data = "foo"
+        ↓
+[1] line=188 | data != null
+        ↓
+[2] line=196 | new URI(data)
+        ↓
+[3] line=204 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=173, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=176, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=176, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=176, col=13 | 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=176, col=18 | 5
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=179, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=179, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=185, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=185, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=188, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=188, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=188, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=188, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=194, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=196, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=196, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=196, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=196, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=204, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_03.java | line=204, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 15
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.019 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-4-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c20e14b2-7117-4843-b33d-5c1dde143f1a/cpg.bin.tmp)
+
+########## FLOW tc4_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-4-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_04.java:153 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_04.java:173 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=153 | data = "foo"
+        ↓
+[1] line=157 | data != null
+        ↓
+[2] line=165 | new URI(data)
+        ↓
+[3] line=173 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=140, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=143, col=9 | if (CWE601_Open_Redirect__Servlet_File_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=143, col=13 | CWE601_Open_Redirect__Servlet_File_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=147, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=153, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=157, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=157, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=157, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=157, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=163, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=165, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=165, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=165, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=165, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=173, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=173, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.024 seconds
+
+########## FLOW tc4_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-4-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_04.java:186 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_04.java:211 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=186 | data = "foo"
+        ↓
+[1] line=195 | data != null
+        ↓
+[2] line=203 | new URI(data)
+        ↓
+[3] line=211 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=180, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=183, col=9 | if (CWE601_Open_Redirect__Servlet_File_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=183, col=13 | CWE601_Open_Redirect__Servlet_File_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=186, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=186, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=192, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=192, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=195, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=195, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=195, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=195, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=201, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=203, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=203, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=203, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=203, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=211, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java | line=211, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.018 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-5-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c5870131-0423-4a5e-b9e7-f7d263783e0c/cpg.bin.tmp)
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-5-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_05.java:153 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_05.java:173 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=153 | data = "foo"
+        ↓
+[1] line=157 | data != null
+        ↓
+[2] line=165 | new URI(data)
+        ↓
+[3] line=173 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=140, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=143, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=143, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=147, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=147, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=153, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=153, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=157, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=157, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=157, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=157, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=163, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=165, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=165, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=165, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=165, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=173, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=173, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 13
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.021 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-5-cpg-resolved.bin
+Source      : CWE601_Open_Redirect__Servlet_File_05.java:186 (3 CFG node(s))
+Sink        : CWE601_Open_Redirect__Servlet_File_05.java:211 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=186 | data = "foo"
+        ↓
+[1] line=195 | data != null
+        ↓
+[2] line=203 | new URI(data)
+        ↓
+[3] line=211 | response.sendRedirect(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=180, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=183, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=183, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=186, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=186, col=20 | "foo"
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=192, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=192, col=20 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=195, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=195, col=13 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=195, col=13 | data != null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=195, col=21 | null
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=201, col=13 | try
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=203, col=-1 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=203, col=17 | uri
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=203, col=23 | new URI(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=203, col=31 | data
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=211, col=13 | response
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=211, col=13 | response.sendRedirect(data)
+src/main/java/juliet/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_05.java | line=211, col=35 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 14
+Control nodes     : 3
+Control DDG nodes : 13
+AST controls      : 3
+Final slice nodes : 20
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.019 seconds
+executing /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/jobs/cwe601_jobs.tsv)
+Creating project `joern-trace-cd87b6a3-bf6d-4442-89a9-61020ee7dca9` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-cd87b6a3-bf6d-4442-89a9-61020ee7dca9/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-189dd784-f00d-490c-bada-73e28ce66f7e` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-189dd784-f00d-490c-bada-73e28ce66f7e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-602b4257-6e1f-4564-81f1-f227e246e42f` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-602b4257-6e1f-4564-81f1-f227e246e42f/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c20e14b2-7117-4843-b33d-5c1dde143f1a` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c20e14b2-7117-4843-b33d-5c1dde143f1a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c5870131-0423-4a5e-b9e7-f7d263783e0c` for CPG at `/home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/CPG/cwe601_cpg/cwe601-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/workspace/joern-trace-c5870131-0423-4a5e-b9e7-f7d263783e0c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
