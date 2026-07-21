@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE546_Suspicious_Comment__BUG_12.java">
+      <comment_flaw line="27" code="/* BUG: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__BUG_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__BUG_12::bad" />
+      <comment_fix line="45" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__BUG_12::good1" />
+      <comment_fix line="51" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__BUG_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="/* BUG: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__BUG_12::bad" file="CWE546_Suspicious_Comment__BUG_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__BUG_12::bad" file="CWE546_Suspicious_Comment__BUG_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE546_Suspicious_Comment__FIXME_12.java">
+      <comment_flaw line="27" code="/* FIXME: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__FIXME_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__FIXME_12::bad" />
+      <comment_fix line="45" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__FIXME_12::good1" />
+      <comment_fix line="51" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__FIXME_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="/* FIXME: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__FIXME_12::bad" file="CWE546_Suspicious_Comment__FIXME_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__FIXME_12::bad" file="CWE546_Suspicious_Comment__FIXME_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE546_Suspicious_Comment__HACK_12.java">
+      <comment_flaw line="27" code="/* HACK: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__HACK_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__HACK_12::bad" />
+      <comment_fix line="45" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__HACK_12::good1" />
+      <comment_fix line="51" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__HACK_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="/* HACK: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__HACK_12::bad" file="CWE546_Suspicious_Comment__HACK_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__HACK_12::bad" file="CWE546_Suspicious_Comment__HACK_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE546_Suspicious_Comment__LATER_12.java">
+      <comment_flaw line="27" code="/* LATER: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__LATER_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__LATER_12::bad" />
+      <comment_fix line="44" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__LATER_12::good1" />
+      <comment_fix line="50" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__LATER_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="/* LATER: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__LATER_12::bad" file="CWE546_Suspicious_Comment__LATER_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__LATER_12::bad" file="CWE546_Suspicious_Comment__LATER_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="80">
+    <file path="CWE546_Suspicious_Comment__TODO_12.java">
+      <comment_flaw line="27" code="/* TODO: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__TODO_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__TODO_12::bad" />
+      <comment_fix line="45" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__TODO_12::good1" />
+      <comment_fix line="51" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__TODO_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="/* TODO: There is a bug at this location...I'm not sure why! */" function="CWE546_Suspicious_Comment__TODO_12::bad" file="CWE546_Suspicious_Comment__TODO_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;This a test of the emergency broadcast system&quot;);" function="CWE546_Suspicious_Comment__TODO_12::bad" file="CWE546_Suspicious_Comment__TODO_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

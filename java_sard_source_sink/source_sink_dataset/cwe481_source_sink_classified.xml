@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE481_Assigning_Instead_of_Comparing__basic_12.java">
+      <comment_flaw line="30" code="[INLINE] (isZero = true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::bad" />
+      <comment_fix line="43" code="[INLINE] (isZero == true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::bad" />
+      <comment_fix line="60" code="[INLINE] (isZero == true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::good1" />
+      <comment_fix line="73" code="[INLINE] (isZero == true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="[INLINE] (isZero = true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::bad" file="CWE481_Assigning_Instead_of_Comparing__basic_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="43" code="[INLINE] (isZero == true)" function="CWE481_Assigning_Instead_of_Comparing__basic_12::bad" file="CWE481_Assigning_Instead_of_Comparing__basic_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

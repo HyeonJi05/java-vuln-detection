@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12.java">
+      <comment_flaw line="41" code="SecretKey secretKey = keyGenerator.generateKey();" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::bad" />
+      <comment_fix line="57" code="keyGenerator.init(256);" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::bad" />
+      <comment_fix line="82" code="keyGenerator.init(256);" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::good1" />
+      <comment_fix line="99" code="keyGenerator.init(256);" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="SecretKey secretKey = keyGenerator.generateKey();" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::bad" file="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="57" code="keyGenerator.init(256);" function="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12::bad" file="CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12.java">
+      <comment_flaw line="30" code="IO.writeLine(IO.toHex(messageDigest.digest()));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::bad" />
+      <comment_fix line="40" code="messageDigest.update(HASH_INPUT.getBytes(&quot;UTF-8&quot;));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::bad" />
+      <comment_fix line="55" code="messageDigest.update(HASH_INPUT.getBytes(&quot;UTF-8&quot;));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::good1" />
+      <comment_fix line="66" code="messageDigest.update(HASH_INPUT.getBytes(&quot;UTF-8&quot;));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="IO.writeLine(IO.toHex(messageDigest.digest()));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::bad" file="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="messageDigest.update(HASH_INPUT.getBytes(&quot;UTF-8&quot;));" function="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12::bad" file="CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

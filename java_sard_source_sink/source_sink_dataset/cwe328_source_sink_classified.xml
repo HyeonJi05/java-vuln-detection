@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE328_Reversible_One_Way_Hash__MD2_12.java">
+      <comment_flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD2&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::bad" />
+      <comment_fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::bad" />
+      <comment_fix line="55" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::good1" />
+      <comment_fix line="65" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD2&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::bad" file="CWE328_Reversible_One_Way_Hash__MD2_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD2_12::bad" file="CWE328_Reversible_One_Way_Hash__MD2_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE328_Reversible_One_Way_Hash__MD5_12.java">
+      <comment_flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD5&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::bad" />
+      <comment_fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::bad" />
+      <comment_fix line="55" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::good1" />
+      <comment_fix line="65" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD5&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::bad" file="CWE328_Reversible_One_Way_Hash__MD5_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__MD5_12::bad" file="CWE328_Reversible_One_Way_Hash__MD5_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE328_Reversible_One_Way_Hash__SHA1_12.java">
+      <comment_flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA1&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::bad" />
+      <comment_fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::bad" />
+      <comment_fix line="55" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::good1" />
+      <comment_fix line="65" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA1&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::bad" file="CWE328_Reversible_One_Way_Hash__SHA1_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="MessageDigest messageDigest = MessageDigest.getInstance(&quot;SHA-512&quot;);" function="CWE328_Reversible_One_Way_Hash__SHA1_12::bad" file="CWE328_Reversible_One_Way_Hash__SHA1_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

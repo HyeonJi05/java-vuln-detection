@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE193_Off_by_One_Error__do_12.java">
+      <comment_flaw line="28" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::bad" />
+      <comment_fix line="41" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::bad" />
+      <comment_fix line="58" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::good1" />
+      <comment_fix line="71" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::bad" file="CWE193_Off_by_One_Error__do_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="[INLINE] do" function="CWE193_Off_by_One_Error__do_12::bad" file="CWE193_Off_by_One_Error__do_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE193_Off_by_One_Error__for_12.java">
+      <comment_flaw line="28" code="for (int i = 0; i &lt;= intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::bad" />
+      <comment_fix line="39" code="for (int i = 0; i &lt; intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::bad" />
+      <comment_fix line="54" code="for (int i = 0; i &lt; intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::good1" />
+      <comment_fix line="65" code="for (int i = 0; i &lt; intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="for (int i = 0; i &lt;= intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::bad" file="CWE193_Off_by_One_Error__for_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="for (int i = 0; i &lt; intArray.length; i++)" function="CWE193_Off_by_One_Error__for_12::bad" file="CWE193_Off_by_One_Error__for_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE193_Off_by_One_Error__while_12.java">
+      <comment_flaw line="29" code="while (i &lt;= intArray.length)" function="CWE193_Off_by_One_Error__while_12::bad" />
+      <comment_fix line="42" code="while (i &lt; intArray.length)" function="CWE193_Off_by_One_Error__while_12::bad" />
+      <comment_fix line="59" code="while (i &lt; intArray.length)" function="CWE193_Off_by_One_Error__while_12::good1" />
+      <comment_fix line="72" code="while (i &lt; intArray.length)" function="CWE193_Off_by_One_Error__while_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="while (i &lt;= intArray.length)" function="CWE193_Off_by_One_Error__while_12::bad" file="CWE193_Off_by_One_Error__while_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="while (i &lt; intArray.length)" function="CWE193_Off_by_One_Error__while_12::bad" file="CWE193_Off_by_One_Error__while_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

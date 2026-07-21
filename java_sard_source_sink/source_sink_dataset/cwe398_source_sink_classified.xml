@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE398_Poor_Code_Quality__empty_block_12.java">
+      <comment_flaw line="27" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::bad" />
+      <comment_fix line="35" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::bad" />
+      <comment_fix line="51" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::good1" />
+      <comment_fix line="61" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::bad" file="CWE398_Poor_Code_Quality__empty_block_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="35" code="{" function="CWE398_Poor_Code_Quality__empty_block_12::bad" file="CWE398_Poor_Code_Quality__empty_block_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE398_Poor_Code_Quality__empty_case_12.java">
+      <comment_flaw line="32" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::bad" />
+      <comment_fix line="48" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::bad" />
+      <comment_fix line="70" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::good1" />
+      <comment_fix line="87" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::bad" file="CWE398_Poor_Code_Quality__empty_case_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="48" code="case 0:" function="CWE398_Poor_Code_Quality__empty_case_12::bad" file="CWE398_Poor_Code_Quality__empty_case_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE398_Poor_Code_Quality__empty_else_12.java">
+      <comment_flaw line="36" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::bad" />
+      <comment_fix line="53" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::bad" />
+      <comment_fix line="75" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::good1" />
+      <comment_fix line="93" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::bad" file="CWE398_Poor_Code_Quality__empty_else_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="53" code="{" function="CWE398_Poor_Code_Quality__empty_else_12::bad" file="CWE398_Poor_Code_Quality__empty_else_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE398_Poor_Code_Quality__empty_for_12.java">
+      <comment_flaw line="27" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::bad" />
+      <comment_fix line="36" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::bad" />
+      <comment_fix line="52" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::good1" />
+      <comment_fix line="62" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::bad" file="CWE398_Poor_Code_Quality__empty_for_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="for (int i = 0; i &lt; 10; i++)" function="CWE398_Poor_Code_Quality__empty_for_12::bad" file="CWE398_Poor_Code_Quality__empty_for_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="81">
+    <file path="CWE398_Poor_Code_Quality__empty_if_12.java">
+      <comment_flaw line="31" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::bad" />
+      <comment_fix line="48" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::bad" />
+      <comment_fix line="70" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::good1" />
+      <comment_fix line="88" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::bad" file="CWE398_Poor_Code_Quality__empty_if_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="48" code="if (x == 0)" function="CWE398_Poor_Code_Quality__empty_if_12::bad" file="CWE398_Poor_Code_Quality__empty_if_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="98">
+    <file path="CWE398_Poor_Code_Quality__empty_while_12.java">
+      <comment_flaw line="28" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::bad" />
+      <comment_fix line="39" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::bad" />
+      <comment_fix line="56" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::good1" />
+      <comment_fix line="68" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::bad" file="CWE398_Poor_Code_Quality__empty_while_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="while(i++ &lt; 10)" function="CWE398_Poor_Code_Quality__empty_while_12::bad" file="CWE398_Poor_Code_Quality__empty_while_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="115">
+    <file path="CWE398_Poor_Code_Quality__equals_12.java">
+      <comment_flaw line="29" code="intOne = intOne;" function="CWE398_Poor_Code_Quality__equals_12::bad" />
+      <comment_fix line="40" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12::bad" />
+      <comment_fix line="55" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12::good1" />
+      <comment_fix line="66" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="intOne = intOne;" function="CWE398_Poor_Code_Quality__equals_12::bad" file="CWE398_Poor_Code_Quality__equals_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12::bad" file="CWE398_Poor_Code_Quality__equals_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="132">
+    <file path="CWE398_Poor_Code_Quality__semicolon_12.java">
+      <comment_flaw line="27" code="IO.writeLine(&quot;Hello from bad()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::bad" />
+      <comment_fix line="34" code="IO.writeLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::bad" />
+      <comment_fix line="45" code="IO.writeLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::good1" />
+      <comment_fix line="52" code="IO.writeLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="IO.writeLine(&quot;Hello from bad()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::bad" file="CWE398_Poor_Code_Quality__semicolon_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="IO.writeLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12::bad" file="CWE398_Poor_Code_Quality__semicolon_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>
