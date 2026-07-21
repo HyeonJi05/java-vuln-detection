@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE459_Incomplete_Cleanup__Servlet_temp_file_12.java">
+      <comment_flaw line="40" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::bad" />
+      <comment_fix line="90" code="if (tempFile.exists())" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::bad" />
+      <comment_fix line="129" code="if (tempFile.exists())" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::good1" />
+      <comment_fix line="165" code="if (tempFile.exists())" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::bad" file="CWE459_Incomplete_Cleanup__Servlet_temp_file_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="90" code="if (tempFile.exists())" function="CWE459_Incomplete_Cleanup__Servlet_temp_file_12::bad" file="CWE459_Incomplete_Cleanup__Servlet_temp_file_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE459_Incomplete_Cleanup__temp_file_12.java">
+      <comment_flaw line="37" code="/* Set the permissions to avoid insecure temporary file incidentals  */" function="CWE459_Incomplete_Cleanup__temp_file_12::bad" />
+      <comment_fix line="67" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__temp_file_12::bad" />
+      <comment_fix line="102" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__temp_file_12::good1" />
+      <comment_fix line="133" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__temp_file_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="/* Set the permissions to avoid insecure temporary file incidentals  */" function="CWE459_Incomplete_Cleanup__temp_file_12::bad" file="CWE459_Incomplete_Cleanup__temp_file_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="67" code="tempFile.deleteOnExit();" function="CWE459_Incomplete_Cleanup__temp_file_12::bad" file="CWE459_Incomplete_Cleanup__temp_file_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE605_Multiple_Binds_Same_Port__basic_12.java">
+      <comment_flaw line="41" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15000));" function="CWE605_Multiple_Binds_Same_Port__basic_12::bad" />
+      <comment_fix line="87" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15001));" function="CWE605_Multiple_Binds_Same_Port__basic_12::bad" />
+      <comment_fix line="136" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15001));" function="CWE605_Multiple_Binds_Same_Port__basic_12::good1" />
+      <comment_fix line="182" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15001));" function="CWE605_Multiple_Binds_Same_Port__basic_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15000));" function="CWE605_Multiple_Binds_Same_Port__basic_12::bad" file="CWE605_Multiple_Binds_Same_Port__basic_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="87" code="socket2.bind(new InetSocketAddress(&quot;localhost&quot;, 15001));" function="CWE605_Multiple_Binds_Same_Port__basic_12::bad" file="CWE605_Multiple_Binds_Same_Port__basic_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

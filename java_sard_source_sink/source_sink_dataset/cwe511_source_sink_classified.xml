@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE511_Logic_Time_Bomb__counter_12.java">
+      <comment_flaw line="30" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::bad" />
+      <comment_fix line="46" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::bad" />
+      <comment_fix line="66" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::good1" />
+      <comment_fix line="82" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::bad" file="CWE511_Logic_Time_Bomb__counter_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="46" code="if (count == 20000)" function="CWE511_Logic_Time_Bomb__counter_12::bad" file="CWE511_Logic_Time_Bomb__counter_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE511_Logic_Time_Bomb__rand_12.java">
+      <comment_flaw line="29" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::bad" />
+      <comment_fix line="38" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::bad" />
+      <comment_fix line="52" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::good1" />
+      <comment_fix line="61" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::bad" file="CWE511_Logic_Time_Bomb__rand_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if ((new SecureRandom()).nextInt() == 20000)" function="CWE511_Logic_Time_Bomb__rand_12::bad" file="CWE511_Logic_Time_Bomb__rand_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE511_Logic_Time_Bomb__time_12.java">
+      <comment_flaw line="32" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::bad" />
+      <comment_fix line="46" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::bad" />
+      <comment_fix line="63" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::good1" />
+      <comment_fix line="77" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::bad" file="CWE511_Logic_Time_Bomb__time_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="46" code="if (calendarNow.after(calendarCheck))" function="CWE511_Logic_Time_Bomb__time_12::bad" file="CWE511_Logic_Time_Bomb__time_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="1">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_01.java">
+      <comment_flaw line="32" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::bad" />
+      <comment_flaw line="37" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::bad" />
+      <comment_fix line="56" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::good1" />
+      <comment_flaw line="60" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_01.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_01::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_01.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="2">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_02.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_02.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_02::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_02.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="3">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_03.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_03.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_03::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_03.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="4">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_04.java">
+      <comment_flaw line="40" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::bad" />
+      <comment_flaw line="43" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::bad" />
+      <comment_fix line="65" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::good1" />
+      <comment_flaw line="69" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::good1" />
+      <comment_fix line="85" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::good2" />
+      <comment_flaw line="87" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_04.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_04::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_04.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="5">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_05.java">
+      <comment_flaw line="40" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::bad" />
+      <comment_flaw line="43" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::bad" />
+      <comment_fix line="65" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::good1" />
+      <comment_flaw line="69" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::good1" />
+      <comment_fix line="85" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::good2" />
+      <comment_flaw line="87" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_05.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_05::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_05.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="6">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_06.java">
+      <comment_flaw line="39" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::bad" />
+      <comment_flaw line="42" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::bad" />
+      <comment_fix line="64" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::good1" />
+      <comment_flaw line="68" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::good1" />
+      <comment_fix line="84" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::good2" />
+      <comment_flaw line="86" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="39" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_06.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_06::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_06.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="7">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_07.java">
+      <comment_flaw line="39" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::bad" />
+      <comment_flaw line="42" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::bad" />
+      <comment_fix line="64" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::good1" />
+      <comment_flaw line="68" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::good1" />
+      <comment_fix line="84" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::good2" />
+      <comment_flaw line="86" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="39" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_07.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_07::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_07.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="8">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_08.java">
+      <comment_flaw line="47" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::bad" />
+      <comment_flaw line="50" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::bad" />
+      <comment_fix line="72" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::good1" />
+      <comment_flaw line="76" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::good1" />
+      <comment_fix line="92" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::good2" />
+      <comment_flaw line="94" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="47" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_08.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_08::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_08.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="9">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_09.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_09.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_09::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_09.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="10">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_10.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_10.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_10::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_10.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="11">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_11.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_11.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_11::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_11.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="12">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_12.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" />
+      <comment_fix line="48" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" />
+      <comment_flaw line="52" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" />
+      <comment_fix line="68" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::good1" />
+      <comment_flaw line="70" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::good1" />
+      <comment_fix line="82" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::good1" />
+      <comment_flaw line="86" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_12.java" origin="comment_flaw" />
+      <fix line="48" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_12.java" origin="comment_fix" />
+      <flaw line="52" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_12::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_12.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="13">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_13.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_13.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_13::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_13.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="14">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_14.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::bad" />
+      <comment_fix line="58" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::good1" />
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::good1" />
+      <comment_fix line="78" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::good2" />
+      <comment_flaw line="80" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_14.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_14::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_14.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="15">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_15.java">
+      <comment_flaw line="34" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::bad" />
+      <comment_flaw line="37" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::bad" />
+      <comment_fix line="62" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::good1" />
+      <comment_flaw line="64" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::good1" />
+      <comment_fix line="81" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::good2" />
+      <comment_flaw line="83" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_15.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_15::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_15.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="16">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_16.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::bad" />
+      <comment_fix line="52" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::good1" />
+      <comment_flaw line="54" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_16.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_16::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_16.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="17">
+    <file path="CWE477_Obsolete_Functions__DataInputStream_readLine_17.java">
+      <comment_flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::bad" />
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::bad" />
+      <comment_fix line="51" code="String myString = readerBuffered.readLine();" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::good1" />
+      <comment_flaw line="53" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="33" code="DataInputStream streamDataInput = new DataInputStream(System.in);" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_17.java" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE477_Obsolete_Functions__DataInputStream_readLine_17::bad" file="CWE477_Obsolete_Functions__DataInputStream_readLine_17.java" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE477_Obsolete_Functions__Date_parse_12.java">
+      <comment_flaw line="27" code="long unixDate = java.util.Date.parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::bad" />
+      <comment_fix line="34" code="java.util.Date date = java.text.DateFormat.getInstance().parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::bad" />
+      <comment_fix line="47" code="java.util.Date date = java.text.DateFormat.getInstance().parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::good1" />
+      <comment_fix line="54" code="java.util.Date date = java.text.DateFormat.getInstance().parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="long unixDate = java.util.Date.parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::bad" file="CWE477_Obsolete_Functions__Date_parse_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="java.util.Date date = java.text.DateFormat.getInstance().parse(&quot;2010-07-13 10:41:00&quot;);" function="CWE477_Obsolete_Functions__Date_parse_12::bad" file="CWE477_Obsolete_Functions__Date_parse_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE477_Obsolete_Functions__String_getBytes_12.java">
+      <comment_flaw line="29" code="sentence.getBytes(0, sentence.length(), sentenceAsBytes, 0);" function="CWE477_Obsolete_Functions__String_getBytes_12::bad" />
+      <comment_fix line="38" code="byte[] sentenceAsBytes = sentence.getBytes(&quot;UTF-8&quot;);" function="CWE477_Obsolete_Functions__String_getBytes_12::bad" />
+      <comment_fix line="52" code="byte[] sentenceAsBytes = sentence.getBytes(&quot;UTF-8&quot;);" function="CWE477_Obsolete_Functions__String_getBytes_12::good1" />
+      <comment_fix line="61" code="byte[] sentenceAsBytes = sentence.getBytes(&quot;UTF-8&quot;);" function="CWE477_Obsolete_Functions__String_getBytes_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="sentence.getBytes(0, sentence.length(), sentenceAsBytes, 0);" function="CWE477_Obsolete_Functions__String_getBytes_12::bad" file="CWE477_Obsolete_Functions__String_getBytes_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="byte[] sentenceAsBytes = sentence.getBytes(&quot;UTF-8&quot;);" function="CWE477_Obsolete_Functions__String_getBytes_12::bad" file="CWE477_Obsolete_Functions__String_getBytes_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12.java">
+      <comment_flaw line="30" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::bad" />
+      <comment_fix line="36" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;, &quot;UTF-8&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::bad" />
+      <comment_fix line="47" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;, &quot;UTF-8&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::good1" />
+      <comment_fix line="53" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;, &quot;UTF-8&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::bad" file="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="response.getWriter().println(URLEncoder.encode(&quot;abc|1 $#@&lt;&gt;&lt;()&quot;, &quot;UTF-8&quot;));" function="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12::bad" file="CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

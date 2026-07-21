@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE390_Error_Without_Action__mkdirs_12.java">
+      <comment_flaw line="41" code="WARNING_NOT_FOUND" function="CWE390_Error_Without_Action__mkdirs_12::bad" />
+      <comment_fix line="63" code="IO.writeLine(&quot;The directories could not be created&quot;);" function="CWE390_Error_Without_Action__mkdirs_12::bad" />
+      <comment_fix line="93" code="IO.writeLine(&quot;The directories could not be created&quot;);" function="CWE390_Error_Without_Action__mkdirs_12::good1" />
+      <comment_fix line="120" code="IO.writeLine(&quot;The directories could not be created&quot;);" function="CWE390_Error_Without_Action__mkdirs_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="WARNING_NOT_FOUND" function="CWE390_Error_Without_Action__mkdirs_12::bad" file="CWE390_Error_Without_Action__mkdirs_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="IO.writeLine(&quot;The directories could not be created&quot;);" function="CWE390_Error_Without_Action__mkdirs_12::bad" file="CWE390_Error_Without_Action__mkdirs_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE390_Error_Without_Action__reader_12.java">
+      <comment_flaw line="57" code="WARNING_NOT_FOUND" function="CWE390_Error_Without_Action__reader_12::bad" />
+      <comment_fix line="127" code="IO.writeLine(&quot;Error reading path: &quot; + exceptFileNotFound.getMessage());" function="CWE390_Error_Without_Action__reader_12::bad" />
+      <comment_fix line="201" code="IO.writeLine(&quot;Error reading path: &quot; + exceptFileNotFound.getMessage());" function="CWE390_Error_Without_Action__reader_12::good1" />
+      <comment_fix line="272" code="IO.writeLine(&quot;Error reading path: &quot; + exceptFileNotFound.getMessage());" function="CWE390_Error_Without_Action__reader_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="57" code="WARNING_NOT_FOUND" function="CWE390_Error_Without_Action__reader_12::bad" file="CWE390_Error_Without_Action__reader_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="127" code="IO.writeLine(&quot;Error reading path: &quot; + exceptFileNotFound.getMessage());" function="CWE390_Error_Without_Action__reader_12::bad" file="CWE390_Error_Without_Action__reader_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE617_Reachable_Assertion__false_12.java">
+      <comment_flaw line="27" code="assert false;" function="CWE617_Reachable_Assertion__false_12::bad" />
+      <comment_fix line="34" code="assert true;" function="CWE617_Reachable_Assertion__false_12::bad" />
+      <comment_fix line="46" code="assert true;" function="CWE617_Reachable_Assertion__false_12::good1" />
+      <comment_fix line="53" code="assert true;" function="CWE617_Reachable_Assertion__false_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="assert false;" function="CWE617_Reachable_Assertion__false_12::bad" file="CWE617_Reachable_Assertion__false_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="assert true;" function="CWE617_Reachable_Assertion__false_12::bad" file="CWE617_Reachable_Assertion__false_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE617_Reachable_Assertion__length_12.java">
+      <comment_flaw line="27" code="assert &quot;&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::bad" />
+      <comment_fix line="33" code="assert &quot;cwe617&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::bad" />
+      <comment_fix line="44" code="assert &quot;cwe617&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::good1" />
+      <comment_fix line="50" code="assert &quot;cwe617&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="assert &quot;&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::bad" file="CWE617_Reachable_Assertion__length_12.java" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="33" code="assert &quot;cwe617&quot;.length() &gt; 0;" function="CWE617_Reachable_Assertion__length_12::bad" file="CWE617_Reachable_Assertion__length_12.java" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>
