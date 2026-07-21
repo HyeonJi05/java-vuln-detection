@@ -1,0 +1,78 @@
+cd ~/java-vuln-detection/joern-juliet-slicer
+
+cat > output/slice_results/batch_run.log << 'EOF'
+Filtered XMLs found: 32  | per-cwe: 5
+Results dir: /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/slice_results
+===== CWE-113 =====
+  CWE-113 done: 23 flows.
+===== CWE-129 =====
+  CWE-129 done: 23 flows.
+===== CWE-134 =====
+  CWE-134 done: 23 flows.
+===== CWE-15 =====
+  CWE-15 done: 14 flows.
+===== CWE-190 =====
+  CWE-190 done: 23 flows.
+===== CWE-191 =====
+  CWE-191 done: 23 flows.
+===== CWE-197 =====
+  CWE-197 done: 14 flows.
+===== CWE-23 =====
+  CWE-23 done: 14 flows.
+===== CWE-256 =====
+  CWE-256 done: 9 flows.
+===== CWE-259 =====
+  CWE-259 done: 14 flows.
+===== CWE-315 =====
+  CWE-315 done: 23 flows.
+===== CWE-319 =====
+  CWE-319 done: 5 flows.
+===== CWE-321 =====
+  CWE-321 done: 14 flows.
+===== CWE-369 =====
+  CWE-369 done: 23 flows.
+===== CWE-36 =====
+  CWE-36 done: 14 flows.
+===== CWE-400 =====
+  CWE-400 done: 23 flows.
+===== CWE-470 =====
+  CWE-470 done: 14 flows.
+===== CWE-476 =====
+  CWE-476 done: 23 flows.
+===== CWE-563 =====
+  CWE-563 done: 9 flows.
+===== CWE-566 =====
+  CWE-566 done: 14 flows.
+===== CWE-601 =====
+  CWE-601 done: 9 flows.
+===== CWE-606 =====
+  CWE-606 done: 23 flows.
+===== CWE-643 =====
+  CWE-643 done: 23 flows.
+===== CWE-690 =====
+  CWE-690 done: 23 flows.
+===== CWE-789 =====
+  CWE-789 done: 14 flows.
+===== CWE-78 =====
+  CWE-78 done: 14 flows.
+===== CWE-80 =====
+  CWE-80 done: 9 flows.
+===== CWE-81 =====
+  CWE-81 done: 9 flows.
+===== CWE-832 =====
+  CWE-832 done: 1 flows.
+===== CWE-83 =====
+  CWE-83 done: 9 flows.
+===== CWE-89 =====
+  CWE-89 done: 23 flows.
+===== CWE-90 =====
+  CWE-90 done: 14 flows.
+=== Batch complete ===
+CWEs sliced  : 32
+Flows sliced : 513
+Failures     : 0
+Results dir  : /home/hyeonjijang/java-vuln-detection/joern-juliet-slicer/output/slice_results
+real    29m7.536s
+user    90m30.276s
+sys     7m30.664s
+EOF
