@@ -1580,9 +1580,20 @@ CWE789_Uncontrolled_Mem_Alloc__Environment_HashSet_45.java | line=91, col=9 | th
 ## 요약
 
 - 정상적으로 추출된 flow 수 : 15개 (CWE-113 8개 + CWE-789 7개)
+
 - 부족하게 추출된 flow 수 : 13개 (모두 CWE-113)
-    - sink 연산 노드(`setHeader`/`addCookie`)가 트레이스에 없음 : 7개 (tc1310 flow4, tc229 flow1·2·4·5, tc564 flow2·5) — 데이터는 sink 인자까지 도달하나 sink 호출 노드가 누락됨
-    - sink이 `if (data != null)` 가드로 지정돼 실제 sink 라인이 통째로 누락 : 6개 (tc52 5개, tc502 1개) — sink 재지정 필요
-- 추출 실패한 flow 수 : 4개 (CWE-789 4개)
-    - source를 `POTENTIAL FLAW` 다음 줄의 `{` 블록 괄호로 잘못 지정한 경우 3개 (tc1044, tc1011, tc97)
-    - source/sink는 정상이나 joern이 static 필드를 통한 값 전달을 처리하지 못해 경로 미검출 1개 (tc1565)
+    - sink 연산 노드(`setHeader`/`addCookie`)가 트레이스에 없음 : 7개 — 데이터는 sink 인자까지 도달하나 sink 호출 노드가 누락됨. 예를 들어 'response.setHeader("Location", "/author.jsp?lang=" + data);'가 sink 인데 함수 호출의 setHeader 키워드가 추출되지 않음
+        - CWE113_HTTP_Response_Splitting__listen_tcp_setHeaderServlet_15.java : flow4
+        - CWE113_HTTP_Response_Splitting__PropertiesFile_addCookieServlet_07.java : flow1, flow2, flow4, flow5
+        - CWE113_HTTP_Response_Splitting__connect_tcp_addCookieServlet_09.java : flow2, flow5
+    - sink가 `if (data != null)` 로 지정돼 실제 sink 라인이 통째로 누락 : 6개 — sink 재지정 필요. 예를 들어 'if (data != null)' 아래의 if문 내부 블럭의 'response.addHeader("Location", "/author.jsp?lang=" + data);'가 취약한 sink인데 data의 null을 체크하는 코드가 sink로 지정됨 
+        - CWE113_HTTP_Response_Splitting__Environment_addHeaderServlet_15.java : flow1, flow2, flow3, flow4, flow5
+        - CWE113_HTTP_Response_Splitting__URLConnection_addHeaderServlet_41.java : flow3
+
+- 추출 실패한 flow 수 : 4개 (모두 CWE-789)
+    - source를 `POTENTIAL FLAW` 다음 줄의 `{` 블록 괄호로 잘못 지정 : 3개
+        - CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_HashMap_08.java : flow1
+        - CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_12.java : flow1
+        - CWE789_Uncontrolled_Mem_Alloc__Environment_HashSet_45.java : flow1
+    - source/sink는 정상이나 joern이 static 필드를 통한 값 전달을 처리하지 못해 경로 미검출 : 1개
+        - CWE789_Uncontrolled_Mem_Alloc__random_HashSet_68a.java / 68b.java : flow1
