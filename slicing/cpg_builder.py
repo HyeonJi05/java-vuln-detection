@@ -18,6 +18,7 @@ import sys
 import tempfile
 import xml.etree.ElementTree as ET
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -56,7 +57,21 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--testcase-index",
-        help="Build only this testcase index. By default, build every testcase.",
+        action="append",
+        dest="testcase_indexes",
+        help=(
+            "Build only this testcase index. Repeat the option to select multiple "
+            "testcases. By default, build every testcase."
+        ),
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help=(
+            "Number of joern-parse processes to run concurrently (default: 1, "
+            "which preserves the original sequential behavior)."
+        ),
     )
     parser.add_argument(
         "--force",
@@ -410,10 +425,17 @@ def build_cpgs(args: argparse.Namespace) -> None:
     validate_configuration(juliet_dir, joern_parse, jars)
 
     testcases = read_testcases(xml_path)
-    if args.testcase_index is not None:
-        testcases = [tc for tc in testcases if tc.index == args.testcase_index]
-        if not testcases:
-            raise ValueError(f"Testcase index not found: {args.testcase_index}")
+    if args.workers < 1:
+        raise ValueError("--workers must be at least 1")
+    if args.testcase_indexes is not None:
+        requested_indexes = set(args.testcase_indexes)
+        testcases = [tc for tc in testcases if tc.index in requested_indexes]
+        found_indexes = {tc.index for tc in testcases}
+        missing_indexes = requested_indexes - found_indexes
+        if missing_indexes:
+            raise ValueError(
+                "Testcase index not found: " + ", ".join(sorted(missing_indexes))
+            )
 
     source_root = source_root_for_cwe(juliet_dir, number)
     java_index = build_java_index(source_root, testcases)
@@ -439,26 +461,51 @@ def build_cpgs(args: argparse.Namespace) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     built = 0
     skipped = 0
+    failures: list[str] = []
     total = len(testcases)
-    for position, testcase in enumerate(testcases, start=1):
-        result = build_one_testcase(
-            testcase,
-            number,
-            output_dir,
-            java_index,
-            source_root,
-            joern_parse,
-            jars,
-            args.force,
-            position,
-            total,
+    worker_count = min(args.workers, total)
+
+    def build(position: int, testcase: Testcase) -> str:
+        return build_one_testcase(
+            testcase, number, output_dir, java_index, source_root, joern_parse,
+            jars, args.force, position, total
         )
-        built += result == "built"
-        skipped += result == "skipped"
+
+    if worker_count == 1:
+        for position, testcase in enumerate(testcases, start=1):
+            try:
+                result = build(position, testcase)
+                built += result == "built"
+                skipped += result == "skipped"
+            except (OSError, RuntimeError) as error:
+                failures.append(f"testcase {testcase.index}: {error}")
+    else:
+        print(f"CPG workers       : {worker_count}")
+        with ThreadPoolExecutor(max_workers=worker_count) as executor:
+            futures = {
+                executor.submit(build, position, testcase): testcase
+                for position, testcase in enumerate(testcases, start=1)
+            }
+            for future in as_completed(futures):
+                testcase = futures[future]
+                try:
+                    result = future.result()
+                    built += result == "built"
+                    skipped += result == "skipped"
+                except (OSError, RuntimeError) as error:
+                    failures.append(f"testcase {testcase.index}: {error}")
 
     if sys.stdout.isatty():
         print()
-    print(f"Complete: {built} built, {skipped} skipped -> {output_dir}")
+    print(
+        f"Complete: {built} built, {skipped} skipped, "
+        f"{len(failures)} failed -> {output_dir}"
+    )
+    if failures:
+        preview = "\n\n".join(failures[:10])
+        remainder = len(failures) - 10
+        suffix = f"\n\n... and {remainder} more failure(s)" if remainder else ""
+        raise RuntimeError(f"CPG build failures:\n{preview}{suffix}")
 
 
 def main() -> int:

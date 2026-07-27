@@ -15,7 +15,7 @@ manual setting.sh / .env editing:
      juliet-java-test-suite submodule, then cleans the build output so the
      submodule stays clean). No second juliet clone.
   4. Writes a throwaway .env pointing at all of the above and the ROOT juliet
-     submodule, and hands it to cpg_builder.py (team code, unmodified).
+     submodule, and hands it to cpg_builder.py.
   5. Filters the extraction XMLs, builds/reuses CPGs, and runs the optimized
      one-joern-session-per-CWE batch slicing.
 
@@ -27,7 +27,7 @@ Layout assumed (this file lives in slicing/):
     |   `-- source_sink_dataset/
     `-- slicing/
         |-- run_slicing.py           (this file)
-        |-- cpg_builder.py           (team, unmodified)
+        |-- cpg_builder.py           (CPG builder, batched + optional parallelism)
         |-- flow_filter.py           (team, unmodified)
         |-- deps/                    (auto-created; gitignored)
         `-- script/
@@ -175,7 +175,7 @@ def ensure_support_jar():
 
 
 # ---------------------------------------------------------------------------
-# Step 4: write a throwaway .env for cpg_builder.py (team code, unmodified)
+# Step 4: write a throwaway .env for cpg_builder.py
 # ---------------------------------------------------------------------------
 def write_env(joern_cli: Path) -> Path:
     env_path = SLICING_DIR / ".env"
@@ -220,7 +220,8 @@ def filter_xmls(only, refilter):
     print(out.strip().splitlines()[-1] if out.strip() else "[filter] done")
 
 
-def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir):
+def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
+              cpg_workers):
     xmls = sorted(FILTERED_DIR.glob("cwe*_source_sink_classified.xml"))
     if only:
         xmls = [x for x in xmls if cwe_num(x) in only]
@@ -256,21 +257,39 @@ def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir):
         else:
             testcases = all_tc[:per_cwe]        # first N in XML order
         job_lines = []
+        cpg_paths = {
+            tc.get("testcase_index"): (
+                CPG_DIR / f"cwe{cwe}_cpg" /
+                f"cwe{cwe}-{tc.get('testcase_index')}-cpg-resolved.bin"
+            )
+            for tc in testcases
+        }
+        indexes_to_build = [
+            idx for idx, cpg in cpg_paths.items()
+            if force or not cpg.exists()
+        ]
+        if indexes_to_build:
+            cmd = [sys.executable, str(CPG_BUILDER), str(xml_path),
+                   "--env-file", str(env_path),
+                   "--output-dir", str(CPG_DIR / f"cwe{cwe}_cpg"),
+                   "--workers", str(cpg_workers)]
+            for idx in indexes_to_build:
+                cmd.extend(["--testcase-index", str(idx)])
+            if force:
+                cmd.append("--force")
+            rc, out = sh(cmd)
+            if rc != 0:
+                print(f"  [CPG] builder reported failures (rc={rc})")
+                if out.strip():
+                    print("\n".join(out.strip().splitlines()[-12:]))
+
         for tc in testcases:
             idx = tc.get("testcase_index")
-            cpg = CPG_DIR / f"cwe{cwe}_cpg" / f"cwe{cwe}-{idx}-cpg-resolved.bin"
-            if not (cpg.exists() and not force):
-                cmd = [sys.executable, str(CPG_BUILDER), str(xml_path),
-                       "--env-file", str(env_path),
-                       "--output-dir", str(CPG_DIR / f"cwe{cwe}_cpg"),
-                       "--testcase-index", str(idx)]
-                if force:
-                    cmd.append("--force")
-                rc, out = sh(cmd)
-                if rc != 0 or not cpg.exists():
-                    print(f"  [tc{idx}] CPG build FAILED")
-                    total_fail += 1
-                    continue
+            cpg = cpg_paths[idx]
+            if not cpg.exists():
+                print(f"  [tc{idx}] CPG build FAILED")
+                total_fail += 1
+                continue
             for flow in tc.findall(".//flow"):
                 fidx = flow.get("flow_index", "?")
                 src = sink = None
@@ -317,6 +336,9 @@ def main():
     ap.add_argument("--only", type=int, nargs="*", default=None)
     ap.add_argument("--force", action="store_true",
                     help="Rebuild CPGs even if present")
+    ap.add_argument("--cpg-workers", type=int, default=1,
+                    help="Concurrent joern-parse processes (default: 1; try 2 "
+                         "only when enough memory is available)")
     ap.add_argument("--sample", action="store_true",
                     help="Pick testcases randomly instead of the first N "
                          "(ignored when --per-cwe 0)")
@@ -330,6 +352,8 @@ def main():
                          "timestamped folder output/slice_results_YYMMDD_HHMMSS/ "
                          "is created (never overwrites previous runs).")
     args = ap.parse_args()
+    if args.cpg_workers < 1:
+        ap.error("--cpg-workers must be at least 1")
 
     # Decide result directory: explicit --output-dir, else timestamped folder.
     if args.output_dir:
@@ -348,7 +372,7 @@ def main():
     env_path = write_env(joern_cli)
     filter_xmls(args.only, args.refilter)
     run_batch(env_path, args.per_cwe, args.only, args.force,
-              args.sample, args.seed, result_dir)
+              args.sample, args.seed, result_dir, args.cpg_workers)
 
 
 if __name__ == "__main__":
