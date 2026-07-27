@@ -1,0 +1,1123 @@
+# CWE-83: 10 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe83_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-59-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-9e6a1679-8a66-4158-8ac5-e5e2f1749a9d/cpg.bin.tmp)
+
+########## FLOW tc59_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-59-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java:48 (5 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java:82 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.266 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=48 | properties.getProperty("data")
+        ↓
+[1] line=48 | data = properties.getProperty("data")
+        ↓
+[2] line=71 | return data;
+        ↓
+[3] line=31 | RET
+        ↓
+[4] line=77 | this.badSource(request, response)
+        ↓
+[5] line=77 | String data = badSource(request, response)
+        ↓
+[6] line=79 | data != null
+        ↓
+[7] line=82 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=48 | properties.getProperty("data")
+        ↓
+[1] line=48 | data = properties.getProperty("data")
+        ↓
+[2] line=71 | return data;
+        ↓
+[3] line=31 | RET
+        ↓
+[4] line=77 | this.badSource(request, response)
+        ↓
+[5] line=77 | String data = badSource(request, response)
+        ↓
+[6] line=79 | data != null
+        ↓
+[7] line=82 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=48 | data = properties.getProperty("data")
+        ↓
+[1] line=71 | return data;
+        ↓
+[2] line=31 | RET
+        ↓
+[3] line=77 | this.badSource(request, response)
+        ↓
+[4] line=77 | String data = badSource(request, response)
+        ↓
+[5] line=79 | data != null
+        ↓
+[6] line=82 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=48 | data = properties.getProperty("data")
+        ↓
+[1] line=71 | return data;
+        ↓
+[2] line=31 | RET
+        ↓
+[3] line=77 | this.badSource(request, response)
+        ↓
+[4] line=77 | String data = badSource(request, response)
+        ↓
+[5] line=79 | data != null
+        ↓
+[6] line=82 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=31, col=5 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=31, col=13 | RET
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=31, col=30 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=31, col=58 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=35, col=9 | data = ""
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=35, col=9 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=35, col=16 | ""
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=39, col=-1 | new Properties()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=39, col=24 | Properties properties = new Properties()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=39, col=24 | properties
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=39, col=37 | new Properties()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=40, col=29 | FileInputStream streamFileInput = null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=40, col=29 | streamFileInput
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=40, col=47 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=42, col=13 | try
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=44, col=-1 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=44, col=17 | streamFileInput = new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=44, col=17 | streamFileInput
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=44, col=35 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=44, col=55 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=45, col=17 | properties
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=45, col=17 | properties.load(streamFileInput)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=45, col=33 | streamFileInput
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=48, col=17 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=48, col=17 | data = properties.getProperty("data")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=48, col=24 | properties
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=48, col=24 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=48, col=47 | "data"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=50, col=13 | catch
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=52, col=17 | IO.logger
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=52, col=17 | IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=52, col=31 | Level.WARNING
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=52, col=46 | "Error with stream reading"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=52, col=75 | exceptIO
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=55, col=13 | finally
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=57, col=17 | try
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=59, col=21 | if (streamFileInput != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=59, col=25 | streamFileInput
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=59, col=25 | streamFileInput != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=59, col=44 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=61, col=25 | streamFileInput
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=61, col=25 | streamFileInput.close()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=64, col=17 | catch
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=66, col=21 | IO.logger
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=66, col=21 | IO.logger.log(Level.WARNING, "Error closing FileInputStream", exceptIO)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=66, col=35 | Level.WARNING
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=66, col=50 | "Error closing FileInputStream"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=66, col=83 | exceptIO
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=71, col=9 | return data;
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=71, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=75, col=5 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=75, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=75, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=77, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=77, col=23 | this.badSource(request, response)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=77, col=23 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=77, col=33 | request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=77, col=42 | response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=79, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=79, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=79, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=79, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=82, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=82, col=42 | "<br>bad() - <img src=\"" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 58
+Control nodes     : 4
+Control DDG nodes : 30
+AST controls      : 7
+Final slice nodes : 66
+Slice time        : 0.064 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.266 seconds
+
+########## FLOW tc59_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-59-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java:92 (3 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java:105 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.042 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=92 | data = "foo"
+        ↓
+[1] line=94 | return data;
+        ↓
+[2] line=87 | RET
+        ↓
+[3] line=100 | this.goodG2BSource(request, response)
+        ↓
+[4] line=100 | String data = goodG2BSource(request, response)
+        ↓
+[5] line=102 | data != null
+        ↓
+[6] line=105 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=92 | data = "foo"
+        ↓
+[1] line=94 | return data;
+        ↓
+[2] line=87 | RET
+        ↓
+[3] line=100 | this.goodG2BSource(request, response)
+        ↓
+[4] line=100 | String data = goodG2BSource(request, response)
+        ↓
+[5] line=102 | data != null
+        ↓
+[6] line=105 | "<br>bad() - <img src=\"" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=87, col=5 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=87, col=13 | RET
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=87, col=34 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=87, col=62 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=92, col=9 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=92, col=9 | data = "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=92, col=16 | "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=94, col=9 | return data;
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=94, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=98, col=5 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=98, col=26 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=98, col=54 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=100, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=100, col=23 | this.goodG2BSource(request, response)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=100, col=23 | this
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=100, col=37 | request
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=100, col=46 | response
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=102, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=102, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=102, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=102, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=105, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_PropertiesFile_42.java | line=105, col=70 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 21
+Control nodes     : 1
+Control DDG nodes : 11
+AST controls      : 1
+Final slice nodes : 23
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.042 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-275-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-78d2bc49-21e6-4552-85cb-af24ab0f6968/cpg.bin.tmp)
+
+########## FLOW tc275_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-275-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java:35 (1 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java:53 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.039 seconds
+
+########## FLOW tc275_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-275-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java:66 (3 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java:73 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=66 | data = "foo"
+        ↓
+[1] line=70 | data != null
+        ↓
+[2] line=73 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=66 | data = "foo"
+        ↓
+[1] line=70 | data != null
+        ↓
+[2] line=73 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=63, col=9 | while (true)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=63, col=16 | true
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=66, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=66, col=20 | "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=70, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=70, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=70, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=70, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=73, col=42 | "<br>bad() - <img src=\"" + data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_16.java | line=73, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 6
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 10
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.050 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-137-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-89dd2d55-e0bc-43f8-a324-5890e643e594/cpg.bin.tmp)
+
+########## FLOW tc137_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-137-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java:55 (4 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java:31 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=55 | data = readerBuffered.readLine()
+        ↓
+[1] line=103 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=28 | data != null
+        ↓
+[8] line=31 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=55 | data = readerBuffered.readLine()
+        ↓
+[1] line=103 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=28 | data != null
+        ↓
+[8] line=31 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=55 | readerBuffered.readLine()
+        ↓
+[1] line=55 | data = readerBuffered.readLine()
+        ↓
+[2] line=103 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=28 | data != null
+        ↓
+[9] line=31 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=55 | readerBuffered.readLine()
+        ↓
+[1] line=55 | data = readerBuffered.readLine()
+        ↓
+[2] line=103 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=28 | data != null
+        ↓
+[9] line=31 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=44, col=13 | try
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=47, col=17 | socket
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=47, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=47, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=47, col=57 | 39544
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=51, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=51, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=51, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=51, col=59 | socket
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=51, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=52, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=52, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=52, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=55, col=17 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=55, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=55, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=103, col=70 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53b.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53b.java | line=27, col=70 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53c.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53c.java | line=27, col=70 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=28, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=28, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=28, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=28, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=31, col=42 | "<br>bad() - <img src=\"" + data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=31, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 28
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 31
+Slice time        : 0.010 seconds
+
+=== Summary ===
+Raw paths    : 9
+Unique traces: 4
+Flow time    : 0.039 seconds
+
+########## FLOW tc137_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-137-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java:117 (3 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java:43 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=117 | data = "foo"
+        ↓
+[1] line=119 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=37 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=40 | data != null
+        ↓
+[8] line=43 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=117 | data = "foo"
+        ↓
+[1] line=119 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=37 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=40 | data != null
+        ↓
+[8] line=43 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=117, col=9 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=117, col=16 | "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53a.java | line=119, col=74 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53b.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53b.java | line=33, col=74 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53c.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53c.java | line=33, col=74 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=37, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=40, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=40, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=40, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=43, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_connect_tcp_53d.java | line=43, col=70 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 12
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 14
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.034 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-329-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a94e0bf9-bcb4-4b59-b90f-3e23dc0d9023/cpg.bin.tmp)
+
+########## FLOW tc329_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-329-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java:59 (4 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java:33 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=59 | readerBuffered.readLine()
+        ↓
+[1] line=59 | data = readerBuffered.readLine()
+        ↓
+[2] line=120 | dataVector.add(0, data)
+        ↓
+[3] line=121 | dataVector.add(1, data)
+        ↓
+[4] line=122 | dataVector.add(2, data)
+        ↓
+[5] line=123 | this.badSink(dataVector, request, response)
+        ↓
+[6] line=26 | badSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=28 | dataVector.remove(2)
+        ↓
+[8] line=28 | String data = dataVector.remove(2)
+        ↓
+[9] line=30 | data != null
+        ↓
+[10] line=33 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=59 | readerBuffered.readLine()
+        ↓
+[1] line=59 | data = readerBuffered.readLine()
+        ↓
+[2] line=120 | dataVector.add(0, data)
+        ↓
+[3] line=121 | dataVector.add(1, data)
+        ↓
+[4] line=122 | dataVector.add(2, data)
+        ↓
+[5] line=123 | this.badSink(dataVector, request, response)
+        ↓
+[6] line=26 | badSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=28 | dataVector.remove(2)
+        ↓
+[8] line=28 | String data = dataVector.remove(2)
+        ↓
+[9] line=30 | data != null
+        ↓
+[10] line=33 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=59 | data = readerBuffered.readLine()
+        ↓
+[1] line=120 | dataVector.add(0, data)
+        ↓
+[2] line=121 | dataVector.add(1, data)
+        ↓
+[3] line=122 | dataVector.add(2, data)
+        ↓
+[4] line=123 | this.badSink(dataVector, request, response)
+        ↓
+[5] line=26 | badSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=28 | dataVector.remove(2)
+        ↓
+[7] line=28 | String data = dataVector.remove(2)
+        ↓
+[8] line=30 | data != null
+        ↓
+[9] line=33 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=59 | data = readerBuffered.readLine()
+        ↓
+[1] line=120 | dataVector.add(0, data)
+        ↓
+[2] line=121 | dataVector.add(1, data)
+        ↓
+[3] line=122 | dataVector.add(2, data)
+        ↓
+[4] line=123 | this.badSink(dataVector, request, response)
+        ↓
+[5] line=26 | badSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=28 | dataVector.remove(2)
+        ↓
+[7] line=28 | String data = dataVector.remove(2)
+        ↓
+[8] line=30 | data != null
+        ↓
+[9] line=33 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=48, col=13 | try
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=50, col=17 | listener
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=50, col=28 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=50, col=45 | 39543
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=51, col=17 | socket
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=51, col=26 | listener.accept()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=51, col=26 | listener
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=55, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=55, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=55, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=55, col=59 | socket
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=55, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=56, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=56, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=56, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=59, col=17 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=59, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=59, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=119, col=24 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=119, col=37 | new Vector<String>(5)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=119, col=56 | 5
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=120, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=120, col=24 | 0
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=120, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=121, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=121, col=24 | 1
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=121, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=122, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=122, col=24 | 2
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=122, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=123, col=69 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=26, col=25 | Vector<String> dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=28, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=28, col=23 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=28, col=23 | dataVector.remove(2)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=28, col=41 | 2
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=30, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=30, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=30, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=30, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=33, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=33, col=42 | "<br>bad() - <img src=\"" + data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=33, col=70 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 44
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 2
+Final slice nodes : 47
+Slice time        : 0.011 seconds
+
+=== Summary ===
+Raw paths    : 9
+Unique traces: 4
+Flow time    : 0.039 seconds
+
+########## FLOW tc329_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-329-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java:137 (3 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java:46 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=137 | data = "foo"
+        ↓
+[1] line=140 | dataVector.add(0, data)
+        ↓
+[2] line=141 | dataVector.add(1, data)
+        ↓
+[3] line=142 | dataVector.add(2, data)
+        ↓
+[4] line=143 | this.goodG2BSink(dataVector, request, response)
+        ↓
+[5] line=39 | goodG2BSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=41 | dataVector.remove(2)
+        ↓
+[7] line=41 | String data = dataVector.remove(2)
+        ↓
+[8] line=43 | data != null
+        ↓
+[9] line=46 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=137 | data = "foo"
+        ↓
+[1] line=140 | dataVector.add(0, data)
+        ↓
+[2] line=141 | dataVector.add(1, data)
+        ↓
+[3] line=142 | dataVector.add(2, data)
+        ↓
+[4] line=143 | this.goodG2BSink(dataVector, request, response)
+        ↓
+[5] line=39 | goodG2BSink(this, Vector<String> dataVector, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=41 | dataVector.remove(2)
+        ↓
+[7] line=41 | String data = dataVector.remove(2)
+        ↓
+[8] line=43 | data != null
+        ↓
+[9] line=46 | "<br>bad() - <img src=\"" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=137, col=9 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=137, col=16 | "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=139, col=24 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=139, col=37 | new Vector<String>(5)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=139, col=56 | 5
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=140, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=140, col=24 | 0
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=140, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=141, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=141, col=24 | 1
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=141, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=142, col=9 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=142, col=24 | 2
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=142, col=27 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72a.java | line=143, col=73 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=39, col=29 | Vector<String> dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=41, col=16 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=41, col=23 | dataVector
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=41, col=23 | dataVector.remove(2)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=41, col=41 | 2
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=43, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=43, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=43, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=46, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_72b.java | line=46, col=42 | "<br>bad() - <img src=\"" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 25
+Control nodes     : 1
+Control DDG nodes : 8
+AST controls      : 1
+Final slice nodes : 27
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.030 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-175-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8ea7b09e-81db-469d-856f-c67d3f7ba429/cpg.bin.tmp)
+
+########## FLOW tc175_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-175-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_database_54a.java:54 (5 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_database_54e.java:31 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=54 | resultSet.getString(1)
+        ↓
+[1] line=54 | data = resultSet.getString(1)
+        ↓
+[2] line=101 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=27 | this.badSink(data, request, response)
+        ↓
+[9] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[10] line=28 | data != null
+        ↓
+[11] line=31 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=54 | resultSet.getString(1)
+        ↓
+[1] line=54 | data = resultSet.getString(1)
+        ↓
+[2] line=101 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=27 | this.badSink(data, request, response)
+        ↓
+[9] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[10] line=28 | data != null
+        ↓
+[11] line=31 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=54 | data = resultSet.getString(1)
+        ↓
+[1] line=101 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=27 | this.badSink(data, request, response)
+        ↓
+[8] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[9] line=28 | data != null
+        ↓
+[10] line=31 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=54 | data = resultSet.getString(1)
+        ↓
+[1] line=101 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=27 | this.badSink(data, request, response)
+        ↓
+[8] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[9] line=28 | data != null
+        ↓
+[10] line=31 | "<br>bad() - <img src=\"" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=44, col=13 | try
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=47, col=17 | connection
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=47, col=30 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=47, col=30 | IO
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=50, col=17 | preparedStatement
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=50, col=37 | connection.prepareStatement("select name from users where id=0")
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=50, col=37 | connection
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=50, col=65 | "select name from users where id=0"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=51, col=17 | resultSet
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=51, col=29 | preparedStatement.executeQuery()
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=51, col=29 | preparedStatement
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=54, col=17 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=54, col=24 | resultSet
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=54, col=24 | resultSet.getString(1)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=54, col=44 | 1
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=101, col=67 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54b.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54b.java | line=27, col=67 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54c.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54c.java | line=27, col=67 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54d.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54d.java | line=27, col=67 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=28, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=28, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=28, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=28, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=31, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=31, col=42 | "<br>bad() - <img src=\"" + data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=31, col=70 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 16
+Data nodes        : 27
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 30
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.050 seconds
+
+########## FLOW tc175_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-175-cpg-resolved.bin
+Source      : CWE83_XSS_Attribute__Servlet_database_54a.java:115 (3 CFG node(s))
+Sink        : CWE83_XSS_Attribute__Servlet_database_54e.java:43 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=115 | data = "foo"
+        ↓
+[1] line=117 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[8] line=37 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[9] line=40 | data != null
+        ↓
+[10] line=43 | "<br>bad() - <img src=\"" + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=115 | data = "foo"
+        ↓
+[1] line=117 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[8] line=37 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[9] line=40 | data != null
+        ↓
+[10] line=43 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=115, col=9 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=115, col=16 | "foo"
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54a.java | line=117, col=71 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54b.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54b.java | line=33, col=71 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54c.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54c.java | line=33, col=71 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54d.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54d.java | line=33, col=71 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=37, col=29 | String data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=40, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=40, col=13 | data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=40, col=13 | data != null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=40, col=21 | null
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=43, col=42 | "<br>bad() - <img src=\"" + data
+src/main/java/juliet/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_database_54e.java | line=43, col=42 | "<br>bad() - <img src=\"" + data + "\">"
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 14
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 16
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.037 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe83_jobs.tsv)
+Creating project `joern-trace-9e6a1679-8a66-4158-8ac5-e5e2f1749a9d` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-59-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-9e6a1679-8a66-4158-8ac5-e5e2f1749a9d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-78d2bc49-21e6-4552-85cb-af24ab0f6968` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-275-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-78d2bc49-21e6-4552-85cb-af24ab0f6968/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-89dd2d55-e0bc-43f8-a324-5890e643e594` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-137-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-89dd2d55-e0bc-43f8-a324-5890e643e594/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-a94e0bf9-bcb4-4b59-b90f-3e23dc0d9023` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-329-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a94e0bf9-bcb4-4b59-b90f-3e23dc0d9023/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8ea7b09e-81db-469d-856f-c67d3f7ba429` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe83_cpg/cwe83-175-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8ea7b09e-81db-469d-856f-c67d3f7ba429/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

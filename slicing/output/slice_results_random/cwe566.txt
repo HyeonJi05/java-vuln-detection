@@ -1,0 +1,1461 @@
+# CWE-566: 13 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe566_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-21-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-93d084f7-23e5-4e10-818b-8dba7bc5e8cc/cpg.bin.tmp)
+
+########## FLOW tc21_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-21-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java:104 (5 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java:52 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.367 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=104 | request.getParameter("id")
+        ↓
+[1] line=104 | data = request.getParameter("id")
+        ↓
+[2] line=106 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=37 | Integer.parseInt(data)
+        ↓
+[5] line=52 | "bad() - result requested: " + data + "\n"
+        ↓
+[6] line=52 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=104 | request.getParameter("id")
+        ↓
+[1] line=104 | data = request.getParameter("id")
+        ↓
+[2] line=106 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=37 | Integer.parseInt(data)
+        ↓
+[5] line=52 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=104 | data = request.getParameter("id")
+        ↓
+[1] line=106 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=37 | Integer.parseInt(data)
+        ↓
+[4] line=52 | "bad() - result requested: " + data + "\n"
+        ↓
+[5] line=52 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=104 | data = request.getParameter("id")
+        ↓
+[1] line=106 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=37 | Integer.parseInt(data)
+        ↓
+[4] line=52 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=104 | request.getParameter("id")
+        ↓
+[1] line=104 | data = request.getParameter("id")
+        ↓
+[2] line=106 | this.badSink(data, request, response)
+        ↓
+[3] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=37 | Integer.parseInt(data)
+        ↓
+[5] line=52 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=104 | data = request.getParameter("id")
+        ↓
+[1] line=106 | this.badSink(data, request, response)
+        ↓
+[2] line=28 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=37 | Integer.parseInt(data)
+        ↓
+[4] line=52 | "bad() - result requested: " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=28, col=26 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=31, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=35, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=37, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=37, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=44, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=52, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=52, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=52, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=52, col=59 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=99, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=104, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=104, col=16 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=104, col=16 | request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=104, col=37 | "id"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=106, col=17 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 14
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.019 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.367 seconds
+
+########## FLOW tc21_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-21-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java:191 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java:138 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=191 | data = "10"
+        ↓
+[1] line=193 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=114 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=123 | Integer.parseInt(data)
+        ↓
+[4] line=138 | "bad() - result requested: " + data + "\n"
+        ↓
+[5] line=138 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=191 | data = "10"
+        ↓
+[1] line=193 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=114 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=123 | Integer.parseInt(data)
+        ↓
+[4] line=138 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=191 | data = "10"
+        ↓
+[1] line=193 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=114 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=123 | Integer.parseInt(data)
+        ↓
+[4] line=138 | "bad() - result requested: " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=114, col=30 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=117, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=121, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=123, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=123, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=130, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=138, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=138, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=138, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=138, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=191, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=191, col=16 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_41.java | line=193, col=21 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 11
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.037 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-26-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-352f3735-838a-4835-9f87-20443a283d3a/cpg.bin.tmp)
+
+########## FLOW tc26_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-26-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java:30 (5 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java:53 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.053 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=30 | request.getParameter("id")
+        ↓
+[1] line=30 | data = request.getParameter("id")
+        ↓
+[2] line=32 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=38 | Integer.parseInt(data)
+        ↓
+[9] line=53 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=30 | request.getParameter("id")
+        ↓
+[1] line=30 | data = request.getParameter("id")
+        ↓
+[2] line=32 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=38 | Integer.parseInt(data)
+        ↓
+[9] line=53 | "bad() - result requested: " + data + "\n"
+        ↓
+[10] line=53 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=30 | data = request.getParameter("id")
+        ↓
+[1] line=32 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=38 | Integer.parseInt(data)
+        ↓
+[8] line=53 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=30 | data = request.getParameter("id")
+        ↓
+[1] line=32 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=38 | Integer.parseInt(data)
+        ↓
+[8] line=53 | "bad() - result requested: " + data + "\n"
+        ↓
+[9] line=53 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=30 | data = request.getParameter("id")
+        ↓
+[1] line=32 | this.badSink(data, request, response)
+        ↓
+[2] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=27 | this.badSink(data, request, response)
+        ↓
+[4] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | this.badSink(data, request, response)
+        ↓
+[6] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=38 | Integer.parseInt(data)
+        ↓
+[8] line=53 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=30 | request.getParameter("id")
+        ↓
+[1] line=30 | data = request.getParameter("id")
+        ↓
+[2] line=32 | this.badSink(data, request, response)
+        ↓
+[3] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | this.badSink(data, request, response)
+        ↓
+[5] line=25 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | this.badSink(data, request, response)
+        ↓
+[7] line=29 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[8] line=38 | Integer.parseInt(data)
+        ↓
+[9] line=53 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=25, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=30, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=30, col=16 | request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=30, col=16 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=30, col=37 | "id"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=32, col=86 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53b.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53b.java | line=27, col=86 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53c.java | line=25, col=25 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53c.java | line=27, col=86 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=29, col=25 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=32, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=36, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=38, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=38, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=45, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=53, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=53, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=53, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=53, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=53, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 19
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 2
+Final slice nodes : 21
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.053 seconds
+
+########## FLOW tc26_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-26-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java:46 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java:125 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.032 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=46 | data = "10"
+        ↓
+[1] line=48 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=101 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=110 | Integer.parseInt(data)
+        ↓
+[8] line=125 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=46 | data = "10"
+        ↓
+[1] line=48 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=101 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=110 | Integer.parseInt(data)
+        ↓
+[8] line=125 | "bad() - result requested: " + data + "\n"
+        ↓
+[9] line=125 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=46 | data = "10"
+        ↓
+[1] line=48 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=31 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=33 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=101 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=110 | Integer.parseInt(data)
+        ↓
+[8] line=125 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=46, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=46, col=16 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53a.java | line=48, col=90 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53b.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53b.java | line=33, col=90 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53c.java | line=31, col=29 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53c.java | line=33, col=90 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=101, col=29 | String data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=104, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=108, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=110, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=110, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=117, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=125, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=125, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_53d.java | line=125, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 14
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 2
+Final slice nodes : 16
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.032 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-18-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a8f78a10-e065-497a-a52b-34157b7a89c8/cpg.bin.tmp)
+
+########## FLOW tc18_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-18-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:114 (5 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:60 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.078 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=114 | request.getParameter("id")
+        ↓
+[1] line=114 | data = request.getParameter("id")
+        ↓
+[2] line=123 | return data;
+        ↓
+[3] line=107 | RET
+        ↓
+[4] line=37 | this.bad_source(request, response)
+        ↓
+[5] line=37 | data = bad_source(request, response)
+        ↓
+[6] line=45 | Integer.parseInt(data)
+        ↓
+[7] line=60 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=114 | data = request.getParameter("id")
+        ↓
+[1] line=123 | return data;
+        ↓
+[2] line=107 | RET
+        ↓
+[3] line=37 | this.bad_source(request, response)
+        ↓
+[4] line=37 | data = bad_source(request, response)
+        ↓
+[5] line=45 | Integer.parseInt(data)
+        ↓
+[6] line=60 | "bad() - result requested: " + data + "\n"
+        ↓
+[7] line=60 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=114 | data = request.getParameter("id")
+        ↓
+[1] line=123 | return data;
+        ↓
+[2] line=107 | RET
+        ↓
+[3] line=37 | this.bad_source(request, response)
+        ↓
+[4] line=37 | data = bad_source(request, response)
+        ↓
+[5] line=45 | Integer.parseInt(data)
+        ↓
+[6] line=60 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=114 | request.getParameter("id")
+        ↓
+[1] line=114 | data = request.getParameter("id")
+        ↓
+[2] line=123 | return data;
+        ↓
+[3] line=107 | RET
+        ↓
+[4] line=37 | this.bad_source(request, response)
+        ↓
+[5] line=37 | data = bad_source(request, response)
+        ↓
+[6] line=45 | Integer.parseInt(data)
+        ↓
+[7] line=60 | "bad() - result requested: " + data + "\n"
+        ↓
+[8] line=60 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=114 | data = request.getParameter("id")
+        ↓
+[1] line=123 | return data;
+        ↓
+[2] line=107 | RET
+        ↓
+[3] line=37 | this.bad_source(request, response)
+        ↓
+[4] line=37 | data = bad_source(request, response)
+        ↓
+[5] line=45 | Integer.parseInt(data)
+        ↓
+[6] line=60 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=114 | request.getParameter("id")
+        ↓
+[1] line=114 | data = request.getParameter("id")
+        ↓
+[2] line=123 | return data;
+        ↓
+[3] line=107 | RET
+        ↓
+[4] line=37 | this.bad_source(request, response)
+        ↓
+[5] line=37 | data = bad_source(request, response)
+        ↓
+[6] line=45 | Integer.parseInt(data)
+        ↓
+[7] line=60 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=32, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=32, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=32, col=49 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=36, col=9 | this.badPrivate
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=36, col=22 | true
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=37, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=37, col=16 | this.bad_source(request, response)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=37, col=16 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=37, col=27 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=37, col=36 | response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=39, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=43, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=45, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=45, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=52, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=60, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=60, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=60, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=60, col=59 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=107, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=107, col=13 | RET
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=107, col=31 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=107, col=59 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=111, col=9 | if (this.badPrivate)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=111, col=13 | this.badPrivate
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=114, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=114, col=13 | data = request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=114, col=20 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=114, col=20 | request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=114, col=41 | "id"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=120, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=120, col=13 | data = null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=120, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=123, col=9 | return data;
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=123, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 31
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 35
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.078 seconds
+
+########## FLOW tc18_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-18-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:226 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:165 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=226 | data = "10"
+        ↓
+[1] line=230 | return data;
+        ↓
+[2] line=212 | RET
+        ↓
+[3] line=142 | this.goodG2B1_source(request, response)
+        ↓
+[4] line=142 | data = goodG2B1_source(request, response)
+        ↓
+[5] line=150 | Integer.parseInt(data)
+        ↓
+[6] line=165 | "bad() - result requested: " + data + "\n"
+        ↓
+[7] line=165 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=226 | data = "10"
+        ↓
+[1] line=230 | return data;
+        ↓
+[2] line=212 | RET
+        ↓
+[3] line=142 | this.goodG2B1_source(request, response)
+        ↓
+[4] line=142 | data = goodG2B1_source(request, response)
+        ↓
+[5] line=150 | Integer.parseInt(data)
+        ↓
+[6] line=165 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=226 | data = "10"
+        ↓
+[1] line=230 | return data;
+        ↓
+[2] line=212 | RET
+        ↓
+[3] line=142 | this.goodG2B1_source(request, response)
+        ↓
+[4] line=142 | data = goodG2B1_source(request, response)
+        ↓
+[5] line=150 | Integer.parseInt(data)
+        ↓
+[6] line=165 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=137, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=137, col=27 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=137, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=141, col=9 | this.goodG2B1_private
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=141, col=28 | false
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=142, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=142, col=16 | this.goodG2B1_source(request, response)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=142, col=16 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=142, col=32 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=142, col=41 | response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=144, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=148, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=150, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=150, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=157, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=165, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=165, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=165, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=165, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=212, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=212, col=13 | RET
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=212, col=36 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=212, col=64 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=214, col=16 | String data = null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=214, col=16 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=214, col=23 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=216, col=9 | if (this.goodG2B1_private)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=216, col=13 | this.goodG2B1_private
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=220, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=220, col=13 | data = null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=220, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=226, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=226, col=13 | data = "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=226, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=230, col=9 | return data;
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=230, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 32
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 36
+Slice time        : 0.010 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.031 seconds
+
+########## FLOW tc18_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-18-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:316 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java:262 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=316 | data = "10"
+        ↓
+[1] line=325 | return data;
+        ↓
+[2] line=309 | RET
+        ↓
+[3] line=239 | this.goodG2B2_source(request, response)
+        ↓
+[4] line=239 | data = goodG2B2_source(request, response)
+        ↓
+[5] line=247 | Integer.parseInt(data)
+        ↓
+[6] line=262 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=316 | data = "10"
+        ↓
+[1] line=325 | return data;
+        ↓
+[2] line=309 | RET
+        ↓
+[3] line=239 | this.goodG2B2_source(request, response)
+        ↓
+[4] line=239 | data = goodG2B2_source(request, response)
+        ↓
+[5] line=247 | Integer.parseInt(data)
+        ↓
+[6] line=262 | "bad() - result requested: " + data + "\n"
+        ↓
+[7] line=262 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=316 | data = "10"
+        ↓
+[1] line=325 | return data;
+        ↓
+[2] line=309 | RET
+        ↓
+[3] line=239 | this.goodG2B2_source(request, response)
+        ↓
+[4] line=239 | data = goodG2B2_source(request, response)
+        ↓
+[5] line=247 | Integer.parseInt(data)
+        ↓
+[6] line=262 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=234, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=234, col=27 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=234, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=238, col=9 | this.goodG2B2_private
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=238, col=28 | true
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=239, col=9 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=239, col=16 | this.goodG2B2_source(request, response)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=239, col=16 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=239, col=32 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=239, col=41 | response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=241, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=245, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=247, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=247, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=254, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=262, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=262, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=262, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=309, col=5 | this
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=309, col=13 | RET
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=309, col=36 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=309, col=64 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=311, col=16 | String data = null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=311, col=16 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=311, col=23 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=313, col=9 | if (this.goodG2B2_private)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=313, col=13 | this.goodG2B2_private
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=316, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=316, col=13 | data = "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=316, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=322, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=322, col=13 | data = null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=322, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=325, col=9 | return data;
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_21.java | line=325, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 31
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 35
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.026 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-5-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0aa003d2-0eb1-469a-b578-14ff5c17fbde/cpg.bin.tmp)
+
+########## FLOW tc5_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-5-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:42 (5 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:72 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=42 | request.getParameter("id")
+        ↓
+[1] line=42 | data = request.getParameter("id")
+        ↓
+[2] line=57 | Integer.parseInt(data)
+        ↓
+[3] line=72 | "bad() - result requested: " + data + "\n"
+        ↓
+[4] line=72 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=42 | data = request.getParameter("id")
+        ↓
+[1] line=57 | Integer.parseInt(data)
+        ↓
+[2] line=72 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=42 | request.getParameter("id")
+        ↓
+[1] line=42 | data = request.getParameter("id")
+        ↓
+[2] line=57 | Integer.parseInt(data)
+        ↓
+[3] line=72 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=42 | request.getParameter("id")
+        ↓
+[1] line=42 | data = request.getParameter("id")
+        ↓
+[2] line=57 | Integer.parseInt(data)
+        ↓
+[3] line=72 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=42 | data = request.getParameter("id")
+        ↓
+[1] line=57 | Integer.parseInt(data)
+        ↓
+[2] line=72 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=72 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=42 | data = request.getParameter("id")
+        ↓
+[1] line=57 | Integer.parseInt(data)
+        ↓
+[2] line=72 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=36, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=39, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=39, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=42, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=42, col=20 | request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=42, col=20 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=42, col=41 | "id"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=48, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=48, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=51, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=55, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=57, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=57, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=64, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=72, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=72, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=72, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=72, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=72, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 15
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 19
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.024 seconds
+
+########## FLOW tc5_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-5-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:133 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:158 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=133 | data = "10"
+        ↓
+[1] line=143 | Integer.parseInt(data)
+        ↓
+[2] line=158 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=158 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=133 | data = "10"
+        ↓
+[1] line=143 | Integer.parseInt(data)
+        ↓
+[2] line=158 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=133 | data = "10"
+        ↓
+[1] line=143 | Integer.parseInt(data)
+        ↓
+[2] line=158 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=123, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=123, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=127, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=127, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=133, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=133, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=137, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=141, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=143, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=143, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=150, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=158, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=158, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=158, col=28 | "bad() - result requested: " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 14
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.025 seconds
+
+########## FLOW tc5_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-5-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:212 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java:242 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.033 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=212 | data = "10"
+        ↓
+[1] line=227 | Integer.parseInt(data)
+        ↓
+[2] line=242 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=212 | data = "10"
+        ↓
+[1] line=227 | Integer.parseInt(data)
+        ↓
+[2] line=242 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=242 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=212 | data = "10"
+        ↓
+[1] line=227 | Integer.parseInt(data)
+        ↓
+[2] line=242 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=209, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=209, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=212, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=212, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=218, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=218, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=221, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=225, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=227, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=227, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=234, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=242, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=242, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_05.java | line=242, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 3
+Final slice nodes : 14
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.033 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-14-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e5ae6bee-e2b1-4b05-9cf1-3102b5486e47/cpg.bin.tmp)
+
+########## FLOW tc14_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-14-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:35 (5 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:65 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=35 | data = request.getParameter("id")
+        ↓
+[1] line=50 | Integer.parseInt(data)
+        ↓
+[2] line=65 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=35 | request.getParameter("id")
+        ↓
+[1] line=35 | data = request.getParameter("id")
+        ↓
+[2] line=50 | Integer.parseInt(data)
+        ↓
+[3] line=65 | "bad() - result requested: " + data + "\n"
+        ↓
+[4] line=65 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=35 | data = request.getParameter("id")
+        ↓
+[1] line=50 | Integer.parseInt(data)
+        ↓
+[2] line=65 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=35 | request.getParameter("id")
+        ↓
+[1] line=35 | data = request.getParameter("id")
+        ↓
+[2] line=50 | Integer.parseInt(data)
+        ↓
+[3] line=65 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=35 | request.getParameter("id")
+        ↓
+[1] line=35 | data = request.getParameter("id")
+        ↓
+[2] line=50 | Integer.parseInt(data)
+        ↓
+[3] line=65 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=35 | data = request.getParameter("id")
+        ↓
+[1] line=50 | Integer.parseInt(data)
+        ↓
+[2] line=65 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=65 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=29, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=32, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=32, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=32, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=32, col=30 | 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=35, col=20 | request
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=35, col=20 | request.getParameter("id")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=35, col=41 | "id"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=41, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=44, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=48, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=50, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=50, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=57, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=65, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=65, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=65, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=65, col=28 | "bad() - result requested: " + data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=65, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 17
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 3
+Final slice nodes : 21
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.024 seconds
+
+########## FLOW tc14_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-14-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:126 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:151 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=126 | data = "10"
+        ↓
+[1] line=136 | Integer.parseInt(data)
+        ↓
+[2] line=151 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=126 | data = "10"
+        ↓
+[1] line=136 | Integer.parseInt(data)
+        ↓
+[2] line=151 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=151 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=126 | data = "10"
+        ↓
+[1] line=136 | Integer.parseInt(data)
+        ↓
+[2] line=151 | "bad() - result requested: " + data + "\n"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=116, col=9 | if (IO.staticFive != 5)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=116, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=116, col=13 | IO.staticFive != 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=116, col=30 | 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=120, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=120, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=126, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=126, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=130, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=134, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=136, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=136, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=143, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=151, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=151, col=13 | IO.writeString("bad() - result requested: " + data + "\n")
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=151, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=151, col=59 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 13
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 3
+Final slice nodes : 17
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.023 seconds
+
+########## FLOW tc14_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-14-cpg-resolved.bin
+Source      : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:205 (3 CFG node(s))
+Sink        : CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java:235 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=205 | data = "10"
+        ↓
+[1] line=220 | Integer.parseInt(data)
+        ↓
+[2] line=235 | "bad() - result requested: " + data + "\n"
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=205 | data = "10"
+        ↓
+[1] line=220 | Integer.parseInt(data)
+        ↓
+[2] line=235 | "bad() - result requested: " + data
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=205 | data = "10"
+        ↓
+[1] line=220 | Integer.parseInt(data)
+        ↓
+[2] line=235 | "bad() - result requested: " + data + "\n"
+        ↓
+[3] line=235 | IO.writeString("bad() - result requested: " + data + "\n")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=202, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=202, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=202, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=202, col=30 | 5
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=205, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=205, col=20 | "10"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=211, col=13 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=211, col=20 | null
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=214, col=35 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=218, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=220, col=18 | Integer
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=220, col=35 | data
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=227, col=9 | try
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=235, col=13 | IO
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=235, col=28 | "bad() - result requested: " + data + "\n"
+src/main/java/juliet/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_14.java | line=235, col=28 | "bad() - result requested: " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 12
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.026 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe566_jobs.tsv)
+Creating project `joern-trace-93d084f7-23e5-4e10-818b-8dba7bc5e8cc` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-21-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-93d084f7-23e5-4e10-818b-8dba7bc5e8cc/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-352f3735-838a-4835-9f87-20443a283d3a` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-26-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-352f3735-838a-4835-9f87-20443a283d3a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-a8f78a10-e065-497a-a52b-34157b7a89c8` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-18-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a8f78a10-e065-497a-a52b-34157b7a89c8/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-0aa003d2-0eb1-469a-b578-14ff5c17fbde` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0aa003d2-0eb1-469a-b578-14ff5c17fbde/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e5ae6bee-e2b1-4b05-9cf1-3102b5486e47` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe566_cpg/cwe566-14-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e5ae6bee-e2b1-4b05-9cf1-3102b5486e47/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

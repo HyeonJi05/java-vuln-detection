@@ -1,0 +1,502 @@
+# CWE-563: 10 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe563_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-57-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-dff766ed-e2f5-495c-bafd-c05d0d52211e/cpg.bin.tmp)
+
+########## FLOW tc57_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-57-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_long_03.java:46 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_long_03.java:58 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.273 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=46 | data = 5L
+        ↓
+[1] line=58 | "" + data
+        ↓
+[2] line=58 | IO.writeLine("" + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=46 | data = 5L
+        ↓
+[1] line=58 | "" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=46, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=46, col=16 | 5L
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=48, col=9 | if (5 != 5)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=48, col=13 | 5 != 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=48, col=13 | 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=48, col=18 | 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=58, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=58, col=26 | "" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 4
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 8
+Slice time        : 0.048 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.273 seconds
+
+########## FLOW tc57_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-57-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_long_03.java:70 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_long_03.java:75 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=70 | data = 5L
+        ↓
+[1] line=75 | "" + data
+        ↓
+[2] line=75 | IO.writeLine("" + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=70 | data = 5L
+        ↓
+[1] line=75 | "" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=70, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=70, col=16 | 5L
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=72, col=9 | if (5 == 5)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=72, col=13 | 5 == 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=72, col=13 | 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=72, col=18 | 5
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=75, col=13 | IO.writeLine("" + data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=75, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_03.java | line=75, col=26 | "" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.031 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-158-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1ebb1a07-164f-49b4-81ae-737be942c956/cpg.bin.tmp)
+
+########## FLOW tc158_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-158-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_value_String_12.java:107 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_value_String_12.java:128 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.035 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=107 | data = "Good"
+        ↓
+[1] line=128 | IO.writeLine(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=104, col=9 | if (IO.staticReturnsTrueOrFalse())
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=104, col=12 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=104, col=12 | IO.staticReturnsTrueOrFalse()
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=107, col=13 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=107, col=20 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=114, col=13 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=114, col=20 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=118, col=9 | if (IO.staticReturnsTrueOrFalse())
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=118, col=12 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=118, col=12 | IO.staticReturnsTrueOrFalse()
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=128, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=128, col=13 | IO.writeLine(data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_12.java | line=128, col=26 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 2
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 13
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.035 seconds
+
+########## FLOW tc158_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-158-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_value_String_12.java:67 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_value_String_12.java:92 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.018 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-15-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1fba334c-7bee-419a-9113-570d1a6beab4/cpg.bin.tmp)
+
+########## FLOW tc15_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-15-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_String_15.java:52 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_String_15.java:62 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=52 | data = "Good"
+        ↓
+[1] line=62 | IO.writeLine(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=52, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=52, col=16 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=54, col=9 | switch(8)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=54, col=17 | 8
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=62, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=62, col=13 | IO.writeLine(data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=62, col=26 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 5
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 7
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.034 seconds
+
+########## FLOW tc15_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-15-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_String_15.java:74 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_String_15.java:80 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=74 | data = "Good"
+        ↓
+[1] line=80 | IO.writeLine(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=74, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=74, col=16 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=76, col=9 | switch(7)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=76, col=17 | 7
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=80, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_15.java | line=80, col=26 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 4
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 6
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.029 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-59-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-956148fc-7a2b-4f04-9df0-9d4ec9721af9/cpg.bin.tmp)
+
+########## FLOW tc59_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-59-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_long_05.java:53 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_long_05.java:65 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=53 | data = 5L
+        ↓
+[1] line=65 | "" + data
+        ↓
+[2] line=65 | IO.writeLine("" + data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=53 | data = 5L
+        ↓
+[1] line=65 | "" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=53, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=53, col=16 | 5L
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=55, col=9 | if (this.privateFalse)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=55, col=13 | this.privateFalse
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=65, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=65, col=13 | IO.writeLine("" + data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=65, col=26 | "" + data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=65, col=31 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 6
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 8
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.031 seconds
+
+########## FLOW tc59_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-59-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_long_05.java:77 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_long_05.java:82 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.032 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=77 | data = 5L
+        ↓
+[1] line=82 | "" + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=77 | data = 5L
+        ↓
+[1] line=82 | "" + data
+        ↓
+[2] line=82 | IO.writeLine("" + data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=77, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=77, col=16 | 5L
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=79, col=9 | if (this.privateTrue)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=79, col=13 | this.privateTrue
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=82, col=13 | IO.writeLine("" + data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=82, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_05.java | line=82, col=26 | "" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 7
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.032 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-9-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-20b88308-fa80-4a04-8ca1-a3b170cbe8db/cpg.bin.tmp)
+
+########## FLOW tc9_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-9-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_String_09.java:46 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_String_09.java:58 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=46 | data = "Good"
+        ↓
+[1] line=58 | IO.writeLine(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=46, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=46, col=16 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=48, col=9 | if (IO.STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=48, col=13 | IO.STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=58, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=58, col=13 | IO.writeLine(data)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=58, col=26 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 7
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.028 seconds
+
+########## FLOW tc9_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-9-cpg-resolved.bin
+Source      : CWE563_Unused_Variable__unused_init_variable_String_09.java:70 (3 CFG node(s))
+Sink        : CWE563_Unused_Variable__unused_init_variable_String_09.java:75 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.023 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=70 | data = "Good"
+        ↓
+[1] line=75 | IO.writeLine(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=70, col=9 | data
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=70, col=16 | "Good"
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=72, col=9 | if (IO.STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=72, col=13 | IO.STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=75, col=13 | IO
+src/main/java/juliet/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_String_09.java | line=75, col=26 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 4
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 6
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 1
+Flow time    : 0.023 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe563_jobs.tsv)
+Creating project `joern-trace-dff766ed-e2f5-495c-bafd-c05d0d52211e` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-57-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-dff766ed-e2f5-495c-bafd-c05d0d52211e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1ebb1a07-164f-49b4-81ae-737be942c956` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-158-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1ebb1a07-164f-49b4-81ae-737be942c956/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1fba334c-7bee-419a-9113-570d1a6beab4` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-15-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-1fba334c-7bee-419a-9113-570d1a6beab4/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-956148fc-7a2b-4f04-9df0-9d4ec9721af9` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-59-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-956148fc-7a2b-4f04-9df0-9d4ec9721af9/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-20b88308-fa80-4a04-8ca1-a3b170cbe8db` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe563_cpg/cwe563-9-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-20b88308-fa80-4a04-8ca1-a3b170cbe8db/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

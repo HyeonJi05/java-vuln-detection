@@ -1,0 +1,771 @@
+# CWE-80: 10 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe80_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-433-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8284f4ca-38e1-43a7-9e65-8817ff4fdb6b/cpg.bin.tmp)
+
+########## FLOW tc433_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-433-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_URLConnection_53a.java:101 (3 CFG node(s))
+Sink        : CWE80_XSS__Servlet_URLConnection_53d.java:42 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.288 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=101 | data = "foo"
+        ↓
+[1] line=103 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=30 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=32 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=30 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=32 | this.goodG2BSink(data, request, response)
+        ↓
+[6] line=36 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[7] line=39 | data != null
+        ↓
+[8] line=42 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53a.java | line=101, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53a.java | line=101, col=16 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53a.java | line=103, col=66 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53b.java | line=30, col=29 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53b.java | line=32, col=66 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53c.java | line=30, col=29 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53c.java | line=32, col=66 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=36, col=29 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=39, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=39, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=39, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_URLConnection_53d.java | line=42, col=65 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 11
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 13
+Slice time        : 0.021 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.288 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-611-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-19cab329-8a5f-4734-b3cf-5ed322bd1e1b/cpg.bin.tmp)
+
+########## FLOW tc611_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-611-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_getQueryString_Servlet_22b.java:34 (1 CFG node(s))
+Sink        : CWE80_XSS__Servlet_getQueryString_Servlet_22a.java:38 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.055 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.055 seconds
+
+########## FLOW tc611_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-611-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_getQueryString_Servlet_22b.java:71 (3 CFG node(s))
+Sink        : CWE80_XSS__Servlet_getQueryString_Servlet_22a.java:65 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=71 | data = "foo"
+        ↓
+[1] line=75 | return data;
+        ↓
+[2] line=57 | RET
+        ↓
+[3] line=60 | this.goodG2B1Source(request, response)
+        ↓
+[4] line=60 | data = (new CWE80_XSS__Servlet_getQueryString_Servlet_22b()).goodG2B1Source(request, response)
+        ↓
+[5] line=62 | data != null
+        ↓
+[6] line=65 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=55, col=27 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=55, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=16 | this.goodG2B1Source(request, response)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=17 | <empty>
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=17 | $obj1
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=17 | new CWE80_XSS__Servlet_getQueryString_Servlet_22b()
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=85 | request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=60, col=94 | response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=62, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=62, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=62, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=62, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=65, col=65 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=57, col=5 | this
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=57, col=12 | RET
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=57, col=34 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=57, col=62 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=61, col=9 | if (CWE80_XSS__Servlet_getQueryString_Servlet_22a.goodG2B1PublicStatic)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=61, col=13 | CWE80_XSS__Servlet_getQueryString_Servlet_22a
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=61, col=13 | CWE80_XSS__Servlet_getQueryString_Servlet_22a.goodG2B1PublicStatic
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=65, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=65, col=13 | data = null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=65, col=20 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=71, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=71, col=13 | data = "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=71, col=20 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=75, col=9 | return data;
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=75, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 26
+Control nodes     : 2
+Control DDG nodes : 14
+AST controls      : 2
+Final slice nodes : 30
+Slice time        : 0.015 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.037 seconds
+
+########## FLOW tc611_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-611-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_getQueryString_Servlet_22b.java:86 (3 CFG node(s))
+Sink        : CWE80_XSS__Servlet_getQueryString_Servlet_22a.java:81 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=86 | data = "foo"
+        ↓
+[1] line=95 | return data;
+        ↓
+[2] line=79 | RET
+        ↓
+[3] line=76 | this.goodG2B2Source(request, response)
+        ↓
+[4] line=76 | data = (new CWE80_XSS__Servlet_getQueryString_Servlet_22b()).goodG2B2Source(request, response)
+        ↓
+[5] line=78 | data != null
+        ↓
+[6] line=81 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=71, col=27 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=71, col=55 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=16 | this.goodG2B2Source(request, response)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=17 | <empty>
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=17 | $obj2
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=17 | new CWE80_XSS__Servlet_getQueryString_Servlet_22b()
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=85 | request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=76, col=94 | response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=78, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=78, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=78, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=78, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22a.java | line=81, col=65 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=79, col=5 | this
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=79, col=12 | RET
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=79, col=34 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=79, col=62 | HttpServletResponse response
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=83, col=9 | if (CWE80_XSS__Servlet_getQueryString_Servlet_22a.goodG2B2PublicStatic)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=83, col=13 | CWE80_XSS__Servlet_getQueryString_Servlet_22a
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=83, col=13 | CWE80_XSS__Servlet_getQueryString_Servlet_22a.goodG2B2PublicStatic
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=86, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=86, col=13 | data = "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=86, col=20 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=92, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=92, col=13 | data = null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=92, col=20 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=95, col=9 | return data;
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getQueryString_Servlet_22b.java | line=95, col=16 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 26
+Control nodes     : 2
+Control DDG nodes : 14
+AST controls      : 2
+Final slice nodes : 30
+Slice time        : 0.011 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.039 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-66-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-716cd64a-383e-4870-a727-435a51150019/cpg.bin.tmp)
+
+########## FLOW tc66_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-66-cpg-resolved.bin
+Source      : CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java:48 (5 CFG node(s))
+Sink        : CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java:31 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.041 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=48 | properties.getProperty("data")
+        ↓
+[1] line=48 | data = properties.getProperty("data")
+        ↓
+[2] line=72 | dataArray[2] = data
+        ↓
+[3] line=73 | this.badSink(dataArray, request, response)
+        ↓
+[4] line=24 | badSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=26 | String data = dataArray[2]
+        ↓
+[6] line=28 | data != null
+        ↓
+[7] line=31 | data.replaceAll("(<script>)", "")
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=48 | data = properties.getProperty("data")
+        ↓
+[1] line=72 | dataArray[2] = data
+        ↓
+[2] line=73 | this.badSink(dataArray, request, response)
+        ↓
+[3] line=24 | badSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=26 | String data = dataArray[2]
+        ↓
+[5] line=28 | data != null
+        ↓
+[6] line=31 | data.replaceAll("(<script>)", "")
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=48 | properties.getProperty("data")
+        ↓
+[1] line=48 | data = properties.getProperty("data")
+        ↓
+[2] line=72 | dataArray[2] = data
+        ↓
+[3] line=73 | this.badSink(dataArray, request, response)
+        ↓
+[4] line=24 | badSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=26 | String data = dataArray[2]
+        ↓
+[6] line=28 | data != null
+        ↓
+[7] line=31 | data.replaceAll("(<script>)", "")
+        ↓
+[8] line=31 | "<br>bad(): data = " + data.replaceAll("(<script>)", "")
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=48 | data = properties.getProperty("data")
+        ↓
+[1] line=72 | dataArray[2] = data
+        ↓
+[2] line=73 | this.badSink(dataArray, request, response)
+        ↓
+[3] line=24 | badSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=26 | String data = dataArray[2]
+        ↓
+[5] line=28 | data != null
+        ↓
+[6] line=31 | data.replaceAll("(<script>)", "")
+        ↓
+[7] line=31 | "<br>bad(): data = " + data.replaceAll("(<script>)", "")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=39, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=39, col=37 | new Properties()
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=42, col=13 | try
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=44, col=17 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=44, col=35 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=44, col=55 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=45, col=17 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=45, col=33 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=48, col=17 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=48, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=48, col=24 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=48, col=47 | "data"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=71, col=18 | dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=71, col=30 | new String[5]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=71, col=41 | 5
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=72, col=9 | dataArray[2]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=72, col=24 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=73, col=70 | dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=24, col=25 | String[] dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=26, col=16 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=26, col=23 | dataArray[2]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=28, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=28, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=28, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=28, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=31, col=42 | "<br>bad(): data = " + data.replaceAll("(<script>)", "")
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=31, col=65 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=31, col=65 | data.replaceAll("(<script>)", "")
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=31, col=81 | "(<script>)"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=31, col=95 | ""
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 29
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 32
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.041 seconds
+
+########## FLOW tc66_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-66-cpg-resolved.bin
+Source      : CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java:87 (3 CFG node(s))
+Sink        : CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java:44 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=87 | data = "foo"
+        ↓
+[1] line=90 | dataArray[2] = data
+        ↓
+[2] line=91 | this.goodG2BSink(dataArray, request, response)
+        ↓
+[3] line=37 | goodG2BSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=39 | String data = dataArray[2]
+        ↓
+[5] line=41 | data != null
+        ↓
+[6] line=44 | data.replaceAll("(<script>)", "")
+        ↓
+[7] line=44 | "<br>bad(): data = " + data.replaceAll("(<script>)", "")
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=87 | data = "foo"
+        ↓
+[1] line=90 | dataArray[2] = data
+        ↓
+[2] line=91 | this.goodG2BSink(dataArray, request, response)
+        ↓
+[3] line=37 | goodG2BSink(this, String[] dataArray, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=39 | String data = dataArray[2]
+        ↓
+[5] line=41 | data != null
+        ↓
+[6] line=44 | data.replaceAll("(<script>)", "")
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=87, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=87, col=16 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=89, col=18 | dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=89, col=30 | new String[5]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=89, col=41 | 5
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=90, col=9 | dataArray[2]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=90, col=24 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66a.java | line=91, col=74 | dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=37, col=29 | String[] dataArray
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=39, col=16 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=39, col=23 | dataArray[2]
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=41, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=41, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=41, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=41, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=44, col=42 | "<br>bad(): data = " + data.replaceAll("(<script>)", "")
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=44, col=65 | data
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=44, col=81 | "(<script>)"
+src/main/java/juliet/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_66b.java | line=44, col=95 | ""
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 17
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 19
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.026 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-395-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b85e2347-2871-423e-9cec-bce48ddc9ea0/cpg.bin.tmp)
+
+########## FLOW tc395_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-395-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_PropertiesFile_52a.java:48 (5 CFG node(s))
+Sink        : CWE80_XSS__Servlet_PropertiesFile_52c.java:30 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=48 | data = properties.getProperty("data")
+        ↓
+[1] line=71 | this.badSink(data, request, response)
+        ↓
+[2] line=24 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=26 | this.badSink(data, request, response)
+        ↓
+[4] line=24 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | data != null
+        ↓
+[6] line=30 | "<br>bad(): data = " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=48 | properties.getProperty("data")
+        ↓
+[1] line=48 | data = properties.getProperty("data")
+        ↓
+[2] line=71 | this.badSink(data, request, response)
+        ↓
+[3] line=24 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=26 | this.badSink(data, request, response)
+        ↓
+[5] line=24 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[6] line=27 | data != null
+        ↓
+[7] line=30 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=39, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=39, col=37 | new Properties()
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=42, col=13 | try
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=44, col=17 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=44, col=35 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=44, col=55 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=45, col=17 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=45, col=33 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=48, col=17 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=48, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=48, col=24 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=48, col=47 | "data"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=71, col=63 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52b.java | line=24, col=25 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52b.java | line=26, col=63 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=24, col=25 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=27, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=27, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=27, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=27, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=30, col=42 | "<br>bad(): data = " + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 20
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 23
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.030 seconds
+
+########## FLOW tc395_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-395-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_PropertiesFile_52a.java:85 (3 CFG node(s))
+Sink        : CWE80_XSS__Servlet_PropertiesFile_52c.java:42 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=85 | data = "foo"
+        ↓
+[1] line=87 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=30 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=32 | this.goodG2BSink(data, request, response)
+        ↓
+[4] line=36 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=39 | data != null
+        ↓
+[6] line=42 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=85, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=85, col=16 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52a.java | line=87, col=67 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52b.java | line=30, col=29 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52b.java | line=32, col=67 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=36, col=29 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=39, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=39, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=39, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_52c.java | line=42, col=65 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.034 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-391-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-9c4d4e95-6c19-49b1-903d-45bcacb824a2/cpg.bin.tmp)
+
+########## FLOW tc391_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-391-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_PropertiesFile_41.java:58 (5 CFG node(s))
+Sink        : CWE80_XSS__Servlet_PropertiesFile_41.java:36 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.059 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=58 | properties.getProperty("data")
+        ↓
+[1] line=58 | data = properties.getProperty("data")
+        ↓
+[2] line=81 | this.badSink(data, request, response)
+        ↓
+[3] line=30 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=33 | data != null
+        ↓
+[5] line=36 | "<br>bad(): data = " + data
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=58 | data = properties.getProperty("data")
+        ↓
+[1] line=81 | this.badSink(data, request, response)
+        ↓
+[2] line=30 | badSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=33 | data != null
+        ↓
+[4] line=36 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=30, col=26 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=33, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=33, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=33, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=33, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=36, col=42 | "<br>bad(): data = " + data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=49, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=49, col=37 | new Properties()
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=52, col=13 | try
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=54, col=17 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=54, col=35 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=54, col=55 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=55, col=17 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=55, col=33 | streamFileInput
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=58, col=17 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=58, col=24 | properties
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=58, col=24 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=58, col=47 | "data"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=81, col=17 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 18
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 2
+Final slice nodes : 21
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.059 seconds
+
+########## FLOW tc391_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-391-cpg-resolved.bin
+Source      : CWE80_XSS__Servlet_PropertiesFile_41.java:106 (3 CFG node(s))
+Sink        : CWE80_XSS__Servlet_PropertiesFile_41.java:95 (6 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.045 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=106 | data = "foo"
+        ↓
+[1] line=108 | this.goodG2BSink(data, request, response)
+        ↓
+[2] line=89 | goodG2BSink(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=92 | data != null
+        ↓
+[4] line=95 | "<br>bad(): data = " + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=89, col=30 | String data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=92, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=92, col=13 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=92, col=13 | data != null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=92, col=21 | null
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=95, col=42 | "<br>bad(): data = " + data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=106, col=9 | data
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=106, col=16 | "foo"
+src/main/java/juliet/testcases/CWE80_XSS/s02/CWE80_XSS__Servlet_PropertiesFile_41.java | line=108, col=21 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 7
+Control nodes     : 1
+Control DDG nodes : 4
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.045 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe80_jobs.tsv)
+Creating project `joern-trace-8284f4ca-38e1-43a7-9e65-8817ff4fdb6b` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-433-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8284f4ca-38e1-43a7-9e65-8817ff4fdb6b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-19cab329-8a5f-4734-b3cf-5ed322bd1e1b` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-611-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-19cab329-8a5f-4734-b3cf-5ed322bd1e1b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-716cd64a-383e-4870-a727-435a51150019` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-66-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-716cd64a-383e-4870-a727-435a51150019/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b85e2347-2871-423e-9cec-bce48ddc9ea0` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-395-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b85e2347-2871-423e-9cec-bce48ddc9ea0/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-9c4d4e95-6c19-49b1-903d-45bcacb824a2` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe80_cpg/cwe80-391-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-9c4d4e95-6c19-49b1-903d-45bcacb824a2/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

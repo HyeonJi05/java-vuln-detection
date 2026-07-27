@@ -1,0 +1,532 @@
+# CWE-259: 10 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe259_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-94-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-cd0a78c0-0c1a-45f0-bb5e-6eee1cd3ee9c/cpg.bin.tmp)
+
+########## FLOW tc94_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-94-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__passwordAuth_31.java:36 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__passwordAuth_31.java:46 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.270 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=36 | data = "7e5tc4s3"
+        ↓
+[1] line=38 | dataCopy = data
+        ↓
+[2] line=41 | String data = dataCopy
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | data.toCharArray()
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=36 | data = "7e5tc4s3"
+        ↓
+[1] line=38 | dataCopy = data
+        ↓
+[2] line=41 | String data = dataCopy
+        ↓
+[3] line=43 | data != null
+        ↓
+[4] line=46 | data.toCharArray()
+        ↓
+[5] line=46 | new PasswordAuthentication("user", data.toCharArray())
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=36, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=36, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=38, col=13 | dataCopy
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=38, col=24 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=41, col=20 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=41, col=27 | dataCopy
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=43, col=13 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=43, col=17 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=43, col=17 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=43, col=25 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=-1 | new PasswordAuthentication("user", data.toCharArray())
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=40 | credentials
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=54 | new PasswordAuthentication("user", data.toCharArray())
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=81 | "user"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=89 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_31.java | line=46, col=89 | data.toCharArray()
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 15
+Control nodes     : 1
+Control DDG nodes : 9
+AST controls      : 1
+Final slice nodes : 17
+Slice time        : 0.029 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.270 seconds
+
+########## FLOW tc94_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-94-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__passwordAuth_31.java:68 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__passwordAuth_31.java:91 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.044 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.044 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-59-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-72cbbb44-1bc3-4280-bcdc-fa7847eb9b91/cpg.bin.tmp)
+
+########## FLOW tc59_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-59-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_42.java:33 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_42.java:47 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.114 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=33 | data = "7e5tc4s3"
+        ↓
+[1] line=35 | return data;
+        ↓
+[2] line=28 | RET
+        ↓
+[3] line=41 | this.badSource()
+        ↓
+[4] line=41 | String data = badSource()
+        ↓
+[5] line=43 | data != null
+        ↓
+[6] line=47 | data.toCharArray()
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=33 | data = "7e5tc4s3"
+        ↓
+[1] line=35 | return data;
+        ↓
+[2] line=28 | RET
+        ↓
+[3] line=41 | this.badSource()
+        ↓
+[4] line=41 | String data = badSource()
+        ↓
+[5] line=43 | data != null
+        ↓
+[6] line=47 | data.toCharArray()
+        ↓
+[7] line=47 | new KerberosKey(principal, data.toCharArray(), null)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=28, col=5 | this
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=28, col=13 | RET
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=33, col=9 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=33, col=9 | data = "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=33, col=16 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=35, col=9 | return data;
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=35, col=16 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=39, col=5 | this
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=41, col=16 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=41, col=23 | this.badSource()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=41, col=23 | this
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=43, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=43, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=43, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=45, col=31 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=45, col=43 | new KerberosPrincipal("test")
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=45, col=65 | "test"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=25 | key
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=31 | new KerberosKey(principal, data.toCharArray(), null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=47 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=58 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=58 | data.toCharArray()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_42.java | line=47, col=78 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 24
+Control nodes     : 1
+Control DDG nodes : 7
+AST controls      : 1
+Final slice nodes : 26
+Slice time        : 0.024 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 2
+Flow time    : 0.114 seconds
+
+########## FLOW tc59_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-59-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_42.java:60 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_42.java:87 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.048 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.048 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-69-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-49b34841-8f61-44a4-9124-97a6b543c12d/cpg.bin.tmp)
+
+########## FLOW tc69_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-69-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_71a.java:31 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_71b.java:37 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.070 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=31 | data = "7e5tc4s3"
+        ↓
+[1] line=33 | (Object) data
+        ↓
+[2] line=29 | badSink(this, Object dataObject)
+        ↓
+[3] line=31 | (String) dataObject
+        ↓
+[4] line=31 | String data = (String) dataObject
+        ↓
+[5] line=33 | data != null
+        ↓
+[6] line=37 | data.toCharArray()
+        ↓
+[7] line=37 | new KerberosKey(principal, data.toCharArray(), null)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=31 | data = "7e5tc4s3"
+        ↓
+[1] line=33 | (Object) data
+        ↓
+[2] line=29 | badSink(this, Object dataObject)
+        ↓
+[3] line=31 | (String) dataObject
+        ↓
+[4] line=31 | String data = (String) dataObject
+        ↓
+[5] line=33 | data != null
+        ↓
+[6] line=37 | data.toCharArray()
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71a.java | line=31, col=9 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71a.java | line=31, col=16 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71a.java | line=33, col=69 | (Object) data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=29, col=25 | Object dataObject
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=31, col=16 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=31, col=23 | (String) dataObject
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=33, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=33, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=33, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=33, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=35, col=31 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=35, col=43 | new KerberosPrincipal("test")
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=35, col=65 | "test"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=-1 | new KerberosKey(principal, data.toCharArray(), null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=25 | key
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=31 | new KerberosKey(principal, data.toCharArray(), null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=47 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=58 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=58 | data.toCharArray()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_71b.java | line=37, col=78 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 20
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 1
+Final slice nodes : 22
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 2
+Flow time    : 0.070 seconds
+
+########## FLOW tc69_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-69-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_71a.java:49 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_71a.java:64 (11 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.026 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.026 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-16-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-957da3ef-e27e-470c-b9a5-7bb9186a4726/cpg.bin.tmp)
+
+########## FLOW tc16_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-16-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_16.java:35 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_16.java:48 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=35 | data = "7e5tc4s3"
+        ↓
+[1] line=43 | data != null
+        ↓
+[2] line=48 | DriverManager.getConnection("data-url", "root", data)
+        ↓
+[3] line=48 | connection = DriverManager.getConnection("data-url", "root", data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=35 | data = "7e5tc4s3"
+        ↓
+[1] line=43 | data != null
+        ↓
+[2] line=48 | DriverManager.getConnection("data-url", "root", data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=32, col=9 | while (true)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=32, col=16 | true
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=35, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=43, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=43, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=43, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=43, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=45, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=17 | connection
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=30 | DriverManager.getConnection("data-url", "root", data)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=30 | DriverManager
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=58 | "data-url"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=70 | "root"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_16.java | line=48, col=78 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 10
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 15
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.034 seconds
+
+########## FLOW tc16_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-16-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__driverManager_16.java:107 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__driverManager_16.java:131 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.021 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.021 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-49-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a9224157-722b-4469-bde0-65f4176f6221/cpg.bin.tmp)
+
+########## FLOW tc49_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-49-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_12.java:35 (3 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_12.java:64 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=35 | data = "7e5tc4s3"
+        ↓
+[1] line=60 | data != null
+        ↓
+[2] line=64 | data.toCharArray()
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=35 | data = "7e5tc4s3"
+        ↓
+[1] line=60 | data != null
+        ↓
+[2] line=64 | data.toCharArray()
+        ↓
+[3] line=64 | new KerberosKey(principal, data.toCharArray(), null)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=32, col=9 | if (IO.staticReturnsTrueOrFalse())
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=32, col=13 | IO.staticReturnsTrueOrFalse()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=32, col=13 | IO
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=35, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=35, col=20 | "7e5tc4s3"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=43, col=13 | try
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=45, col=35 | readerInputStream
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=45, col=55 | new InputStreamReader(System.in, "UTF-8")
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=45, col=77 | System.in
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=45, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=46, col=32 | readerBuffered
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=46, col=49 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=46, col=68 | readerInputStream
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=49, col=17 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=49, col=24 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=49, col=24 | readerBuffered
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=60, col=9 | if (data != null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=60, col=13 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=60, col=13 | data != null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=60, col=21 | null
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=62, col=31 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=62, col=43 | new KerberosPrincipal("test")
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=62, col=65 | "test"
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=-1 | new KerberosKey(principal, data.toCharArray(), null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=25 | key
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=31 | new KerberosKey(principal, data.toCharArray(), null)
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=47 | principal
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=58 | data
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=58 | data.toCharArray()
+src/main/java/juliet/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__kerberosKey_12.java | line=64, col=78 | null
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 28
+Control nodes     : 2
+Control DDG nodes : 19
+AST controls      : 3
+Final slice nodes : 34
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 2
+Flow time    : 0.027 seconds
+
+########## FLOW tc49_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-49-cpg-resolved.bin
+Source      : CWE259_Hard_Coded_Password__kerberosKey_12.java:79 (1 CFG node(s))
+Sink        : CWE259_Hard_Coded_Password__kerberosKey_12.java:119 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.019 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe259_jobs.tsv)
+Creating project `joern-trace-cd0a78c0-0c1a-45f0-bb5e-6eee1cd3ee9c` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-94-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-cd0a78c0-0c1a-45f0-bb5e-6eee1cd3ee9c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-72cbbb44-1bc3-4280-bcdc-fa7847eb9b91` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-59-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-72cbbb44-1bc3-4280-bcdc-fa7847eb9b91/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-49b34841-8f61-44a4-9124-97a6b543c12d` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-69-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-49b34841-8f61-44a4-9124-97a6b543c12d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-957da3ef-e27e-470c-b9a5-7bb9186a4726` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-16-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-957da3ef-e27e-470c-b9a5-7bb9186a4726/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-a9224157-722b-4469-bde0-65f4176f6221` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe259_cpg/cwe259-49-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-a9224157-722b-4469-bde0-65f4176f6221/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

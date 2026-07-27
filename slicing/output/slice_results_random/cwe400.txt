@@ -1,0 +1,2029 @@
+# CWE-400: 13 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe400_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1455-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-493c7bd9-b125-4589-9789-01b2b7d403fe/cpg.bin.tmp)
+
+########## FLOW tc1455_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1455-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_random_71a.java:30 (10 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_random_71b.java:28 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.307 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=30 | $obj0 = new SecureRandom()
+        ↓
+[1] line=30 | new SecureRandom()
+        ↓
+[2] line=30 | $obj0
+        ↓
+[3] line=30 | this.nextInt()
+        ↓
+[4] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[5] line=32 | (Object) count
+        ↓
+[6] line=23 | badSink(this, Object countObject)
+        ↓
+[7] line=25 | (Integer) countObject
+        ↓
+[8] line=25 | int count = (Integer) countObject
+        ↓
+[9] line=28 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=30 | new SecureRandom()
+        ↓
+[1] line=30 | $obj0 = new SecureRandom()
+        ↓
+[2] line=30 | new SecureRandom()
+        ↓
+[3] line=30 | $obj0
+        ↓
+[4] line=30 | this.nextInt()
+        ↓
+[5] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[6] line=32 | (Object) count
+        ↓
+[7] line=23 | badSink(this, Object countObject)
+        ↓
+[8] line=25 | (Integer) countObject
+        ↓
+[9] line=25 | int count = (Integer) countObject
+        ↓
+[10] line=28 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=30 | new SecureRandom()
+        ↓
+[1] line=30 | $obj0
+        ↓
+[2] line=30 | this.nextInt()
+        ↓
+[3] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[4] line=32 | (Object) count
+        ↓
+[5] line=23 | badSink(this, Object countObject)
+        ↓
+[6] line=25 | (Integer) countObject
+        ↓
+[7] line=25 | int count = (Integer) countObject
+        ↓
+[8] line=28 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=30 | this.nextInt()
+        ↓
+[1] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[2] line=32 | (Object) count
+        ↓
+[3] line=23 | badSink(this, Object countObject)
+        ↓
+[4] line=25 | (Integer) countObject
+        ↓
+[5] line=25 | int count = (Integer) countObject
+        ↓
+[6] line=28 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[1] line=32 | (Object) count
+        ↓
+[2] line=23 | badSink(this, Object countObject)
+        ↓
+[3] line=25 | (Integer) countObject
+        ↓
+[4] line=25 | int count = (Integer) countObject
+        ↓
+[5] line=28 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=30 | $obj0
+        ↓
+[1] line=30 | this.nextInt()
+        ↓
+[2] line=30 | count = (new SecureRandom()).nextInt()
+        ↓
+[3] line=32 | (Object) count
+        ↓
+[4] line=23 | badSink(this, Object countObject)
+        ↓
+[5] line=25 | (Integer) countObject
+        ↓
+[6] line=25 | int count = (Integer) countObject
+        ↓
+[7] line=28 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=30, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=30, col=17 | this.nextInt()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=30, col=18 | $obj0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=30, col=18 | <empty>
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=30, col=18 | new SecureRandom()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=32, col=70 | (Object) count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=23, col=25 | Object countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=25, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=25, col=21 | (Integer) countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=28, col=9 | Thread.sleep(count)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=28, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=28, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 13
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 13
+Slice time        : 0.038 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 6
+Flow time    : 0.307 seconds
+
+########## FLOW tc1455_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1455-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_random_71a.java:58 (10 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_random_71b.java:48 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.086 seconds
+
+=== Source-to-Sink Trace 1/24 ===
+
+[0] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[1] line=60 | (Object) count
+        ↓
+[2] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[3] line=45 | (Integer) countObject
+        ↓
+[4] line=45 | int count = (Integer) countObject
+        ↓
+[5] line=48 | count > 0
+        ↓
+[6] line=48 | count <= 2000
+        ↓
+[7] line=48 | count > 0
+
+=== Source-to-Sink Trace 2/24 ===
+
+[0] line=58 | this.nextInt()
+        ↓
+[1] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[2] line=60 | (Object) count
+        ↓
+[3] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[4] line=45 | (Integer) countObject
+        ↓
+[5] line=45 | int count = (Integer) countObject
+        ↓
+[6] line=48 | count > 0
+        ↓
+[7] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 3/24 ===
+
+[0] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[1] line=60 | (Object) count
+        ↓
+[2] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[3] line=45 | (Integer) countObject
+        ↓
+[4] line=45 | int count = (Integer) countObject
+        ↓
+[5] line=48 | count > 0
+        ↓
+[6] line=48 | count <= 2000
+        ↓
+[7] line=48 | count > 0
+        ↓
+[8] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 4/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3 = new SecureRandom()
+        ↓
+[2] line=58 | new SecureRandom()
+        ↓
+[3] line=58 | $obj3
+        ↓
+[4] line=58 | this.nextInt()
+        ↓
+[5] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[6] line=60 | (Object) count
+        ↓
+[7] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[8] line=45 | (Integer) countObject
+        ↓
+[9] line=45 | int count = (Integer) countObject
+        ↓
+[10] line=48 | count > 0
+        ↓
+[11] line=48 | count <= 2000
+        ↓
+[12] line=48 | count > 0
+        ↓
+[13] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 5/24 ===
+
+[0] line=58 | $obj3 = new SecureRandom()
+        ↓
+[1] line=58 | new SecureRandom()
+        ↓
+[2] line=58 | $obj3
+        ↓
+[3] line=58 | this.nextInt()
+        ↓
+[4] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[5] line=60 | (Object) count
+        ↓
+[6] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[7] line=45 | (Integer) countObject
+        ↓
+[8] line=45 | int count = (Integer) countObject
+        ↓
+[9] line=48 | count > 0
+
+=== Source-to-Sink Trace 6/24 ===
+
+[0] line=58 | $obj3
+        ↓
+[1] line=58 | this.nextInt()
+        ↓
+[2] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[3] line=60 | (Object) count
+        ↓
+[4] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[5] line=45 | (Integer) countObject
+        ↓
+[6] line=45 | int count = (Integer) countObject
+        ↓
+[7] line=48 | count > 0
+
+=== Source-to-Sink Trace 7/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3
+        ↓
+[2] line=58 | this.nextInt()
+        ↓
+[3] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[4] line=60 | (Object) count
+        ↓
+[5] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[6] line=45 | (Integer) countObject
+        ↓
+[7] line=45 | int count = (Integer) countObject
+        ↓
+[8] line=48 | count > 0
+        ↓
+[9] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 8/24 ===
+
+[0] line=58 | $obj3
+        ↓
+[1] line=58 | this.nextInt()
+        ↓
+[2] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[3] line=60 | (Object) count
+        ↓
+[4] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[5] line=45 | (Integer) countObject
+        ↓
+[6] line=45 | int count = (Integer) countObject
+        ↓
+[7] line=48 | count > 0
+        ↓
+[8] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 9/24 ===
+
+[0] line=58 | this.nextInt()
+        ↓
+[1] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[2] line=60 | (Object) count
+        ↓
+[3] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[4] line=45 | (Integer) countObject
+        ↓
+[5] line=45 | int count = (Integer) countObject
+        ↓
+[6] line=48 | count > 0
+
+=== Source-to-Sink Trace 10/24 ===
+
+[0] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[1] line=60 | (Object) count
+        ↓
+[2] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[3] line=45 | (Integer) countObject
+        ↓
+[4] line=45 | int count = (Integer) countObject
+        ↓
+[5] line=48 | count > 0
+        ↓
+[6] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 11/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3 = new SecureRandom()
+        ↓
+[2] line=58 | new SecureRandom()
+        ↓
+[3] line=58 | $obj3
+        ↓
+[4] line=58 | this.nextInt()
+        ↓
+[5] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[6] line=60 | (Object) count
+        ↓
+[7] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[8] line=45 | (Integer) countObject
+        ↓
+[9] line=45 | int count = (Integer) countObject
+        ↓
+[10] line=48 | count > 0
+        ↓
+[11] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 12/24 ===
+
+[0] line=58 | $obj3
+        ↓
+[1] line=58 | this.nextInt()
+        ↓
+[2] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[3] line=60 | (Object) count
+        ↓
+[4] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[5] line=45 | (Integer) countObject
+        ↓
+[6] line=45 | int count = (Integer) countObject
+        ↓
+[7] line=48 | count > 0
+        ↓
+[8] line=48 | count <= 2000
+        ↓
+[9] line=48 | count > 0
+
+=== Source-to-Sink Trace 13/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3
+        ↓
+[2] line=58 | this.nextInt()
+        ↓
+[3] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[4] line=60 | (Object) count
+        ↓
+[5] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[6] line=45 | (Integer) countObject
+        ↓
+[7] line=45 | int count = (Integer) countObject
+        ↓
+[8] line=48 | count > 0
+        ↓
+[9] line=48 | count <= 2000
+        ↓
+[10] line=48 | count > 0
+        ↓
+[11] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 14/24 ===
+
+[0] line=58 | $obj3 = new SecureRandom()
+        ↓
+[1] line=58 | new SecureRandom()
+        ↓
+[2] line=58 | $obj3
+        ↓
+[3] line=58 | this.nextInt()
+        ↓
+[4] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[5] line=60 | (Object) count
+        ↓
+[6] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[7] line=45 | (Integer) countObject
+        ↓
+[8] line=45 | int count = (Integer) countObject
+        ↓
+[9] line=48 | count > 0
+        ↓
+[10] line=48 | count <= 2000
+
+=== Source-to-Sink Trace 15/24 ===
+
+[0] line=58 | $obj3 = new SecureRandom()
+        ↓
+[1] line=58 | new SecureRandom()
+        ↓
+[2] line=58 | $obj3
+        ↓
+[3] line=58 | this.nextInt()
+        ↓
+[4] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[5] line=60 | (Object) count
+        ↓
+[6] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[7] line=45 | (Integer) countObject
+        ↓
+[8] line=45 | int count = (Integer) countObject
+        ↓
+[9] line=48 | count > 0
+        ↓
+[10] line=48 | count <= 2000
+        ↓
+[11] line=48 | count > 0
+        ↓
+[12] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 16/24 ===
+
+[0] line=58 | this.nextInt()
+        ↓
+[1] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[2] line=60 | (Object) count
+        ↓
+[3] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[4] line=45 | (Integer) countObject
+        ↓
+[5] line=45 | int count = (Integer) countObject
+        ↓
+[6] line=48 | count > 0
+        ↓
+[7] line=48 | count <= 2000
+        ↓
+[8] line=48 | count > 0
+
+=== Source-to-Sink Trace 17/24 ===
+
+[0] line=58 | $obj3
+        ↓
+[1] line=58 | this.nextInt()
+        ↓
+[2] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[3] line=60 | (Object) count
+        ↓
+[4] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[5] line=45 | (Integer) countObject
+        ↓
+[6] line=45 | int count = (Integer) countObject
+        ↓
+[7] line=48 | count > 0
+        ↓
+[8] line=48 | count <= 2000
+        ↓
+[9] line=48 | count > 0
+        ↓
+[10] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 18/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3 = new SecureRandom()
+        ↓
+[2] line=58 | new SecureRandom()
+        ↓
+[3] line=58 | $obj3
+        ↓
+[4] line=58 | this.nextInt()
+        ↓
+[5] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[6] line=60 | (Object) count
+        ↓
+[7] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[8] line=45 | (Integer) countObject
+        ↓
+[9] line=45 | int count = (Integer) countObject
+        ↓
+[10] line=48 | count > 0
+
+=== Source-to-Sink Trace 19/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3
+        ↓
+[2] line=58 | this.nextInt()
+        ↓
+[3] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[4] line=60 | (Object) count
+        ↓
+[5] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[6] line=45 | (Integer) countObject
+        ↓
+[7] line=45 | int count = (Integer) countObject
+        ↓
+[8] line=48 | count > 0
+
+=== Source-to-Sink Trace 20/24 ===
+
+[0] line=58 | $obj3 = new SecureRandom()
+        ↓
+[1] line=58 | new SecureRandom()
+        ↓
+[2] line=58 | $obj3
+        ↓
+[3] line=58 | this.nextInt()
+        ↓
+[4] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[5] line=60 | (Object) count
+        ↓
+[6] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[7] line=45 | (Integer) countObject
+        ↓
+[8] line=45 | int count = (Integer) countObject
+        ↓
+[9] line=48 | count > 0
+        ↓
+[10] line=48 | count <= 2000
+        ↓
+[11] line=48 | count > 0
+
+=== Source-to-Sink Trace 21/24 ===
+
+[0] line=58 | this.nextInt()
+        ↓
+[1] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[2] line=60 | (Object) count
+        ↓
+[3] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[4] line=45 | (Integer) countObject
+        ↓
+[5] line=45 | int count = (Integer) countObject
+        ↓
+[6] line=48 | count > 0
+        ↓
+[7] line=48 | count <= 2000
+        ↓
+[8] line=48 | count > 0
+        ↓
+[9] line=48 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 22/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3 = new SecureRandom()
+        ↓
+[2] line=58 | new SecureRandom()
+        ↓
+[3] line=58 | $obj3
+        ↓
+[4] line=58 | this.nextInt()
+        ↓
+[5] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[6] line=60 | (Object) count
+        ↓
+[7] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[8] line=45 | (Integer) countObject
+        ↓
+[9] line=45 | int count = (Integer) countObject
+        ↓
+[10] line=48 | count > 0
+        ↓
+[11] line=48 | count <= 2000
+        ↓
+[12] line=48 | count > 0
+
+=== Source-to-Sink Trace 23/24 ===
+
+[0] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[1] line=60 | (Object) count
+        ↓
+[2] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[3] line=45 | (Integer) countObject
+        ↓
+[4] line=45 | int count = (Integer) countObject
+        ↓
+[5] line=48 | count > 0
+
+=== Source-to-Sink Trace 24/24 ===
+
+[0] line=58 | new SecureRandom()
+        ↓
+[1] line=58 | $obj3
+        ↓
+[2] line=58 | this.nextInt()
+        ↓
+[3] line=58 | count = (new SecureRandom()).nextInt()
+        ↓
+[4] line=60 | (Object) count
+        ↓
+[5] line=43 | goodB2GSink(this, Object countObject)
+        ↓
+[6] line=45 | (Integer) countObject
+        ↓
+[7] line=45 | int count = (Integer) countObject
+        ↓
+[8] line=48 | count > 0
+        ↓
+[9] line=48 | count <= 2000
+        ↓
+[10] line=48 | count > 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=58, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=58, col=17 | this.nextInt()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=58, col=18 | new SecureRandom()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=58, col=18 | $obj3
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=58, col=18 | <empty>
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=60, col=74 | (Object) count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=43, col=29 | Object countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=45, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=45, col=21 | (Integer) countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=9 | if (count > 0 && count <= 2000)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=13 | count > 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=13 | count > 0 && count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=21 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=26 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=26 | count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=48, col=35 | 2000
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 17
+Control nodes     : 1
+Control DDG nodes : 9
+AST controls      : 1
+Final slice nodes : 18
+Slice time        : 0.026 seconds
+
+=== Summary ===
+Raw paths    : 30
+Unique traces: 24
+Flow time    : 0.086 seconds
+
+########## FLOW tc1455_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1455-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_random_71a.java:47 (3 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_random_71b.java:38 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.082 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=47 | count = 2
+        ↓
+[1] line=49 | (Object) count
+        ↓
+[2] line=33 | goodG2BSink(this, Object countObject)
+        ↓
+[3] line=35 | (Integer) countObject
+        ↓
+[4] line=35 | int count = (Integer) countObject
+        ↓
+[5] line=38 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=47, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=47, col=17 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71a.java | line=49, col=74 | (Object) count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=33, col=29 | Object countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=35, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=35, col=21 | (Integer) countObject
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=38, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_random_71b.java | line=38, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 8
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 8
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.082 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1417-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-abcd892c-bcab-43e3-b299-b2cdc4f43a80/cpg.bin.tmp)
+
+########## FLOW tc1417_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1417-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_max_value_68a.java:29 (7 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_max_value_68b.java:28 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.029 seconds
+
+########## FLOW tc1417_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1417-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_max_value_68a.java:55 (7 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_max_value_68b.java:48 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.041 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.041 seconds
+
+########## FLOW tc1417_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1417-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_max_value_68a.java:45 (5 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_max_value_68b.java:38 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.053 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=45 | CWE400_Resource_Exhaustion__sleep_max_value_68a.count = 2
+        ↓
+[1] line=35 | int count = CWE400_Resource_Exhaustion__sleep_max_value_68a.count
+        ↓
+[2] line=38 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_max_value_68a.java | line=45, col=17 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_max_value_68b.java | line=35, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_max_value_68b.java | line=35, col=21 | CWE400_Resource_Exhaustion__sleep_max_value_68a.count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_max_value_68b.java | line=38, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_max_value_68b.java | line=38, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 5
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 5
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 2
+Unique traces: 1
+Flow time    : 0.053 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1345-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-76da2ed9-80d4-4bef-8d28-4e0334263225/cpg.bin.tmp)
+
+########## FLOW tc1345_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1345-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_database_72a.java:53 (5 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_database_72b.java:29 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.052 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=53 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=54 | stringNumber != null
+        ↓
+[2] line=58 | stringNumber.trim()
+        ↓
+[3] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=58 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=112 | countVector.add(0, count)
+        ↓
+[6] line=113 | countVector.add(1, count)
+        ↓
+[7] line=114 | countVector.add(2, count)
+        ↓
+[8] line=115 | this.badSink(countVector)
+        ↓
+[9] line=24 | badSink(this, Vector<Integer> countVector)
+        ↓
+[10] line=26 | countVector.remove(2)
+        ↓
+[11] line=26 | int count = countVector.remove(2)
+        ↓
+[12] line=29 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=53 | resultSet.getString(1)
+        ↓
+[1] line=53 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=54 | stringNumber != null
+        ↓
+[3] line=58 | stringNumber.trim()
+        ↓
+[4] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=58 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=112 | countVector.add(0, count)
+        ↓
+[7] line=113 | countVector.add(1, count)
+        ↓
+[8] line=114 | countVector.add(2, count)
+        ↓
+[9] line=115 | this.badSink(countVector)
+        ↓
+[10] line=24 | badSink(this, Vector<Integer> countVector)
+        ↓
+[11] line=26 | countVector.remove(2)
+        ↓
+[12] line=26 | int count = countVector.remove(2)
+        ↓
+[13] line=29 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=35, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=35, col=17 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=43, col=13 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=46, col=17 | connection
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=46, col=30 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=46, col=30 | IO
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=49, col=17 | preparedStatement
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=49, col=37 | connection.prepareStatement("select name from users where id=0")
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=49, col=37 | connection
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=49, col=65 | "select name from users where id=0"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=50, col=17 | resultSet
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=50, col=29 | preparedStatement.executeQuery()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=50, col=29 | preparedStatement
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=53, col=24 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=53, col=39 | resultSet
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=53, col=39 | resultSet.getString(1)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=53, col=59 | 1
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=54, col=17 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=54, col=21 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=54, col=21 | stringNumber != null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=54, col=37 | null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=56, col=21 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=58, col=25 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=58, col=33 | Integer
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=58, col=33 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=58, col=50 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=58, col=50 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=111, col=25 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=111, col=39 | new Vector<Integer>(5)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=111, col=59 | 5
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=112, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=112, col=25 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=112, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=113, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=113, col=25 | 1
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=113, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=114, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=114, col=25 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=114, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=115, col=72 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=24, col=25 | Vector<Integer> countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=26, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=26, col=21 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=26, col=21 | countVector.remove(2)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=26, col=40 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=29, col=9 | Thread.sleep(count)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=29, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=29, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 20
+Data nodes        : 45
+Control nodes     : 1
+Control DDG nodes : 17
+AST controls      : 3
+Final slice nodes : 49
+Slice time        : 0.015 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.052 seconds
+
+########## FLOW tc1345_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1345-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_database_72a.java:162 (5 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_database_72b.java:49 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.064 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=162 | resultSet.getString(1)
+        ↓
+[1] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=163 | stringNumber != null
+        ↓
+[3] line=167 | stringNumber.trim()
+        ↓
+[4] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=221 | countVector.add(0, count)
+        ↓
+[7] line=222 | countVector.add(1, count)
+        ↓
+[8] line=223 | countVector.add(2, count)
+        ↓
+[9] line=224 | this.goodB2GSink(countVector)
+        ↓
+[10] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[11] line=46 | countVector.remove(2)
+        ↓
+[12] line=46 | int count = countVector.remove(2)
+        ↓
+[13] line=49 | count > 0
+        ↓
+[14] line=49 | count <= 2000
+        ↓
+[15] line=49 | count > 0
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=162 | resultSet.getString(1)
+        ↓
+[1] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=163 | stringNumber != null
+        ↓
+[3] line=167 | stringNumber.trim()
+        ↓
+[4] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=221 | countVector.add(0, count)
+        ↓
+[7] line=222 | countVector.add(1, count)
+        ↓
+[8] line=223 | countVector.add(2, count)
+        ↓
+[9] line=224 | this.goodB2GSink(countVector)
+        ↓
+[10] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[11] line=46 | countVector.remove(2)
+        ↓
+[12] line=46 | int count = countVector.remove(2)
+        ↓
+[13] line=49 | count > 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=162 | resultSet.getString(1)
+        ↓
+[1] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=163 | stringNumber != null
+        ↓
+[3] line=167 | stringNumber.trim()
+        ↓
+[4] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=221 | countVector.add(0, count)
+        ↓
+[7] line=222 | countVector.add(1, count)
+        ↓
+[8] line=223 | countVector.add(2, count)
+        ↓
+[9] line=224 | this.goodB2GSink(countVector)
+        ↓
+[10] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[11] line=46 | countVector.remove(2)
+        ↓
+[12] line=46 | int count = countVector.remove(2)
+        ↓
+[13] line=49 | count > 0
+        ↓
+[14] line=49 | count <= 2000
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=163 | stringNumber != null
+        ↓
+[2] line=167 | stringNumber.trim()
+        ↓
+[3] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=221 | countVector.add(0, count)
+        ↓
+[6] line=222 | countVector.add(1, count)
+        ↓
+[7] line=223 | countVector.add(2, count)
+        ↓
+[8] line=224 | this.goodB2GSink(countVector)
+        ↓
+[9] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[10] line=46 | countVector.remove(2)
+        ↓
+[11] line=46 | int count = countVector.remove(2)
+        ↓
+[12] line=49 | count > 0
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=163 | stringNumber != null
+        ↓
+[2] line=167 | stringNumber.trim()
+        ↓
+[3] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=221 | countVector.add(0, count)
+        ↓
+[6] line=222 | countVector.add(1, count)
+        ↓
+[7] line=223 | countVector.add(2, count)
+        ↓
+[8] line=224 | this.goodB2GSink(countVector)
+        ↓
+[9] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[10] line=46 | countVector.remove(2)
+        ↓
+[11] line=46 | int count = countVector.remove(2)
+        ↓
+[12] line=49 | count > 0
+        ↓
+[13] line=49 | count <= 2000
+        ↓
+[14] line=49 | count > 0
+        ↓
+[15] line=49 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=162 | resultSet.getString(1)
+        ↓
+[1] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[2] line=163 | stringNumber != null
+        ↓
+[3] line=167 | stringNumber.trim()
+        ↓
+[4] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=221 | countVector.add(0, count)
+        ↓
+[7] line=222 | countVector.add(1, count)
+        ↓
+[8] line=223 | countVector.add(2, count)
+        ↓
+[9] line=224 | this.goodB2GSink(countVector)
+        ↓
+[10] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[11] line=46 | countVector.remove(2)
+        ↓
+[12] line=46 | int count = countVector.remove(2)
+        ↓
+[13] line=49 | count > 0
+        ↓
+[14] line=49 | count <= 2000
+        ↓
+[15] line=49 | count > 0
+        ↓
+[16] line=49 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=163 | stringNumber != null
+        ↓
+[2] line=167 | stringNumber.trim()
+        ↓
+[3] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=221 | countVector.add(0, count)
+        ↓
+[6] line=222 | countVector.add(1, count)
+        ↓
+[7] line=223 | countVector.add(2, count)
+        ↓
+[8] line=224 | this.goodB2GSink(countVector)
+        ↓
+[9] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[10] line=46 | countVector.remove(2)
+        ↓
+[11] line=46 | int count = countVector.remove(2)
+        ↓
+[12] line=49 | count > 0
+        ↓
+[13] line=49 | count <= 2000
+        ↓
+[14] line=49 | count > 0
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=162 | String stringNumber = resultSet.getString(1)
+        ↓
+[1] line=163 | stringNumber != null
+        ↓
+[2] line=167 | stringNumber.trim()
+        ↓
+[3] line=167 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=167 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=221 | countVector.add(0, count)
+        ↓
+[6] line=222 | countVector.add(1, count)
+        ↓
+[7] line=223 | countVector.add(2, count)
+        ↓
+[8] line=224 | this.goodB2GSink(countVector)
+        ↓
+[9] line=44 | goodB2GSink(this, Vector<Integer> countVector)
+        ↓
+[10] line=46 | countVector.remove(2)
+        ↓
+[11] line=46 | int count = countVector.remove(2)
+        ↓
+[12] line=49 | count > 0
+        ↓
+[13] line=49 | count <= 2000
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=144, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=144, col=17 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=152, col=13 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=155, col=17 | connection
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=155, col=30 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=155, col=30 | IO
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=158, col=17 | preparedStatement
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=158, col=37 | connection.prepareStatement("select name from users where id=0")
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=158, col=37 | connection
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=158, col=65 | "select name from users where id=0"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=159, col=17 | resultSet
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=159, col=29 | preparedStatement.executeQuery()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=159, col=29 | preparedStatement
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=162, col=24 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=162, col=39 | resultSet.getString(1)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=162, col=39 | resultSet
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=162, col=59 | 1
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=163, col=17 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=163, col=21 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=163, col=21 | stringNumber != null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=163, col=37 | null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=165, col=21 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=167, col=25 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=167, col=33 | Integer
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=167, col=33 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=167, col=50 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=167, col=50 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=220, col=25 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=220, col=39 | new Vector<Integer>(5)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=220, col=59 | 5
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=221, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=221, col=25 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=221, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=222, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=222, col=25 | 1
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=222, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=223, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=223, col=25 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=223, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=224, col=76 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=44, col=29 | Vector<Integer> countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=46, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=46, col=21 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=46, col=21 | countVector.remove(2)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=46, col=40 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=9 | if (count > 0 && count <= 2000)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=13 | count > 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=13 | count > 0 && count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=21 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=26 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=26 | count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=49, col=35 | 2000
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 23
+Data nodes        : 49
+Control nodes     : 2
+Control DDG nodes : 28
+AST controls      : 4
+Final slice nodes : 54
+Slice time        : 0.012 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 8
+Flow time    : 0.064 seconds
+
+########## FLOW tc1345_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1345-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_database_72a.java:130 (3 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_database_72b.java:39 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=130 | count = 2
+        ↓
+[1] line=133 | countVector.add(0, count)
+        ↓
+[2] line=134 | countVector.add(1, count)
+        ↓
+[3] line=135 | countVector.add(2, count)
+        ↓
+[4] line=136 | this.goodG2BSink(countVector)
+        ↓
+[5] line=34 | goodG2BSink(this, Vector<Integer> countVector)
+        ↓
+[6] line=36 | countVector.remove(2)
+        ↓
+[7] line=36 | int count = countVector.remove(2)
+        ↓
+[8] line=39 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=130, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=130, col=17 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=132, col=25 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=132, col=39 | new Vector<Integer>(5)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=132, col=59 | 5
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=133, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=133, col=25 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=133, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=134, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=134, col=25 | 1
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=134, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=135, col=9 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=135, col=25 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=135, col=28 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72a.java | line=136, col=76 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=34, col=29 | Vector<Integer> countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=36, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=36, col=21 | countVector
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=36, col=21 | countVector.remove(2)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=36, col=40 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=39, col=9 | Thread.sleep(count)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=39, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_database_72b.java | line=39, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 13
+Data nodes        : 24
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 24
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.025 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-147-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-7fc5acfb-2997-40d7-950d-f86d486eb797/cpg.bin.tmp)
+
+########## FLOW tc147_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-147-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__File_write_75a.java:173 (3 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__File_write_75b.java:160 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.025 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.025 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1265-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ece1083f-a89c-4b37-bb38-681c3ba9e6ef/cpg.bin.tmp)
+
+########## FLOW tc1265_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1265-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java:53 (4 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java:27 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.034 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=53 | readerBuffered.readLine()
+        ↓
+[1] line=53 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=54 | stringNumber != null
+        ↓
+[3] line=58 | stringNumber.trim()
+        ↓
+[4] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=58 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=112 | this.badSink(count)
+        ↓
+[7] line=23 | badSink(this, int count)
+        ↓
+[8] line=25 | this.badSink(count)
+        ↓
+[9] line=23 | badSink(this, int count)
+        ↓
+[10] line=25 | this.badSink(count)
+        ↓
+[11] line=23 | badSink(this, int count)
+        ↓
+[12] line=25 | this.badSink(count)
+        ↓
+[13] line=23 | badSink(this, int count)
+        ↓
+[14] line=27 | Thread.sleep(count)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=53 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=54 | stringNumber != null
+        ↓
+[2] line=58 | stringNumber.trim()
+        ↓
+[3] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=58 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=112 | this.badSink(count)
+        ↓
+[6] line=23 | badSink(this, int count)
+        ↓
+[7] line=25 | this.badSink(count)
+        ↓
+[8] line=23 | badSink(this, int count)
+        ↓
+[9] line=25 | this.badSink(count)
+        ↓
+[10] line=23 | badSink(this, int count)
+        ↓
+[11] line=25 | this.badSink(count)
+        ↓
+[12] line=23 | badSink(this, int count)
+        ↓
+[13] line=27 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=34, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=34, col=17 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=42, col=13 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=45, col=17 | socket
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=45, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=45, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=45, col=57 | 39544
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=49, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=49, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=49, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=49, col=59 | socket
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=49, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=50, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=50, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=50, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=53, col=24 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=53, col=39 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=53, col=39 | readerBuffered
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=54, col=17 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=54, col=21 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=54, col=21 | stringNumber != null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=54, col=37 | null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=56, col=21 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=58, col=25 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=58, col=33 | Integer
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=58, col=33 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=58, col=50 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=58, col=50 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=112, col=75 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=23, col=25 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=25, col=75 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=23, col=25 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=25, col=75 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=23, col=25 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=25, col=75 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=23, col=25 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=27, col=9 | Thread.sleep(count)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=27, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=27, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 18
+Data nodes        : 38
+Control nodes     : 1
+Control DDG nodes : 21
+AST controls      : 3
+Final slice nodes : 42
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.034 seconds
+
+########## FLOW tc1265_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1265-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java:156 (4 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java:45 (8 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.037 seconds
+
+=== Source-to-Sink Trace 1/8 ===
+
+[0] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=157 | stringNumber != null
+        ↓
+[2] line=161 | stringNumber.trim()
+        ↓
+[3] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=215 | this.goodB2GSink(count)
+        ↓
+[6] line=35 | goodB2GSink(this, int count)
+        ↓
+[7] line=37 | this.goodB2GSink(count)
+        ↓
+[8] line=35 | goodB2GSink(this, int count)
+        ↓
+[9] line=37 | this.goodB2GSink(count)
+        ↓
+[10] line=35 | goodB2GSink(this, int count)
+        ↓
+[11] line=37 | this.goodB2GSink(count)
+        ↓
+[12] line=41 | goodB2GSink(this, int count)
+        ↓
+[13] line=45 | count > 0
+        ↓
+[14] line=45 | count <= 2000
+
+=== Source-to-Sink Trace 2/8 ===
+
+[0] line=156 | readerBuffered.readLine()
+        ↓
+[1] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=157 | stringNumber != null
+        ↓
+[3] line=161 | stringNumber.trim()
+        ↓
+[4] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=215 | this.goodB2GSink(count)
+        ↓
+[7] line=35 | goodB2GSink(this, int count)
+        ↓
+[8] line=37 | this.goodB2GSink(count)
+        ↓
+[9] line=35 | goodB2GSink(this, int count)
+        ↓
+[10] line=37 | this.goodB2GSink(count)
+        ↓
+[11] line=35 | goodB2GSink(this, int count)
+        ↓
+[12] line=37 | this.goodB2GSink(count)
+        ↓
+[13] line=41 | goodB2GSink(this, int count)
+        ↓
+[14] line=45 | count > 0
+
+=== Source-to-Sink Trace 3/8 ===
+
+[0] line=156 | readerBuffered.readLine()
+        ↓
+[1] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=157 | stringNumber != null
+        ↓
+[3] line=161 | stringNumber.trim()
+        ↓
+[4] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=215 | this.goodB2GSink(count)
+        ↓
+[7] line=35 | goodB2GSink(this, int count)
+        ↓
+[8] line=37 | this.goodB2GSink(count)
+        ↓
+[9] line=35 | goodB2GSink(this, int count)
+        ↓
+[10] line=37 | this.goodB2GSink(count)
+        ↓
+[11] line=35 | goodB2GSink(this, int count)
+        ↓
+[12] line=37 | this.goodB2GSink(count)
+        ↓
+[13] line=41 | goodB2GSink(this, int count)
+        ↓
+[14] line=45 | count > 0
+        ↓
+[15] line=45 | count <= 2000
+        ↓
+[16] line=45 | count > 0
+
+=== Source-to-Sink Trace 4/8 ===
+
+[0] line=156 | readerBuffered.readLine()
+        ↓
+[1] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=157 | stringNumber != null
+        ↓
+[3] line=161 | stringNumber.trim()
+        ↓
+[4] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=215 | this.goodB2GSink(count)
+        ↓
+[7] line=35 | goodB2GSink(this, int count)
+        ↓
+[8] line=37 | this.goodB2GSink(count)
+        ↓
+[9] line=35 | goodB2GSink(this, int count)
+        ↓
+[10] line=37 | this.goodB2GSink(count)
+        ↓
+[11] line=35 | goodB2GSink(this, int count)
+        ↓
+[12] line=37 | this.goodB2GSink(count)
+        ↓
+[13] line=41 | goodB2GSink(this, int count)
+        ↓
+[14] line=45 | count > 0
+        ↓
+[15] line=45 | count <= 2000
+
+=== Source-to-Sink Trace 5/8 ===
+
+[0] line=156 | readerBuffered.readLine()
+        ↓
+[1] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=157 | stringNumber != null
+        ↓
+[3] line=161 | stringNumber.trim()
+        ↓
+[4] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=215 | this.goodB2GSink(count)
+        ↓
+[7] line=35 | goodB2GSink(this, int count)
+        ↓
+[8] line=37 | this.goodB2GSink(count)
+        ↓
+[9] line=35 | goodB2GSink(this, int count)
+        ↓
+[10] line=37 | this.goodB2GSink(count)
+        ↓
+[11] line=35 | goodB2GSink(this, int count)
+        ↓
+[12] line=37 | this.goodB2GSink(count)
+        ↓
+[13] line=41 | goodB2GSink(this, int count)
+        ↓
+[14] line=45 | count > 0
+        ↓
+[15] line=45 | count <= 2000
+        ↓
+[16] line=45 | count > 0
+        ↓
+[17] line=45 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 6/8 ===
+
+[0] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=157 | stringNumber != null
+        ↓
+[2] line=161 | stringNumber.trim()
+        ↓
+[3] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=215 | this.goodB2GSink(count)
+        ↓
+[6] line=35 | goodB2GSink(this, int count)
+        ↓
+[7] line=37 | this.goodB2GSink(count)
+        ↓
+[8] line=35 | goodB2GSink(this, int count)
+        ↓
+[9] line=37 | this.goodB2GSink(count)
+        ↓
+[10] line=35 | goodB2GSink(this, int count)
+        ↓
+[11] line=37 | this.goodB2GSink(count)
+        ↓
+[12] line=41 | goodB2GSink(this, int count)
+        ↓
+[13] line=45 | count > 0
+        ↓
+[14] line=45 | count <= 2000
+        ↓
+[15] line=45 | count > 0
+
+=== Source-to-Sink Trace 7/8 ===
+
+[0] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=157 | stringNumber != null
+        ↓
+[2] line=161 | stringNumber.trim()
+        ↓
+[3] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=215 | this.goodB2GSink(count)
+        ↓
+[6] line=35 | goodB2GSink(this, int count)
+        ↓
+[7] line=37 | this.goodB2GSink(count)
+        ↓
+[8] line=35 | goodB2GSink(this, int count)
+        ↓
+[9] line=37 | this.goodB2GSink(count)
+        ↓
+[10] line=35 | goodB2GSink(this, int count)
+        ↓
+[11] line=37 | this.goodB2GSink(count)
+        ↓
+[12] line=41 | goodB2GSink(this, int count)
+        ↓
+[13] line=45 | count > 0
+        ↓
+[14] line=45 | count <= 2000
+        ↓
+[15] line=45 | count > 0
+        ↓
+[16] line=45 | count > 0 && count <= 2000
+
+=== Source-to-Sink Trace 8/8 ===
+
+[0] line=156 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=157 | stringNumber != null
+        ↓
+[2] line=161 | stringNumber.trim()
+        ↓
+[3] line=161 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=161 | count = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=215 | this.goodB2GSink(count)
+        ↓
+[6] line=35 | goodB2GSink(this, int count)
+        ↓
+[7] line=37 | this.goodB2GSink(count)
+        ↓
+[8] line=35 | goodB2GSink(this, int count)
+        ↓
+[9] line=37 | this.goodB2GSink(count)
+        ↓
+[10] line=35 | goodB2GSink(this, int count)
+        ↓
+[11] line=37 | this.goodB2GSink(count)
+        ↓
+[12] line=41 | goodB2GSink(this, int count)
+        ↓
+[13] line=45 | count > 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=137, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=137, col=17 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=145, col=13 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=148, col=17 | socket
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=148, col=26 | new Socket("host.example.org", 39544)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=148, col=37 | "host.example.org"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=148, col=57 | 39544
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=152, col=17 | readerInputStream
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=152, col=37 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=152, col=59 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=152, col=59 | socket
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=152, col=84 | "UTF-8"
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=153, col=17 | readerBuffered
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=153, col=34 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=153, col=53 | readerInputStream
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=156, col=24 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=156, col=39 | readerBuffered
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=156, col=39 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=157, col=17 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=157, col=21 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=157, col=21 | stringNumber != null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=157, col=37 | null
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=159, col=21 | try
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=161, col=25 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=161, col=33 | Integer
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=161, col=33 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=161, col=50 | stringNumber
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=161, col=50 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=215, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=35, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=37, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=35, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=37, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=35, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=37, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=41, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=9 | if (count > 0 && count <= 2000)
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=13 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=13 | count > 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=13 | count > 0 && count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=21 | 0
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=26 | count <= 2000
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=26 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=45, col=35 | 2000
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 22
+Data nodes        : 42
+Control nodes     : 2
+Control DDG nodes : 28
+AST controls      : 4
+Final slice nodes : 47
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 15
+Unique traces: 8
+Flow time    : 0.037 seconds
+
+########## FLOW tc1265_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1265-cpg-resolved.bin
+Source      : CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java:127 (3 CFG node(s))
+Sink        : CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java:36 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.029 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=127 | count = 2
+        ↓
+[1] line=129 | this.goodG2BSink(count)
+        ↓
+[2] line=29 | goodG2BSink(this, int count)
+        ↓
+[3] line=31 | this.goodG2BSink(count)
+        ↓
+[4] line=29 | goodG2BSink(this, int count)
+        ↓
+[5] line=31 | this.goodG2BSink(count)
+        ↓
+[6] line=29 | goodG2BSink(this, int count)
+        ↓
+[7] line=31 | this.goodG2BSink(count)
+        ↓
+[8] line=32 | goodG2BSink(this, int count)
+        ↓
+[9] line=36 | Thread.sleep(count)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=127, col=9 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=127, col=17 | 2
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54a.java | line=129, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=29, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54b.java | line=31, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=29, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54c.java | line=31, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=29, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54d.java | line=31, col=79 | count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=32, col=29 | int count
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=36, col=9 | Thread
+src/main/java/juliet/testcases/CWE400_Resource_Exhaustion/s02/CWE400_Resource_Exhaustion__sleep_connect_tcp_54e.java | line=36, col=22 | count
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 12
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 12
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.029 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe400_jobs.tsv)
+Creating project `joern-trace-493c7bd9-b125-4589-9789-01b2b7d403fe` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1455-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-493c7bd9-b125-4589-9789-01b2b7d403fe/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-abcd892c-bcab-43e3-b299-b2cdc4f43a80` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1417-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-abcd892c-bcab-43e3-b299-b2cdc4f43a80/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-76da2ed9-80d4-4bef-8d28-4e0334263225` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1345-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-76da2ed9-80d4-4bef-8d28-4e0334263225/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-7fc5acfb-2997-40d7-950d-f86d486eb797` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-147-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-7fc5acfb-2997-40d7-950d-f86d486eb797/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ece1083f-a89c-4b37-bb38-681c3ba9e6ef` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe400_cpg/cwe400-1265-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ece1083f-a89c-4b37-bb38-681c3ba9e6ef/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

@@ -1,0 +1,34 @@
+# CWE-832: 1 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe832_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe832_cpg/cwe832-1-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0a4c6aa7-e88e-44d3-bc67-8164f001eb29/cpg.bin.tmp)
+
+########## FLOW tc1_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe832_cpg/cwe832-1-cpg-resolved.bin
+Source      : CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java:22 (2 CFG node(s))
+Sink        : CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java:34 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.132 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.132 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe832_jobs.tsv)
+Creating project `joern-trace-0a4c6aa7-e88e-44d3-bc67-8164f001eb29` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe832_cpg/cwe832-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0a4c6aa7-e88e-44d3-bc67-8164f001eb29/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

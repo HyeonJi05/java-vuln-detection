@@ -70,6 +70,10 @@ python3 run_slicing.py --per-cwe 5
 - `--joern <경로>` : joern-cli 경로 직접 지정 (자동 탐지 실패 시)
 - `--force` : 이미 만든 CPG도 다시 빌드
 - `--refilter` : 이미 필터링된 XML이 있어도 다시 필터링
+- `--sample` : 각 CWE에서 앞에서부터가 아니라 무작위로 테스트케이스를 뽑습니다
+  (`--per-cwe 0`일 때는 무시). 기본은 XML 순서대로 앞에서 N개입니다.
+- `--seed N` : `--sample`의 난수 시드 (기본 0). 같은 시드면 같은 샘플이 뽑혀
+  재현할 수 있습니다.
 
 `--only`(어떤 CWE)와 `--per-cwe`(각 CWE에서 테스트케이스 몇 개)는 서로 다른
 축이며 조합할 수 있습니다.

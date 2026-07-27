@@ -1,0 +1,960 @@
+# CWE-470: 14 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe470_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-326-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-f5313c72-ba29-4032-89b9-2a1e5ed53193/cpg.bin.tmp)
+
+########## FLOW tc326_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-326-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java:43 (6 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java:30 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.247 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=43 | data = cookieSources[0].getValue()
+        ↓
+[1] line=48 | dataContainer.containerOne = data
+        ↓
+[2] line=49 | this.badSink(dataContainer, request, response)
+        ↓
+[3] line=25 | badSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | String data = dataContainer.containerOne
+        ↓
+[5] line=30 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=43 | cookieSources[0].getValue()
+        ↓
+[1] line=43 | data = cookieSources[0].getValue()
+        ↓
+[2] line=48 | dataContainer.containerOne = data
+        ↓
+[3] line=49 | this.badSink(dataContainer, request, response)
+        ↓
+[4] line=25 | badSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | String data = dataContainer.containerOne
+        ↓
+[6] line=30 | Class.forName(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=43 | cookieSources[0].getValue()
+        ↓
+[1] line=43 | data = cookieSources[0].getValue()
+        ↓
+[2] line=48 | dataContainer.containerOne = data
+        ↓
+[3] line=49 | this.badSink(dataContainer, request, response)
+        ↓
+[4] line=25 | badSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[5] line=27 | String data = dataContainer.containerOne
+        ↓
+[6] line=30 | Class.forName(data)
+        ↓
+[7] line=30 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=43 | data = cookieSources[0].getValue()
+        ↓
+[1] line=48 | dataContainer.containerOne = data
+        ↓
+[2] line=49 | this.badSink(dataContainer, request, response)
+        ↓
+[3] line=25 | badSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=27 | String data = dataContainer.containerOne
+        ↓
+[5] line=30 | Class.forName(data)
+        ↓
+[6] line=30 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=31, col=5 | this
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=31, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=35, col=9 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=35, col=16 | ""
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=39, col=20 | cookieSources
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=39, col=38 | request.getCookies()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=39, col=38 | request
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=40, col=13 | if (cookieSources != null)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=40, col=17 | cookieSources
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=40, col=17 | cookieSources != null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=40, col=34 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=43, col=17 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=43, col=24 | cookieSources[0].getValue()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=43, col=24 | cookieSources[0]
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=47, col=19 | dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=47, col=35 | new Container()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=48, col=9 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=48, col=38 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=49, col=74 | dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=25, col=25 | CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=27, col=16 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=27, col=23 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=30, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=30, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=30, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=30, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 12
+Data nodes        : 25
+Control nodes     : 1
+Control DDG nodes : 7
+AST controls      : 1
+Final slice nodes : 27
+Slice time        : 0.027 seconds
+
+=== Summary ===
+Raw paths    : 12
+Unique traces: 4
+Flow time    : 0.247 seconds
+
+########## FLOW tc326_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-326-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java:63 (3 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java:43 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.036 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=63 | data = "Testing.test"
+        ↓
+[1] line=66 | dataContainer.containerOne = data
+        ↓
+[2] line=67 | this.goodG2BSink(dataContainer, request, response)
+        ↓
+[3] line=38 | goodG2BSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=40 | String data = dataContainer.containerOne
+        ↓
+[5] line=43 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=63 | data = "Testing.test"
+        ↓
+[1] line=66 | dataContainer.containerOne = data
+        ↓
+[2] line=67 | this.goodG2BSink(dataContainer, request, response)
+        ↓
+[3] line=38 | goodG2BSink(this, CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=40 | String data = dataContainer.containerOne
+        ↓
+[5] line=43 | Class.forName(data)
+        ↓
+[6] line=43 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=58, col=5 | this
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=63, col=9 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=63, col=16 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=65, col=19 | dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=65, col=35 | new Container()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=66, col=9 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=66, col=38 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67a.java | line=67, col=78 | dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=38, col=29 | CWE470_Unsafe_Reflection__getCookies_Servlet_67a.Container dataContainer
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=40, col=16 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=40, col=23 | dataContainer.containerOne
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=43, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=43, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=43, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_67b.java | line=43, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 11
+Data nodes        : 16
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 0
+Final slice nodes : 16
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.036 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-88-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b726a23b-8d9b-4619-9a62-1f3482339208/cpg.bin.tmp)
+
+########## FLOW tc88_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-88-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__PropertiesFile_14.java:47 (5 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__PropertiesFile_14.java:78 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.045 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=47 | properties.getProperty("data")
+        ↓
+[1] line=47 | data = properties.getProperty("data")
+        ↓
+[2] line=78 | Class.forName(data)
+        ↓
+[3] line=78 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=47 | properties.getProperty("data")
+        ↓
+[1] line=47 | data = properties.getProperty("data")
+        ↓
+[2] line=78 | Class.forName(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=47 | data = properties.getProperty("data")
+        ↓
+[1] line=78 | Class.forName(data)
+        ↓
+[2] line=78 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=47 | data = properties.getProperty("data")
+        ↓
+[1] line=78 | Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=35, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=35, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=35, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=35, col=30 | 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=40, col=28 | properties
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=40, col=41 | new Properties()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=42, col=17 | try
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=44, col=21 | streamFileInput
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=44, col=39 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=44, col=59 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=45, col=21 | properties
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=45, col=37 | streamFileInput
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=47, col=21 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=47, col=28 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=47, col=28 | properties
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=47, col=51 | "data"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=74, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=74, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=78, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=78, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=78, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=78, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=78, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 20
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 2
+Final slice nodes : 25
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.045 seconds
+
+########## FLOW tc88_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-88-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__PropertiesFile_14.java:99 (3 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__PropertiesFile_14.java:104 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=99 | data = "Testing.test"
+        ↓
+[1] line=104 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=99 | data = "Testing.test"
+        ↓
+[1] line=104 | Class.forName(data)
+        ↓
+[2] line=104 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=89, col=9 | if (IO.staticFive != 5)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=89, col=13 | IO.staticFive != 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=89, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=89, col=30 | 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=93, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=93, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=99, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=99, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=104, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=104, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=104, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=104, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.005 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.028 seconds
+
+########## FLOW tc88_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-88-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__PropertiesFile_14.java:118 (3 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__PropertiesFile_14.java:128 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=118 | data = "Testing.test"
+        ↓
+[1] line=128 | Class.forName(data)
+        ↓
+[2] line=128 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=118 | data = "Testing.test"
+        ↓
+[1] line=128 | Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=115, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=115, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=115, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=115, col=30 | 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=118, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=124, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=124, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=128, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=128, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=128, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__PropertiesFile_14.java | line=128, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 3
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.030 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-274-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-37f623fa-4d07-4d7d-858d-18e6dbdff584/cpg.bin.tmp)
+
+########## FLOW tc274_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-274-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__database_15.java:53 (5 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__database_15.java:108 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.031 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=53 | resultSet.getString(1)
+        ↓
+[1] line=53 | data = resultSet.getString(1)
+        ↓
+[2] line=108 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=53 | data = resultSet.getString(1)
+        ↓
+[1] line=108 | Class.forName(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=53 | resultSet.getString(1)
+        ↓
+[1] line=53 | data = resultSet.getString(1)
+        ↓
+[2] line=108 | Class.forName(data)
+        ↓
+[3] line=108 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=53 | data = resultSet.getString(1)
+        ↓
+[1] line=108 | Class.forName(data)
+        ↓
+[2] line=108 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=36, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=36, col=17 | 6
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=45, col=17 | try
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=48, col=21 | connection
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=48, col=34 | IO.getDBConnection()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=48, col=34 | IO
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=50, col=21 | preparedStatement
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=50, col=41 | connection.prepareStatement("select name from users where id=0")
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=50, col=41 | connection
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=50, col=69 | "select name from users where id=0"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=51, col=21 | resultSet
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=51, col=33 | preparedStatement.executeQuery()
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=51, col=33 | preparedStatement
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=53, col=21 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=53, col=28 | resultSet
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=53, col=28 | resultSet.getString(1)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=53, col=48 | 1
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=103, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=103, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=108, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=108, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=108, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=108, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=108, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 21
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 24
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.031 seconds
+
+########## FLOW tc274_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-274-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__database_15.java:129 (4 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__database_15.java:134 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.020 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=129 | data = "Testing.test"
+        ↓
+[1] line=134 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=129 | data = "Testing.test"
+        ↓
+[1] line=134 | Class.forName(data)
+        ↓
+[2] line=134 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=120, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=120, col=17 | 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=125, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=125, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=129, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=129, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=134, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=134, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=134, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=134, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=134, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.020 seconds
+
+########## FLOW tc274_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-274-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__database_15.java:150 (4 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__database_15.java:160 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=150 | data = "Testing.test"
+        ↓
+[1] line=160 | Class.forName(data)
+        ↓
+[2] line=160 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=150 | data = "Testing.test"
+        ↓
+[1] line=160 | Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=146, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=146, col=17 | 6
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=150, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=150, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=155, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=155, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=160, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=160, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=160, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=160, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__database_15.java | line=160, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.018 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-374-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ee529baa-5f0b-43d0-b27a-ce322395dbed/cpg.bin.tmp)
+
+########## FLOW tc374_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-374-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:41 (1 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:62 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.017 seconds
+
+########## FLOW tc374_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-374-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:83 (3 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:88 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=83 | data = "Testing.test"
+        ↓
+[1] line=88 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=83 | data = "Testing.test"
+        ↓
+[1] line=88 | Class.forName(data)
+        ↓
+[2] line=88 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=73, col=9 | if (CWE470_Unsafe_Reflection__getQueryString_Servlet_04.PRIVATE_STATIC_FINAL_FALSE)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=73, col=13 | CWE470_Unsafe_Reflection__getQueryString_Servlet_04.PRIVATE_STATIC_FINAL_FALSE
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=77, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=77, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=83, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=83, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=88, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=88, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=88, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=88, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.024 seconds
+
+########## FLOW tc374_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-374-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:102 (3 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java:112 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.020 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=102 | data = "Testing.test"
+        ↓
+[1] line=112 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=102 | data = "Testing.test"
+        ↓
+[1] line=112 | Class.forName(data)
+        ↓
+[2] line=112 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=99, col=9 | if (CWE470_Unsafe_Reflection__getQueryString_Servlet_04.PRIVATE_STATIC_FINAL_TRUE)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=99, col=13 | CWE470_Unsafe_Reflection__getQueryString_Servlet_04.PRIVATE_STATIC_FINAL_TRUE
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=102, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=102, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=108, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=108, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=112, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=112, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=112, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=112, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getQueryString_Servlet_04.java | line=112, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.020 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-126-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8b6147cf-a58c-4c97-9bc6-4dcc8b5b050a/cpg.bin.tmp)
+
+########## FLOW tc126_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-126-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__Property_15.java:34 (6 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__Property_15.java:44 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace 1/4 ===
+
+[0] line=34 | data = System.getProperty("user.home")
+        ↓
+[1] line=44 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/4 ===
+
+[0] line=34 | data = System.getProperty("user.home")
+        ↓
+[1] line=44 | Class.forName(data)
+        ↓
+[2] line=44 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 3/4 ===
+
+[0] line=34 | System.getProperty("user.home")
+        ↓
+[1] line=34 | data = System.getProperty("user.home")
+        ↓
+[2] line=44 | Class.forName(data)
+
+=== Source-to-Sink Trace 4/4 ===
+
+[0] line=34 | System.getProperty("user.home")
+        ↓
+[1] line=34 | data = System.getProperty("user.home")
+        ↓
+[2] line=44 | Class.forName(data)
+        ↓
+[3] line=44 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=29, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=29, col=17 | 6
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=34, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=34, col=20 | System.getProperty("user.home")
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=34, col=20 | System
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=34, col=39 | "user.home"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=39, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=39, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=44, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=44, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=44, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=44, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=44, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 7
+Data nodes        : 11
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 13
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 16
+Unique traces: 4
+Flow time    : 0.024 seconds
+
+########## FLOW tc126_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-126-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__Property_15.java:65 (4 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__Property_15.java:70 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=65 | data = "Testing.test"
+        ↓
+[1] line=70 | Class.forName(data)
+        ↓
+[2] line=70 | Class tempClass = Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=65 | data = "Testing.test"
+        ↓
+[1] line=70 | Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=56, col=9 | switch(5)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=56, col=17 | 5
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=61, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=61, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=65, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=65, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=70, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=70, col=18 | Class tempClass = Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=70, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=70, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=70, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 9
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.019 seconds
+
+########## FLOW tc126_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-126-cpg-resolved.bin
+Source      : CWE470_Unsafe_Reflection__Property_15.java:86 (4 CFG node(s))
+Sink        : CWE470_Unsafe_Reflection__Property_15.java:96 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=86 | data = "Testing.test"
+        ↓
+[1] line=96 | Class.forName(data)
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=86 | data = "Testing.test"
+        ↓
+[1] line=96 | Class.forName(data)
+        ↓
+[2] line=96 | Class tempClass = Class.forName(data)
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=82, col=9 | switch(6)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=82, col=17 | 6
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=86, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=86, col=20 | "Testing.test"
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=91, col=13 | data
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=91, col=20 | null
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=96, col=18 | tempClass
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=96, col=30 | Class.forName(data)
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=96, col=30 | Class
+src/main/java/juliet/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__Property_15.java | line=96, col=44 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 5
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 1
+Final slice nodes : 10
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.018 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe470_jobs.tsv)
+Creating project `joern-trace-f5313c72-ba29-4032-89b9-2a1e5ed53193` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-326-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-f5313c72-ba29-4032-89b9-2a1e5ed53193/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b726a23b-8d9b-4619-9a62-1f3482339208` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-88-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-b726a23b-8d9b-4619-9a62-1f3482339208/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-37f623fa-4d07-4d7d-858d-18e6dbdff584` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-274-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-37f623fa-4d07-4d7d-858d-18e6dbdff584/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ee529baa-5f0b-43d0-b27a-ce322395dbed` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-374-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-ee529baa-5f0b-43d0-b27a-ce322395dbed/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8b6147cf-a58c-4c97-9bc6-4dcc8b5b050a` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe470_cpg/cwe470-126-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-8b6147cf-a58c-4c97-9bc6-4dcc8b5b050a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

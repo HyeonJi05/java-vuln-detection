@@ -1,0 +1,804 @@
+# CWE-90: 11 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe90_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-2-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c60e952a-c0ba-4b74-bd96-39851b528b2a/cpg.bin.tmp)
+
+########## FLOW tc2_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-2-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__Environment_02.java:38 (5 CFG node(s))
+Sink        : CWE90_LDAP_Injection__Environment_02.java:56 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.256 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=56 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=56 | "(cn=" + data
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=56 | "(cn=" + data + ")"
+        ↓
+[3] line=56 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=56 | "(cn=" + data
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=38 | System.getenv("ADD")
+        ↓
+[1] line=38 | data = System.getenv("ADD")
+        ↓
+[2] line=56 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=38 | data = System.getenv("ADD")
+        ↓
+[1] line=56 | "(cn=" + data + ")"
+        ↓
+[2] line=56 | String search = "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=34, col=9 | if (true)
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=34, col=13 | true
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=38, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=38, col=20 | System.getenv("ADD")
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=38, col=20 | System
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=38, col=34 | "ADD"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=44, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=44, col=20 | null
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=52, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=56, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=56, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=56, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=56, col=29 | "(cn=" + data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=56, col=38 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 9
+Data nodes        : 11
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 14
+Slice time        : 0.028 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.256 seconds
+
+########## FLOW tc2_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-2-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__Environment_02.java:110 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__Environment_02.java:123 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.041 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=110 | data = "foo"
+        ↓
+[1] line=123 | "(cn=" + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=110 | data = "foo"
+        ↓
+[1] line=123 | "(cn=" + data + ")"
+        ↓
+[2] line=123 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=110 | data = "foo"
+        ↓
+[1] line=123 | "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=100, col=9 | if (false)
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=100, col=13 | false
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=104, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=104, col=20 | null
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=110, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=110, col=20 | "foo"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=119, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=123, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=123, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=123, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=123, col=38 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.008 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.041 seconds
+
+########## FLOW tc2_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-2-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__Environment_02.java:170 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__Environment_02.java:188 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.028 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=170 | data = "foo"
+        ↓
+[1] line=188 | "(cn=" + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=170 | data = "foo"
+        ↓
+[1] line=188 | "(cn=" + data + ")"
+        ↓
+[2] line=188 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=170 | data = "foo"
+        ↓
+[1] line=188 | "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=167, col=9 | if (true)
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=167, col=13 | true
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=170, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=170, col=20 | "foo"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=176, col=13 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=176, col=20 | null
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=184, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=188, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=188, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=188, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Environment_02.java | line=188, col=38 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 6
+Data nodes        : 8
+Control nodes     : 1
+Control DDG nodes : 1
+AST controls      : 2
+Final slice nodes : 11
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.028 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-370-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-2f15db81-4193-475a-b0d9-50db2956835f/cpg.bin.tmp)
+
+########## FLOW tc370_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-370-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__getParameter_Servlet_81a.java:31 (5 CFG node(s))
+Sink        : CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java:43 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.072 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=31 | data = request.getParameter("name")
+        ↓
+[1] line=34 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=31 | request.getParameter("name")
+        ↓
+[1] line=31 | data = request.getParameter("name")
+        ↓
+[2] line=34 | baseObject.action(data, request, response)
+        ↓
+[3] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=43 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=31 | request.getParameter("name")
+        ↓
+[1] line=31 | data = request.getParameter("name")
+        ↓
+[2] line=34 | baseObject.action(data, request, response)
+        ↓
+[3] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=43 | "(cn=" + data
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=31 | request.getParameter("name")
+        ↓
+[1] line=31 | data = request.getParameter("name")
+        ↓
+[2] line=34 | baseObject.action(data, request, response)
+        ↓
+[3] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[4] line=43 | "(cn=" + data + ")"
+        ↓
+[5] line=43 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=31 | data = request.getParameter("name")
+        ↓
+[1] line=34 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=31 | data = request.getParameter("name")
+        ↓
+[1] line=34 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data + ")"
+        ↓
+[4] line=43 | String search = "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=31, col=24 | String data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=39, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=43, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=43, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=43, col=29 | "(cn=" + data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_bad.java | line=43, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=26, col=21 | HttpServletRequest request
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=31, col=9 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=31, col=16 | request
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=31, col=16 | request.getParameter("name")
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=31, col=37 | "name"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=34, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 11
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 12
+Slice time        : 0.006 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.072 seconds
+
+########## FLOW tc370_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-370-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__getParameter_Servlet_81a.java:48 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java:43 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.043 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=48 | data = "foo"
+        ↓
+[1] line=51 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=48 | data = "foo"
+        ↓
+[1] line=51 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=48 | data = "foo"
+        ↓
+[1] line=51 | baseObject.action(data, request, response)
+        ↓
+[2] line=31 | action(this, String data, HttpServletRequest request, HttpServletResponse response)
+        ↓
+[3] line=43 | "(cn=" + data + ")"
+        ↓
+[4] line=43 | String search = "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=31, col=24 | String data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=39, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=43, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=43, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=43, col=29 | "(cn=" + data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81_goodG2B.java | line=43, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=48, col=9 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=48, col=16 | "foo"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_81a.java | line=51, col=27 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 8
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.043 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-369-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-724adc60-2ff0-4151-afe2-13955f9590f7/cpg.bin.tmp)
+
+########## FLOW tc369_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-369-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__getParameter_Servlet_75a.java:36 (5 CFG node(s))
+Sink        : CWE90_LDAP_Injection__getParameter_Servlet_75b.java:55 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.046 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.046 seconds
+
+########## FLOW tc369_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-369-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__getParameter_Servlet_75a.java:94 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__getParameter_Servlet_75b.java:153 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.033 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.033 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-135-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0fbb9cf2-0aa9-4bac-90c2-d1dd90788f48/cpg.bin.tmp)
+
+########## FLOW tc135_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-135-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__Property_51a.java:30 (5 CFG node(s))
+Sink        : CWE90_LDAP_Injection__Property_51b.java:42 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.063 seconds
+
+=== Source-to-Sink Trace 1/6 ===
+
+[0] line=30 | System.getProperty("user.home")
+        ↓
+[1] line=30 | data = System.getProperty("user.home")
+        ↓
+[2] line=32 | this.badSink(data)
+        ↓
+[3] line=30 | badSink(this, String data)
+        ↓
+[4] line=42 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 2/6 ===
+
+[0] line=30 | data = System.getProperty("user.home")
+        ↓
+[1] line=32 | this.badSink(data)
+        ↓
+[2] line=30 | badSink(this, String data)
+        ↓
+[3] line=42 | "(cn=" + data + ")"
+        ↓
+[4] line=42 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/6 ===
+
+[0] line=30 | System.getProperty("user.home")
+        ↓
+[1] line=30 | data = System.getProperty("user.home")
+        ↓
+[2] line=32 | this.badSink(data)
+        ↓
+[3] line=30 | badSink(this, String data)
+        ↓
+[4] line=42 | "(cn=" + data + ")"
+        ↓
+[5] line=42 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 4/6 ===
+
+[0] line=30 | data = System.getProperty("user.home")
+        ↓
+[1] line=32 | this.badSink(data)
+        ↓
+[2] line=30 | badSink(this, String data)
+        ↓
+[3] line=42 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 5/6 ===
+
+[0] line=30 | System.getProperty("user.home")
+        ↓
+[1] line=30 | data = System.getProperty("user.home")
+        ↓
+[2] line=32 | this.badSink(data)
+        ↓
+[3] line=30 | badSink(this, String data)
+        ↓
+[4] line=42 | "(cn=" + data
+
+=== Source-to-Sink Trace 6/6 ===
+
+[0] line=30 | data = System.getProperty("user.home")
+        ↓
+[1] line=32 | this.badSink(data)
+        ↓
+[2] line=30 | badSink(this, String data)
+        ↓
+[3] line=42 | "(cn=" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=30, col=9 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=30, col=16 | System.getProperty("user.home")
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=30, col=16 | System
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=30, col=35 | "user.home"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=32, col=60 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=30, col=25 | String data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=38, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=42, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=42, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=42, col=29 | "(cn=" + data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=42, col=38 | data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 10
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 11
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 20
+Unique traces: 6
+Flow time    : 0.063 seconds
+
+########## FLOW tc135_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-135-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__Property_51a.java:46 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__Property_51b.java:95 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=46 | data = "foo"
+        ↓
+[1] line=48 | this.goodG2BSink(data)
+        ↓
+[2] line=83 | goodG2BSink(this, String data)
+        ↓
+[3] line=95 | "(cn=" + data + ")"
+        ↓
+[4] line=95 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=46 | data = "foo"
+        ↓
+[1] line=48 | this.goodG2BSink(data)
+        ↓
+[2] line=83 | goodG2BSink(this, String data)
+        ↓
+[3] line=95 | "(cn=" + data
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=46 | data = "foo"
+        ↓
+[1] line=48 | this.goodG2BSink(data)
+        ↓
+[2] line=83 | goodG2BSink(this, String data)
+        ↓
+[3] line=95 | "(cn=" + data + ")"
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=46, col=9 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=46, col=16 | "foo"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51a.java | line=48, col=64 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=83, col=29 | String data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=91, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=95, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=95, col=20 | String search = "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=95, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_51b.java | line=95, col=29 | "(cn=" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 8
+Data nodes        : 8
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 9
+Slice time        : 0.001 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.027 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-257-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-75da2a0b-4cad-4807-8cb8-ae0dbacd91c4/cpg.bin.tmp)
+
+########## FLOW tc257_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-257-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__console_readLine_74b.java:45 (7 CFG node(s))
+Sink        : CWE90_LDAP_Injection__console_readLine_74a.java:84 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.017 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.017 seconds
+
+########## FLOW tc257_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-257-cpg-resolved.bin
+Source      : CWE90_LDAP_Injection__console_readLine_74a.java:102 (3 CFG node(s))
+Sink        : CWE90_LDAP_Injection__console_readLine_74b.java:99 (7 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace 1/3 ===
+
+[0] line=102 | data = "foo"
+        ↓
+[1] line=105 | dataHashMap.put(0, data)
+        ↓
+[2] line=106 | dataHashMap.put(1, data)
+        ↓
+[3] line=107 | dataHashMap.put(2, data)
+        ↓
+[4] line=108 | this.goodG2BSink(dataHashMap)
+        ↓
+[5] line=86 | goodG2BSink(this, HashMap<Integer, String> dataHashMap)
+        ↓
+[6] line=88 | dataHashMap.get(2)
+        ↓
+[7] line=88 | String data = dataHashMap.get(2)
+        ↓
+[8] line=99 | "(cn=" + data + ")"
+        ↓
+[9] line=99 | String search = "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 2/3 ===
+
+[0] line=102 | data = "foo"
+        ↓
+[1] line=105 | dataHashMap.put(0, data)
+        ↓
+[2] line=106 | dataHashMap.put(1, data)
+        ↓
+[3] line=107 | dataHashMap.put(2, data)
+        ↓
+[4] line=108 | this.goodG2BSink(dataHashMap)
+        ↓
+[5] line=86 | goodG2BSink(this, HashMap<Integer, String> dataHashMap)
+        ↓
+[6] line=88 | dataHashMap.get(2)
+        ↓
+[7] line=88 | String data = dataHashMap.get(2)
+        ↓
+[8] line=99 | "(cn=" + data + ")"
+
+=== Source-to-Sink Trace 3/3 ===
+
+[0] line=102 | data = "foo"
+        ↓
+[1] line=105 | dataHashMap.put(0, data)
+        ↓
+[2] line=106 | dataHashMap.put(1, data)
+        ↓
+[3] line=107 | dataHashMap.put(2, data)
+        ↓
+[4] line=108 | this.goodG2BSink(dataHashMap)
+        ↓
+[5] line=86 | goodG2BSink(this, HashMap<Integer, String> dataHashMap)
+        ↓
+[6] line=88 | dataHashMap.get(2)
+        ↓
+[7] line=88 | String data = dataHashMap.get(2)
+        ↓
+[8] line=99 | "(cn=" + data
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=102, col=9 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=102, col=16 | "foo"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=104, col=33 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=104, col=47 | new HashMap<Integer, String>()
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=105, col=9 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=105, col=25 | 0
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=105, col=28 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=106, col=9 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=106, col=25 | 1
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=106, col=28 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=107, col=9 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=107, col=25 | 2
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=107, col=28 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74a.java | line=108, col=72 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=86, col=29 | HashMap<Integer, String> dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=88, col=16 | data
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=88, col=23 | dataHashMap
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=88, col=23 | dataHashMap.get(2)
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=88, col=39 | 2
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=95, col=9 | try
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=99, col=20 | search
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=99, col=29 | "(cn=" + data + ")"
+src/main/java/juliet/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__console_readLine_74b.java | line=99, col=29 | "(cn=" + data
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 14
+Data nodes        : 23
+Control nodes     : 0
+Control DDG nodes : 0
+AST controls      : 1
+Final slice nodes : 24
+Slice time        : 0.004 seconds
+
+=== Summary ===
+Raw paths    : 10
+Unique traces: 3
+Flow time    : 0.050 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe90_jobs.tsv)
+Creating project `joern-trace-c60e952a-c0ba-4b74-bd96-39851b528b2a` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-c60e952a-c0ba-4b74-bd96-39851b528b2a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-2f15db81-4193-475a-b0d9-50db2956835f` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-370-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-2f15db81-4193-475a-b0d9-50db2956835f/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-724adc60-2ff0-4151-afe2-13955f9590f7` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-369-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-724adc60-2ff0-4151-afe2-13955f9590f7/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-0fbb9cf2-0aa9-4bac-90c2-d1dd90788f48` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-135-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-0fbb9cf2-0aa9-4bac-90c2-d1dd90788f48/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-75da2a0b-4cad-4807-8cb8-ae0dbacd91c4` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe90_cpg/cwe90-257-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-75da2a0b-4cad-4807-8cb8-ae0dbacd91c4/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit

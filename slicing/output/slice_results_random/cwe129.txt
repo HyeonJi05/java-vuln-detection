@@ -1,0 +1,1626 @@
+# CWE-129: 15 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe129_jobs.tsv
+Scala script: /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-915-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-95f8f189-cb74-4147-9326-e70275f1fc59/cpg.bin.tmp)
+
+########## FLOW tc915_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-915-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__URLConnection_array_write_no_check_54a.java:115 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__URLConnection_array_write_no_check_54e.java:46 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.412 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.412 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-572-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-612447f5-e07c-4c27-935e-a35519198bef/cpg.bin.tmp)
+
+########## FLOW tc572_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-572-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:40 (1 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:57 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.039 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.039 seconds
+
+########## FLOW tc572_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-572-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:101 (1 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:118 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.050 seconds
+
+########## FLOW tc572_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-572-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:74 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java:81 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.068 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=74 | data = 2
+        ↓
+[1] line=81 | data < array.length
+        ↓
+[2] line=81 | array.length
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=74 | data = 2
+        ↓
+[1] line=81 | data < array.length
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=74, col=9 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=74, col=16 | 2
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=9 | for (int j = 0; j < 1; j++)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=18 | j
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=22 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=25 | j < 1
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=25 | j
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=29 | 1
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=76, col=32 | j
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=81, col=13 | if (data < array.length)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=81, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__Property_array_read_check_max_17.java | line=81, col=24 | array.length
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 4
+Control nodes     : 1
+Control DDG nodes : 6
+AST controls      : 2
+Final slice nodes : 12
+Slice time        : 0.032 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.068 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-67819b96-295d-4679-bf7e-fd33636ee0a2/cpg.bin.tmp)
+
+########## FLOW tc420_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:47 (5 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:93 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.133 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=47 | properties.getProperty("data")
+        ↓
+[1] line=47 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=48 | stringNumber != null
+        ↓
+[3] line=52 | stringNumber.trim()
+        ↓
+[4] line=52 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=52 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=93 | data >= 0
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=47 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=48 | stringNumber != null
+        ↓
+[2] line=52 | stringNumber.trim()
+        ↓
+[3] line=52 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=52 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=93 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=35, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=35, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=35, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=35, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=37, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=37, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=40, col=28 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=40, col=41 | new Properties()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=42, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=44, col=21 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=44, col=39 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=44, col=59 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=45, col=21 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=45, col=37 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=47, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=47, col=43 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=47, col=43 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=47, col=66 | "data"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=48, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=48, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=48, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=48, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=50, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=52, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=52, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=52, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=52, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=52, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=85, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=85, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=88, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=88, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=88, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=88, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=93, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=93, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=93, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 26
+Control nodes     : 3
+Control DDG nodes : 22
+AST controls      : 6
+Final slice nodes : 39
+Slice time        : 0.045 seconds
+
+=== Summary ===
+Raw paths    : 8
+Unique traces: 2
+Flow time    : 0.133 seconds
+
+########## FLOW tc420_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:186 (5 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:239 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.103 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=186 | properties.getProperty("data")
+        ↓
+[1] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=187 | stringNumber != null
+        ↓
+[3] line=191 | stringNumber.trim()
+        ↓
+[4] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=239 | data >= 0
+        ↓
+[7] line=239 | data < array.length
+        ↓
+[8] line=239 | array.length
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=186 | properties.getProperty("data")
+        ↓
+[1] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=187 | stringNumber != null
+        ↓
+[3] line=191 | stringNumber.trim()
+        ↓
+[4] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=239 | data >= 0
+        ↓
+[7] line=239 | data < array.length
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=187 | stringNumber != null
+        ↓
+[2] line=191 | stringNumber.trim()
+        ↓
+[3] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data >= 0
+        ↓
+[6] line=239 | data < array.length
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=187 | stringNumber != null
+        ↓
+[2] line=191 | stringNumber.trim()
+        ↓
+[3] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data >= 0
+        ↓
+[6] line=239 | data < array.length
+        ↓
+[7] line=239 | data >= 0
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=186 | properties.getProperty("data")
+        ↓
+[1] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=187 | stringNumber != null
+        ↓
+[3] line=191 | stringNumber.trim()
+        ↓
+[4] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=239 | data >= 0
+        ↓
+[7] line=239 | data < array.length
+        ↓
+[8] line=239 | data >= 0
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=186 | properties.getProperty("data")
+        ↓
+[1] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=187 | stringNumber != null
+        ↓
+[3] line=191 | stringNumber.trim()
+        ↓
+[4] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=239 | data >= 0
+        ↓
+[7] line=239 | data < array.length
+        ↓
+[8] line=239 | data >= 0
+        ↓
+[9] line=239 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=187 | stringNumber != null
+        ↓
+[2] line=191 | stringNumber.trim()
+        ↓
+[3] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data >= 0
+        ↓
+[6] line=239 | data < array.length
+        ↓
+[7] line=239 | array.length
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=186 | properties.getProperty("data")
+        ↓
+[1] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=187 | stringNumber != null
+        ↓
+[3] line=191 | stringNumber.trim()
+        ↓
+[4] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=239 | data >= 0
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=187 | stringNumber != null
+        ↓
+[2] line=191 | stringNumber.trim()
+        ↓
+[3] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data >= 0
+        ↓
+[6] line=239 | data < array.length
+        ↓
+[7] line=239 | data >= 0
+        ↓
+[8] line=239 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=186 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=187 | stringNumber != null
+        ↓
+[2] line=191 | stringNumber.trim()
+        ↓
+[3] line=191 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=191 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=174, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=174, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=174, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=174, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=176, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=176, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=179, col=28 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=179, col=41 | new Properties()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=181, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=183, col=21 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=183, col=39 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=183, col=59 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=184, col=21 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=184, col=37 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=186, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=186, col=43 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=186, col=43 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=186, col=66 | "data"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=187, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=187, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=187, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=187, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=189, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=191, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=191, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=191, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=191, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=191, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=224, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=224, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=227, col=9 | if (IO.STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=227, col=13 | IO.STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=227, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=227, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=13 | if (data >= 0 && data < array.length)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=17 | data >= 0 && data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=25 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=30 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=30 | data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=239, col=37 | array.length
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 16
+Data nodes        : 31
+Control nodes     : 4
+Control DDG nodes : 36
+AST controls      : 6
+Final slice nodes : 44
+Slice time        : 0.030 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.103 seconds
+
+########## FLOW tc420_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:267 (5 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:313 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.059 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=267 | properties.getProperty("data")
+        ↓
+[1] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=268 | stringNumber != null
+        ↓
+[3] line=272 | stringNumber.trim()
+        ↓
+[4] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=313 | data >= 0
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=268 | stringNumber != null
+        ↓
+[2] line=272 | stringNumber.trim()
+        ↓
+[3] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=313 | data >= 0
+        ↓
+[6] line=313 | data < array.length
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=268 | stringNumber != null
+        ↓
+[2] line=272 | stringNumber.trim()
+        ↓
+[3] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=313 | data >= 0
+        ↓
+[6] line=313 | data < array.length
+        ↓
+[7] line=313 | array.length
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=267 | properties.getProperty("data")
+        ↓
+[1] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=268 | stringNumber != null
+        ↓
+[3] line=272 | stringNumber.trim()
+        ↓
+[4] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=313 | data >= 0
+        ↓
+[7] line=313 | data < array.length
+        ↓
+[8] line=313 | array.length
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=268 | stringNumber != null
+        ↓
+[2] line=272 | stringNumber.trim()
+        ↓
+[3] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=313 | data >= 0
+        ↓
+[6] line=313 | data < array.length
+        ↓
+[7] line=313 | data >= 0
+        ↓
+[8] line=313 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=267 | properties.getProperty("data")
+        ↓
+[1] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=268 | stringNumber != null
+        ↓
+[3] line=272 | stringNumber.trim()
+        ↓
+[4] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=313 | data >= 0
+        ↓
+[7] line=313 | data < array.length
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=267 | properties.getProperty("data")
+        ↓
+[1] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=268 | stringNumber != null
+        ↓
+[3] line=272 | stringNumber.trim()
+        ↓
+[4] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=313 | data >= 0
+        ↓
+[7] line=313 | data < array.length
+        ↓
+[8] line=313 | data >= 0
+        ↓
+[9] line=313 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=267 | properties.getProperty("data")
+        ↓
+[1] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[2] line=268 | stringNumber != null
+        ↓
+[3] line=272 | stringNumber.trim()
+        ↓
+[4] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=313 | data >= 0
+        ↓
+[7] line=313 | data < array.length
+        ↓
+[8] line=313 | data >= 0
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=268 | stringNumber != null
+        ↓
+[2] line=272 | stringNumber.trim()
+        ↓
+[3] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=313 | data >= 0
+        ↓
+[6] line=313 | data < array.length
+        ↓
+[7] line=313 | data >= 0
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=267 | String stringNumber = properties.getProperty("data")
+        ↓
+[1] line=268 | stringNumber != null
+        ↓
+[2] line=272 | stringNumber.trim()
+        ↓
+[3] line=272 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=272 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=313 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=255, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=255, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=255, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=255, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=257, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=257, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=260, col=28 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=260, col=41 | new Properties()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=262, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=264, col=21 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=264, col=39 | new FileInputStream("../common/config.properties")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=264, col=59 | "../common/config.properties"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=265, col=21 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=265, col=37 | streamFileInput
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=267, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=267, col=43 | properties
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=267, col=43 | properties.getProperty("data")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=267, col=66 | "data"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=268, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=268, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=268, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=268, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=270, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=272, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=272, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=272, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=272, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=272, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=305, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=305, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=308, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=308, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=308, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=308, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=13 | if (data >= 0 && data < array.length)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=17 | data >= 0 && data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=25 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=30 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=30 | data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=313, col=37 | array.length
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 16
+Data nodes        : 31
+Control nodes     : 4
+Control DDG nodes : 36
+AST controls      : 6
+Final slice nodes : 44
+Slice time        : 0.012 seconds
+
+=== Summary ===
+Raw paths    : 24
+Unique traces: 10
+Flow time    : 0.059 seconds
+
+########## FLOW tc420_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:118 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:127 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.027 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=118 | data = 2
+        ↓
+[1] line=127 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=108, col=9 | if (IO.STATIC_FINAL_FIVE != 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=108, col=13 | IO.STATIC_FINAL_FIVE != 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=108, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=108, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=112, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=112, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=118, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=118, col=20 | 2
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=122, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=122, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=122, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=122, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=127, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=127, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=127, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=127, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.027 seconds
+
+########## FLOW tc420_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:145 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java:159 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.030 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=145 | data = 2
+        ↓
+[1] line=159 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=142, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=142, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=142, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=142, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=145, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=145, col=20 | 2
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=151, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=151, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=154, col=9 | if (IO.STATIC_FINAL_FIVE == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=154, col=13 | IO.STATIC_FINAL_FIVE == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=154, col=13 | IO.STATIC_FINAL_FIVE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=154, col=35 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=159, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=159, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__PropertiesFile_array_read_check_min_13.java | line=159, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 2
+Data nodes        : 6
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 15
+Slice time        : 0.007 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.030 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e9f2aa4c-98e3-417c-926e-0970a7657b7c/cpg.bin.tmp)
+
+########## FLOW tc2234_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:53 (4 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:136 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.047 seconds
+
+=== Source-to-Sink Trace 1/2 ===
+
+[0] line=53 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=54 | stringNumber != null
+        ↓
+[2] line=58 | stringNumber.trim()
+        ↓
+[3] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=58 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=136 | data >= 0
+
+=== Source-to-Sink Trace 2/2 ===
+
+[0] line=53 | readerBuffered.readLine()
+        ↓
+[1] line=53 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=54 | stringNumber != null
+        ↓
+[3] line=58 | stringNumber.trim()
+        ↓
+[4] line=58 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=58 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=136 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=36, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=36, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=36, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=36, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=38, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=38, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=45, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=47, col=21 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=47, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=47, col=49 | 39543
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=48, col=21 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=48, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=48, col=30 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=50, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=50, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=50, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=50, col=63 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=50, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=51, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=51, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=51, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=53, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=53, col=43 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=53, col=43 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=54, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=54, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=54, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=54, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=56, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=58, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=58, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=58, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=58, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=58, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=128, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=128, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=131, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=131, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=131, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=131, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=136, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=136, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=136, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=136, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 10
+Data nodes        : 34
+Control nodes     : 3
+Control DDG nodes : 29
+AST controls      : 6
+Final slice nodes : 47
+Slice time        : 0.013 seconds
+
+=== Summary ===
+Raw paths    : 6
+Unique traces: 2
+Flow time    : 0.047 seconds
+
+########## FLOW tc2234_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:234 (4 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:324 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.056 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=235 | stringNumber != null
+        ↓
+[2] line=239 | stringNumber.trim()
+        ↓
+[3] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=324 | data >= 0
+        ↓
+[6] line=324 | data < array.length
+        ↓
+[7] line=324 | data >= 0
+        ↓
+[8] line=324 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=234 | readerBuffered.readLine()
+        ↓
+[1] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=235 | stringNumber != null
+        ↓
+[3] line=239 | stringNumber.trim()
+        ↓
+[4] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=324 | data >= 0
+        ↓
+[7] line=324 | data < array.length
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=235 | stringNumber != null
+        ↓
+[2] line=239 | stringNumber.trim()
+        ↓
+[3] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=324 | data >= 0
+        ↓
+[6] line=324 | data < array.length
+        ↓
+[7] line=324 | data >= 0
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=235 | stringNumber != null
+        ↓
+[2] line=239 | stringNumber.trim()
+        ↓
+[3] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=324 | data >= 0
+        ↓
+[6] line=324 | data < array.length
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=234 | readerBuffered.readLine()
+        ↓
+[1] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=235 | stringNumber != null
+        ↓
+[3] line=239 | stringNumber.trim()
+        ↓
+[4] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=324 | data >= 0
+        ↓
+[7] line=324 | data < array.length
+        ↓
+[8] line=324 | array.length
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=234 | readerBuffered.readLine()
+        ↓
+[1] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=235 | stringNumber != null
+        ↓
+[3] line=239 | stringNumber.trim()
+        ↓
+[4] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=324 | data >= 0
+        ↓
+[7] line=324 | data < array.length
+        ↓
+[8] line=324 | data >= 0
+        ↓
+[9] line=324 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=234 | readerBuffered.readLine()
+        ↓
+[1] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=235 | stringNumber != null
+        ↓
+[3] line=239 | stringNumber.trim()
+        ↓
+[4] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=324 | data >= 0
+        ↓
+[7] line=324 | data < array.length
+        ↓
+[8] line=324 | data >= 0
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=234 | readerBuffered.readLine()
+        ↓
+[1] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=235 | stringNumber != null
+        ↓
+[3] line=239 | stringNumber.trim()
+        ↓
+[4] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=324 | data >= 0
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=235 | stringNumber != null
+        ↓
+[2] line=239 | stringNumber.trim()
+        ↓
+[3] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=324 | data >= 0
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=234 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=235 | stringNumber != null
+        ↓
+[2] line=239 | stringNumber.trim()
+        ↓
+[3] line=239 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=239 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=324 | data >= 0
+        ↓
+[6] line=324 | data < array.length
+        ↓
+[7] line=324 | array.length
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=217, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=217, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=217, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=217, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=219, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=219, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=226, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=228, col=21 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=228, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=228, col=49 | 39543
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=229, col=21 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=229, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=229, col=30 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=231, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=231, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=231, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=231, col=63 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=231, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=232, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=232, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=232, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=234, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=234, col=43 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=234, col=43 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=235, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=235, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=235, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=235, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=237, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=239, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=239, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=239, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=239, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=239, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=309, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=309, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=312, col=9 | if (IO.staticFive != 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=312, col=13 | IO.staticFive != 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=312, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=312, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=13 | if (data >= 0 && data < array.length)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=17 | data >= 0 && data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=25 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=30 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=30 | data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=324, col=37 | array.length
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 38
+Control nodes     : 4
+Control DDG nodes : 43
+AST controls      : 6
+Final slice nodes : 51
+Slice time        : 0.027 seconds
+
+=== Summary ===
+Raw paths    : 18
+Unique traces: 10
+Flow time    : 0.056 seconds
+
+########## FLOW tc2234_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:357 (4 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:440 (9 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.050 seconds
+
+=== Source-to-Sink Trace 1/10 ===
+
+[0] line=357 | readerBuffered.readLine()
+        ↓
+[1] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=358 | stringNumber != null
+        ↓
+[3] line=362 | stringNumber.trim()
+        ↓
+[4] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=440 | data >= 0
+        ↓
+[7] line=440 | data < array.length
+
+=== Source-to-Sink Trace 2/10 ===
+
+[0] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=358 | stringNumber != null
+        ↓
+[2] line=362 | stringNumber.trim()
+        ↓
+[3] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=440 | data >= 0
+        ↓
+[6] line=440 | data < array.length
+
+=== Source-to-Sink Trace 3/10 ===
+
+[0] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=358 | stringNumber != null
+        ↓
+[2] line=362 | stringNumber.trim()
+        ↓
+[3] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=440 | data >= 0
+        ↓
+[6] line=440 | data < array.length
+        ↓
+[7] line=440 | data >= 0
+        ↓
+[8] line=440 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 4/10 ===
+
+[0] line=357 | readerBuffered.readLine()
+        ↓
+[1] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=358 | stringNumber != null
+        ↓
+[3] line=362 | stringNumber.trim()
+        ↓
+[4] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=440 | data >= 0
+        ↓
+[7] line=440 | data < array.length
+        ↓
+[8] line=440 | array.length
+
+=== Source-to-Sink Trace 5/10 ===
+
+[0] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=358 | stringNumber != null
+        ↓
+[2] line=362 | stringNumber.trim()
+        ↓
+[3] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=440 | data >= 0
+        ↓
+[6] line=440 | data < array.length
+        ↓
+[7] line=440 | array.length
+
+=== Source-to-Sink Trace 6/10 ===
+
+[0] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=358 | stringNumber != null
+        ↓
+[2] line=362 | stringNumber.trim()
+        ↓
+[3] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=440 | data >= 0
+        ↓
+[6] line=440 | data < array.length
+        ↓
+[7] line=440 | data >= 0
+
+=== Source-to-Sink Trace 7/10 ===
+
+[0] line=357 | readerBuffered.readLine()
+        ↓
+[1] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=358 | stringNumber != null
+        ↓
+[3] line=362 | stringNumber.trim()
+        ↓
+[4] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=440 | data >= 0
+
+=== Source-to-Sink Trace 8/10 ===
+
+[0] line=357 | readerBuffered.readLine()
+        ↓
+[1] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=358 | stringNumber != null
+        ↓
+[3] line=362 | stringNumber.trim()
+        ↓
+[4] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=440 | data >= 0
+        ↓
+[7] line=440 | data < array.length
+        ↓
+[8] line=440 | data >= 0
+
+=== Source-to-Sink Trace 9/10 ===
+
+[0] line=357 | readerBuffered.readLine()
+        ↓
+[1] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[2] line=358 | stringNumber != null
+        ↓
+[3] line=362 | stringNumber.trim()
+        ↓
+[4] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[6] line=440 | data >= 0
+        ↓
+[7] line=440 | data < array.length
+        ↓
+[8] line=440 | data >= 0
+        ↓
+[9] line=440 | data >= 0 && data < array.length
+
+=== Source-to-Sink Trace 10/10 ===
+
+[0] line=357 | String stringNumber = readerBuffered.readLine()
+        ↓
+[1] line=358 | stringNumber != null
+        ↓
+[2] line=362 | stringNumber.trim()
+        ↓
+[3] line=362 | Integer.parseInt(stringNumber.trim())
+        ↓
+[4] line=362 | data = Integer.parseInt(stringNumber.trim())
+        ↓
+[5] line=440 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=340, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=340, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=340, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=340, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=342, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=342, col=20 | Integer.MIN_VALUE
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=349, col=17 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=351, col=21 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=351, col=32 | new ServerSocket(39543)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=351, col=49 | 39543
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=352, col=21 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=352, col=30 | listener.accept()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=352, col=30 | listener
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=354, col=21 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=354, col=41 | new InputStreamReader(socket.getInputStream(), "UTF-8")
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=354, col=63 | socket.getInputStream()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=354, col=63 | socket
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=354, col=88 | "UTF-8"
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=355, col=21 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=355, col=38 | new BufferedReader(readerInputStream)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=355, col=57 | readerInputStream
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=357, col=28 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=357, col=43 | readerBuffered
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=357, col=43 | readerBuffered.readLine()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=358, col=21 | if (stringNumber != null)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=358, col=25 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=358, col=25 | stringNumber != null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=358, col=41 | null
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=360, col=25 | try
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=362, col=29 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=362, col=36 | Integer
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=362, col=36 | Integer.parseInt(stringNumber.trim())
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=362, col=53 | stringNumber
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=362, col=53 | stringNumber.trim()
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=432, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=432, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=435, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=435, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=435, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=435, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=13 | if (data >= 0 && data < array.length)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=17 | data >= 0 && data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=25 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=30 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=30 | data < array.length
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=440, col=37 | array.length
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 15
+Data nodes        : 38
+Control nodes     : 4
+Control DDG nodes : 43
+AST controls      : 6
+Final slice nodes : 51
+Slice time        : 0.009 seconds
+
+=== Summary ===
+Raw paths    : 18
+Unique traces: 10
+Flow time    : 0.050 seconds
+
+########## FLOW tc2234_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:161 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:170 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.018 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=161 | data = 2
+        ↓
+[1] line=170 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=151, col=9 | if (IO.staticFive != 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=151, col=13 | IO.staticFive != 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=151, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=151, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=155, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=155, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=161, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=161, col=20 | 2
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=165, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=165, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=165, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=165, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=170, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=170, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=170, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=170, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 3
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.003 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.018 seconds
+
+########## FLOW tc2234_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:188 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java:202 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.019 seconds
+
+=== Source-to-Sink Trace ===
+
+[0] line=188 | data = 2
+        ↓
+[1] line=202 | data >= 0
+
+=== DDG + CDG Backward Slice Started (depth=20) ===
+
+=== DDG + CDG Backward Slice ===
+
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=185, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=185, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=185, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=185, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=188, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=188, col=20 | 2
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=194, col=13 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=194, col=20 | 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=197, col=9 | if (IO.staticFive == 5)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=197, col=13 | IO.staticFive == 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=197, col=13 | IO.staticFive
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=197, col=28 | 5
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=202, col=13 | if (data >= 0)
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=202, col=17 | data
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=202, col=17 | data >= 0
+src/main/java/juliet/testcases/CWE129_Improper_Validation_of_Array_Index/s03/CWE129_Improper_Validation_of_Array_Index__listen_tcp_array_read_check_min_14.java | line=202, col=25 | 0
+
+=== PDG Slice Summary ===
+Slice depth       : 20
+Flow nodes        : 4
+Data nodes        : 7
+Control nodes     : 2
+Control DDG nodes : 6
+AST controls      : 3
+Final slice nodes : 16
+Slice time        : 0.002 seconds
+
+=== Summary ===
+Raw paths    : 4
+Unique traces: 1
+Flow time    : 0.019 seconds
+
+@@@@@@@@@@ CPG /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-357-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-752bc3a7-4637-43c7-afc3-69d4e24a234d/cpg.bin.tmp)
+
+########## FLOW tc357_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-357-cpg-resolved.bin
+Source      : CWE129_Improper_Validation_of_Array_Index__File_array_write_no_check_51a.java:128 (3 CFG node(s))
+Sink        : CWE129_Improper_Validation_of_Array_Index__File_array_write_no_check_51b.java:46 (5 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.024 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.024 seconds
+executing /home/hyeonjijang/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/hyeonjijang/java-vuln-detection/slicing/output/slice_results_260722_004108/jobs/cwe129_jobs.tsv)
+Creating project `joern-trace-95f8f189-cb74-4147-9326-e70275f1fc59` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-915-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-95f8f189-cb74-4147-9326-e70275f1fc59/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-612447f5-e07c-4c27-935e-a35519198bef` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-572-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-612447f5-e07c-4c27-935e-a35519198bef/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-67819b96-295d-4679-bf7e-fd33636ee0a2` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-420-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-67819b96-295d-4679-bf7e-fd33636ee0a2/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e9f2aa4c-98e3-417c-926e-0970a7657b7c` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-2234-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-e9f2aa4c-98e3-417c-926e-0970a7657b7c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-752bc3a7-4637-43c7-afc3-69d4e24a234d` for CPG at `/home/hyeonjijang/java-vuln-detection/slicing/output/CPG/cwe129_cpg/cwe129-357-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/hyeonjijang/java-vuln-detection/slicing/workspace/joern-trace-752bc3a7-4637-43c7-afc3-69d4e24a234d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
