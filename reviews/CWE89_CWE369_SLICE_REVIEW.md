@@ -1612,3 +1612,37 @@ CWE369_Divide_by_Zero__float_URLConnection_modulo_01.java | line=118, col=22 | (
     - if-else의 else 내부 코드가 포함되는데 else가 있는 라인은 포함되지 않아, if / else 내부의 코드가 구분되지 않는 문제가 있음.
     - try-catch 구문에서 불필요한 에러 출력 코드까지 포함됨.
     - `$obj0`, `<empty>` 등 중간 객체 노드가 표시되는 경우가 있음.
+
+### 판정 기준별 통계
+
+전체 39개 flow(CWE-89 21개 + CWE-369 18개)를 "추출 범위" 판정 기준으로 분류하고, 같은 판정 안에서도 원인별로 다시 나눴다.
+
+**적절 (21개)**
+
+- else 내부 코드는 포함되나 else 분기 라인 자체는 미포함, 그 외에는 적절 — 17개
+    - CWE-89: tc457-Flow4(g2b1), tc457-Flow5(g2b2), tc1781-Flow1(b2b), tc1781-Flow4(g2b1), tc1781-Flow5(g2b2), tc1859-Flow4(g2b1), tc1859-Flow5(g2b2)
+    - CWE-369: tc929-Flow4(g2b1), tc929-Flow5(g2b2), tc1302-Flow4(g2b1), tc1302-Flow5(g2b2), tc1709-Flow1(b2b), tc1709-Flow4(g2b1), tc1709-Flow5(g2b2), tc748-Flow1(b2b), tc748-Flow4(g2b1), tc748-Flow5(g2b2)
+- source/sink가 다른 클래스 파일에 있어서, `(new B()).badSink(data)`처럼 다른 클래스의 메서드를 호출하는 방식으로 흐름이 이어지는 flow — 호출되는 메서드 이름(`badSink` 등) 자체는 트레이스에 안 뽑히지만, 그 메서드로 넘어가는 인자(`data`)는 포함되어 흐름 추적에는 문제 없음 — 3개
+    - CWE-89: tc1203-Flow4(g2b), tc648-Flow1(b2b), tc648-Flow4(g2b)
+- 특이사항 없이 적절히 추출됨 — 1개
+    - CWE-369: tc334-Flow3(g2b)
+
+**약간 과도 (2개)**
+
+- 불필요한 try-catch 예외처리(catch) 흐름까지 포함됨 — 2개
+    - CWE-89: tc457-Flow1(b2b)
+    - CWE-369: tc1302-Flow1(b2b)
+
+**부족 (6개)**
+
+- 실제 나눗셈 연산(sink)이 트레이스에서 누락됨 — 6개
+    - CWE-369: tc1302-Flow2(b2g1), tc1302-Flow3(b2g2), tc1709-Flow2(b2g1), tc1709-Flow3(b2g2), tc748-Flow2(b2g1), tc748-Flow3(b2g2)
+
+**추출 실패 (10개)**
+
+- sink 지정 위치가 틀림 — fix 코드 블록에서 실제로 데이터가 쓰이는 줄(`sqlStatement.setString(1, data);`, 블록 중간)이 진짜 sink인데, joern은 그 블록의 첫 줄(`dbConnection = IO.getDBConnection();`)을 sink로 잘못 지정함 — 6개
+    - CWE-89: tc457-Flow2(b2g1), tc457-Flow3(b2g2), tc1781-Flow2(b2g1), tc1781-Flow3(b2g2), tc648-Flow2(b2g1), tc648-Flow3(b2g2)
+- source 지정 위치가 틀림 — 블록 시작 중괄호 `{`를 source로 지정했고, 실제 source는 그 다음 줄임 — 3개
+    - CWE-89: tc1859-Flow1(b2b), tc1859-Flow2(b2g1), tc1859-Flow3(b2g2)
+- source/sink가 서로 다른 파일로 잘못 지정됨 (파일 자체가 뒤바뀜) — 1개
+    - CWE-89: tc1203-Flow1(b2b)
