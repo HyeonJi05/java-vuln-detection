@@ -1,0 +1,2146 @@
+# CWE-256: 97 flow(s), one joern session
+
+=== Joern PDG Slice (batch: one session per jobs file) ===
+Jobs file   : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/person-a/jobs/cwe256_jobs.tsv
+Scala script: /home/swlab/Documents/swvul/java-vuln-detection/slicing/script/pdg_slice_batch.sc
+
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-1-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-d6da235f-9d55-4a19-8be7-9754eb6cc33e/cpg.bin.tmp)
+
+########## FLOW tc1_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-1-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_01.java:151 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_01.java:164 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.035 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.035 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-2-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1323f8c3-4682-41b2-9ab3-33890ae0bf2f/cpg.bin.tmp)
+
+########## FLOW tc2_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-2-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_02.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_02.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.004 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.004 seconds
+
+########## FLOW tc2_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-2-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_02.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_02.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-3-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-197c0954-7fa1-46e8-8b99-db899033a46b/cpg.bin.tmp)
+
+########## FLOW tc3_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-3-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_03.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_03.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc3_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-3-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_03.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_03.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-4-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ec6cdf46-3c98-45a8-8a8c-92ed508eb9f4/cpg.bin.tmp)
+
+########## FLOW tc4_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-4-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_04.java:166 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_04.java:182 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc4_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-4-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_04.java:244 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_04.java:265 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-5-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1cea7c25-c73b-45e3-9159-12815f79a824/cpg.bin.tmp)
+
+########## FLOW tc5_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-5-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_05.java:166 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_05.java:182 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+########## FLOW tc5_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-5-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_05.java:244 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_05.java:265 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-6-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1a02778a-b981-4c60-a273-8e4b48ee7b1c/cpg.bin.tmp)
+
+########## FLOW tc6_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-6-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_06.java:164 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_06.java:180 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+########## FLOW tc6_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-6-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_06.java:242 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_06.java:263 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-7-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-64f934f5-9769-45a4-b147-38df1f3effc3/cpg.bin.tmp)
+
+########## FLOW tc7_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-7-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_07.java:164 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_07.java:180 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc7_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-7-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_07.java:242 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_07.java:263 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-8-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-b42a7e78-2cd0-46ab-8b2a-994886b9071e/cpg.bin.tmp)
+
+########## FLOW tc8_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-8-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_08.java:172 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_08.java:188 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc8_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-8-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_08.java:250 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_08.java:271 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-9-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-72606b6a-14a7-418a-90ff-3cd0950e1284/cpg.bin.tmp)
+
+########## FLOW tc9_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-9-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_09.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_09.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc9_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-9-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_09.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_09.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-10-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8b88ae8d-f8b7-454a-8527-4c9c0d7f8009/cpg.bin.tmp)
+
+########## FLOW tc10_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-10-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_10.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_10.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc10_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-10-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_10.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_10.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-11-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-e7fc7485-8894-4917-8322-d16585a89ae6/cpg.bin.tmp)
+
+########## FLOW tc11_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-11-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_11.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_11.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc11_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-11-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_11.java:238 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_11.java:259 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-12-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-afa2ff55-8321-44ef-82ab-3c4c5897112c/cpg.bin.tmp)
+
+########## FLOW tc12_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-12-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_12.java:232 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_12.java:325 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-13-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-053bc3ec-a639-4d7e-a13e-16d16f7a75cd/cpg.bin.tmp)
+
+########## FLOW tc13_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-13-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_13.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_13.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc13_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-13-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_13.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_13.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-14-cpg-resolved.bin (2 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f2839ad9-26af-4865-8774-1b54b7c4edf4/cpg.bin.tmp)
+
+########## FLOW tc14_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-14-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_14.java:159 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_14.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc14_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-14-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_14.java:237 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_14.java:258 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin (5 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-534052fd-b9f8-4bad-b729-33630626183d/cpg.bin.tmp)
+
+########## FLOW tc15_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_15.java:77 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_15.java:89 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc15_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_15.java:340 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_15.java:356 (2 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc15_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_15.java:429 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_15.java:441 (2 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc15_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_15.java:163 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_15.java:180 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc15_flow5 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_15.java:249 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_15.java:271 (4 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-16-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-828a6086-cc66-4859-8c6b-f97aaa50e985/cpg.bin.tmp)
+
+########## FLOW tc16_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-16-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_16.java:76 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_16.java:82 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc16_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-16-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_16.java:227 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_16.java:233 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc16_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-16-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_16.java:146 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_16.java:162 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-17-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f8740049-b5d4-416c-89d4-640657e4bffb/cpg.bin.tmp)
+
+########## FLOW tc17_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-17-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_17.java:83 (10 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_17.java:86 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.010 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.010 seconds
+
+########## FLOW tc17_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-17-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_17.java:230 (10 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_17.java:233 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc17_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-17-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_17.java:151 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_17.java:165 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin (4 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-9f0c52b0-90d8-4bde-aad4-ff8238a2e6f3/cpg.bin.tmp)
+
+########## FLOW tc18_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_21.java:81 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_21.java:90 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.009 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.009 seconds
+
+########## FLOW tc18_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_21.java:167 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_21.java:182 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.004 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.004 seconds
+
+########## FLOW tc18_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_21.java:259 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_21.java:268 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.004 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.004 seconds
+
+########## FLOW tc18_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_21.java:341 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_21.java:361 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin (4 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ba7ff1b9-38cd-4166-b392-3aa6b5f7cb77/cpg.bin.tmp)
+
+########## FLOW tc19_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_22a.java:78 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_22b.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.004 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.004 seconds
+
+########## FLOW tc19_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_22a.java:134 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_22b.java:85 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+########## FLOW tc19_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_22a.java:177 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_22b.java:129 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc19_flow4 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_22a.java:220 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_22b.java:175 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-20-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1e6bb3c1-381d-4808-8209-2b11ecae7f52/cpg.bin.tmp)
+
+########## FLOW tc20_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-20-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_31.java:80 (3 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_31.java:87 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc20_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-20-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_31.java:247 (3 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_31.java:253 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc20_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-20-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_31.java:161 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_31.java:179 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-21-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-9859c3ae-9b8a-4815-b739-614f18856f9a/cpg.bin.tmp)
+
+########## FLOW tc21_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-21-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_41.java:109 (3 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_41.java:45 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc21_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-21-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_41.java:282 (3 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_41.java:206 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc21_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-21-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_41.java:188 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_41.java:123 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-22-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-7f3a6afa-5358-43c3-b9eb-a853a3a298a1/cpg.bin.tmp)
+
+########## FLOW tc22_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-22-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_42.java:78 (2 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_42.java:87 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc22_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-22-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_42.java:237 (2 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_42.java:245 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc22_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-22-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_42.java:152 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_42.java:172 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-23-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1c8fe781-b9d1-4813-a4cd-afa6da18c2aa/cpg.bin.tmp)
+
+########## FLOW tc23_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-23-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_45.java:114 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_45.java:50 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc23_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-23-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_45.java:291 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_45.java:215 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc23_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-23-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_45.java:195 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_45.java:130 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-24-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-7717d1f7-8eb8-4fda-80fe-7ca769ae966d/cpg.bin.tmp)
+
+########## FLOW tc24_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-24-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_51a.java:74 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_51b.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.003 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.003 seconds
+
+########## FLOW tc24_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-24-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_51a.java:175 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_51b.java:103 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc24_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-24-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_51a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_51b.java:72 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-25-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f7ffbb24-ab93-4862-bb24-888c532fd072/cpg.bin.tmp)
+
+########## FLOW tc25_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-25-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_52a.java:74 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_52c.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc25_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-25-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_52a.java:175 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_52c.java:103 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc25_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-25-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_52a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_52c.java:72 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-26-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-5774938e-bd1f-4a43-bb6c-9ffe7475faae/cpg.bin.tmp)
+
+########## FLOW tc26_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-26-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_53a.java:74 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_53d.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc26_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-26-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_53a.java:175 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_53d.java:103 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc26_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-26-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_53a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_53d.java:72 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-27-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-fea15217-bc7c-428c-ad8e-f8b5a86beeaf/cpg.bin.tmp)
+
+########## FLOW tc27_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-27-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_54a.java:74 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_54e.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc27_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-27-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_54a.java:175 (9 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_54e.java:103 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc27_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-27-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_54a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_54e.java:72 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-28-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ef6ddb9b-d162-4247-84ce-d8404c729bad/cpg.bin.tmp)
+
+########## FLOW tc28_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-28-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_61b.java:74 (2 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_61a.java:41 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc28_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-28-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_61b.java:169 (2 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_61a.java:112 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc28_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-28-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_61b.java:116 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_61a.java:80 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-29-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f9876174-a0ea-4720-8947-770a8be5ee11/cpg.bin.tmp)
+
+########## FLOW tc29_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-29-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_66a.java:74 (4 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_66b.java:41 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc29_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-29-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_66a.java:179 (4 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_66b.java:106 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc29_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-29-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_66a.java:124 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_66b.java:74 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-30-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-4a5950dc-5660-4d68-bb67-5ad3399e6fee/cpg.bin.tmp)
+
+########## FLOW tc30_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-30-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_67a.java:79 (6 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_67b.java:41 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc30_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-30-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_67a.java:184 (6 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_67b.java:106 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc30_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-30-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_67a.java:129 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_67b.java:74 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-31-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-bd388e6c-4c18-4fd1-b2b0-8a9530fa15ad/cpg.bin.tmp)
+
+########## FLOW tc31_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-31-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_68a.java:75 (8 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_68b.java:41 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc31_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-31-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_68a.java:174 (8 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_68b.java:106 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc31_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-31-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_68a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_68b.java:74 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-32-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8561b0e3-38c4-4183-9c40-76080715a992/cpg.bin.tmp)
+
+########## FLOW tc32_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-32-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_71a.java:74 (11 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_71b.java:41 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc32_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-32-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_71a.java:175 (11 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_71b.java:106 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc32_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-32-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_71a.java:122 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_71b.java:74 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-33-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8be053c1-a98c-418d-ae38-968c88a04f46/cpg.bin.tmp)
+
+########## FLOW tc33_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-33-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_72a.java:75 (6 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_72b.java:42 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc33_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-33-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_72a.java:184 (6 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_72b.java:107 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc33_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-33-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_72a.java:127 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_72b.java:75 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-34-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-d09072bb-18a5-4ea2-b53e-cc6062811897/cpg.bin.tmp)
+
+########## FLOW tc34_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-34-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_73a.java:75 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_73b.java:42 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc34_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-34-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_73a.java:184 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_73b.java:107 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc34_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-34-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_73a.java:127 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_73b.java:75 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-35-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-33ac8c17-8484-4155-a4d7-991550deef39/cpg.bin.tmp)
+
+########## FLOW tc35_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-35-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_74a.java:75 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_74b.java:42 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc35_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-35-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_74a.java:184 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_74b.java:107 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+########## FLOW tc35_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-35-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_74a.java:127 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_74b.java:75 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-36-cpg-resolved.bin (1 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-c2f69ed3-739a-4476-96c5-d7abafca29b4/cpg.bin.tmp)
+
+########## FLOW tc36_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-36-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_75a.java:167 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_75b.java:128 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.001 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.001 seconds
+
+@@@@@@@@@@ CPG /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-37-cpg-resolved.bin (3 flow) @@@@@@@@@@
+[INFO ] initialising from existing storage (/home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-b7030b6f-5032-4a99-8b0e-213d20df5f20/cpg.bin.tmp)
+
+########## FLOW tc37_flow1 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-37-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_81a.java:74 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_81_bad.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc37_flow2 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-37-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_81a.java:177 (5 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_81_goodB2G.java:39 (1 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+
+########## FLOW tc37_flow3 ##########
+
+=== Analysis Target ===
+CPG         : /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-37-cpg-resolved.bin
+Source      : CWE256_Plaintext_Storage_of_Password__basic_81a.java:123 (1 CFG node(s))
+Sink        : CWE256_Plaintext_Storage_of_Password__basic_81_goodG2B.java:40 (3 CFG node(s))
+Slice depth : 20
+
+=== Source-to-Sink Search Started ===
+Source-to-Sink search completed: 0.002 seconds
+
+=== Source-to-Sink Trace ===
+No data-flow path found.
+
+=== Summary ===
+Raw paths    : 0
+Unique traces: 0
+Flow time    : 0.002 seconds
+executing /home/swlab/Documents/swvul/java-vuln-detection/slicing/script/pdg_slice_batch.sc with params=Map(jobsFile -> /home/swlab/Documents/swvul/java-vuln-detection/slicing/output/person-a/jobs/cwe256_jobs.tsv)
+Creating project `joern-trace-d6da235f-9d55-4a19-8be7-9754eb6cc33e` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-1-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-d6da235f-9d55-4a19-8be7-9754eb6cc33e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1323f8c3-4682-41b2-9ab3-33890ae0bf2f` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-2-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1323f8c3-4682-41b2-9ab3-33890ae0bf2f/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-197c0954-7fa1-46e8-8b99-db899033a46b` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-3-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-197c0954-7fa1-46e8-8b99-db899033a46b/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ec6cdf46-3c98-45a8-8a8c-92ed508eb9f4` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-4-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ec6cdf46-3c98-45a8-8a8c-92ed508eb9f4/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1cea7c25-c73b-45e3-9159-12815f79a824` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-5-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1cea7c25-c73b-45e3-9159-12815f79a824/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1a02778a-b981-4c60-a273-8e4b48ee7b1c` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-6-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1a02778a-b981-4c60-a273-8e4b48ee7b1c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-64f934f5-9769-45a4-b147-38df1f3effc3` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-7-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-64f934f5-9769-45a4-b147-38df1f3effc3/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b42a7e78-2cd0-46ab-8b2a-994886b9071e` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-8-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-b42a7e78-2cd0-46ab-8b2a-994886b9071e/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-72606b6a-14a7-418a-90ff-3cd0950e1284` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-9-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-72606b6a-14a7-418a-90ff-3cd0950e1284/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8b88ae8d-f8b7-454a-8527-4c9c0d7f8009` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-10-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8b88ae8d-f8b7-454a-8527-4c9c0d7f8009/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-e7fc7485-8894-4917-8322-d16585a89ae6` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-11-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-e7fc7485-8894-4917-8322-d16585a89ae6/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-afa2ff55-8321-44ef-82ab-3c4c5897112c` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-12-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-afa2ff55-8321-44ef-82ab-3c4c5897112c/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-053bc3ec-a639-4d7e-a13e-16d16f7a75cd` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-13-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-053bc3ec-a639-4d7e-a13e-16d16f7a75cd/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-f2839ad9-26af-4865-8774-1b54b7c4edf4` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-14-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f2839ad9-26af-4865-8774-1b54b7c4edf4/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-534052fd-b9f8-4bad-b729-33630626183d` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-15-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-534052fd-b9f8-4bad-b729-33630626183d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-828a6086-cc66-4859-8c6b-f97aaa50e985` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-16-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-828a6086-cc66-4859-8c6b-f97aaa50e985/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-f8740049-b5d4-416c-89d4-640657e4bffb` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-17-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f8740049-b5d4-416c-89d4-640657e4bffb/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-9f0c52b0-90d8-4bde-aad4-ff8238a2e6f3` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-18-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-9f0c52b0-90d8-4bde-aad4-ff8238a2e6f3/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ba7ff1b9-38cd-4166-b392-3aa6b5f7cb77` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-19-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ba7ff1b9-38cd-4166-b392-3aa6b5f7cb77/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1e6bb3c1-381d-4808-8209-2b11ecae7f52` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-20-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1e6bb3c1-381d-4808-8209-2b11ecae7f52/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-9859c3ae-9b8a-4815-b739-614f18856f9a` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-21-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-9859c3ae-9b8a-4815-b739-614f18856f9a/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-7f3a6afa-5358-43c3-b9eb-a853a3a298a1` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-22-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-7f3a6afa-5358-43c3-b9eb-a853a3a298a1/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-1c8fe781-b9d1-4813-a4cd-afa6da18c2aa` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-23-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-1c8fe781-b9d1-4813-a4cd-afa6da18c2aa/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-7717d1f7-8eb8-4fda-80fe-7ca769ae966d` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-24-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-7717d1f7-8eb8-4fda-80fe-7ca769ae966d/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-f7ffbb24-ab93-4862-bb24-888c532fd072` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-25-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f7ffbb24-ab93-4862-bb24-888c532fd072/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-5774938e-bd1f-4a43-bb6c-9ffe7475faae` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-26-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-5774938e-bd1f-4a43-bb6c-9ffe7475faae/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-fea15217-bc7c-428c-ad8e-f8b5a86beeaf` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-27-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-fea15217-bc7c-428c-ad8e-f8b5a86beeaf/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-ef6ddb9b-d162-4247-84ce-d8404c729bad` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-28-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-ef6ddb9b-d162-4247-84ce-d8404c729bad/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-f9876174-a0ea-4720-8947-770a8be5ee11` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-29-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-f9876174-a0ea-4720-8947-770a8be5ee11/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-4a5950dc-5660-4d68-bb67-5ad3399e6fee` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-30-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-4a5950dc-5660-4d68-bb67-5ad3399e6fee/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-bd388e6c-4c18-4fd1-b2b0-8a9530fa15ad` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-31-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-bd388e6c-4c18-4fd1-b2b0-8a9530fa15ad/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8561b0e3-38c4-4183-9c40-76080715a992` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-32-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8561b0e3-38c4-4183-9c40-76080715a992/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-8be053c1-a98c-418d-ae38-968c88a04f46` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-33-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-8be053c1-a98c-418d-ae38-968c88a04f46/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-d09072bb-18a5-4ea2-b53e-cc6062811897` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-34-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-d09072bb-18a5-4ea2-b53e-cc6062811897/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-33ac8c17-8484-4155-a4d7-991550deef39` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-35-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-33ac8c17-8484-4155-a4d7-991550deef39/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-c2f69ed3-739a-4476-96c5-d7abafca29b4` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-36-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-c2f69ed3-739a-4476-96c5-d7abafca29b4/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
+Creating project `joern-trace-b7030b6f-5032-4a99-8b0e-213d20df5f20` for CPG at `/home/swlab/Documents/swvul/java-vuln-detection/slicing/output/CPG/cwe256_cpg/cwe256-37-cpg-resolved.bin`
+Creating working copy of CPG to be safe
+Loading base CPG from: /home/swlab/Documents/swvul/java-vuln-detection/workspace/joern-trace-b7030b6f-5032-4a99-8b0e-213d20df5f20/cpg.bin.tmp
+Overlay dataflowOss already exists - skipping
+The graph has been modified. You may want to use the `save` command to persist changes to disk.  All changes will also be saved collectively on exit
