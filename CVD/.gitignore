@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+cache/
+indexes/
+results/
+dataset/*.csv
+.codex
+.env
+juliet-playground/
+sim_web/
+tracer/
+top50/
+llm_cvd/resultStar/
+
+dataset/c_c++_dataset/
+dataset/java_dataset/

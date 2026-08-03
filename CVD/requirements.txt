@@ -1,0 +1,13 @@
+openai
+anthropic
+xai-sdk
+google-generativeai
+google-genai
+numpy
+pandas
+torch
+transformers
+faiss-cpu
+scikit-learn
+tqdm
+python-dotenv
