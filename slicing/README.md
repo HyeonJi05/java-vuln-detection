@@ -1,18 +1,17 @@
 # slicing
 
-Juliet Java 취약점 데이터셋의 source/sink 흐름을 [joern](https://joern.io)으로
-슬라이싱하는 단계입니다. 추출(extraction) 단계가 만든
-`java_sard_source_sink/source_sink_dataset/`의 XML을 입력으로 받아,
-각 flow(source → sink)에 대한 PDG 슬라이스를 생성합니다.
+Juliet Java 및 C/C++ 취약점 데이터셋의 source/sink 흐름을
+[joern](https://joern.io)으로 슬라이싱하는 단계입니다. 추출 단계가 만든
+분류 XML을 입력으로 받아 각 flow(source → sink)에 대한 PDG 슬라이스를
+생성합니다.
 
 파이프라인 상 위치: **추출 → 슬라이싱(여기) → 탐지**
 
 ## 출처
 
 `cpg_builder.py`와 `flow_filter.py`는 팀원 SAN2G1의 저장소에서 가져왔습니다.
-`cpg_builder.py`에는 여러 테스트케이스의 준비 작업을 한 번에 수행하고 CPG를
-선택적으로 병렬 생성하는 실행 최적화가 적용되어 있습니다. `flow_filter.py`는
-수정 없이 사용합니다. 배치 슬라이싱에 쓰는 `script/pdg_slice_batch.sc`도
+`cpg_builder.py`는 Java와 C/C++에 공통된 빌드 흐름을 사용하도록 확장했습니다.
+배치 슬라이싱에 쓰는 `script/pdg_slice_batch.sc`도
 원본 저장소의 슬라이싱 로직(`pdg_slice.sc`)을 그대로 담고 있습니다.
 
 - 원본: https://github.com/SAN2G1/joern-juliet-slicer
@@ -25,7 +24,7 @@ Juliet Java 취약점 데이터셋의 source/sink 흐름을 [joern](https://joer
 
 ## 사전 요구사항
 
-두 가지만 미리 설치하면 됩니다. 나머지(라이브러리 JAR, 환경 설정)는
+다음 실행 환경을 미리 설치하면 됩니다. 나머지(라이브러리 JAR, 환경 설정)는
 `run_slicing.py`가 자동으로 준비합니다.
 
 - **JDK 17**
@@ -49,8 +48,9 @@ Juliet Java 취약점 데이터셋의 source/sink 흐름을 [joern](https://joer
   ./joern-install.sh --interactive
   ```
 
-또한 Python 의존성(저장소 루트 `requirements.txt`)과 juliet 서브모듈이
-필요합니다.
+또한 Python 의존성(저장소 루트 `requirements.txt`)과 분석할 Juliet 데이터셋이
+필요합니다. Java는 `juliet-java-test-suite/`, C/C++는
+`juliet-test-suite-v1.3/C/`에 둡니다.
 ```bash
 pip install -r ../requirements.txt
 git submodule update --init juliet-java-test-suite   # 저장소 루트에서
@@ -63,16 +63,28 @@ cd slicing
 python3 run_slicing.py --per-cwe 5
 ```
 
+C/C++ Juliet v1.3은 언어와 source/sink XML 위치를 지정합니다.
+
+```bash
+python3 run_slicing.py --language c \
+  --source-sink-dir ../c_sard_source_sink/source_sink_dataset \
+  --per-cwe 5
+```
+
 주요 옵션:
 
 - `--per-cwe N` : CWE마다 앞에서 N개 테스트케이스만 처리 (기본 5).
   `--per-cwe 0`으로 지정하면 모든 테스트케이스를 처리합니다.
 - `--only 78 89` : 지정한 CWE 번호만 처리 (CWE 선택일 뿐이며, 각 CWE에서
   몇 개 테스트케이스를 처리할지는 `--per-cwe`가 따로 결정합니다)
-- `--joern <경로>` : joern-cli 경로 직접 지정 (자동 탐지 실패 시)
+- `--joern <경로>` : joern-cli 경로 직접 지정. 선택한 경로는 CPG 생성과 PDG
+  슬라이싱에 모두 적용됩니다.
+- `--language java|c` : 분석 언어 선택 (기본 `java`). `c`는 C/C++를 함께
+  처리합니다.
+- `--source-sink-dir <경로>` : 분류된 source/sink XML 위치를 직접 지정합니다.
 - `--force` : 이미 만든 CPG도 다시 빌드
-- `--cpg-workers N` : 동시에 실행할 `joern-parse` 수 (기본 1). 기본값은 기존과
-  동일한 순차 실행이며, 메모리가 충분할 때만 2 정도로 올리는 것을 권장합니다.
+- `--cpg-workers N` : 동시에 실행할 `joern-parse` 수 (기본 1). 메모리가
+  충분할 때만 값을 늘리는 것을 권장합니다.
 - `--refilter` : 이미 필터링된 XML이 있어도 다시 필터링
 - `--sample` : 각 CWE에서 앞에서부터가 아니라 무작위로 테스트케이스를 뽑습니다
   (`--per-cwe 0`일 때는 무시). 기본은 XML 순서대로 앞에서 N개입니다.
@@ -88,7 +100,9 @@ python3 run_slicing.py --only 78 --per-cwe 0  # CWE-78의 모든 테스트케이
 python3 run_slicing.py --per-cwe 0            # 모든 CWE의 모든 테스트케이스
 ```
 
-결과는 `output/slice_results/cwe{번호}.txt`에 저장됩니다.
+결과는 기본적으로 실행 시각이 붙은
+`output/slice_results_YYMMDD_HHMMSS/cwe{번호}.txt`에 저장됩니다.
+`--output-dir`을 사용하면 원하는 결과 디렉터리를 지정할 수 있습니다.
 
 ## `run_slicing.py`가 자동으로 하는 일
 
@@ -97,11 +111,13 @@ python3 run_slicing.py --per-cwe 0            # 모든 CWE의 모든 테스트�
 `run_slicing.py`는 이 과정을 대신합니다.
 
 1. **joern 위치 탐지** — 흔한 설치 경로를 확인하고, 없으면 설치 방법을 안내합니다.
-2. **servlet API JAR 준비** — `deps/`에 없으면 Maven Central에서 내려받습니다.
+2. **Java 의존성 준비** — Java 모드에서만 servlet API JAR을 `deps/`에
+   준비합니다. 없으면 Maven Central에서 내려받습니다.
    joern이 웹 입력(`request.getParameter` 등)이 있는 테스트케이스를 분석할 때
    필요합니다.
-3. **juliet support JAR 준비** — `deps/`에 없으면 저장소 루트의
-   `juliet-java-test-suite` 서브모듈에서 support 클래스를 빌드해 JAR로 묶고,
+3. **Java support JAR 준비** — Java 모드에서만 실행합니다. `deps/`에 없으면
+   저장소 루트의 `juliet-java-test-suite` 서브모듈에서 support 클래스를 빌드해
+   JAR로 묶고,
    서브모듈에 남은 빌드 산출물은 정리합니다. joern이 Juliet 공통 클래스
    (`AbstractTestCase` 등)를 분석할 때 필요합니다. 원본처럼 juliet을 별도로
    다시 clone하지 않고, 이미 있는 루트 서브모듈을 재사용합니다.
@@ -111,9 +127,10 @@ python3 run_slicing.py --per-cwe 0            # 모든 CWE의 모든 테스트�
    이 단계를 건너뜁니다.
 4. **`.env` 생성** — 위 경로들을 모아 임시 `.env`를 만들어 `cpg_builder.py`에
    넘깁니다.
-5. **필터링 → CPG 빌드 → 슬라이싱** — 추출 단계 결과인 저장소 루트의
-   `java_sard_source_sink/source_sink_dataset/`을 입력으로 자동으로 사용합니다.
-   데이터 경로를 따로 지정할 필요는 없습니다. 이후 아래 방식으로 실행합니다.
+5. **필터링 → CPG 빌드 → 슬라이싱** — Java는 기본적으로
+   `java_sard_source_sink/source_sink_dataset/`을 사용합니다. C/C++는
+   `c_sard_source_sink/source_sink_dataset/`을 사용하며, 다른 위치라면
+   `--source-sink-dir`로 지정합니다.
 
 한 번 만든 것(JAR, 필터링 결과, CPG)은 다시 실행할 때 재사용하며,
 다시 만들려면 `--refilter` 또는 `--force`를 사용합니다.
@@ -151,6 +168,11 @@ CPG가 반복해서 로드됐습니다.
   위 `run_pdg_slice_batch.sh`에 넘깁니다. 목록 파일 하나 = joern 한 번이므로,
   CWE 하나가 joern 실행 한 번이 됩니다.
 
+CPG 생성도 CWE 단위로 묶습니다. `run_slicing.py`가 생성이 필요한 testcase
+index들을 모아 `cpg_builder.py`를 CWE마다 한 번 호출하므로, XML 파싱과 source
+파일 인덱스 생성은 CWE당 한 번만 수행됩니다. `--cpg-workers`가 2 이상이면 같은
+CWE의 testcase CPG들을 지정한 개수만큼 병렬 생성합니다.
+
 결과적으로 joern 실행 횟수는 CWE 단위로, CPG 로드는 테스트케이스 단위로
 줄어듭니다. 앞의 의존 관계에 맞게, 한 번만 하면 되는 일을 한 번만 하도록
 바꾼 것입니다.
@@ -164,7 +186,7 @@ CPG가 반복해서 로드됐습니다.
 ```
 slicing/
 ├── run_slicing.py              # 진입점 (환경 자동 준비 + 배치 실행)
-├── cpg_builder.py              # (SAN2G1 기반) 배치 선택·병렬 CPG 빌드
+├── cpg_builder.py              # Java/C 공통 배치·병렬 CPG 빌드
 ├── flow_filter.py              # (SAN2G1) source/sink XML 필터링
 ├── script/
 │   ├── pdg_slice_batch.sc      # CPG 단위로 묶어 처리하는 배치 버전
@@ -176,5 +198,7 @@ slicing/
         └── test/               # 원본 방식으로 뽑은 결과 (비교용)
 ```
 
-`deps/`, `.env`, `output/CPG/`, `output/jobs/` 등 재생성되는 파일과 환경 파일은
-저장소에 포함하지 않습니다(`.gitignore`).
+Java CPG는 `output/CPG/cwe{번호}_cpg/`, C/C++ CPG는
+`output/CPG/cwe{번호}_c_cpg/`에 저장하여 캐시 충돌을 방지합니다. `deps/`,
+`.env`, `output/CPG/`, `output/jobs/` 등 재생성되는 파일과 환경 파일은 저장소에
+포함하지 않습니다(`.gitignore`).

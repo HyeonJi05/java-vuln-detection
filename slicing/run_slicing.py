@@ -27,7 +27,7 @@ Layout assumed (this file lives in slicing/):
     |   `-- source_sink_dataset/
     `-- slicing/
         |-- run_slicing.py           (this file)
-        |-- cpg_builder.py           (CPG builder, batched + optional parallelism)
+        |-- cpg_builder.py           (shared Java/C CPG builder)
         |-- flow_filter.py           (team, unmodified)
         |-- deps/                    (auto-created; gitignored)
         `-- script/
@@ -52,8 +52,10 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 SLICING_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SLICING_DIR.parent
-JULIET_DIR = REPO_ROOT / "juliet-java-test-suite"
-EXTRACTION_OUT = REPO_ROOT / "java_sard_source_sink" / "source_sink_dataset"
+JAVA_JULIET_DIR = REPO_ROOT / "juliet-java-test-suite"
+C_JULIET_DIR = REPO_ROOT / "juliet-test-suite-v1.3" / "C"
+JAVA_EXTRACTION_OUT = REPO_ROOT / "java_sard_source_sink" / "source_sink_dataset"
+C_EXTRACTION_OUT = REPO_ROOT / "c_sard_source_sink" / "source_sink_dataset"
 
 DEPS_DIR = SLICING_DIR / "deps"
 OUTPUT_DIR = SLICING_DIR / "output"
@@ -138,23 +140,23 @@ def ensure_support_jar():
     if SUPPORT_JAR.is_file() and SUPPORT_JAR.stat().st_size > 1000:
         print(f"[support] present: {SUPPORT_JAR.name}")
         return
-    if not JULIET_DIR.is_dir():
+    if not JAVA_JULIET_DIR.is_dir():
         sys.exit(
-            f"[support] juliet submodule missing: {JULIET_DIR}\n"
+            f"[support] juliet submodule missing: {JAVA_JULIET_DIR}\n"
             "  Run: git submodule update --init juliet-java-test-suite"
         )
     DEPS_DIR.mkdir(parents=True, exist_ok=True)
-    gradlew = JULIET_DIR / "gradlew"
+    gradlew = JAVA_JULIET_DIR / "gradlew"
     if not gradlew.is_file():
-        sys.exit(f"[support] gradlew not found in {JULIET_DIR}")
+        sys.exit(f"[support] gradlew not found in {JAVA_JULIET_DIR}")
 
     print("[support] building juliet support classes (gradlew) ...")
     os.chmod(gradlew, 0o755)
-    rc, out = sh(["./gradlew", ":support:classes"], cwd=str(JULIET_DIR))
+    rc, out = sh(["./gradlew", ":support:classes"], cwd=str(JAVA_JULIET_DIR))
     if rc != 0:
         sys.exit(f"[support] gradlew build failed:\n{out[-1500:]}")
 
-    classes = JULIET_DIR / "juliet-support" / "build" / "classes" / "java" / "main"
+    classes = JAVA_JULIET_DIR / "juliet-support" / "build" / "classes" / "java" / "main"
     if not classes.is_dir():
         sys.exit(f"[support] compiled classes not found: {classes}")
 
@@ -166,9 +168,9 @@ def ensure_support_jar():
 
     # keep the juliet submodule clean: remove gradle build output
     print("[support] cleaning juliet build output (keep submodule clean) ...")
-    sh(["./gradlew", "clean"], cwd=str(JULIET_DIR))
+    sh(["./gradlew", "clean"], cwd=str(JAVA_JULIET_DIR))
     for junk in ("juliet-support/build", "support/build", "build", ".gradle"):
-        p = JULIET_DIR / junk
+        p = JAVA_JULIET_DIR / junk
         if p.exists():
             shutil.rmtree(p, ignore_errors=True)
     print(f"[support] saved: {SUPPORT_JAR} ({SUPPORT_JAR.stat().st_size} bytes)")
@@ -177,15 +179,21 @@ def ensure_support_jar():
 # ---------------------------------------------------------------------------
 # Step 4: write a throwaway .env for cpg_builder.py
 # ---------------------------------------------------------------------------
-def write_env(joern_cli: Path) -> Path:
+def write_env(joern_cli: Path, juliet_dir: Path, language: str) -> Path:
     env_path = SLICING_DIR / ".env"
-    env_path.write_text(
-        f"JULIET_DIR={JULIET_DIR.resolve()}\n"
-        f"JOERN_PARSE={(joern_cli / 'joern-parse').resolve()}\n"
-        f"JOERN={(joern_cli / 'joern').resolve()}\n"
-        f"SUPPORT_JAR={SUPPORT_JAR.resolve()}\n"
-        f"SERVLET_JAR={SERVLET_JAR.resolve()}\n"
-    )
+    lines = [
+        f"JULIET_DIR={juliet_dir.resolve()}",
+        f"JOERN_PARSE={(joern_cli / 'joern-parse').resolve()}",
+        f"JOERN={(joern_cli / 'joern').resolve()}",
+    ]
+    if language == "java":
+        lines.extend(
+            [
+                f"SUPPORT_JAR={SUPPORT_JAR.resolve()}",
+                f"SERVLET_JAR={SERVLET_JAR.resolve()}",
+            ]
+        )
+    env_path.write_text("\n".join(lines) + "\n")
     print(f"[env] wrote {env_path}")
     return env_path
 
@@ -198,35 +206,37 @@ def cwe_num(path: Path):
     return int(m.group(1)) if m else None
 
 
-def filter_xmls(only, refilter):
-    if not EXTRACTION_OUT.is_dir():
+def filter_xmls(extraction_out, filtered_dir, refilter):
+    if not extraction_out.is_dir():
         sys.exit(
-            f"[filter] extraction output not found: {EXTRACTION_OUT}\n"
+            f"[filter] extraction output not found: {extraction_out}\n"
             "  Run the extraction pipeline first (produces the source/sink XMLs)."
         )
     # Reuse existing filtered XMLs unless --refilter is given.
-    existing = list(FILTERED_DIR.glob("cwe*_source_sink_classified.xml"))
+    existing = list(filtered_dir.glob("cwe*_source_sink_classified.xml"))
     if existing and not refilter:
         print(f"[filter] reusing {len(existing)} filtered XML(s) "
               f"(use --refilter to redo)")
         return
-    FILTERED_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"[filter] filtering XMLs from {EXTRACTION_OUT} ...")
-    rc, out = sh([sys.executable, str(FLOW_FILTER), str(EXTRACTION_OUT),
-                  "--output-dir", str(FILTERED_DIR.relative_to(SLICING_DIR))])
+    filtered_dir.mkdir(parents=True, exist_ok=True)
+    print(f"[filter] filtering XMLs from {extraction_out} ...")
+    rc, out = sh([sys.executable, str(FLOW_FILTER), str(extraction_out),
+                  "--output-dir", str(filtered_dir.relative_to(SLICING_DIR))])
     # flow_filter's --output-dir is relative to its own dir; fall back to abs if needed
     if rc != 0:
-        rc, out = sh([sys.executable, str(FLOW_FILTER), str(EXTRACTION_OUT)])
+        rc, out = sh([sys.executable, str(FLOW_FILTER), str(extraction_out)])
     print(out.strip().splitlines()[-1] if out.strip() else "[filter] done")
 
 
-def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
-              cpg_workers):
-    xmls = sorted(FILTERED_DIR.glob("cwe*_source_sink_classified.xml"))
+def run_batch(
+    env_path, filtered_dir, language, joern_cli, per_cwe, only, force, sample,
+    seed, result_dir, cpg_workers,
+):
+    xmls = sorted(filtered_dir.glob("cwe*_source_sink_classified.xml"))
     if only:
         xmls = [x for x in xmls if cwe_num(x) in only]
     if not xmls:
-        sys.exit(f"[batch] no filtered XMLs in {FILTERED_DIR}")
+        sys.exit(f"[batch] no filtered XMLs in {filtered_dir}")
 
     jobs_dir = result_dir / "jobs"
     result_dir.mkdir(parents=True, exist_ok=True)
@@ -257,10 +267,13 @@ def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
         else:
             testcases = all_tc[:per_cwe]        # first N in XML order
         job_lines = []
+        cpg_dir_name = (
+            f"cwe{cwe}_cpg" if language == "java" else f"cwe{cwe}_c_cpg"
+        )
+        cpg_dir = CPG_DIR / cpg_dir_name
         cpg_paths = {
             tc.get("testcase_index"): (
-                CPG_DIR / f"cwe{cwe}_cpg" /
-                f"cwe{cwe}-{tc.get('testcase_index')}-cpg-resolved.bin"
+                cpg_dir / f"cwe{cwe}-{tc.get('testcase_index')}-cpg-resolved.bin"
             )
             for tc in testcases
         }
@@ -271,7 +284,8 @@ def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
         if indexes_to_build:
             cmd = [sys.executable, str(CPG_BUILDER), str(xml_path),
                    "--env-file", str(env_path),
-                   "--output-dir", str(CPG_DIR / f"cwe{cwe}_cpg"),
+                   "--language", language,
+                   "--output-dir", str(cpg_dir),
                    "--workers", str(cpg_workers)]
             for idx in indexes_to_build:
                 cmd.extend(["--testcase-index", str(idx)])
@@ -310,7 +324,11 @@ def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
         jobs_file = jobs_dir / f"cwe{cwe}_jobs.tsv"
         jobs_file.write_text("\n".join(job_lines) + "\n")
         log_path = result_dir / f"cwe{cwe}.txt"
-        rc, out = sh(["bash", str(RUN_SLICE_BATCH), str(jobs_file)])
+        slice_env = os.environ.copy()
+        slice_env["PATH"] = f"{joern_cli}{os.pathsep}{slice_env.get('PATH', '')}"
+        rc, out = sh(
+            ["bash", str(RUN_SLICE_BATCH), str(jobs_file)], env=slice_env
+        )
         with log_path.open("w") as fh:
             fh.write(f"# CWE-{cwe}: {len(job_lines)} flow(s), one joern session\n\n")
             fh.write(out)
@@ -328,6 +346,10 @@ def run_batch(env_path, per_cwe, only, force, sample, seed, result_dir,
 
 def main():
     ap = argparse.ArgumentParser(description="One-command Juliet slicing runner.")
+    ap.add_argument("--language", choices=("java", "c"), default="java",
+                    help="Source language (default: java)")
+    ap.add_argument("--source-sink-dir", default=None,
+                    help="Classified source/sink XML directory")
     ap.add_argument("--joern", default=None,
                     help="Path to joern-cli dir (auto-detected if omitted)")
     ap.add_argument("--per-cwe", type=int, default=5,
@@ -337,8 +359,7 @@ def main():
     ap.add_argument("--force", action="store_true",
                     help="Rebuild CPGs even if present")
     ap.add_argument("--cpg-workers", type=int, default=1,
-                    help="Concurrent joern-parse processes (default: 1; try 2 "
-                         "only when enough memory is available)")
+                    help="Concurrent joern-parse processes (default: 1)")
     ap.add_argument("--sample", action="store_true",
                     help="Pick testcases randomly instead of the first N "
                          "(ignored when --per-cwe 0)")
@@ -367,12 +388,21 @@ def main():
     print("== java-vuln-detection slicing runner ==")
     joern_cli = find_joern(args.joern)
     print(f"[joern] using: {joern_cli}")
-    ensure_servlet_jar()
-    ensure_support_jar()
-    env_path = write_env(joern_cli)
-    filter_xmls(args.only, args.refilter)
-    run_batch(env_path, args.per_cwe, args.only, args.force,
-              args.sample, args.seed, result_dir, args.cpg_workers)
+    juliet_dir = JAVA_JULIET_DIR if args.language == "java" else C_JULIET_DIR
+    extraction_out = Path(args.source_sink_dir) if args.source_sink_dir else (
+        JAVA_EXTRACTION_OUT if args.language == "java" else C_EXTRACTION_OUT
+    )
+    filtered_dir = FILTERED_DIR if args.language == "java" else FILTERED_DIR / "c"
+    if args.language == "java":
+        ensure_servlet_jar()
+        ensure_support_jar()
+    env_path = write_env(joern_cli, juliet_dir, args.language)
+    filter_xmls(extraction_out, filtered_dir, args.refilter)
+    run_batch(
+        env_path, filtered_dir, args.language, joern_cli, args.per_cwe,
+        args.only, args.force, args.sample, args.seed, result_dir,
+        args.cpg_workers,
+    )
 
 
 if __name__ == "__main__":

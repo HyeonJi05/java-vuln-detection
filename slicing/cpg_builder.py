@@ -25,15 +25,19 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_ENV_FILE = PROJECT_ROOT / ".env"
-REQUIRED_SETTINGS = ("JULIET_DIR", "JOERN_PARSE", "SUPPORT_JAR", "SERVLET_JAR")
+REQUIRED_SETTINGS = ("JULIET_DIR", "JOERN_PARSE")
+SOURCE_SUFFIXES = {
+    "java": (".java",),
+    "c": (".c", ".cpp", ".h"),
+}
 
 
 @dataclass(frozen=True)
 class Testcase:
-    """The Java files and flows that belong to one XML testcase."""
+    """The source files and flows that belong to one XML testcase."""
 
     index: str
-    java_paths: tuple[str, ...]
+    source_paths: tuple[str, ...]
     flow_count: int
 
 
@@ -44,6 +48,12 @@ def parse_args() -> argparse.Namespace:
         )
     )
     parser.add_argument("testcase_xml", help="Full path to a filtered XML file.")
+    parser.add_argument(
+        "--language",
+        choices=("java", "c"),
+        default="java",
+        help="Source language (default: java).",
+    )
     parser.add_argument(
         "--env-file",
         type=Path,
@@ -68,10 +78,7 @@ def parse_args() -> argparse.Namespace:
         "--workers",
         type=int,
         default=1,
-        help=(
-            "Number of joern-parse processes to run concurrently (default: 1, "
-            "which preserves the original sequential behavior)."
-        ),
+        help="Concurrent joern-parse processes (default: 1).",
     )
     parser.add_argument(
         "--force",
@@ -81,7 +88,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Validate the XML and Java files without running joern-parse.",
+        help="Validate the XML and source files without running joern-parse.",
     )
     return parser.parse_args()
 
@@ -133,7 +140,7 @@ def cwe_number(xml_path: Path) -> str:
     return match.group(1)
 
 
-def read_testcases(xml_path: Path) -> list[Testcase]:
+def read_testcases(xml_path: Path, suffixes: tuple[str, ...]) -> list[Testcase]:
     """Read each testcase and verify that its flows reference declared files."""
     try:
         root = ET.parse(xml_path).getroot()
@@ -150,19 +157,19 @@ def read_testcases(xml_path: Path) -> list[Testcase]:
             raise ValueError(f"Duplicate testcase_index: {index}")
         seen_indexes.add(index)
 
-        java_paths = tuple(
+        source_paths = tuple(
             dict.fromkeys(
                 path.replace("\\", "/")
                 for file_element in element.findall("file")
                 if (path := file_element.get("path"))
-                and Path(path).suffix.lower() == ".java"
+                and Path(path).suffix.lower() in suffixes
             )
         )
         flows = element.findall("flow")
-        if not java_paths or not flows:
-            raise ValueError(f"Testcase {index} has no Java files or flows")
+        if not source_paths or not flows:
+            raise ValueError(f"Testcase {index} has no source files or flows")
 
-        declared_files = {Path(path).name for path in java_paths}
+        declared_files = {Path(path).name for path in source_paths}
         for flow in flows:
             flow_index = flow.get("flow_index", "?")
             flow_files = {node.get("file") for node in flow if node.get("file")}
@@ -171,23 +178,26 @@ def read_testcases(xml_path: Path) -> list[Testcase]:
                 names = ", ".join(sorted(missing))
                 raise ValueError(
                     f"Testcase {index}, flow {flow_index} references undeclared "
-                    f"Java files: {names}"
+                    f"source files: {names}"
                 )
 
-        testcases.append(Testcase(index, java_paths, len(flows)))
+        testcases.append(Testcase(index, source_paths, len(flows)))
 
     if not testcases:
         raise ValueError(f"No testcases found in XML: {xml_path}")
     return testcases
 
 
-def source_root_for_cwe(juliet_dir: Path, number: str) -> Path:
+def source_root_for_cwe(juliet_dir: Path, number: str, language: str) -> Path:
     """Limit searches to the CWE module when the module directory exists."""
+    if language == "c":
+        matches = list((juliet_dir / "testcases").glob(f"CWE{number}_*"))
+        return matches[0] if matches else juliet_dir / "testcases"
     cwe_module = juliet_dir / f"juliet-cwe{number}"
     return cwe_module if cwe_module.is_dir() else juliet_dir
 
 
-def testcase_group_prefix(java_path: str) -> str | None:
+def testcase_group_prefix(source_path: str) -> str | None:
     """Extract the common prefix through a Juliet flow variant number.
 
     These files all produce the same prefix ending in ``_81``::
@@ -200,13 +210,13 @@ def testcase_group_prefix(java_path: str) -> str | None:
     A single-file name such as ``Example_01.java`` also has a valid prefix, but
     it only collects itself when no related suffix files exist.
     """
-    stem = Path(java_path).stem
+    stem = Path(source_path).stem
     match = re.fullmatch(r"(.+_\d+)(?:[a-z]|_[A-Za-z0-9_]+)?", stem)
     return match.group(1) if match else None
 
 
 def belongs_to_testcase_group(file_name: str, prefix: str) -> bool:
-    """Return whether a Java filename belongs to the given Juliet group."""
+    """Return whether a source filename belongs to the given Juliet group."""
     stem = Path(file_name).stem
     if stem == prefix:
         return True
@@ -217,29 +227,30 @@ def belongs_to_testcase_group(file_name: str, prefix: str) -> bool:
     )
 
 
-def build_java_index(
-    source_root: Path, testcases: list[Testcase]
+def build_source_index(
+    source_root: Path, testcases: list[Testcase], suffixes: tuple[str, ...]
 ) -> dict[str, Path]:
     """Find requested files and all members of their multi-file Juliet families."""
     wanted_names = {
-        Path(java_path).name
+        Path(source_path).name
         for testcase in testcases
-        for java_path in testcase.java_paths
+        for source_path in testcase.source_paths
     }
     wanted_prefixes = {
         prefix
         for testcase in testcases
-        for java_path in testcase.java_paths
-        if (prefix := testcase_group_prefix(java_path))
+        for source_path in testcase.source_paths
+        if (prefix := testcase_group_prefix(source_path))
     }
     candidates: dict[str, list[Path]] = defaultdict(list)
-    for candidate in source_root.rglob("*.java"):
-        belongs_to_family = any(
-            belongs_to_testcase_group(candidate.name, prefix)
-            for prefix in wanted_prefixes
-        )
-        if candidate.name in wanted_names or belongs_to_family:
-            candidates[candidate.name].append(candidate)
+    for suffix in suffixes:
+        for candidate in source_root.rglob(f"*{suffix}"):
+            belongs_to_family = any(
+                belongs_to_testcase_group(candidate.name, prefix)
+                for prefix in wanted_prefixes
+            )
+            if candidate.name in wanted_names or belongs_to_family:
+                candidates[candidate.name].append(candidate)
 
     index: dict[str, Path] = {}
     problems: list[str] = []
@@ -256,22 +267,22 @@ def build_java_index(
         preview = "\n  ".join(problems[:20])
         remainder = len(problems) - 20
         suffix = f"\n  ... and {remainder} more" if remainder > 0 else ""
-        raise FileNotFoundError(f"Could not resolve Java files:\n  {preview}{suffix}")
+        raise FileNotFoundError(f"Could not resolve source files:\n  {preview}{suffix}")
     return index
 
 
 def testcase_source_names(
-    testcase: Testcase, java_index: dict[str, Path]
+    testcase: Testcase, source_index: dict[str, Path]
 ) -> list[str]:
-    """Include every Java file in the testcase's Juliet filename group."""
-    exact_names = {Path(path).name for path in testcase.java_paths}
+    """Include every source file in the testcase's Juliet filename group."""
+    exact_names = {Path(path).name for path in testcase.source_paths}
     prefixes = {
         prefix
-        for java_path in testcase.java_paths
-        if (prefix := testcase_group_prefix(java_path))
+        for source_path in testcase.source_paths
+        if (prefix := testcase_group_prefix(source_path))
     }
     names = []
-    for name in java_index:
+    for name in source_index:
         in_family = any(
             belongs_to_testcase_group(name, prefix) for prefix in prefixes
         )
@@ -294,17 +305,22 @@ def validate_configuration(
 
 def copy_testcase_sources(
     testcase: Testcase,
-    java_index: dict[str, Path],
+    source_index: dict[str, Path],
     source_root: Path,
     temp_dir: Path,
+    language: str,
+    juliet_dir: Path,
 ) -> list[str]:
-    """Copy only this testcase's Java files, preserving their package paths."""
-    source_names = testcase_source_names(testcase, java_index)
+    """Copy only this testcase's sources, preserving their relative paths."""
+    source_names = testcase_source_names(testcase, source_index)
     for source_name in source_names:
-        source = java_index[source_name]
+        source = source_index[source_name]
         destination = temp_dir / source.relative_to(source_root)
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
+    if language == "c":
+        for header in (juliet_dir / "testcasesupport").glob("*.h"):
+            shutil.copy2(header, temp_dir / header.name)
     return source_names
 
 
@@ -316,19 +332,26 @@ def joern_command(
     joern_parse: Path,
     source_dir: Path,
     output_path: Path,
+    language: str,
     jars: list[Path],
 ) -> list[str]:
-    return [
+    command = [
         str(joern_parse),
         str(source_dir),
         "--language",
-        "JAVASRC",
+        "JAVASRC" if language == "java" else "C",
         "--output",
         str(output_path),
-        "--frontend-args",
-        "--inference-jar-paths",
-        ",".join(str(jar) for jar in jars),
     ]
+    if language == "java":
+        command.extend(
+            [
+                "--frontend-args",
+                "--inference-jar-paths",
+                ",".join(str(jar) for jar in jars),
+            ]
+        )
+    return command
 
 
 def show_progress(position: int, total: int, testcase: Testcase, status: str) -> None:
@@ -348,9 +371,11 @@ def build_one_testcase(
     testcase: Testcase,
     number: str,
     output_dir: Path,
-    java_index: dict[str, Path],
+    source_index: dict[str, Path],
     source_root: Path,
     joern_parse: Path,
+    language: str,
+    juliet_dir: Path,
     jars: list[Path],
     force: bool,
     position: int,
@@ -372,9 +397,11 @@ def build_one_testcase(
     ) as temp_name:
         temp_dir = Path(temp_name)
         copied_names = copy_testcase_sources(
-            testcase, java_index, source_root, temp_dir
+            testcase, source_index, source_root, temp_dir, language, juliet_dir
         )
-        command = joern_command(joern_parse, temp_dir, output_path, jars)
+        command = joern_command(
+            joern_parse, temp_dir, output_path, language, jars
+        )
         if sys.stdout.isatty() and position > 1:
             print()
         print(
@@ -418,13 +445,16 @@ def build_cpgs(args: argparse.Namespace) -> None:
     number = cwe_number(xml_path)
     juliet_dir = configured_path(settings, "JULIET_DIR", env_file)
     joern_parse = configured_path(settings, "JOERN_PARSE", env_file)
-    jars = [
-        configured_path(settings, "SUPPORT_JAR", env_file),
-        configured_path(settings, "SERVLET_JAR", env_file),
-    ]
+    jars = []
+    if args.language == "java":
+        for name in ("SUPPORT_JAR", "SERVLET_JAR"):
+            if not settings.get(name):
+                raise ValueError(f"Missing setting in {env_file}: {name}")
+            jars.append(configured_path(settings, name, env_file))
     validate_configuration(juliet_dir, joern_parse, jars)
 
-    testcases = read_testcases(xml_path)
+    suffixes = SOURCE_SUFFIXES[args.language]
+    testcases = read_testcases(xml_path, suffixes)
     if args.workers < 1:
         raise ValueError("--workers must be at least 1")
     if args.testcase_indexes is not None:
@@ -437,21 +467,24 @@ def build_cpgs(args: argparse.Namespace) -> None:
                 "Testcase index not found: " + ", ".join(sorted(missing_indexes))
             )
 
-    source_root = source_root_for_cwe(juliet_dir, number)
-    java_index = build_java_index(source_root, testcases)
+    source_root = source_root_for_cwe(juliet_dir, number, args.language)
+    source_index = build_source_index(source_root, testcases, suffixes)
+    cpg_dir_name = (
+        f"cwe{number}_cpg" if args.language == "java" else f"cwe{number}_c_cpg"
+    )
     output_dir = (
         args.output_dir.expanduser().resolve()
         if args.output_dir
-        else PROJECT_ROOT / "output" / "CPG" / f"cwe{number}_cpg"
+        else PROJECT_ROOT / "output" / "CPG" / cpg_dir_name
     )
     flow_count = sum(testcase.flow_count for testcase in testcases)
-    java_count = len(java_index)
+    source_count = len(source_index)
 
     print(f"CWE               : {number}")
     print(f"Filtered XML      : {xml_path}")
     print(f"Testcases         : {len(testcases)}")
     print(f"Flows             : {flow_count}")
-    print(f"Unique Java files : {java_count}")
+    print(f"Unique source files: {source_count}")
     print(f"CPG output dir    : {output_dir}")
 
     if args.dry_run:
@@ -467,8 +500,9 @@ def build_cpgs(args: argparse.Namespace) -> None:
 
     def build(position: int, testcase: Testcase) -> str:
         return build_one_testcase(
-            testcase, number, output_dir, java_index, source_root, joern_parse,
-            jars, args.force, position, total
+            testcase, number, output_dir, source_index, source_root,
+            joern_parse, args.language, juliet_dir, jars, args.force,
+            position, total,
         )
 
     if worker_count == 1:
