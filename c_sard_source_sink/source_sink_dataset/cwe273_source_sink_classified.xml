@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12.c">
+      <comment_flaw line="55" code="ImpersonateNamedPipeClient(hPipe);" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="89" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="138" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+      <comment_fix line="178" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="55" code="ImpersonateNamedPipeClient(hPipe);" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12_bad" file="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="89" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12_bad" file="CWE273_Improper_Check_for_Dropped_Privileges__w32_ImpersonateNamedPipeClient_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12.c">
+      <comment_flaw line="30" code="WARNING_NOT_FOUND" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12_bad" />
+      <comment_fix line="37" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12_bad" />
+      <comment_fix line="56" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="good1" />
+      <comment_fix line="66" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="WARNING_NOT_FOUND" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12_bad" file="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="37" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12_bad" file="CWE273_Improper_Check_for_Dropped_Privileges__w32_RpcImpersonateClient_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

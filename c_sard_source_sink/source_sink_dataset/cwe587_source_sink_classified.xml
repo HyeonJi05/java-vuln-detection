@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12.c">
+      <comment_flaw line="26" code="char *charPointer = (char*)0x400000;" function="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12_bad" />
+      <comment_fix line="34" code="char charStack = 'a';" function="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12_bad" />
+      <comment_fix line="52" code="char charStack = 'a';" function="good1" />
+      <comment_fix line="61" code="char charStack = 'a';" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="char *charPointer = (char*)0x400000;" function="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12_bad" file="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="34" code="char charStack = 'a';" function="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12_bad" file="CWE587_Assignment_of_Fixed_Address_to_Pointer__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

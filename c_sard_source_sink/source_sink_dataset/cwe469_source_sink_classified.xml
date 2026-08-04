@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12.c">
+      <comment_flaw line="39" code="indexOfSlashInString1 = (size_t)(slashInString1 - string2);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12_bad" />
+      <comment_fix line="56" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12_bad" />
+      <comment_fix line="82" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="good1" />
+      <comment_fix line="99" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="39" code="indexOfSlashInString1 = (size_t)(slashInString1 - string2);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12_bad" file="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="56" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12_bad" file="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__char_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12.c">
+      <comment_flaw line="39" code="indexOfSlashInString1 = (size_t)(slashInString1 - string2);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12_bad" />
+      <comment_fix line="56" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12_bad" />
+      <comment_fix line="82" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="good1" />
+      <comment_fix line="99" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="39" code="indexOfSlashInString1 = (size_t)(slashInString1 - string2);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12_bad" file="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="56" code="indexOfSlashInString1 = (size_t)(slashInString1 - string1);" function="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12_bad" file="CWE469_Use_of_Pointer_Subtraction_to_Determine_Size__wchar_t_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

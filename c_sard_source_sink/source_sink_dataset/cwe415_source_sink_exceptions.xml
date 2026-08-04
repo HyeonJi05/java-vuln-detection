@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="1">
+    <file path="CWE415_Double_Free__malloc_free_char_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_char_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_char_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_char_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_char_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="49">
+    <file path="CWE415_Double_Free__malloc_free_int_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_int_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_int_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_int_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_int_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="97">
+    <file path="CWE415_Double_Free__malloc_free_int64_t_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_int64_t_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_int64_t_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_int64_t_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_int64_t_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="145">
+    <file path="CWE415_Double_Free__malloc_free_long_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_long_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_long_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_long_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_long_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="193">
+    <file path="CWE415_Double_Free__malloc_free_struct_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_struct_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_struct_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_struct_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_struct_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="241">
+    <file path="CWE415_Double_Free__malloc_free_wchar_t_01.c">
+      <comment_flaw line="32" code="free(data);" function="CWE415_Double_Free__malloc_free_wchar_t_01_bad" />
+      <comment_flaw line="34" code="free(data);" function="CWE415_Double_Free__malloc_free_wchar_t_01_bad" />
+      <comment_fix line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="51" code="free(data);" function="goodG2B" />
+      <comment_flaw line="63" code="free(data);" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_wchar_t_01.c" origin="comment_fix" />
+      <flaw line="51" code="free(data);" function="goodG2B" file="CWE415_Double_Free__malloc_free_wchar_t_01.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="289">
+    <file path="CWE415_Double_Free__new_delete_array_char_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_char_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_char_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="337">
+    <file path="CWE415_Double_Free__new_delete_array_class_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_class_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_class_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="385">
+    <file path="CWE415_Double_Free__new_delete_array_int_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_int_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_int_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="433">
+    <file path="CWE415_Double_Free__new_delete_array_int64_t_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_int64_t_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_int64_t_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="481">
+    <file path="CWE415_Double_Free__new_delete_array_long_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_long_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_long_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="529">
+    <file path="CWE415_Double_Free__new_delete_array_struct_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_struct_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_struct_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="577">
+    <file path="CWE415_Double_Free__new_delete_array_wchar_t_01.cpp">
+      <comment_flaw line="34" code="delete [] data;" function="bad" />
+      <comment_flaw line="36" code="delete [] data;" function="bad" />
+      <comment_fix line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete [] data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete [] data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_wchar_t_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete [] data;" function="goodG2B" file="CWE415_Double_Free__new_delete_array_wchar_t_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="625">
+    <file path="CWE415_Double_Free__new_delete_char_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_char_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_char_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="673">
+    <file path="CWE415_Double_Free__new_delete_class_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_class_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_class_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="721">
+    <file path="CWE415_Double_Free__new_delete_int_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_int_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_int_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="769">
+    <file path="CWE415_Double_Free__new_delete_int64_t_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_int64_t_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_int64_t_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="817">
+    <file path="CWE415_Double_Free__new_delete_long_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_long_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_long_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="865">
+    <file path="CWE415_Double_Free__new_delete_struct_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_struct_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_struct_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="913">
+    <file path="CWE415_Double_Free__new_delete_wchar_t_01.cpp">
+      <comment_flaw line="34" code="delete data;" function="bad" />
+      <comment_flaw line="36" code="delete data;" function="bad" />
+      <comment_fix line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="52" code="delete data;" function="goodG2B" />
+      <comment_flaw line="63" code="delete data;" function="goodB2G" />
+      <comment_fix line="66" code=";" function="goodB2G" />
+    </file>
+    <flow type="g2b" flow_index="3" skip_reason="same_function_same_line" comment_tag_count="2">
+      <fix line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_wchar_t_01.cpp" origin="comment_fix" />
+      <flaw line="52" code="delete data;" function="goodG2B" file="CWE415_Double_Free__new_delete_wchar_t_01.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+</container>

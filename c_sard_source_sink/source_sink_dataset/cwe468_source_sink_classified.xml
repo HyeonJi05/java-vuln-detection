@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12.c">
+      <comment_flaw line="29" code="int toPrint = (int) (*(charPointer+2));" function="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12_bad" />
+      <comment_fix line="40" code="int toPrint = (int) (*(charPointer+(2*sizeof(int))));" function="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12_bad" />
+      <comment_fix line="60" code="int toPrint = (int) (*(charPointer+(2*sizeof(int))));" function="good1" />
+      <comment_fix line="71" code="int toPrint = (int) (*(charPointer+(2*sizeof(int))));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="int toPrint = (int) (*(charPointer+2));" function="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12_bad" file="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="int toPrint = (int) (*(charPointer+(2*sizeof(int))));" function="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12_bad" file="CWE468_Incorrect_Pointer_Scaling__char_ptr_to_int_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="31">
+    <file path="CWE468_Incorrect_Pointer_Scaling__int_12.c">
+      <comment_flaw line="29" code="int toPrint = *(intPointer+(2*sizeof(int)));" function="CWE468_Incorrect_Pointer_Scaling__int_12_bad" />
+      <comment_fix line="40" code="int toPrint = *(intPointer+2);" function="CWE468_Incorrect_Pointer_Scaling__int_12_bad" />
+      <comment_fix line="60" code="int toPrint = *(intPointer+2);" function="good1" />
+      <comment_fix line="71" code="int toPrint = *(intPointer+2);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="int toPrint = *(intPointer+(2*sizeof(int)));" function="CWE468_Incorrect_Pointer_Scaling__int_12_bad" file="CWE468_Incorrect_Pointer_Scaling__int_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="int toPrint = *(intPointer+2);" function="CWE468_Incorrect_Pointer_Scaling__int_12_bad" file="CWE468_Incorrect_Pointer_Scaling__int_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE758_Undefined_Behavior__char_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] char data = *pointer;" function="CWE758_Undefined_Behavior__char_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] char data = *pointer;" function="CWE758_Undefined_Behavior__char_alloca_use_12_bad" file="CWE758_Undefined_Behavior__char_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_alloca_use_12_bad" file="CWE758_Undefined_Behavior__char_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE758_Undefined_Behavior__char_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] char data = *pointer;" function="CWE758_Undefined_Behavior__char_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] char data = *pointer;" function="CWE758_Undefined_Behavior__char_malloc_use_12_bad" file="CWE758_Undefined_Behavior__char_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_malloc_use_12_bad" file="CWE758_Undefined_Behavior__char_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE758_Undefined_Behavior__char_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] char data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] char data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__char_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__char_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE758_Undefined_Behavior__char_pointer_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] char * data = *pointer;" function="CWE758_Undefined_Behavior__char_pointer_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_pointer_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] char * data = *pointer;" function="CWE758_Undefined_Behavior__char_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__char_pointer_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__char_pointer_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE758_Undefined_Behavior__char_pointer_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] char * data = *pointer;" function="CWE758_Undefined_Behavior__char_pointer_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_pointer_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] char * data = *pointer;" function="CWE758_Undefined_Behavior__char_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__char_pointer_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__char_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__char_pointer_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="102">
+    <file path="CWE758_Undefined_Behavior__char_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] char * data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] char * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__char_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__char_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="120">
+    <file path="CWE758_Undefined_Behavior__class_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] TwoIntsClass data = *pointer;" function="bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="67" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="83" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] TwoIntsClass data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__class_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__class_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="138">
+    <file path="CWE758_Undefined_Behavior__class_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] TwoIntsClass * data = *pointer;" function="bad" />
+      <comment_fix line="44" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="89" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] TwoIntsClass * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__class_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__class_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="156">
+    <file path="CWE758_Undefined_Behavior__double_pointer_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] double * data = *pointer;" function="CWE758_Undefined_Behavior__double_pointer_alloca_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__double_pointer_alloca_use_12_bad" />
+      <comment_fix line="64" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="80" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] double * data = *pointer;" function="CWE758_Undefined_Behavior__double_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__double_pointer_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__double_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__double_pointer_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="174">
+    <file path="CWE758_Undefined_Behavior__double_pointer_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] double * data = *pointer;" function="CWE758_Undefined_Behavior__double_pointer_malloc_use_12_bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__double_pointer_malloc_use_12_bad" />
+      <comment_fix line="69" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="87" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] double * data = *pointer;" function="CWE758_Undefined_Behavior__double_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__double_pointer_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__double_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__double_pointer_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="192">
+    <file path="CWE758_Undefined_Behavior__double_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] double * data = *pointer;" function="bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="67" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="83" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] double * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__double_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__double_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="210">
+    <file path="CWE758_Undefined_Behavior__int64_t_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] int64_t data = *pointer;" function="CWE758_Undefined_Behavior__int64_t_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int64_t_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] int64_t data = *pointer;" function="CWE758_Undefined_Behavior__int64_t_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int64_t_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int64_t_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int64_t_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="228">
+    <file path="CWE758_Undefined_Behavior__int64_t_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] int64_t data = *pointer;" function="CWE758_Undefined_Behavior__int64_t_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int64_t_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] int64_t data = *pointer;" function="CWE758_Undefined_Behavior__int64_t_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int64_t_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int64_t_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int64_t_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="246">
+    <file path="CWE758_Undefined_Behavior__int64_t_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] int64_t data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] int64_t data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__int64_t_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__int64_t_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="264">
+    <file path="CWE758_Undefined_Behavior__int_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] int data = *pointer;" function="CWE758_Undefined_Behavior__int_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] int data = *pointer;" function="CWE758_Undefined_Behavior__int_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="282">
+    <file path="CWE758_Undefined_Behavior__int_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] int data = *pointer;" function="CWE758_Undefined_Behavior__int_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] int data = *pointer;" function="CWE758_Undefined_Behavior__int_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="300">
+    <file path="CWE758_Undefined_Behavior__int_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] int data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] int data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__int_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__int_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="318">
+    <file path="CWE758_Undefined_Behavior__int_pointer_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] int * data = *pointer;" function="CWE758_Undefined_Behavior__int_pointer_alloca_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_pointer_alloca_use_12_bad" />
+      <comment_fix line="64" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="80" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] int * data = *pointer;" function="CWE758_Undefined_Behavior__int_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int_pointer_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__int_pointer_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="336">
+    <file path="CWE758_Undefined_Behavior__int_pointer_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] int * data = *pointer;" function="CWE758_Undefined_Behavior__int_pointer_malloc_use_12_bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_pointer_malloc_use_12_bad" />
+      <comment_fix line="69" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="87" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] int * data = *pointer;" function="CWE758_Undefined_Behavior__int_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int_pointer_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__int_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__int_pointer_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="354">
+    <file path="CWE758_Undefined_Behavior__int_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] int * data = *pointer;" function="bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="67" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="83" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] int * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__int_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__int_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="372">
+    <file path="CWE758_Undefined_Behavior__long_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] long data = *pointer;" function="CWE758_Undefined_Behavior__long_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__long_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] long data = *pointer;" function="CWE758_Undefined_Behavior__long_alloca_use_12_bad" file="CWE758_Undefined_Behavior__long_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__long_alloca_use_12_bad" file="CWE758_Undefined_Behavior__long_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="390">
+    <file path="CWE758_Undefined_Behavior__long_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] long data = *pointer;" function="CWE758_Undefined_Behavior__long_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__long_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] long data = *pointer;" function="CWE758_Undefined_Behavior__long_malloc_use_12_bad" file="CWE758_Undefined_Behavior__long_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__long_malloc_use_12_bad" file="CWE758_Undefined_Behavior__long_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="408">
+    <file path="CWE758_Undefined_Behavior__long_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] long data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] long data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__long_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__long_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="427">
+    <file path="CWE758_Undefined_Behavior__struct_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] twoIntsStruct data = *pointer;" function="CWE758_Undefined_Behavior__struct_alloca_use_12_bad" />
+      <comment_fix line="38" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_alloca_use_12_bad" />
+      <comment_fix line="62" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] twoIntsStruct data = *pointer;" function="CWE758_Undefined_Behavior__struct_alloca_use_12_bad" file="CWE758_Undefined_Behavior__struct_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_alloca_use_12_bad" file="CWE758_Undefined_Behavior__struct_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="445">
+    <file path="CWE758_Undefined_Behavior__struct_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] twoIntsStruct data = *pointer;" function="CWE758_Undefined_Behavior__struct_malloc_use_12_bad" />
+      <comment_fix line="41" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_malloc_use_12_bad" />
+      <comment_fix line="67" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="84" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] twoIntsStruct data = *pointer;" function="CWE758_Undefined_Behavior__struct_malloc_use_12_bad" file="CWE758_Undefined_Behavior__struct_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_malloc_use_12_bad" file="CWE758_Undefined_Behavior__struct_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="463">
+    <file path="CWE758_Undefined_Behavior__struct_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] twoIntsStruct data = *pointer;" function="bad" />
+      <comment_fix line="42" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="67" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="83" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] twoIntsStruct data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__struct_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__struct_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="481">
+    <file path="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] twoIntsStruct * data = *pointer;" function="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12_bad" />
+      <comment_fix line="41" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12_bad" />
+      <comment_fix line="68" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="86" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] twoIntsStruct * data = *pointer;" function="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__struct_pointer_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="499">
+    <file path="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] twoIntsStruct * data = *pointer;" function="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12_bad" />
+      <comment_fix line="44" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12_bad" />
+      <comment_fix line="73" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="93" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] twoIntsStruct * data = *pointer;" function="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__struct_pointer_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="517">
+    <file path="CWE758_Undefined_Behavior__struct_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] twoIntsStruct * data = *pointer;" function="bad" />
+      <comment_fix line="44" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="89" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] twoIntsStruct * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__struct_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__struct_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="539">
+    <file path="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12.c">
+      <comment_flaw line="26" code="[INLINE] wchar_t * data = *pointer;" function="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12_bad" />
+      <comment_fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12_bad" />
+      <comment_fix line="58" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="71" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="26" code="[INLINE] wchar_t * data = *pointer;" function="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12_bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_alloca_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="557">
+    <file path="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12.c">
+      <comment_flaw line="27" code="[INLINE] wchar_t * data = *pointer;" function="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12_bad" />
+      <comment_fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12_bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="78" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="[INLINE] wchar_t * data = *pointer;" function="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="39" code="[INLINE] *pointer = data;" function="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12_bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_malloc_use_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="575">
+    <file path="CWE758_Undefined_Behavior__wchar_t_pointer_new_use_12.cpp">
+      <comment_flaw line="29" code="[INLINE] wchar_t * data = *pointer;" function="bad" />
+      <comment_fix line="40" code="[INLINE] *pointer = data;" function="bad" />
+      <comment_fix line="63" code="[INLINE] *pointer = data;" function="good1" />
+      <comment_fix line="77" code="[INLINE] *pointer = data;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="[INLINE] wchar_t * data = *pointer;" function="bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_new_use_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="[INLINE] *pointer = data;" function="bad" file="CWE758_Undefined_Behavior__wchar_t_pointer_new_use_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

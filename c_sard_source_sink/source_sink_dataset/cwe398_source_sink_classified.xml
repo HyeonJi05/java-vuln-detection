@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE398_Poor_Code_Quality__addition_12.c">
+      <comment_flaw line="28" code="intOne + intTwo;" function="CWE398_Poor_Code_Quality__addition_12_bad" />
+      <comment_fix line="38" code="intSum = intOne + intTwo;" function="CWE398_Poor_Code_Quality__addition_12_bad" />
+      <comment_fix line="57" code="intSum = intOne + intTwo;" function="good1" />
+      <comment_fix line="67" code="intSum = intOne + intTwo;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="intOne + intTwo;" function="CWE398_Poor_Code_Quality__addition_12_bad" file="CWE398_Poor_Code_Quality__addition_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="intSum = intOne + intTwo;" function="CWE398_Poor_Code_Quality__addition_12_bad" file="CWE398_Poor_Code_Quality__addition_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE398_Poor_Code_Quality__empty_block_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_block_12_bad" />
+      <comment_fix line="32" code="{" function="CWE398_Poor_Code_Quality__empty_block_12_bad" />
+      <comment_fix line="49" code="{" function="good1" />
+      <comment_fix line="57" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_block_12_bad" file="CWE398_Poor_Code_Quality__empty_block_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="32" code="{" function="CWE398_Poor_Code_Quality__empty_block_12_bad" file="CWE398_Poor_Code_Quality__empty_block_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE398_Poor_Code_Quality__empty_case_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_case_12_bad" />
+      <comment_fix line="38" code="{" function="CWE398_Poor_Code_Quality__empty_case_12_bad" />
+      <comment_fix line="61" code="{" function="good1" />
+      <comment_fix line="75" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_case_12_bad" file="CWE398_Poor_Code_Quality__empty_case_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="{" function="CWE398_Poor_Code_Quality__empty_case_12_bad" file="CWE398_Poor_Code_Quality__empty_case_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE398_Poor_Code_Quality__empty_else_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_else_12_bad" />
+      <comment_fix line="41" code="{" function="CWE398_Poor_Code_Quality__empty_else_12_bad" />
+      <comment_fix line="67" code="{" function="good1" />
+      <comment_fix line="84" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_else_12_bad" file="CWE398_Poor_Code_Quality__empty_else_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="{" function="CWE398_Poor_Code_Quality__empty_else_12_bad" file="CWE398_Poor_Code_Quality__empty_else_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE398_Poor_Code_Quality__empty_for_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_for_12_bad" />
+      <comment_fix line="36" code="{" function="CWE398_Poor_Code_Quality__empty_for_12_bad" />
+      <comment_fix line="57" code="{" function="good1" />
+      <comment_fix line="69" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_for_12_bad" file="CWE398_Poor_Code_Quality__empty_for_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="{" function="CWE398_Poor_Code_Quality__empty_for_12_bad" file="CWE398_Poor_Code_Quality__empty_for_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="103">
+    <file path="CWE398_Poor_Code_Quality__empty_if_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_if_12_bad" />
+      <comment_fix line="41" code="{" function="CWE398_Poor_Code_Quality__empty_if_12_bad" />
+      <comment_fix line="67" code="{" function="good1" />
+      <comment_fix line="84" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_if_12_bad" file="CWE398_Poor_Code_Quality__empty_if_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="{" function="CWE398_Poor_Code_Quality__empty_if_12_bad" file="CWE398_Poor_Code_Quality__empty_if_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="121">
+    <file path="CWE398_Poor_Code_Quality__empty_while_12.c">
+      <comment_flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_while_12_bad" />
+      <comment_fix line="36" code="{" function="CWE398_Poor_Code_Quality__empty_while_12_bad" />
+      <comment_fix line="57" code="{" function="good1" />
+      <comment_fix line="69" code="{" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="{" function="CWE398_Poor_Code_Quality__empty_while_12_bad" file="CWE398_Poor_Code_Quality__empty_while_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="36" code="{" function="CWE398_Poor_Code_Quality__empty_while_12_bad" file="CWE398_Poor_Code_Quality__empty_while_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="139">
+    <file path="CWE398_Poor_Code_Quality__equals_12.c">
+      <comment_flaw line="28" code="intOne = intOne;" function="CWE398_Poor_Code_Quality__equals_12_bad" />
+      <comment_fix line="38" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12_bad" />
+      <comment_fix line="57" code="intOne = intFive;" function="good1" />
+      <comment_fix line="67" code="intOne = intFive;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="intOne = intOne;" function="CWE398_Poor_Code_Quality__equals_12_bad" file="CWE398_Poor_Code_Quality__equals_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="intOne = intFive;" function="CWE398_Poor_Code_Quality__equals_12_bad" file="CWE398_Poor_Code_Quality__equals_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="157">
+    <file path="CWE398_Poor_Code_Quality__five_12.c">
+      <comment_flaw line="25" code="5;" function="CWE398_Poor_Code_Quality__five_12_bad" />
+      <comment_fix line="31" code="printLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__five_12_bad" />
+      <comment_fix line="45" code="printLine(&quot;Hello from good()&quot;);" function="good1" />
+      <comment_fix line="50" code="printLine(&quot;Hello from good()&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="5;" function="CWE398_Poor_Code_Quality__five_12_bad" file="CWE398_Poor_Code_Quality__five_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="31" code="printLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__five_12_bad" file="CWE398_Poor_Code_Quality__five_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="175">
+    <file path="CWE398_Poor_Code_Quality__semicolon_12.c">
+      <comment_flaw line="25" code=";" function="CWE398_Poor_Code_Quality__semicolon_12_bad" />
+      <comment_fix line="31" code="printLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12_bad" />
+      <comment_fix line="45" code="printLine(&quot;Hello from good()&quot;);" function="good1" />
+      <comment_fix line="50" code="printLine(&quot;Hello from good()&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code=";" function="CWE398_Poor_Code_Quality__semicolon_12_bad" file="CWE398_Poor_Code_Quality__semicolon_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="31" code="printLine(&quot;Hello from good()&quot;);" function="CWE398_Poor_Code_Quality__semicolon_12_bad" file="CWE398_Poor_Code_Quality__semicolon_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

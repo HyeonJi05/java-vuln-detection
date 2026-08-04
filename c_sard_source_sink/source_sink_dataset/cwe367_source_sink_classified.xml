@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE367_TOC_TOU__access_12.c">
+      <comment_flaw line="62" code="if (ACCESS(filename, W_OK) == -1)" function="CWE367_TOC_TOU__access_12_bad" />
+      <comment_fix line="97" code="fileDesc  = OPEN(filename, O_RDWR);" function="CWE367_TOC_TOU__access_12_bad" />
+      <comment_fix line="137" code="fileDesc  = OPEN(filename, O_RDWR);" function="good1" />
+      <comment_fix line="168" code="fileDesc  = OPEN(filename, O_RDWR);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="62" code="if (ACCESS(filename, W_OK) == -1)" function="CWE367_TOC_TOU__access_12_bad" file="CWE367_TOC_TOU__access_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="97" code="fileDesc  = OPEN(filename, O_RDWR);" function="CWE367_TOC_TOU__access_12_bad" file="CWE367_TOC_TOU__access_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE367_TOC_TOU__stat_12.c">
+      <comment_flaw line="56" code="if (STAT(filename, &amp;statBuffer) == -1)" function="CWE367_TOC_TOU__stat_12_bad" />
+      <comment_fix line="91" code="fileDesc  = OPEN(filename, O_RDWR);" function="CWE367_TOC_TOU__stat_12_bad" />
+      <comment_fix line="131" code="fileDesc  = OPEN(filename, O_RDWR);" function="good1" />
+      <comment_fix line="162" code="fileDesc  = OPEN(filename, O_RDWR);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="56" code="if (STAT(filename, &amp;statBuffer) == -1)" function="CWE367_TOC_TOU__stat_12_bad" file="CWE367_TOC_TOU__stat_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="91" code="fileDesc  = OPEN(filename, O_RDWR);" function="CWE367_TOC_TOU__stat_12_bad" file="CWE367_TOC_TOU__stat_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

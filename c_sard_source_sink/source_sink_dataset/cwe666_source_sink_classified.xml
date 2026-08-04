@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12.c">
+      <comment_flaw line="79" code="acceptSocket = accept(listenSocket, NULL, NULL);" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12_bad" />
+      <comment_fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12_bad" />
+      <comment_fix line="256" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="340" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="acceptSocket = accept(listenSocket, NULL, NULL);" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_bind_listen_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12.c">
+      <comment_flaw line="79" code="acceptSocket = accept(listenSocket, NULL, NULL);" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12_bad" />
+      <comment_fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12_bad" />
+      <comment_fix line="256" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="340" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="acceptSocket = accept(listenSocket, NULL, NULL);" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__accept_listen_bind_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12.c">
+      <comment_flaw line="79" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12_bad" />
+      <comment_fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12_bad" />
+      <comment_fix line="256" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="340" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__bind_accept_listen_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12.c">
+      <comment_flaw line="79" code="if (listen(listenSocket, LISTEN_BACKLOG) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12_bad" />
+      <comment_fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12_bad" />
+      <comment_fix line="256" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="340" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="if (listen(listenSocket, LISTEN_BACKLOG) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_accept_bind_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12.c">
+      <comment_flaw line="79" code="if (listen(listenSocket, LISTEN_BACKLOG) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12_bad" />
+      <comment_fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12_bad" />
+      <comment_fix line="256" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="340" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="if (listen(listenSocket, LISTEN_BACKLOG) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="if (bind(listenSocket, (struct sockaddr*)&amp;service, sizeof(service)) == SOCKET_ERROR)" function="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12_bad" file="CWE666_Operation_on_Resource_in_Wrong_Phase_of_Lifetime__listen_bind_accept_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

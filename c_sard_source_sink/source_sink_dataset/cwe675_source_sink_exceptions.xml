@@ -1,0 +1,1075 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="20">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_22a.c">
+      <comment_flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_bad" />
+      <comment_flaw line="56" code="fclose(data);" function="goodB2G1" />
+      <comment_flaw line="70" code="fclose(data);" function="goodB2G2" />
+      <comment_fix line="83" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_22b.c">
+      <comment_flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_badSink" />
+      <comment_fix line="55" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_goodB2G1Sink" />
+      <comment_fix line="66" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_goodB2G2Sink" />
+      <comment_flaw line="76" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_22a.c" origin="comment_flaw" />
+      <flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_22_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_22b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="26">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_42.c">
+      <comment_flaw line="26" code="fclose(data);" function="badSource" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_42_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2BSource" />
+      <comment_flaw line="57" code="fclose(data);" function="goodG2B" />
+      <comment_flaw line="65" code="fclose(data);" function="goodB2GSource" />
+      <comment_fix line="76" code=";" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="26" code="fclose(data);" function="badSource" file="CWE675_Duplicate_Operations_on_Resource__fopen_42.c" origin="comment_flaw" />
+      <flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_42_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_42.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_51a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_51_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_51b.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_51b_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_51b_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_51b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_51_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_51a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_51b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_51b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="31">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_52a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_52_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_52b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_52c.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_52c_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_52c_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_52c_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_52_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_52a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_52c_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_52c.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="32">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_53a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_53_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_53b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_53c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_53d.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_53d_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_53d_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_53d_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_53_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_53a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_53d_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_53d.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="33">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_54a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_54_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_54b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_54c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_54d.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_54e.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_54e_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_54e_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_54e_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_54_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_54a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_54e_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_54e.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="34">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_61a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61_bad" />
+      <comment_flaw line="47" code="fclose(data);" function="goodG2B" />
+      <comment_fix line="60" code=";" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_61b.c">
+      <comment_flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61b_badSource" />
+      <comment_fix line="38" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61b_goodG2BSource" />
+      <comment_flaw line="47" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61b_goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_61a.c" origin="comment_flaw" />
+      <flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_61b_badSource" file="CWE675_Duplicate_Operations_on_Resource__fopen_61b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="36">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_63a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_63_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_63b.c">
+      <comment_flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_63b_badSink" />
+      <comment_flaw line="38" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_63b_goodG2BSink" />
+      <comment_fix line="47" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_63b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_63_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_63a.c" origin="comment_flaw" />
+      <flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_63b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_63b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="37">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_64a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_64_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_64b.c">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_64b_badSink" />
+      <comment_flaw line="44" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_64b_goodG2BSink" />
+      <comment_fix line="56" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_64b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_64_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_64a.c" origin="comment_flaw" />
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_64b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_64b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="38">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_65a.c">
+      <comment_flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_65_bad" />
+      <comment_fix line="51" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="65" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_65b.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_65b_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_65b_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_65b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_65_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_65a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_65b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_65b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="39">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_66a.c">
+      <comment_flaw line="32" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_66_bad" />
+      <comment_fix line="51" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="66" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_66b.c">
+      <comment_flaw line="27" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_66b_badSink" />
+      <comment_flaw line="39" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_66b_goodG2BSink" />
+      <comment_fix line="48" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_66b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="32" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_66_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_66a.c" origin="comment_flaw" />
+      <flaw line="27" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_66b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_66b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="40">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_67a.c">
+      <comment_flaw line="37" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_67_bad" />
+      <comment_fix line="55" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="70" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_67b.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_67b_badSink" />
+      <comment_flaw line="43" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_67b_goodG2BSink" />
+      <comment_fix line="52" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_67b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="37" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_67_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_67a.c" origin="comment_flaw" />
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_67b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_67b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="41">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_68a.c">
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_68_bad" />
+      <comment_fix line="54" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="66" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_68b.c">
+      <comment_flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_68b_badSink" />
+      <comment_flaw line="42" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_68b_goodG2BSink" />
+      <comment_fix line="51" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_68b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_68_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_68a.c" origin="comment_flaw" />
+      <flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_68b_badSink" file="CWE675_Duplicate_Operations_on_Resource__fopen_68b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="47">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad::CWE675_Duplicate_Operations_on_Resource__fopen_83_bad" />
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad::~CWE675_Duplicate_Operations_on_Resource__fopen_83_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B.cpp">
+      <comment_fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B" />
+      <comment_flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_83a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad::CWE675_Duplicate_Operations_on_Resource__fopen_83_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad::~CWE675_Duplicate_Operations_on_Resource__fopen_83_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__fopen_83_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad::CWE675_Duplicate_Operations_on_Resource__fopen_84_bad" />
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad::~CWE675_Duplicate_Operations_on_Resource__fopen_84_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B.cpp">
+      <comment_fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B" />
+      <comment_flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__fopen_84a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad::CWE675_Duplicate_Operations_on_Resource__fopen_84_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad::~CWE675_Duplicate_Operations_on_Resource__fopen_84_bad" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__fopen_84_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="68">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_22a.c">
+      <comment_flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_bad" />
+      <comment_flaw line="56" code="fclose(data);" function="goodB2G1" />
+      <comment_flaw line="70" code="fclose(data);" function="goodB2G2" />
+      <comment_fix line="83" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_22b.c">
+      <comment_flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_badSink" />
+      <comment_fix line="55" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_goodB2G1Sink" />
+      <comment_fix line="66" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_goodB2G2Sink" />
+      <comment_flaw line="76" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_22a.c" origin="comment_flaw" />
+      <flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_22_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_22b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="74">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_42.c">
+      <comment_flaw line="26" code="fclose(data);" function="badSource" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_42_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2BSource" />
+      <comment_flaw line="57" code="fclose(data);" function="goodG2B" />
+      <comment_flaw line="65" code="fclose(data);" function="goodB2GSource" />
+      <comment_fix line="76" code=";" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="26" code="fclose(data);" function="badSource" file="CWE675_Duplicate_Operations_on_Resource__freopen_42.c" origin="comment_flaw" />
+      <flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_42_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_42.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="78">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_51a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_51_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_51b.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_51b_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_51b_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_51b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_51_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_51a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_51b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_51b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="79">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_52a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_52_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_52b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_52c.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_52c_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_52c_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_52c_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_52_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_52a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_52c_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_52c.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="80">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_53a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_53_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_53b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_53c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_53d.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_53d_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_53d_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_53d_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_53_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_53a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_53d_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_53d.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="81">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_54a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_54_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_54b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_54c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_54d.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_54e.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_54e_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_54e_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_54e_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_54_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_54a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_54e_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_54e.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="82">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_61a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61_bad" />
+      <comment_flaw line="47" code="fclose(data);" function="goodG2B" />
+      <comment_fix line="60" code=";" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_61b.c">
+      <comment_flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61b_badSource" />
+      <comment_fix line="38" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61b_goodG2BSource" />
+      <comment_flaw line="47" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61b_goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_61a.c" origin="comment_flaw" />
+      <flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_61b_badSource" file="CWE675_Duplicate_Operations_on_Resource__freopen_61b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_63a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_63_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_63b.c">
+      <comment_flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_63b_badSink" />
+      <comment_flaw line="38" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_63b_goodG2BSink" />
+      <comment_fix line="47" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_63b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_63_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_63a.c" origin="comment_flaw" />
+      <flaw line="26" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_63b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_63b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="85">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_64a.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_64_bad" />
+      <comment_fix line="47" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_64b.c">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_64b_badSink" />
+      <comment_flaw line="44" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_64b_goodG2BSink" />
+      <comment_fix line="56" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_64b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_64_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_64a.c" origin="comment_flaw" />
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_64b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_64b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="86">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_65a.c">
+      <comment_flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_65_bad" />
+      <comment_fix line="51" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="65" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_65b.c">
+      <comment_flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_65b_badSink" />
+      <comment_flaw line="36" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_65b_goodG2BSink" />
+      <comment_fix line="44" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_65b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="33" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_65_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_65a.c" origin="comment_flaw" />
+      <flaw line="25" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_65b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_65b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="87">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_66a.c">
+      <comment_flaw line="32" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_66_bad" />
+      <comment_fix line="51" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="66" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_66b.c">
+      <comment_flaw line="27" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_66b_badSink" />
+      <comment_flaw line="39" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_66b_goodG2BSink" />
+      <comment_fix line="48" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_66b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="32" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_66_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_66a.c" origin="comment_flaw" />
+      <flaw line="27" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_66b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_66b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="88">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_67a.c">
+      <comment_flaw line="37" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_67_bad" />
+      <comment_fix line="55" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="70" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_67b.c">
+      <comment_flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_67b_badSink" />
+      <comment_flaw line="43" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_67b_goodG2BSink" />
+      <comment_fix line="52" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_67b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="37" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_67_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_67a.c" origin="comment_flaw" />
+      <flaw line="31" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_67b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_67b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="89">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_68a.c">
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_68_bad" />
+      <comment_fix line="54" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="goodG2B" />
+      <comment_flaw line="66" code="fclose(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_68b.c">
+      <comment_flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_68b_badSink" />
+      <comment_flaw line="42" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_68b_goodG2BSink" />
+      <comment_fix line="51" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_68b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_68_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_68a.c" origin="comment_flaw" />
+      <flaw line="30" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_68b_badSink" file="CWE675_Duplicate_Operations_on_Resource__freopen_68b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="95">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad::CWE675_Duplicate_Operations_on_Resource__freopen_83_bad" />
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad::~CWE675_Duplicate_Operations_on_Resource__freopen_83_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B.cpp">
+      <comment_fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B" />
+      <comment_flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_83a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad::CWE675_Duplicate_Operations_on_Resource__freopen_83_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad::~CWE675_Duplicate_Operations_on_Resource__freopen_83_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__freopen_83_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="96">
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad::CWE675_Duplicate_Operations_on_Resource__freopen_84_bad" />
+      <comment_flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad::~CWE675_Duplicate_Operations_on_Resource__freopen_84_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G.cpp">
+      <comment_flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B.cpp">
+      <comment_fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B" />
+      <comment_flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__freopen_84a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad::CWE675_Duplicate_Operations_on_Resource__freopen_84_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad::~CWE675_Duplicate_Operations_on_Resource__freopen_84_bad" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = fopen(&quot;GoodSource_fopen.txt&quot;, &quot;w+&quot;);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="fclose(data);" function="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__freopen_84_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="116">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_22a.c">
+      <comment_flaw line="42" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_22_bad" />
+      <comment_flaw line="65" code="CLOSE(data);" function="goodB2G1" />
+      <comment_flaw line="79" code="CLOSE(data);" function="goodB2G2" />
+      <comment_fix line="92" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_22b.c">
+      <comment_flaw line="39" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_22_badSink" />
+      <comment_fix line="64" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_22_goodB2G1Sink" />
+      <comment_fix line="75" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_22_goodB2G2Sink" />
+      <comment_flaw line="85" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_22_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="42" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_22_bad" file="CWE675_Duplicate_Operations_on_Resource__open_22a.c" origin="comment_flaw" />
+      <flaw line="39" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_22_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_22b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="122">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_42.c">
+      <comment_flaw line="35" code="CLOSE(data);" function="badSource" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_42_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2BSource" />
+      <comment_flaw line="66" code="CLOSE(data);" function="goodG2B" />
+      <comment_flaw line="74" code="CLOSE(data);" function="goodB2GSource" />
+      <comment_fix line="85" code=";" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="CLOSE(data);" function="badSource" file="CWE675_Duplicate_Operations_on_Resource__open_42.c" origin="comment_flaw" />
+      <flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_42_bad" file="CWE675_Duplicate_Operations_on_Resource__open_42.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="126">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_51a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_51_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_51b.c">
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_51b_badSink" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_51b_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_51b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_51_bad" file="CWE675_Duplicate_Operations_on_Resource__open_51a.c" origin="comment_flaw" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_51b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_51b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="127">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_52a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_52_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_52b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_52c.c">
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_52c_badSink" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_52c_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_52c_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_52_bad" file="CWE675_Duplicate_Operations_on_Resource__open_52a.c" origin="comment_flaw" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_52c_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_52c.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="128">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_53a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_53_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_53b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_53c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_53d.c">
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_53d_badSink" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_53d_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_53d_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_53_bad" file="CWE675_Duplicate_Operations_on_Resource__open_53a.c" origin="comment_flaw" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_53d_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_53d.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="129">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_54a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_54_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_54b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_54c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_54d.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_54e.c">
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_54e_badSink" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_54e_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_54e_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_54_bad" file="CWE675_Duplicate_Operations_on_Resource__open_54a.c" origin="comment_flaw" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_54e_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_54e.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="130">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_61a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_61_bad" />
+      <comment_flaw line="56" code="CLOSE(data);" function="goodG2B" />
+      <comment_fix line="69" code=";" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_61b.c">
+      <comment_flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_61b_badSource" />
+      <comment_fix line="47" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE675_Duplicate_Operations_on_Resource__open_61b_goodG2BSource" />
+      <comment_flaw line="56" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_61b_goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_61_bad" file="CWE675_Duplicate_Operations_on_Resource__open_61a.c" origin="comment_flaw" />
+      <flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_61b_badSource" file="CWE675_Duplicate_Operations_on_Resource__open_61b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="132">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_63a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_63_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_63b.c">
+      <comment_flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_63b_badSink" />
+      <comment_flaw line="47" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_63b_goodG2BSink" />
+      <comment_fix line="56" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_63b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_63_bad" file="CWE675_Duplicate_Operations_on_Resource__open_63a.c" origin="comment_flaw" />
+      <flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_63b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_63b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="133">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_64a.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_64_bad" />
+      <comment_fix line="56" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="69" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_64b.c">
+      <comment_flaw line="38" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_64b_badSink" />
+      <comment_flaw line="53" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_64b_goodG2BSink" />
+      <comment_fix line="65" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_64b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_64_bad" file="CWE675_Duplicate_Operations_on_Resource__open_64a.c" origin="comment_flaw" />
+      <flaw line="38" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_64b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_64b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="134">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_65a.c">
+      <comment_flaw line="42" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_65_bad" />
+      <comment_fix line="60" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="74" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_65b.c">
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_65b_badSink" />
+      <comment_flaw line="45" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_65b_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_65b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="42" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_65_bad" file="CWE675_Duplicate_Operations_on_Resource__open_65a.c" origin="comment_flaw" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_65b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_65b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="135">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_66a.c">
+      <comment_flaw line="41" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_66_bad" />
+      <comment_fix line="60" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="75" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_66b.c">
+      <comment_flaw line="36" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_66b_badSink" />
+      <comment_flaw line="48" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_66b_goodG2BSink" />
+      <comment_fix line="57" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_66b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="41" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_66_bad" file="CWE675_Duplicate_Operations_on_Resource__open_66a.c" origin="comment_flaw" />
+      <flaw line="36" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_66b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_66b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="136">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_67a.c">
+      <comment_flaw line="46" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_67_bad" />
+      <comment_fix line="64" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="79" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_67b.c">
+      <comment_flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_67b_badSink" />
+      <comment_flaw line="52" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_67b_goodG2BSink" />
+      <comment_fix line="61" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_67b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="46" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_67_bad" file="CWE675_Duplicate_Operations_on_Resource__open_67a.c" origin="comment_flaw" />
+      <flaw line="40" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_67b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_67b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="137">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_68a.c">
+      <comment_flaw line="44" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_68_bad" />
+      <comment_fix line="63" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="goodG2B" />
+      <comment_flaw line="75" code="CLOSE(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_68b.c">
+      <comment_flaw line="39" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_68b_badSink" />
+      <comment_flaw line="51" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_68b_goodG2BSink" />
+      <comment_fix line="60" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_68b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="44" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_68_bad" file="CWE675_Duplicate_Operations_on_Resource__open_68a.c" origin="comment_flaw" />
+      <flaw line="39" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_68b_badSink" file="CWE675_Duplicate_Operations_on_Resource__open_68b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="143">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_83_bad.cpp">
+      <comment_flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_bad::CWE675_Duplicate_Operations_on_Resource__open_83_bad" />
+      <comment_flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_bad::~CWE675_Duplicate_Operations_on_Resource__open_83_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G.cpp">
+      <comment_flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B.cpp">
+      <comment_fix line="28" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B" />
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_83a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_bad::CWE675_Duplicate_Operations_on_Resource__open_83_bad" file="CWE675_Duplicate_Operations_on_Resource__open_83_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_bad::~CWE675_Duplicate_Operations_on_Resource__open_83_bad" file="CWE675_Duplicate_Operations_on_Resource__open_83_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__open_83_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__open_83_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="144">
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_84_bad.cpp">
+      <comment_flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_bad::CWE675_Duplicate_Operations_on_Resource__open_84_bad" />
+      <comment_flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_bad::~CWE675_Duplicate_Operations_on_Resource__open_84_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G.cpp">
+      <comment_flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G" />
+      <comment_fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B.cpp">
+      <comment_fix line="28" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B" />
+      <comment_flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__open_84a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_bad::CWE675_Duplicate_Operations_on_Resource__open_84_bad" file="CWE675_Duplicate_Operations_on_Resource__open_84_bad.cpp" origin="comment_flaw" />
+      <flaw line="35" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_bad::~CWE675_Duplicate_Operations_on_Resource__open_84_bad" file="CWE675_Duplicate_Operations_on_Resource__open_84_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="29" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="36" code=";" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__open_84_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = OPEN(&quot;GoodSource_open.txt&quot;, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="34" code="CLOSE(data);" function="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__open_84_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="164">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22a.c">
+      <comment_flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_bad" />
+      <comment_flaw line="70" code="CloseHandle(data);" function="goodB2G1" />
+      <comment_flaw line="90" code="CloseHandle(data);" function="goodB2G2" />
+      <comment_fix line="103" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22b.c">
+      <comment_flaw line="32" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_badSink" />
+      <comment_fix line="57" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_goodB2G1Sink" />
+      <comment_fix line="68" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_goodB2G2Sink" />
+      <comment_flaw line="78" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22a.c" origin="comment_flaw" />
+      <flaw line="32" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_22b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="170">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_42.c">
+      <comment_flaw line="34" code="CloseHandle(data);" function="badSource" />
+      <comment_flaw line="44" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_42_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2BSource" />
+      <comment_flaw line="71" code="CloseHandle(data);" function="goodG2B" />
+      <comment_flaw line="85" code="CloseHandle(data);" function="goodB2GSource" />
+      <comment_fix line="96" code=";" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="34" code="CloseHandle(data);" function="badSource" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_42.c" origin="comment_flaw" />
+      <flaw line="44" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_42_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_42.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="174">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b.c">
+      <comment_flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b_badSink" />
+      <comment_flaw line="38" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b_goodG2BSink" />
+      <comment_fix line="46" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51a.c" origin="comment_flaw" />
+      <flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="175">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c.c">
+      <comment_flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c_badSink" />
+      <comment_flaw line="38" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c_goodG2BSink" />
+      <comment_fix line="46" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52a.c" origin="comment_flaw" />
+      <flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="176">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d.c">
+      <comment_flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d_badSink" />
+      <comment_flaw line="38" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d_goodG2BSink" />
+      <comment_fix line="46" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53a.c" origin="comment_flaw" />
+      <flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="177">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54b.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54c.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54d.c" />
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e.c">
+      <comment_flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e_badSink" />
+      <comment_flaw line="38" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e_goodG2BSink" />
+      <comment_fix line="46" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54a.c" origin="comment_flaw" />
+      <flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_54e.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="178">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61a.c">
+      <comment_flaw line="33" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61_bad" />
+      <comment_flaw line="49" code="CloseHandle(data);" function="goodG2B" />
+      <comment_fix line="62" code=";" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b.c">
+      <comment_flaw line="34" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b_badSource" />
+      <comment_fix line="46" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b_goodG2BSource" />
+      <comment_flaw line="67" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b_goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="33" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61a.c" origin="comment_flaw" />
+      <flaw line="34" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b_badSource" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="180">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b.c">
+      <comment_flaw line="28" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b_badSink" />
+      <comment_flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b_goodG2BSink" />
+      <comment_fix line="49" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63a.c" origin="comment_flaw" />
+      <flaw line="28" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_63b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="181">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64a.c">
+      <comment_flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64_bad" />
+      <comment_fix line="55" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="80" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b.c">
+      <comment_flaw line="31" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b_badSink" />
+      <comment_flaw line="46" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b_goodG2BSink" />
+      <comment_fix line="58" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="39" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64a.c" origin="comment_flaw" />
+      <flaw line="31" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_64b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="182">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65a.c">
+      <comment_flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65_bad" />
+      <comment_fix line="59" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="85" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b.c">
+      <comment_flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b_badSink" />
+      <comment_flaw line="38" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b_goodG2BSink" />
+      <comment_fix line="46" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65a.c" origin="comment_flaw" />
+      <flaw line="27" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_65b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="183">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66a.c">
+      <comment_flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66_bad" />
+      <comment_fix line="59" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="86" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b.c">
+      <comment_flaw line="29" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b_badSink" />
+      <comment_flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b_goodG2BSink" />
+      <comment_fix line="50" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66a.c" origin="comment_flaw" />
+      <flaw line="29" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="184">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67a.c">
+      <comment_flaw line="45" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67_bad" />
+      <comment_fix line="63" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="90" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b.c">
+      <comment_flaw line="33" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b_badSink" />
+      <comment_flaw line="45" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b_goodG2BSink" />
+      <comment_fix line="54" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="45" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67a.c" origin="comment_flaw" />
+      <flaw line="33" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="185">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68a.c">
+      <comment_flaw line="43" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68_bad" />
+      <comment_fix line="62" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="goodG2B" />
+      <comment_flaw line="86" code="CloseHandle(data);" function="goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b.c">
+      <comment_flaw line="32" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b_badSink" />
+      <comment_flaw line="44" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b_goodG2BSink" />
+      <comment_fix line="53" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="43" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68a.c" origin="comment_flaw" />
+      <flaw line="32" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b_badSink" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_68b.c" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="191">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad.cpp">
+      <comment_flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad" />
+      <comment_flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G.cpp">
+      <comment_flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G" />
+      <comment_fix line="42" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B.cpp">
+      <comment_fix line="28" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B" />
+      <comment_flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad.cpp" origin="comment_flaw" />
+      <flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="42" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_83_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="192">
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad.cpp">
+      <comment_flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad" />
+      <comment_flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G.cpp">
+      <comment_flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G" />
+      <comment_fix line="42" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B.cpp">
+      <comment_fix line="28" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B" />
+      <comment_flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B" />
+    </file>
+    <file path="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad.cpp" origin="comment_flaw" />
+      <flaw line="41" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="35" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="42" code=";" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data = CreateFile(&quot;GoodSource_w32CreateFile.txt&quot;," function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B::CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="40" code="CloseHandle(data);" function="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B::~CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B" file="CWE675_Duplicate_Operations_on_Resource__w32CreateFile_84_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+</container>

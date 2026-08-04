@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12.c">
+      <comment_flaw line="35" code="*(int*)(charPtr + sizeof(int)) = 5;" function="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12_bad" />
+      <comment_fix line="51" code="structCharInt.intSecond = 5;" function="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12_bad" />
+      <comment_fix line="76" code="structCharInt.intSecond = 5;" function="good1" />
+      <comment_fix line="92" code="structCharInt.intSecond = 5;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="*(int*)(charPtr + sizeof(int)) = 5;" function="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12_bad" file="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="structCharInt.intSecond = 5;" function="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12_bad" file="CWE188_Reliance_on_Data_Memory_Layout__modify_local_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE188_Reliance_on_Data_Memory_Layout__union_12.c">
+      <comment_flaw line="36" code="unionStructLong.structChars.charFourth |= 0x80;" function="CWE188_Reliance_on_Data_Memory_Layout__union_12_bad" />
+      <comment_fix line="51" code="longNumber |= LONG_MIN;" function="CWE188_Reliance_on_Data_Memory_Layout__union_12_bad" />
+      <comment_fix line="75" code="longNumber |= LONG_MIN;" function="good1" />
+      <comment_fix line="90" code="longNumber |= LONG_MIN;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="unionStructLong.structChars.charFourth |= 0x80;" function="CWE188_Reliance_on_Data_Memory_Layout__union_12_bad" file="CWE188_Reliance_on_Data_Memory_Layout__union_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="longNumber |= LONG_MIN;" function="CWE188_Reliance_on_Data_Memory_Layout__union_12_bad" file="CWE188_Reliance_on_Data_Memory_Layout__union_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

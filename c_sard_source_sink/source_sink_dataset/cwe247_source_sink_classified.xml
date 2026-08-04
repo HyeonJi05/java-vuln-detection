@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12.c">
+      <comment_flaw line="86" code="if (strcmp(hostInfo-&gt;h_name, SECRET_HOSTNAME) == 0)" function="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12_bad" />
+      <comment_fix line="163" code="pFile = fopen(&quot;log.txt&quot;, &quot;a+&quot;);" function="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12_bad" />
+      <comment_fix line="248" code="pFile = fopen(&quot;log.txt&quot;, &quot;a+&quot;);" function="good1" />
+      <comment_fix line="324" code="pFile = fopen(&quot;log.txt&quot;, &quot;a+&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="86" code="if (strcmp(hostInfo-&gt;h_name, SECRET_HOSTNAME) == 0)" function="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12_bad" file="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="163" code="pFile = fopen(&quot;log.txt&quot;, &quot;a+&quot;);" function="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12_bad" file="CWE247_Reliance_on_DNS_Lookups_in_Security_Decision__w32_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

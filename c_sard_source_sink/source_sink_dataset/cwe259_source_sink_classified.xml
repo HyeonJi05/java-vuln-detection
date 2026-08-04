@@ -1,0 +1,1831 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="1">
+    <file path="CWE259_Hard_Coded_Password__w32_char_01.c">
+      <comment_flaw line="34" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_01_bad" />
+      <comment_flaw line="40" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_01_bad" />
+      <comment_fix line="71" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="89" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_01_bad" file="CWE259_Hard_Coded_Password__w32_char_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_01_bad" file="CWE259_Hard_Coded_Password__w32_char_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="71" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_01.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="89" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="2">
+    <file path="CWE259_Hard_Coded_Password__w32_char_02.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_02_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_02_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_02_bad" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_02_bad" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="3">
+    <file path="CWE259_Hard_Coded_Password__w32_char_03.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_03_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_03_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_03_bad" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_03_bad" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="4">
+    <file path="CWE259_Hard_Coded_Password__w32_char_04.c">
+      <comment_flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_04_bad" />
+      <comment_flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_04_bad" />
+      <comment_fix line="88" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="136" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="155" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_04_bad" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_04_bad" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="88" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="136" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="155" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="5">
+    <file path="CWE259_Hard_Coded_Password__w32_char_05.c">
+      <comment_flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_05_bad" />
+      <comment_flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_05_bad" />
+      <comment_fix line="88" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="136" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="155" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_05_bad" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_05_bad" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="88" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="136" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="155" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="6">
+    <file path="CWE259_Hard_Coded_Password__w32_char_06.c">
+      <comment_flaw line="40" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_06_bad" />
+      <comment_flaw line="47" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_06_bad" />
+      <comment_fix line="85" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="104" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="133" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="152" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_06_bad" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="47" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_06_bad" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="85" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="104" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="133" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="152" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="7">
+    <file path="CWE259_Hard_Coded_Password__w32_char_07.c">
+      <comment_flaw line="42" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_07_bad" />
+      <comment_flaw line="49" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_07_bad" />
+      <comment_fix line="87" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="106" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="135" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="154" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_07_bad" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_07_bad" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="87" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="106" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="135" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="154" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="8">
+    <file path="CWE259_Hard_Coded_Password__w32_char_08.c">
+      <comment_flaw line="50" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_08_bad" />
+      <comment_flaw line="57" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_08_bad" />
+      <comment_fix line="95" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="114" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="143" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="162" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_08_bad" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="57" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_08_bad" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="95" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="114" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="143" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="162" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="9">
+    <file path="CWE259_Hard_Coded_Password__w32_char_09.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_09_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_09_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_09_bad" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_09_bad" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="10">
+    <file path="CWE259_Hard_Coded_Password__w32_char_10.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_10_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_10_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_10_bad" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_10_bad" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="11">
+    <file path="CWE259_Hard_Coded_Password__w32_char_11.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_11_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_11_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_11_bad" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_11_bad" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="12">
+    <file path="CWE259_Hard_Coded_Password__w32_char_12.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_12_bad" />
+      <comment_fix line="43" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_12_bad" />
+      <comment_flaw line="62" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_12_bad" />
+      <comment_fix line="96" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_fix line="115" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="134" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_12_bad" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="43" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_12_bad" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_fix" />
+      <flaw line="62" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_12_bad" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="multi_comment_line_extrema">
+      <fix line="96" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_fix" role="source" safety="good" />
+      <fix line="115" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_fix" />
+      <flaw line="134" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="13">
+    <file path="CWE259_Hard_Coded_Password__w32_char_13.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_13_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_13_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_13_bad" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_13_bad" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="14">
+    <file path="CWE259_Hard_Coded_Password__w32_char_14.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_14_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_14_bad" />
+      <comment_fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_14_bad" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_14_bad" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="15">
+    <file path="CWE259_Hard_Coded_Password__w32_char_15.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_15_bad" />
+      <comment_flaw line="49" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_15_bad" />
+      <comment_fix line="87" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="137" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="161" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_15_bad" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_15_bad" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="87" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="137" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="161" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="16">
+    <file path="CWE259_Hard_Coded_Password__w32_char_16.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_16_bad" />
+      <comment_flaw line="44" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_16_bad" />
+      <comment_fix line="77" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="97" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_16_bad" file="CWE259_Hard_Coded_Password__w32_char_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="44" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_16_bad" file="CWE259_Hard_Coded_Password__w32_char_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="77" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_16.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="97" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="17">
+    <file path="CWE259_Hard_Coded_Password__w32_char_17.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_17_bad" />
+      <comment_flaw line="44" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_17_bad" />
+      <comment_fix line="78" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="97" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_17_bad" file="CWE259_Hard_Coded_Password__w32_char_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="44" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_17_bad" file="CWE259_Hard_Coded_Password__w32_char_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="78" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_17.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="97" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="18">
+    <file path="CWE259_Hard_Coded_Password__w32_char_18.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_18_bad" />
+      <comment_flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_18_bad" />
+      <comment_fix line="75" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="93" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_18_bad" file="CWE259_Hard_Coded_Password__w32_char_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_18_bad" file="CWE259_Hard_Coded_Password__w32_char_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="75" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_18.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="93" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="19">
+    <file path="CWE259_Hard_Coded_Password__w32_char_21.c">
+      <comment_flaw line="36" code="strcpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="53" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_21_bad" />
+      <comment_fix line="92" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1Source" />
+      <comment_flaw line="121" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_fix line="147" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2Source" />
+      <comment_flaw line="176" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="36" code="strcpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="53" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_21_bad" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="function_name_rule">
+      <fix line="92" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B1Source" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="121" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="function_name_rule">
+      <fix line="147" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B2Source" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="176" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="20">
+    <file path="CWE259_Hard_Coded_Password__w32_char_22a.c">
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_22_bad" />
+      <comment_flaw line="84" code="if (LogonUserA(" function="goodG2B1" />
+      <comment_flaw line="117" code="if (LogonUserA(" function="goodG2B2" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_22b.c">
+      <comment_flaw line="33" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_22_badSource" />
+      <comment_fix line="59" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_22_goodG2B1Source" />
+      <comment_fix line="84" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_22_goodG2B2Source" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_22_bad" file="CWE259_Hard_Coded_Password__w32_char_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_22_badSource" file="CWE259_Hard_Coded_Password__w32_char_22b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="function_name_rule">
+      <flaw line="84" code="if (LogonUserA(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_char_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="59" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_22_goodG2B1Source" file="CWE259_Hard_Coded_Password__w32_char_22b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="function_name_rule">
+      <flaw line="117" code="if (LogonUserA(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_char_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="84" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_22_goodG2B2Source" file="CWE259_Hard_Coded_Password__w32_char_22b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="21">
+    <file path="CWE259_Hard_Coded_Password__w32_char_31.c">
+      <comment_flaw line="34" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_31_bad" />
+      <comment_flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_31_bad" />
+      <comment_fix line="75" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="96" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_31_bad" file="CWE259_Hard_Coded_Password__w32_char_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_31_bad" file="CWE259_Hard_Coded_Password__w32_char_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="75" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_31.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="96" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="22">
+    <file path="CWE259_Hard_Coded_Password__w32_char_32.c">
+      <comment_flaw line="38" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_32_bad" />
+      <comment_flaw line="48" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_32_bad" />
+      <comment_fix line="84" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="106" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_32_bad" file="CWE259_Hard_Coded_Password__w32_char_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_32_bad" file="CWE259_Hard_Coded_Password__w32_char_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="84" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_32.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="106" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="23">
+    <file path="CWE259_Hard_Coded_Password__w32_char_33.cpp">
+      <comment_flaw line="38" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_flaw line="46" code="if (LogonUserA(" function="bad" />
+      <comment_fix line="79" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="99" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="if (LogonUserA(" function="bad" file="CWE259_Hard_Coded_Password__w32_char_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="79" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_33.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="99" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="24">
+    <file path="CWE259_Hard_Coded_Password__w32_char_34.c">
+      <comment_flaw line="41" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_34_bad" />
+      <comment_flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_34_bad" />
+      <comment_fix line="83" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="104" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_34_bad" file="CWE259_Hard_Coded_Password__w32_char_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_34_bad" file="CWE259_Hard_Coded_Password__w32_char_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="83" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_34.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="104" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="25">
+    <file path="CWE259_Hard_Coded_Password__w32_char_41.c">
+      <comment_flaw line="35" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_41_badSink" />
+      <comment_flaw line="59" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_41_bad" />
+      <comment_flaw line="74" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_41_goodG2BSink" />
+      <comment_fix line="101" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_41_badSink" file="CWE259_Hard_Coded_Password__w32_char_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="59" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_41_bad" file="CWE259_Hard_Coded_Password__w32_char_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="74" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_41_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="101" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_41.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="26">
+    <file path="CWE259_Hard_Coded_Password__w32_char_42.c">
+      <comment_flaw line="31" code="strcpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="46" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_42_bad" />
+      <comment_fix line="73" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" />
+      <comment_flaw line="101" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="strcpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_char_42.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_42_bad" file="CWE259_Hard_Coded_Password__w32_char_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="73" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_char_42.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="101" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="27">
+    <file path="CWE259_Hard_Coded_Password__w32_char_43.cpp">
+      <comment_flaw line="34" code="strcpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="48" code="if (LogonUserA(" function="bad" />
+      <comment_fix line="76" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" />
+      <comment_flaw line="102" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="strcpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_char_43.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="if (LogonUserA(" function="bad" file="CWE259_Hard_Coded_Password__w32_char_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="76" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_char_43.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="102" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="28">
+    <file path="CWE259_Hard_Coded_Password__w32_char_44.c">
+      <comment_flaw line="35" code="if (LogonUserA(" function="badSink" />
+      <comment_flaw line="61" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_44_bad" />
+      <comment_flaw line="78" code="if (LogonUserA(" function="goodG2BSink" />
+      <comment_fix line="105" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="if (LogonUserA(" function="badSink" file="CWE259_Hard_Coded_Password__w32_char_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="61" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_44_bad" file="CWE259_Hard_Coded_Password__w32_char_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="78" code="if (LogonUserA(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="105" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_44.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE259_Hard_Coded_Password__w32_char_45.c">
+      <comment_flaw line="39" code="if (LogonUserA(" function="badSink" />
+      <comment_flaw line="63" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_45_bad" />
+      <comment_flaw line="81" code="if (LogonUserA(" function="goodG2BSink" />
+      <comment_fix line="107" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="if (LogonUserA(" function="badSink" file="CWE259_Hard_Coded_Password__w32_char_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="63" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_45_bad" file="CWE259_Hard_Coded_Password__w32_char_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="81" code="if (LogonUserA(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="107" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_45.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE259_Hard_Coded_Password__w32_char_51a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_51_bad" />
+      <comment_fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_51b.c">
+      <comment_flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_51b_badSink" />
+      <comment_flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_51b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_51_bad" file="CWE259_Hard_Coded_Password__w32_char_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_51b_badSink" file="CWE259_Hard_Coded_Password__w32_char_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_51a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_51b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="31">
+    <file path="CWE259_Hard_Coded_Password__w32_char_52a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_52_bad" />
+      <comment_fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_52b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_52c.c">
+      <comment_flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_52c_badSink" />
+      <comment_flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_52c_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_52_bad" file="CWE259_Hard_Coded_Password__w32_char_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_52c_badSink" file="CWE259_Hard_Coded_Password__w32_char_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_52a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_52c_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="32">
+    <file path="CWE259_Hard_Coded_Password__w32_char_53a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_53_bad" />
+      <comment_fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_53b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_53c.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_53d.c">
+      <comment_flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_53d_badSink" />
+      <comment_flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_53d_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_53_bad" file="CWE259_Hard_Coded_Password__w32_char_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_53d_badSink" file="CWE259_Hard_Coded_Password__w32_char_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_53a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_53d_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="33">
+    <file path="CWE259_Hard_Coded_Password__w32_char_54a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_54_bad" />
+      <comment_fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_54b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_54c.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_54d.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_char_54e.c">
+      <comment_flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_54e_badSink" />
+      <comment_flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_54e_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_54_bad" file="CWE259_Hard_Coded_Password__w32_char_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_54e_badSink" file="CWE259_Hard_Coded_Password__w32_char_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_54a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_54e_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="34">
+    <file path="CWE259_Hard_Coded_Password__w32_char_61a.c">
+      <comment_flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_61_bad" />
+      <comment_flaw line="78" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_61b.c">
+      <comment_flaw line="31" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_61b_badSource" />
+      <comment_fix line="45" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_61b_goodG2BSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_61_bad" file="CWE259_Hard_Coded_Password__w32_char_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="31" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_61b_badSource" file="CWE259_Hard_Coded_Password__w32_char_61b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="78" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="45" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_61b_goodG2BSource" file="CWE259_Hard_Coded_Password__w32_char_61b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="35">
+    <file path="CWE259_Hard_Coded_Password__w32_char_62a.cpp">
+      <comment_flaw line="43" code="if (LogonUserA(" function="bad" />
+      <comment_flaw line="79" code="if (LogonUserA(" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_62b.cpp">
+      <comment_flaw line="31" code="strcpy(password, PASSWORD);" function="badSource" />
+      <comment_fix line="44" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="if (LogonUserA(" function="bad" file="CWE259_Hard_Coded_Password__w32_char_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="31" code="strcpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_char_62b.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="79" code="if (LogonUserA(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="44" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_char_62b.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="36">
+    <file path="CWE259_Hard_Coded_Password__w32_char_63a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_63_bad" />
+      <comment_fix line="56" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_63b.c">
+      <comment_flaw line="36" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_63b_badSink" />
+      <comment_flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_63b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_63_bad" file="CWE259_Hard_Coded_Password__w32_char_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_63b_badSink" file="CWE259_Hard_Coded_Password__w32_char_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_63a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_63b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="37">
+    <file path="CWE259_Hard_Coded_Password__w32_char_64a.c">
+      <comment_flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_64_bad" />
+      <comment_fix line="56" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_64b.c">
+      <comment_flaw line="39" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_64b_badSink" />
+      <comment_flaw line="73" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_64b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_64_bad" file="CWE259_Hard_Coded_Password__w32_char_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="39" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_64b_badSink" file="CWE259_Hard_Coded_Password__w32_char_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_64a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="73" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_64b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="38">
+    <file path="CWE259_Hard_Coded_Password__w32_char_65a.c">
+      <comment_flaw line="39" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_65_bad" />
+      <comment_fix line="60" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_65b.c">
+      <comment_flaw line="35" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_65b_badSink" />
+      <comment_flaw line="65" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_65b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_65_bad" file="CWE259_Hard_Coded_Password__w32_char_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_65b_badSink" file="CWE259_Hard_Coded_Password__w32_char_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="60" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_65a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="65" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_65b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="39">
+    <file path="CWE259_Hard_Coded_Password__w32_char_66a.c">
+      <comment_flaw line="38" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_66_bad" />
+      <comment_fix line="60" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_66b.c">
+      <comment_flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_66b_badSink" />
+      <comment_flaw line="68" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_66b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_66_bad" file="CWE259_Hard_Coded_Password__w32_char_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_66b_badSink" file="CWE259_Hard_Coded_Password__w32_char_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="60" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_66a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_66b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="40">
+    <file path="CWE259_Hard_Coded_Password__w32_char_67a.c">
+      <comment_flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_67_bad" />
+      <comment_fix line="64" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_67b.c">
+      <comment_flaw line="41" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_67b_badSink" />
+      <comment_flaw line="72" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_67b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_67_bad" file="CWE259_Hard_Coded_Password__w32_char_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_67b_badSink" file="CWE259_Hard_Coded_Password__w32_char_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="64" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_67a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_67b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="41">
+    <file path="CWE259_Hard_Coded_Password__w32_char_68a.c">
+      <comment_flaw line="40" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_68_bad" />
+      <comment_fix line="61" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_68b.c">
+      <comment_flaw line="41" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_68b_badSink" />
+      <comment_flaw line="72" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_68b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="40" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_68_bad" file="CWE259_Hard_Coded_Password__w32_char_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_68b_badSink" file="CWE259_Hard_Coded_Password__w32_char_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="61" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_68a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_68b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="42">
+    <file path="CWE259_Hard_Coded_Password__w32_char_72a.cpp">
+      <comment_flaw line="41" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_72b.cpp">
+      <comment_flaw line="41" code="if (LogonUserA(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserA(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserA(" function="badSink" file="CWE259_Hard_Coded_Password__w32_char_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_72a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserA(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="43">
+    <file path="CWE259_Hard_Coded_Password__w32_char_73a.cpp">
+      <comment_flaw line="41" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_73b.cpp">
+      <comment_flaw line="41" code="if (LogonUserA(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserA(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserA(" function="badSink" file="CWE259_Hard_Coded_Password__w32_char_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_73a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserA(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="44">
+    <file path="CWE259_Hard_Coded_Password__w32_char_74a.cpp">
+      <comment_flaw line="41" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_74b.cpp">
+      <comment_flaw line="41" code="if (LogonUserA(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserA(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserA(" function="badSink" file="CWE259_Hard_Coded_Password__w32_char_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_74a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserA(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_char_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="45">
+    <file path="CWE259_Hard_Coded_Password__w32_char_81_bad.cpp">
+      <comment_flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_81_bad::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_81_goodG2B.cpp">
+      <comment_flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_81_goodG2B::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_81a.cpp">
+      <comment_flaw line="33" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="51" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_81_bad::action" file="CWE259_Hard_Coded_Password__w32_char_81_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_81_goodG2B::action" file="CWE259_Hard_Coded_Password__w32_char_81_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="51" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_81a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE259_Hard_Coded_Password__w32_char_82_bad.cpp">
+      <comment_flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_82_bad::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_82_goodG2B.cpp">
+      <comment_flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_82_goodG2B::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_82a.cpp">
+      <comment_flaw line="33" code="strcpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="52" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_82_bad::action" file="CWE259_Hard_Coded_Password__w32_char_82_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="strcpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_char_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_82_goodG2B::action" file="CWE259_Hard_Coded_Password__w32_char_82_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="52" code="if (fgets(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_char_82a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="47">
+    <file path="CWE259_Hard_Coded_Password__w32_char_83_bad.cpp">
+      <comment_flaw line="32" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_83_bad::CWE259_Hard_Coded_Password__w32_char_83_bad" />
+      <comment_flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_83_bad::~CWE259_Hard_Coded_Password__w32_char_83_bad" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_83_goodG2B.cpp">
+      <comment_fix line="32" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_83_goodG2B::CWE259_Hard_Coded_Password__w32_char_83_goodG2B" />
+      <comment_flaw line="54" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_83_goodG2B::~CWE259_Hard_Coded_Password__w32_char_83_goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_83a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="32" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_83_bad::CWE259_Hard_Coded_Password__w32_char_83_bad" file="CWE259_Hard_Coded_Password__w32_char_83_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_83_bad::~CWE259_Hard_Coded_Password__w32_char_83_bad" file="CWE259_Hard_Coded_Password__w32_char_83_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="ctor_dtor_rule">
+      <fix line="32" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_83_goodG2B::CWE259_Hard_Coded_Password__w32_char_83_goodG2B" file="CWE259_Hard_Coded_Password__w32_char_83_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="54" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_83_goodG2B::~CWE259_Hard_Coded_Password__w32_char_83_goodG2B" file="CWE259_Hard_Coded_Password__w32_char_83_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE259_Hard_Coded_Password__w32_char_84_bad.cpp">
+      <comment_flaw line="32" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_84_bad::CWE259_Hard_Coded_Password__w32_char_84_bad" />
+      <comment_flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_84_bad::~CWE259_Hard_Coded_Password__w32_char_84_bad" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_84_goodG2B.cpp">
+      <comment_fix line="32" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_84_goodG2B::CWE259_Hard_Coded_Password__w32_char_84_goodG2B" />
+      <comment_flaw line="54" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_84_goodG2B::~CWE259_Hard_Coded_Password__w32_char_84_goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_char_84a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="32" code="strcpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_char_84_bad::CWE259_Hard_Coded_Password__w32_char_84_bad" file="CWE259_Hard_Coded_Password__w32_char_84_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_84_bad::~CWE259_Hard_Coded_Password__w32_char_84_bad" file="CWE259_Hard_Coded_Password__w32_char_84_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="ctor_dtor_rule">
+      <fix line="32" code="if (fgets(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_char_84_goodG2B::CWE259_Hard_Coded_Password__w32_char_84_goodG2B" file="CWE259_Hard_Coded_Password__w32_char_84_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="54" code="if (LogonUserA(" function="CWE259_Hard_Coded_Password__w32_char_84_goodG2B::~CWE259_Hard_Coded_Password__w32_char_84_goodG2B" file="CWE259_Hard_Coded_Password__w32_char_84_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="49">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_01.c">
+      <comment_flaw line="34" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_01_bad" />
+      <comment_flaw line="40" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_01_bad" />
+      <comment_fix line="71" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="89" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_01_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_01_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="71" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_01.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="89" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="50">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_02.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_02_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_02_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_02_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_02_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="51">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_03.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_03_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_03_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_03_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_03_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="52">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_04.c">
+      <comment_flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_04_bad" />
+      <comment_flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_04_bad" />
+      <comment_fix line="88" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="136" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="155" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_04_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_04_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="88" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="136" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="155" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="53">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_05.c">
+      <comment_flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_05_bad" />
+      <comment_flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_05_bad" />
+      <comment_fix line="88" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="136" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="155" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_05_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_05_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="88" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="136" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="155" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="54">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_06.c">
+      <comment_flaw line="40" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_06_bad" />
+      <comment_flaw line="47" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_06_bad" />
+      <comment_fix line="85" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="104" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="133" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="152" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_06_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="47" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_06_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="85" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="104" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="133" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="152" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="55">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_07.c">
+      <comment_flaw line="42" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_07_bad" />
+      <comment_flaw line="49" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_07_bad" />
+      <comment_fix line="87" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="106" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="135" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="154" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_07_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_07_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="87" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="106" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="135" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="154" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="56">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_08.c">
+      <comment_flaw line="50" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_08_bad" />
+      <comment_flaw line="57" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_08_bad" />
+      <comment_fix line="95" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="114" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="143" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="162" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_08_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="57" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_08_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="95" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="114" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="143" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="162" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="57">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_09.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_09_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_09_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_09_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_09_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="58">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_10.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_10_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_10_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_10_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_10_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="59">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_11.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_11_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_11_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_11_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_11_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="60">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_12.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" />
+      <comment_fix line="43" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" />
+      <comment_flaw line="62" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" />
+      <comment_fix line="96" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_fix line="115" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="134" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="43" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_fix" />
+      <flaw line="62" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_12_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="multi_comment_line_extrema">
+      <fix line="96" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_fix" role="source" safety="good" />
+      <fix line="115" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_fix" />
+      <flaw line="134" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="61">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_13.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_13_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_13_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_13_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_13_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="62">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_14.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_14_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_14_bad" />
+      <comment_fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="100" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="148" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_14_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_14_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="81" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="100" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="129" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_15.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_15_bad" />
+      <comment_flaw line="49" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_15_bad" />
+      <comment_fix line="87" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" />
+      <comment_flaw line="107" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="137" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" />
+      <comment_flaw line="161" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_15_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_15_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="87" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="137" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="161" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="64">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_16.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_16_bad" />
+      <comment_flaw line="44" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_16_bad" />
+      <comment_fix line="77" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="97" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_16_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="44" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_16_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="77" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_16.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="97" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="65">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_17.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_17_bad" />
+      <comment_flaw line="44" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_17_bad" />
+      <comment_fix line="78" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="97" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_17_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="44" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_17_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="78" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_17.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="97" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_18.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_18_bad" />
+      <comment_flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_18_bad" />
+      <comment_fix line="75" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="93" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_18_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_18_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="75" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_18.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="93" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="67">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_21.c">
+      <comment_flaw line="36" code="wcscpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="53" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_21_bad" />
+      <comment_fix line="92" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1Source" />
+      <comment_flaw line="121" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_fix line="147" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2Source" />
+      <comment_flaw line="176" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="36" code="wcscpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="53" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_21_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="function_name_rule">
+      <fix line="92" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B1Source" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="121" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="function_name_rule">
+      <fix line="147" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B2Source" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="176" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_21.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="68">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_22a.c">
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_bad" />
+      <comment_flaw line="84" code="if (LogonUserW(" function="goodG2B1" />
+      <comment_flaw line="117" code="if (LogonUserW(" function="goodG2B2" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_22b.c">
+      <comment_flaw line="33" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_badSource" />
+      <comment_fix line="59" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_goodG2B1Source" />
+      <comment_fix line="84" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_goodG2B2Source" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_22b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="function_name_rule">
+      <flaw line="84" code="if (LogonUserW(" function="goodG2B1" file="CWE259_Hard_Coded_Password__w32_wchar_t_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="59" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_goodG2B1Source" file="CWE259_Hard_Coded_Password__w32_wchar_t_22b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="function_name_rule">
+      <flaw line="117" code="if (LogonUserW(" function="goodG2B2" file="CWE259_Hard_Coded_Password__w32_wchar_t_22a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="84" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_22_goodG2B2Source" file="CWE259_Hard_Coded_Password__w32_wchar_t_22b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="69">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_31.c">
+      <comment_flaw line="34" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_31_bad" />
+      <comment_flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_31_bad" />
+      <comment_fix line="75" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="96" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_31_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_31_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="75" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_31.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="96" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="70">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_32.c">
+      <comment_flaw line="38" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_32_bad" />
+      <comment_flaw line="48" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_32_bad" />
+      <comment_fix line="84" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="106" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_32_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_32_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="84" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_32.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="106" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="71">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_33.cpp">
+      <comment_flaw line="38" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_flaw line="46" code="if (LogonUserW(" function="bad" />
+      <comment_fix line="79" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="99" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="if (LogonUserW(" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="79" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_33.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="99" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="72">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_34.c">
+      <comment_flaw line="41" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_34_bad" />
+      <comment_flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_34_bad" />
+      <comment_fix line="83" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+      <comment_flaw line="104" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_34_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_34_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="83" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_34.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="104" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="73">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_41.c">
+      <comment_flaw line="35" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_badSink" />
+      <comment_flaw line="59" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_bad" />
+      <comment_flaw line="74" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_goodG2BSink" />
+      <comment_fix line="101" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="59" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="74" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_41_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="101" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_41.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="74">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_42.c">
+      <comment_flaw line="31" code="wcscpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="46" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_42_bad" />
+      <comment_fix line="73" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" />
+      <comment_flaw line="101" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="wcscpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_42.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_42_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="73" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_42.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="101" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="75">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_43.cpp">
+      <comment_flaw line="34" code="wcscpy(password, PASSWORD);" function="badSource" />
+      <comment_flaw line="48" code="if (LogonUserW(" function="bad" />
+      <comment_fix line="76" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" />
+      <comment_flaw line="102" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="wcscpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_43.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="if (LogonUserW(" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="76" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_43.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="102" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="76">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_44.c">
+      <comment_flaw line="35" code="if (LogonUserW(" function="badSink" />
+      <comment_flaw line="61" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_44_bad" />
+      <comment_flaw line="78" code="if (LogonUserW(" function="goodG2BSink" />
+      <comment_fix line="105" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="if (LogonUserW(" function="badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="61" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_44_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="78" code="if (LogonUserW(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="105" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_44.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="77">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_45.c">
+      <comment_flaw line="39" code="if (LogonUserW(" function="badSink" />
+      <comment_flaw line="63" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_45_bad" />
+      <comment_flaw line="81" code="if (LogonUserW(" function="goodG2BSink" />
+      <comment_fix line="107" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="if (LogonUserW(" function="badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="63" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_45_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="81" code="if (LogonUserW(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="107" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_45.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="78">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_51a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_51_bad" />
+      <comment_fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_51b.c">
+      <comment_flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_51b_badSink" />
+      <comment_flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_51b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_51_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_51b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_51a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_51b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="79">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_52a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_52_bad" />
+      <comment_fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_52b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_52c.c">
+      <comment_flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_52c_badSink" />
+      <comment_flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_52c_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_52_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_52c_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_52a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_52c_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="80">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_53a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_53_bad" />
+      <comment_fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_53b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_53c.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_53d.c">
+      <comment_flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_53d_badSink" />
+      <comment_flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_53d_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_53_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_53d_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_53a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_53d_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="81">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_54a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_54_bad" />
+      <comment_fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_54b.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_54c.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_54d.c" />
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_54e.c">
+      <comment_flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_54e_badSink" />
+      <comment_flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_54e_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_54_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_54e_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="57" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_54a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_54e_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="82">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_61a.c">
+      <comment_flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_61_bad" />
+      <comment_flaw line="78" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_61b.c">
+      <comment_flaw line="31" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_61b_badSource" />
+      <comment_fix line="45" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_61b_goodG2BSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_61_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="31" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_61b_badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_61b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="78" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="45" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_61b_goodG2BSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_61b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="83">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_62a.cpp">
+      <comment_flaw line="43" code="if (LogonUserW(" function="bad" />
+      <comment_flaw line="79" code="if (LogonUserW(" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_62b.cpp">
+      <comment_flaw line="31" code="wcscpy(password, PASSWORD);" function="badSource" />
+      <comment_fix line="44" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="if (LogonUserW(" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="31" code="wcscpy(password, PASSWORD);" function="badSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_62b.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="79" code="if (LogonUserW(" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="44" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2BSource" file="CWE259_Hard_Coded_Password__w32_wchar_t_62b.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_63a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_63_bad" />
+      <comment_fix line="56" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_63b.c">
+      <comment_flaw line="36" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_63b_badSink" />
+      <comment_flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_63b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_63_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_63b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_63a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="67" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_63b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="85">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_64a.c">
+      <comment_flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_64_bad" />
+      <comment_fix line="56" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_64b.c">
+      <comment_flaw line="39" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_64b_badSink" />
+      <comment_flaw line="73" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_64b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_64_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="39" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_64b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_64a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="73" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_64b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="86">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_65a.c">
+      <comment_flaw line="39" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_65_bad" />
+      <comment_fix line="60" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_65b.c">
+      <comment_flaw line="35" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_65b_badSink" />
+      <comment_flaw line="65" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_65b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_65_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_65b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="60" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_65a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="65" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_65b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="87">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_66a.c">
+      <comment_flaw line="38" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_66_bad" />
+      <comment_fix line="60" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_66b.c">
+      <comment_flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_66b_badSink" />
+      <comment_flaw line="68" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_66b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_66_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_66b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="60" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_66a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_66b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="88">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_67a.c">
+      <comment_flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_67_bad" />
+      <comment_fix line="64" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_67b.c">
+      <comment_flaw line="41" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_67b_badSink" />
+      <comment_flaw line="72" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_67b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_67_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_67b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="64" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_67a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_67b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="89">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_68a.c">
+      <comment_flaw line="40" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_68_bad" />
+      <comment_fix line="61" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_68b.c">
+      <comment_flaw line="41" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_68b_badSink" />
+      <comment_flaw line="72" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_68b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="40" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_68_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_68b_badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="61" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_68a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_68b_goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="90">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_72a.cpp">
+      <comment_flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_72b.cpp">
+      <comment_flaw line="41" code="if (LogonUserW(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserW(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserW(" function="badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_72a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserW(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="91">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_73a.cpp">
+      <comment_flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_73b.cpp">
+      <comment_flaw line="41" code="if (LogonUserW(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserW(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserW(" function="badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_73a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserW(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="92">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_74a.cpp">
+      <comment_flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_74b.cpp">
+      <comment_flaw line="41" code="if (LogonUserW(" function="badSink" />
+      <comment_flaw line="72" code="if (LogonUserW(" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="if (LogonUserW(" function="badSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="67" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_74a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="72" code="if (LogonUserW(" function="goodG2BSink" file="CWE259_Hard_Coded_Password__w32_wchar_t_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="93">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_81_bad.cpp">
+      <comment_flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_81_bad::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_81_goodG2B.cpp">
+      <comment_flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_81_goodG2B::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_81a.cpp">
+      <comment_flaw line="33" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="51" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_81_bad::action" file="CWE259_Hard_Coded_Password__w32_wchar_t_81_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_81_goodG2B::action" file="CWE259_Hard_Coded_Password__w32_wchar_t_81_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="51" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_81a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="94">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_82_bad.cpp">
+      <comment_flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_82_bad::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_82_goodG2B.cpp">
+      <comment_flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_82_goodG2B::action" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_82a.cpp">
+      <comment_flaw line="33" code="wcscpy(password, PASSWORD);" function="bad" />
+      <comment_fix line="52" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_82_bad::action" file="CWE259_Hard_Coded_Password__w32_wchar_t_82_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="33" code="wcscpy(password, PASSWORD);" function="bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="34" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_82_goodG2B::action" file="CWE259_Hard_Coded_Password__w32_wchar_t_82_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="52" code="if (fgetws(password, 100, stdin) == NULL)" function="goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_82a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="95">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad.cpp">
+      <comment_flaw line="32" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad::CWE259_Hard_Coded_Password__w32_wchar_t_83_bad" />
+      <comment_flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad::~CWE259_Hard_Coded_Password__w32_wchar_t_83_bad" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B.cpp">
+      <comment_fix line="32" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B::CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B" />
+      <comment_flaw line="54" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B::~CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_83a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="32" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad::CWE259_Hard_Coded_Password__w32_wchar_t_83_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad::~CWE259_Hard_Coded_Password__w32_wchar_t_83_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_83_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="ctor_dtor_rule">
+      <fix line="32" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B::CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="54" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B::~CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_83_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="96">
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad.cpp">
+      <comment_flaw line="32" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad::CWE259_Hard_Coded_Password__w32_wchar_t_84_bad" />
+      <comment_flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad::~CWE259_Hard_Coded_Password__w32_wchar_t_84_bad" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B.cpp">
+      <comment_fix line="32" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B::CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B" />
+      <comment_flaw line="54" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B::~CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B" />
+    </file>
+    <file path="CWE259_Hard_Coded_Password__w32_wchar_t_84a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="32" code="wcscpy(password, PASSWORD);" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad::CWE259_Hard_Coded_Password__w32_wchar_t_84_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad::~CWE259_Hard_Coded_Password__w32_wchar_t_84_bad" file="CWE259_Hard_Coded_Password__w32_wchar_t_84_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="ctor_dtor_rule">
+      <fix line="32" code="if (fgetws(password, 100, stdin) == NULL)" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B::CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="54" code="if (LogonUserW(" function="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B::~CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B" file="CWE259_Hard_Coded_Password__w32_wchar_t_84_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE480_Use_of_Incorrect_Operator__basic_12.c">
+      <comment_flaw line="54" code="if(helperBad == NULL)" function="CWE480_Use_of_Incorrect_Operator__basic_12_bad" />
+      <comment_fix line="62" code="if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */" function="CWE480_Use_of_Incorrect_Operator__basic_12_bad" />
+      <comment_fix line="79" code="if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */" function="good1" />
+      <comment_fix line="87" code="if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="54" code="if(helperBad == NULL)" function="CWE480_Use_of_Incorrect_Operator__basic_12_bad" file="CWE480_Use_of_Incorrect_Operator__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="62" code="if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */" function="CWE480_Use_of_Incorrect_Operator__basic_12_bad" file="CWE480_Use_of_Incorrect_Operator__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE667_Improper_Locking__basic_12.c">
+      <comment_flaw line="36" code="WARNING_NOT_FOUND" function="CWE667_Improper_Locking__basic_12_bad" />
+      <comment_fix line="52" code="printLine(&quot;Releasing lock...&quot;);" function="CWE667_Improper_Locking__basic_12_bad" />
+      <comment_fix line="80" code="printLine(&quot;Releasing lock...&quot;);" function="good1" />
+      <comment_fix line="99" code="printLine(&quot;Releasing lock...&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="WARNING_NOT_FOUND" function="CWE667_Improper_Locking__basic_12_bad" file="CWE667_Improper_Locking__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="52" code="printLine(&quot;Releasing lock...&quot;);" function="CWE667_Improper_Locking__basic_12_bad" file="CWE667_Improper_Locking__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

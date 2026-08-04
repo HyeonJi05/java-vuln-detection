@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12.c">
+      <comment_flaw line="31" code="hDesk = CreateDesktopA(" function="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12_bad" />
+      <comment_fix line="55" code="hDesk = CreateDesktopA(" function="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12_bad" />
+      <comment_fix line="88" code="hDesk = CreateDesktopA(" function="good1" />
+      <comment_fix line="112" code="hDesk = CreateDesktopA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="hDesk = CreateDesktopA(" function="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="55" code="hDesk = CreateDesktopA(" function="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateDesktop_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE284_Improper_Access_Control__w32_char_CreateFile_12.c">
+      <comment_flaw line="30" code="hFile = CreateFileA(" function="CWE284_Improper_Access_Control__w32_char_CreateFile_12_bad" />
+      <comment_fix line="55" code="hFile = CreateFileA(" function="CWE284_Improper_Access_Control__w32_char_CreateFile_12_bad" />
+      <comment_fix line="89" code="hFile = CreateFileA(" function="good1" />
+      <comment_fix line="114" code="hFile = CreateFileA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="hFile = CreateFileA(" function="CWE284_Improper_Access_Control__w32_char_CreateFile_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateFile_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="55" code="hFile = CreateFileA(" function="CWE284_Improper_Access_Control__w32_char_CreateFile_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateFile_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12.c">
+      <comment_flaw line="34" code="hPipe = CreateNamedPipeA(" function="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12_bad" />
+      <comment_fix line="60" code="hPipe = CreateNamedPipeA(" function="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12_bad" />
+      <comment_fix line="95" code="hPipe = CreateNamedPipeA(" function="good1" />
+      <comment_fix line="121" code="hPipe = CreateNamedPipeA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="hPipe = CreateNamedPipeA(" function="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="60" code="hPipe = CreateNamedPipeA(" function="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateNamedPipe_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12.c">
+      <comment_flaw line="31" code="hWinStation = CreateWindowStationA(" function="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12_bad" />
+      <comment_fix line="53" code="hWinStation = CreateWindowStationA(" function="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12_bad" />
+      <comment_fix line="84" code="hWinStation = CreateWindowStationA(" function="good1" />
+      <comment_fix line="106" code="hWinStation = CreateWindowStationA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="hWinStation = CreateWindowStationA(" function="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="53" code="hWinStation = CreateWindowStationA(" function="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12_bad" file="CWE284_Improper_Access_Control__w32_char_CreateWindowStation_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12.c">
+      <comment_flaw line="31" code="if (RegCreateKeyExA(" function="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12_bad" />
+      <comment_fix line="57" code="if (RegCreateKeyExA(" function="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12_bad" />
+      <comment_fix line="92" code="if (RegCreateKeyExA(" function="good1" />
+      <comment_fix line="118" code="if (RegCreateKeyExA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="if (RegCreateKeyExA(" function="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12_bad" file="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="57" code="if (RegCreateKeyExA(" function="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12_bad" file="CWE284_Improper_Access_Control__w32_char_RegCreateKeyEx_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="102">
+    <file path="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12.c">
+      <comment_flaw line="32" code="if (SHRegCreateUSKeyA(" function="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12_bad" />
+      <comment_fix line="54" code="if (SHRegCreateUSKeyA(" function="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12_bad" />
+      <comment_fix line="85" code="if (SHRegCreateUSKeyA(" function="good1" />
+      <comment_fix line="107" code="if (SHRegCreateUSKeyA(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="if (SHRegCreateUSKeyA(" function="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12_bad" file="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="54" code="if (SHRegCreateUSKeyA(" function="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12_bad" file="CWE284_Improper_Access_Control__w32_char_SHRegCreateUSKey_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="120">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12.c">
+      <comment_flaw line="31" code="hDesk = CreateDesktopW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12_bad" />
+      <comment_fix line="55" code="hDesk = CreateDesktopW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12_bad" />
+      <comment_fix line="88" code="hDesk = CreateDesktopW(" function="good1" />
+      <comment_fix line="112" code="hDesk = CreateDesktopW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="hDesk = CreateDesktopW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="55" code="hDesk = CreateDesktopW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateDesktop_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="138">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12.c">
+      <comment_flaw line="30" code="hFile = CreateFileW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12_bad" />
+      <comment_fix line="55" code="hFile = CreateFileW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12_bad" />
+      <comment_fix line="89" code="hFile = CreateFileW(" function="good1" />
+      <comment_fix line="114" code="hFile = CreateFileW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="hFile = CreateFileW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="55" code="hFile = CreateFileW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateFile_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="156">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12.c">
+      <comment_flaw line="34" code="hPipe = CreateNamedPipeW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12_bad" />
+      <comment_fix line="60" code="hPipe = CreateNamedPipeW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12_bad" />
+      <comment_fix line="95" code="hPipe = CreateNamedPipeW(" function="good1" />
+      <comment_fix line="121" code="hPipe = CreateNamedPipeW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="hPipe = CreateNamedPipeW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="60" code="hPipe = CreateNamedPipeW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateNamedPipe_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="174">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12.c">
+      <comment_flaw line="31" code="hWinStation = CreateWindowStationW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12_bad" />
+      <comment_fix line="53" code="hWinStation = CreateWindowStationW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12_bad" />
+      <comment_fix line="84" code="hWinStation = CreateWindowStationW(" function="good1" />
+      <comment_fix line="106" code="hWinStation = CreateWindowStationW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="hWinStation = CreateWindowStationW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="53" code="hWinStation = CreateWindowStationW(" function="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_CreateWindowStation_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="192">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12.c">
+      <comment_flaw line="31" code="if (RegCreateKeyExW(" function="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12_bad" />
+      <comment_fix line="57" code="if (RegCreateKeyExW(" function="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12_bad" />
+      <comment_fix line="92" code="if (RegCreateKeyExW(" function="good1" />
+      <comment_fix line="118" code="if (RegCreateKeyExW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="if (RegCreateKeyExW(" function="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="57" code="if (RegCreateKeyExW(" function="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_RegCreateKeyEx_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="210">
+    <file path="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12.c">
+      <comment_flaw line="32" code="if (SHRegCreateUSKeyW(" function="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12_bad" />
+      <comment_fix line="54" code="if (SHRegCreateUSKeyW(" function="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12_bad" />
+      <comment_fix line="85" code="if (SHRegCreateUSKeyW(" function="good1" />
+      <comment_fix line="107" code="if (SHRegCreateUSKeyW(" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="if (SHRegCreateUSKeyW(" function="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="54" code="if (SHRegCreateUSKeyW(" function="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12_bad" file="CWE284_Improper_Access_Control__w32_wchar_t_SHRegCreateUSKey_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

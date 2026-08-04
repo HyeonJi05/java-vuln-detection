@@ -1,0 +1,571 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE377_Insecure_Temporary_File__char_mktemp_12.c">
+      <comment_flaw line="65" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_mktemp_12_bad" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_mktemp_12_bad" />
+      <comment_fix line="110" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+      <comment_fix line="125" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="65" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_mktemp_12_bad" file="CWE377_Insecure_Temporary_File__char_mktemp_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_mktemp_12_bad" file="CWE377_Insecure_Temporary_File__char_mktemp_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE377_Insecure_Temporary_File__char_tempnam_12.c">
+      <comment_flaw line="64" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tempnam_12_bad" />
+      <comment_fix line="86" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tempnam_12_bad" />
+      <comment_fix line="110" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+      <comment_fix line="125" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tempnam_12_bad" file="CWE377_Insecure_Temporary_File__char_tempnam_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="86" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tempnam_12_bad" file="CWE377_Insecure_Temporary_File__char_tempnam_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE377_Insecure_Temporary_File__char_tmpnam_12.c">
+      <comment_flaw line="64" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tmpnam_12_bad" />
+      <comment_fix line="85" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tmpnam_12_bad" />
+      <comment_fix line="108" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+      <comment_fix line="123" code="int fileDesc = MKSTEMP(filename);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tmpnam_12_bad" file="CWE377_Insecure_Temporary_File__char_tmpnam_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="85" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_tmpnam_12_bad" file="CWE377_Insecure_Temporary_File__char_tmpnam_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="55">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01.c">
+      <comment_flaw line="42" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01_bad" />
+      <comment_flaw line="48" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01_bad" />
+      <comment_fix line="69" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="76" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="56">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="57">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="58">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04.c">
+      <comment_flaw line="50" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04_bad" />
+      <comment_flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="114" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="121" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="59">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05.c">
+      <comment_flaw line="50" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05_bad" />
+      <comment_flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="114" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="121" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="60">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06.c">
+      <comment_flaw line="49" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06_bad" />
+      <comment_flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06_bad" />
+      <comment_fix line="85" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="92" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="113" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="120" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="49" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="61">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07.c">
+      <comment_flaw line="49" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07_bad" />
+      <comment_flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07_bad" />
+      <comment_fix line="85" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="92" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="113" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="120" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="49" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="62">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08.c">
+      <comment_flaw line="57" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08_bad" />
+      <comment_flaw line="63" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08_bad" />
+      <comment_fix line="93" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="100" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="121" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="128" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="57" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="63" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="64">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="65">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" />
+      <comment_fix line="66" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" />
+      <comment_fix line="73" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" />
+      <comment_fix line="98" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="105" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="121" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="128" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12.c" origin="comment_flaw" />
+      <fix line="66" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12.c" origin="comment_fix" />
+      <fix line="73" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="67">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="68">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="69">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15.c">
+      <comment_flaw line="45" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15_bad" />
+      <comment_flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="116" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="123" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="70">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16_bad" />
+      <comment_fix line="76" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="83" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="71">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17.c">
+      <comment_flaw line="45" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17_bad" />
+      <comment_flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17_bad" />
+      <comment_fix line="77" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="84" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="72">
+    <file path="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18.c">
+      <comment_flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18_bad" />
+      <comment_fix line="74" code="if (GetTempFileNameA(&quot;.&quot;, &quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="81" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameA(&quot;.&quot;, &quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18_bad" file="CWE377_Insecure_Temporary_File__char_w32GetTempFileName_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12.c">
+      <comment_flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12_bad" />
+      <comment_fix line="77" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12_bad" />
+      <comment_fix line="108" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="130" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_mktemp_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="102">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12.c">
+      <comment_flaw line="54" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12_bad" />
+      <comment_fix line="76" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12_bad" />
+      <comment_fix line="107" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="129" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="54" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="76" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_tempnam_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="120">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12.c">
+      <comment_flaw line="54" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12_bad" />
+      <comment_fix line="75" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12_bad" />
+      <comment_fix line="105" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="126" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="54" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="75" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_tmpnam_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="127">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01.c">
+      <comment_flaw line="42" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01_bad" />
+      <comment_flaw line="48" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01_bad" />
+      <comment_fix line="69" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="76" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="128">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="129">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="130">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04.c">
+      <comment_flaw line="50" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04_bad" />
+      <comment_flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="114" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="121" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="131">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05.c">
+      <comment_flaw line="50" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05_bad" />
+      <comment_flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="114" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="121" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="50" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="56" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="132">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06.c">
+      <comment_flaw line="49" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06_bad" />
+      <comment_flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06_bad" />
+      <comment_fix line="85" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="92" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="113" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="120" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="49" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="133">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07.c">
+      <comment_flaw line="49" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07_bad" />
+      <comment_flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07_bad" />
+      <comment_fix line="85" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="92" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="113" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="120" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="49" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="55" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="134">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08.c">
+      <comment_flaw line="57" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08_bad" />
+      <comment_flaw line="63" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08_bad" />
+      <comment_fix line="93" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="100" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="121" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="128" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="57" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="63" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="135">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="136">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="137">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="138">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" />
+      <comment_fix line="66" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" />
+      <comment_fix line="73" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" />
+      <comment_fix line="98" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="105" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="121" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="128" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12.c" origin="comment_flaw" />
+      <fix line="66" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12.c" origin="comment_fix" />
+      <fix line="73" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="139">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="140">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14_bad" />
+      <comment_fix line="80" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="87" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="108" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="115" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="141">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15.c">
+      <comment_flaw line="45" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15_bad" />
+      <comment_flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15_bad" />
+      <comment_fix line="86" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="93" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+      <comment_fix line="116" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good2" />
+      <comment_fix line="123" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="142">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16_bad" />
+      <comment_fix line="76" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="83" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="143">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17.c">
+      <comment_flaw line="45" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17_bad" />
+      <comment_flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17_bad" />
+      <comment_fix line="77" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="84" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="144">
+    <file path="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18.c">
+      <comment_flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18_bad" />
+      <comment_flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18_bad" />
+      <comment_fix line="74" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;good&quot;, rand() + 1, filename) == 0)" function="good1" />
+      <comment_fix line="81" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT|O_EXCL, S_IREAD|S_IWRITE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="if (GetTempFileNameW(L&quot;.&quot;, L&quot;bad&quot;, 0, filename) == 0)" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="fileDesc = OPEN(filename, O_RDWR|O_CREAT, S_IREAD|S_IWRITE);" function="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18_bad" file="CWE377_Insecure_Temporary_File__wchar_t_w32GetTempFileName_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

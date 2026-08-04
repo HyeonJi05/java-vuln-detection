@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE327_Use_Broken_Crypto__w32_3DES_12.c">
+      <comment_flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_3DES_12_bad" />
+      <comment_fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_3DES_12_bad" />
+      <comment_fix line="289" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+      <comment_fix line="382" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_3DES_12_bad" file="CWE327_Use_Broken_Crypto__w32_3DES_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_3DES_12_bad" file="CWE327_Use_Broken_Crypto__w32_3DES_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE327_Use_Broken_Crypto__w32_DES_12.c">
+      <comment_flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_DES_12_bad" />
+      <comment_fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_DES_12_bad" />
+      <comment_fix line="289" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+      <comment_fix line="382" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_DES_12_bad" file="CWE327_Use_Broken_Crypto__w32_DES_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_DES_12_bad" file="CWE327_Use_Broken_Crypto__w32_DES_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE327_Use_Broken_Crypto__w32_RC5_12.c">
+      <comment_flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_RC5_12_bad" />
+      <comment_fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_RC5_12_bad" />
+      <comment_fix line="289" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+      <comment_fix line="382" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="94" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_RC5_12_bad" file="CWE327_Use_Broken_Crypto__w32_RC5_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="187" code="if(!CryptDecrypt(hKey, 0, 1, 0, (BYTE *)toBeDecrypted, &amp;toBeDecryptedLen))" function="CWE327_Use_Broken_Crypto__w32_RC5_12_bad" file="CWE327_Use_Broken_Crypto__w32_RC5_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE676_Use_of_Potentially_Dangerous_Function__basic_12.cpp">
+      <comment_flaw line="37" code="cin &gt;&gt; charBuffer;" function="bad" />
+      <comment_fix line="47" code="cin.width(CHAR_BUFFER_SIZE);" function="bad" />
+      <comment_fix line="67" code="cin.width(CHAR_BUFFER_SIZE);" function="good1" />
+      <comment_fix line="78" code="cin.width(CHAR_BUFFER_SIZE);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="cin &gt;&gt; charBuffer;" function="bad" file="CWE676_Use_of_Potentially_Dangerous_Function__basic_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="47" code="cin.width(CHAR_BUFFER_SIZE);" function="bad" file="CWE676_Use_of_Potentially_Dangerous_Function__basic_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE244_Heap_Inspection__w32_char_free_12.c">
+      <comment_flaw line="66" code="free(password);" function="CWE244_Heap_Inspection__w32_char_free_12_bad" />
+      <comment_fix line="110" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_free_12_bad" />
+      <comment_fix line="164" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+      <comment_fix line="209" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="66" code="free(password);" function="CWE244_Heap_Inspection__w32_char_free_12_bad" file="CWE244_Heap_Inspection__w32_char_free_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="110" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_free_12_bad" file="CWE244_Heap_Inspection__w32_char_free_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE244_Heap_Inspection__w32_char_realloc_12.c">
+      <comment_flaw line="67" code="password = realloc(password, 200 * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_realloc_12_bad" />
+      <comment_fix line="117" code="SecureZeroMemory(password, 100 * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_realloc_12_bad" />
+      <comment_fix line="175" code="SecureZeroMemory(password, 100 * sizeof(char));" function="good1" />
+      <comment_fix line="224" code="SecureZeroMemory(password, 100 * sizeof(char));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="67" code="password = realloc(password, 200 * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_realloc_12_bad" file="CWE244_Heap_Inspection__w32_char_realloc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="117" code="SecureZeroMemory(password, 100 * sizeof(char));" function="CWE244_Heap_Inspection__w32_char_realloc_12_bad" file="CWE244_Heap_Inspection__w32_char_realloc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE244_Heap_Inspection__w32_wchar_t_free_12.c">
+      <comment_flaw line="66" code="free(password);" function="CWE244_Heap_Inspection__w32_wchar_t_free_12_bad" />
+      <comment_fix line="110" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_free_12_bad" />
+      <comment_fix line="164" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+      <comment_fix line="209" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="66" code="free(password);" function="CWE244_Heap_Inspection__w32_wchar_t_free_12_bad" file="CWE244_Heap_Inspection__w32_wchar_t_free_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="110" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_free_12_bad" file="CWE244_Heap_Inspection__w32_wchar_t_free_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE244_Heap_Inspection__w32_wchar_t_realloc_12.c">
+      <comment_flaw line="67" code="password = realloc(password, 200 * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_realloc_12_bad" />
+      <comment_fix line="117" code="SecureZeroMemory(password, 100 * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_realloc_12_bad" />
+      <comment_fix line="175" code="SecureZeroMemory(password, 100 * sizeof(wchar_t));" function="good1" />
+      <comment_fix line="224" code="SecureZeroMemory(password, 100 * sizeof(wchar_t));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="67" code="password = realloc(password, 200 * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_realloc_12_bad" file="CWE244_Heap_Inspection__w32_wchar_t_realloc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="117" code="SecureZeroMemory(password, 100 * sizeof(wchar_t));" function="CWE244_Heap_Inspection__w32_wchar_t_realloc_12_bad" file="CWE244_Heap_Inspection__w32_wchar_t_realloc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

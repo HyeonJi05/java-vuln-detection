@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE535_Info_Exposure_Shell_Error__w32_char_12.c">
+      <comment_flaw line="64" code="fprintf(stderr, &quot;User attempted access with password: %s\n&quot;, password);" function="CWE535_Info_Exposure_Shell_Error__w32_char_12_bad" />
+      <comment_fix line="104" code="fprintf(stderr, &quot;User attempted access\n&quot;);" function="CWE535_Info_Exposure_Shell_Error__w32_char_12_bad" />
+      <comment_fix line="153" code="fprintf(stderr, &quot;User attempted access\n&quot;);" function="good1" />
+      <comment_fix line="193" code="fprintf(stderr, &quot;User attempted access\n&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="fprintf(stderr, &quot;User attempted access with password: %s\n&quot;, password);" function="CWE535_Info_Exposure_Shell_Error__w32_char_12_bad" file="CWE535_Info_Exposure_Shell_Error__w32_char_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="104" code="fprintf(stderr, &quot;User attempted access\n&quot;);" function="CWE535_Info_Exposure_Shell_Error__w32_char_12_bad" file="CWE535_Info_Exposure_Shell_Error__w32_char_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12.c">
+      <comment_flaw line="64" code="fwprintf(stderr, L&quot;User attempted access with password: %s\n&quot;, password);" function="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12_bad" />
+      <comment_fix line="104" code="fwprintf(stderr, L&quot;User attempted access\n&quot;);" function="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12_bad" />
+      <comment_fix line="153" code="fwprintf(stderr, L&quot;User attempted access\n&quot;);" function="good1" />
+      <comment_fix line="193" code="fwprintf(stderr, L&quot;User attempted access\n&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="fwprintf(stderr, L&quot;User attempted access with password: %s\n&quot;, password);" function="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12_bad" file="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="104" code="fwprintf(stderr, L&quot;User attempted access\n&quot;);" function="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12_bad" file="CWE535_Info_Exposure_Shell_Error__w32_wchar_t_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

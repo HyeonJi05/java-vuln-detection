@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE526_Info_Exposure_Environment_Variables__basic_12.c">
+      <comment_flaw line="25" code="printLine(getenv(&quot;PATH&quot;));" function="CWE526_Info_Exposure_Environment_Variables__basic_12_bad" />
+      <comment_fix line="30" code="printLine(&quot;Not in path&quot;);" function="CWE526_Info_Exposure_Environment_Variables__basic_12_bad" />
+      <comment_fix line="44" code="printLine(&quot;Not in path&quot;);" function="good1" />
+      <comment_fix line="49" code="printLine(&quot;Not in path&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="25" code="printLine(getenv(&quot;PATH&quot;));" function="CWE526_Info_Exposure_Environment_Variables__basic_12_bad" file="CWE526_Info_Exposure_Environment_Variables__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="30" code="printLine(&quot;Not in path&quot;);" function="CWE526_Info_Exposure_Environment_Variables__basic_12_bad" file="CWE526_Info_Exposure_Environment_Variables__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

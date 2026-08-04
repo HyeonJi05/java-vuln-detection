@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE484_Omitted_Break_Statement_in_Switch__basic_12.c">
+      <comment_flaw line="27" code="switch (x)" function="CWE484_Omitted_Break_Statement_in_Switch__basic_12_bad" />
+      <comment_fix line="49" code="switch (x)" function="CWE484_Omitted_Break_Statement_in_Switch__basic_12_bad" />
+      <comment_fix line="81" code="switch (x)" function="good1" />
+      <comment_fix line="104" code="switch (x)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="27" code="switch (x)" function="CWE484_Omitted_Break_Statement_in_Switch__basic_12_bad" file="CWE484_Omitted_Break_Statement_in_Switch__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="switch (x)" function="CWE484_Omitted_Break_Statement_in_Switch__basic_12_bad" file="CWE484_Omitted_Break_Statement_in_Switch__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

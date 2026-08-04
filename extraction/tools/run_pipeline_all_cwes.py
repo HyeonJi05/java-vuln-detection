@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Run the 4-stage source/sink extraction pipeline over all Java SARD CWEs.
+"""Run the 4-stage source/sink extraction pipeline over all SARD CWEs
+(Java or C/C++ Juliet, selected via --language).
 
 Folder/file naming matches the manual run (without the '-my' suffix):
-    artifacts/pipeline-runs/java-cwe{N}-source-sink/
-        java-cwe{N}-manifest.xml
+    artifacts/pipeline-runs/{language}-cwe{N}-source-sink/
+        {language}-cwe{N}-manifest.xml
         01_manifest/manifest_with_comments.xml
         02b_flow/manifest_with_testcase_flows.xml
         02b_flow/summary.json
@@ -14,18 +15,18 @@ Folder/file naming matches the manual run (without the '-my' suffix):
 - By default every CWE in the dataset is processed. Use --skip to exclude
   specific CWEs, or --only to restrict to a subset.
 - If one CWE fails, the batch does NOT stop; it records and continues.
-- Final classified XMLs are gathered into --output-dir (default:
-  java_sard_source_sink/source_sink_dataset/) with a cwe{N}_ prefix.
-- Per-CWE status and problems are written to --log-dir (default:
-  java_sard_source_sink/logs/) as CSV/TXT logs.
+- Final classified XMLs are gathered into --output-dir with a cwe{N}_ prefix
+  (default depends on --language: java_sard_source_sink/ or c_sard_source_sink/).
+- Per-CWE status and problems are written to --log-dir as CSV/TXT logs.
 
 Runs on any OS (Linux/macOS/Windows) as long as python + the pipeline deps
 (typer, tree-sitter==0.21.3, tree_sitter_languages==1.10.2) are installed.
 
 Usage (from juliet-playground root, venv active):
-    python tools/run_pipeline_all_cwes.py                   # all CWEs
-    python tools/run_pipeline_all_cwes.py --only 190 476    # just these
-    python tools/run_pipeline_all_cwes.py --skip 113        # all except 113
+    python tools/run_pipeline_all_cwes.py                          # all Java CWEs
+    python tools/run_pipeline_all_cwes.py --language c              # all C CWEs
+    python tools/run_pipeline_all_cwes.py --only 190 476            # just these
+    python tools/run_pipeline_all_cwes.py --skip 113                # all except 113
 """
 from __future__ import annotations
 
@@ -56,18 +57,34 @@ def run(cmd: list[str]) -> tuple[int, str, str]:
     return proc.returncode, proc.stdout, proc.stderr
 
 
-def discover_cwes(dataset_root: Path) -> list[int]:
+def discover_cwes(dataset_root: Path, language: str) -> list[int]:
     cwes = []
-    for d in dataset_root.glob("juliet-cwe*"):
-        m = re.match(r"juliet-cwe(\d+)", d.name)
-        if d.is_dir() and m:
-            cwes.append(int(m.group(1)))
-    return sorted(cwes)
+    if language == "java":
+        for d in dataset_root.glob("juliet-cwe*"):
+            m = re.match(r"juliet-cwe(\d+)", d.name)
+            if d.is_dir() and m:
+                cwes.append(int(m.group(1)))
+    else:
+        # C/C++ Juliet layout: <root>/testcases/CWE{N}_{Name}/
+        for d in (dataset_root / "testcases").glob("CWE*_*"):
+            m = re.match(r"CWE(\d+)_", d.name)
+            if d.is_dir() and m:
+                cwes.append(int(m.group(1)))
+    return sorted(set(cwes))
 
 
-def process_cwe(cwe: int, dataset_root: Path, run_root: Path, output_dir: Path):
+def process_cwe(cwe: int, dataset_root: Path, run_root: Path, output_dir: Path, language: str):
     """Run the 4-stage pipeline for one CWE. Returns a result dict."""
-    src = dataset_root / f"juliet-cwe{cwe}" / "src" / "main" / "java"
+    if language == "java":
+        src = dataset_root / f"juliet-cwe{cwe}" / "src" / "main" / "java"
+        stage2_source_root = src / "juliet"  # Java SARD keeps sources under .../java/juliet
+        suffix_args = ["--suffix", ".java"]
+    else:
+        # C/C++: pass the whole dataset root (contains testcases/); --cwe filters per-CWE.
+        src = dataset_root
+        stage2_source_root = dataset_root
+        suffix_args = ["--suffix", ".c", "--suffix", ".cpp"]
+
     result = {
         "cwe": cwe, "status": "ok", "flows": 0, "classified": 0,
         "missing": 0, "parse_fail": 0, "exceptions": 0, "note": "",
@@ -76,11 +93,11 @@ def process_cwe(cwe: int, dataset_root: Path, run_root: Path, output_dir: Path):
         result["status"] = "no-source-dir"
         return result
 
-    run_dir = run_root / f"java-cwe{cwe}-source-sink"
+    run_dir = run_root / f"{language}-cwe{cwe}-source-sink"
     (run_dir / "01_manifest").mkdir(parents=True, exist_ok=True)
     (run_dir / "02b_flow" / "epic002").mkdir(parents=True, exist_ok=True)
 
-    man = run_dir / f"java-cwe{cwe}-manifest.xml"
+    man = run_dir / f"{language}-cwe{cwe}-manifest.xml"
     com = run_dir / "01_manifest" / "manifest_with_comments.xml"
     flo = run_dir / "02b_flow" / "manifest_with_testcase_flows.xml"
     sj1 = run_dir / "02b_flow" / "summary.json"
@@ -93,14 +110,13 @@ def process_cwe(cwe: int, dataset_root: Path, run_root: Path, output_dir: Path):
     o2 = ""
     try:
         c, _, e = run([py, STAGE1, "--source-root", str(src),
-                       "--output-xml", str(man), "--cwe", str(cwe), "--suffix", ".java"])
+                       "--output-xml", str(man), "--cwe", str(cwe), *suffix_args])
         if c != 0:
             fail_stage, result["note"] = 1, e[-200:]
 
         if fail_stage == 0:
-            # IMPORTANT: source-root must point at the .../java/juliet subdir for Java SARD
             c, o2, e = run([py, STAGE2, "--manifest", str(man),
-                            "--source-root", str(src / "juliet"), "--output-xml", str(com)])
+                            "--source-root", str(stage2_source_root), "--output-xml", str(com)])
             if c != 0:
                 fail_stage, result["note"] = 2, e[-200:]
 
@@ -166,24 +182,33 @@ def process_cwe(cwe: int, dataset_root: Path, run_root: Path, output_dir: Path):
 
 def main():
     ap = argparse.ArgumentParser(description="Run source/sink pipeline over all CWEs.")
-    ap.add_argument("--dataset-root", default="juliet-java-test-suite")
+    ap.add_argument("--language", choices=("java", "c"), default="java",
+                    help="Source language (default: java).")
+    ap.add_argument("--dataset-root", default=None,
+                    help="Default: juliet-java-test-suite (java) / juliet-test-suite-c (c)")
     ap.add_argument("--run-root", default="artifacts/pipeline-runs")
-    ap.add_argument("--output-dir", default="java_sard_source_sink/source_sink_dataset")
-    ap.add_argument("--log-dir", default="java_sard_source_sink/logs")
+    ap.add_argument("--output-dir", default=None,
+                    help="Default: java_sard_source_sink/source_sink_dataset (java) / "
+                         "c_sard_source_sink/source_sink_dataset (c)")
+    ap.add_argument("--log-dir", default=None,
+                    help="Default: java_sard_source_sink/logs (java) / c_sard_source_sink/logs (c)")
     ap.add_argument("--skip", type=int, nargs="*", default=[],
                     help="CWE numbers to skip (default: none)")
     ap.add_argument("--only", type=int, nargs="*", default=None,
                     help="If set, run ONLY these CWE numbers")
     args = ap.parse_args()
 
-    dataset_root = Path(args.dataset_root)
+    default_root = "juliet-java-test-suite" if args.language == "java" else "juliet-test-suite-c"
+    default_out_base = "java_sard_source_sink" if args.language == "java" else "c_sard_source_sink"
+
+    dataset_root = Path(args.dataset_root or default_root)
     run_root = Path(args.run_root)
-    output_dir = Path(args.output_dir)
-    log_dir = Path(args.log_dir)
+    output_dir = Path(args.output_dir or f"{default_out_base}/source_sink_dataset")
+    log_dir = Path(args.log_dir or f"{default_out_base}/logs")
     output_dir.mkdir(parents=True, exist_ok=True)
     log_dir.mkdir(parents=True, exist_ok=True)
 
-    cwes = discover_cwes(dataset_root)
+    cwes = discover_cwes(dataset_root, args.language)
     if args.only:
         cwes = [c for c in cwes if c in args.only]
     else:
@@ -197,7 +222,7 @@ def main():
 
     report, problems = [], []
     for cwe in cwes:
-        r = process_cwe(cwe, dataset_root, run_root, output_dir)
+        r = process_cwe(cwe, dataset_root, run_root, output_dir, args.language)
         report.append(r)
         line = (f"CWE-{r['cwe']}  {r['status']}  flows={r['flows']} "
                 f"classified={r['classified']} missing={r['missing']} exc={r['exceptions']}")
@@ -229,8 +254,9 @@ def main():
     fail = sum(1 for r in report if r["status"].startswith("FAIL") or r["status"] == "no-source-dir")
     total_flows = sum(r["flows"] for r in report)
 
+    language_label = {"java": "Java", "c": "C/C++"}[args.language]
     summary = (
-        f"=== Java SARD source/sink extraction batch summary ({stamp}) ===\n"
+        f"=== {language_label} SARD source/sink extraction batch summary ({stamp}) ===\n"
         f"Target CWEs:   {len(cwes)}\n"
         f"  ok:          {ok}\n"
         f"  empty:       {empty}   (no source/sink flows - not a failure)\n"

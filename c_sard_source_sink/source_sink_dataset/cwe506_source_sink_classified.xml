@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="46">
+    <file path="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12.c">
+      <comment_flaw line="34" code="BYTE payload[20] = {0xfb, 0x50, 0xe5, 0x8d, 0xc5, 0x4b, 0xdd, 0xe0, 0x26, 0x2b, 0x98, 0x49, 0x73, 0xfb, 0x4c, 0xf6};" function="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12_bad" />
+      <comment_fix line="94" code="char * payload = &quot;calc.exe&quot;;" function="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12_bad" />
+      <comment_fix line="115" code="char * payload = &quot;calc.exe&quot;;" function="good1" />
+      <comment_fix line="127" code="char * payload = &quot;calc.exe&quot;;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="BYTE payload[20] = {0xfb, 0x50, 0xe5, 0x8d, 0xc5, 0x4b, 0xdd, 0xe0, 0x26, 0x2b, 0x98, 0x49, 0x73, 0xfb, 0x4c, 0xf6};" function="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12_bad" file="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="94" code="char * payload = &quot;calc.exe&quot;;" function="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12_bad" file="CWE506_Embedded_Malicious_Code__w32_aes_encrypted_payload_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="64">
+    <file path="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12.c">
+      <comment_flaw line="32" code="char * encodedPayload = &quot;Y2FsYy5leGU=&quot;;" function="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12_bad" />
+      <comment_fix line="81" code="char * decodedPayload = &quot;calc.exe&quot;;" function="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12_bad" />
+      <comment_fix line="102" code="char * decodedPayload = &quot;calc.exe&quot;;" function="good1" />
+      <comment_fix line="114" code="char * decodedPayload = &quot;calc.exe&quot;;" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="char * encodedPayload = &quot;Y2FsYy5leGU=&quot;;" function="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12_bad" file="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="81" code="char * decodedPayload = &quot;calc.exe&quot;;" function="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12_bad" file="CWE506_Embedded_Malicious_Code__w32_base64_encoded_payload_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="99">
+    <file path="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12.c">
+      <comment_flaw line="66" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12_bad" />
+      <comment_fix line="88" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12_bad" />
+      <comment_fix line="113" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+      <comment_fix line="129" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="66" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="88" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_accessed_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="117">
+    <file path="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12.c">
+      <comment_flaw line="66" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12_bad" />
+      <comment_fix line="88" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12_bad" />
+      <comment_fix line="113" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+      <comment_fix line="129" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="66" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="88" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_created_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="135">
+    <file path="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12.c">
+      <comment_flaw line="65" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12_bad" />
+      <comment_fix line="87" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12_bad" />
+      <comment_fix line="112" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+      <comment_fix line="128" code="if (hFile != INVALID_HANDLE_VALUE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="65" code="SetFileTime(hFile," function="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="87" code="if (hFile != INVALID_HANDLE_VALUE)" function="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12_bad" file="CWE506_Embedded_Malicious_Code__w32_file_attrib_modified_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

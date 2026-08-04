@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE242_Use_of_Inherently_Dangerous_Function__basic_12.c">
+      <comment_flaw line="32" code="result = gets(dest);" function="CWE242_Use_of_Inherently_Dangerous_Function__basic_12_bad" />
+      <comment_fix line="50" code="result = fgets(dest, DEST_SIZE, stdin);" function="CWE242_Use_of_Inherently_Dangerous_Function__basic_12_bad" />
+      <comment_fix line="77" code="result = fgets(dest, DEST_SIZE, stdin);" function="good1" />
+      <comment_fix line="95" code="result = fgets(dest, DEST_SIZE, stdin);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="result = gets(dest);" function="CWE242_Use_of_Inherently_Dangerous_Function__basic_12_bad" file="CWE242_Use_of_Inherently_Dangerous_Function__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="50" code="result = fgets(dest, DEST_SIZE, stdin);" function="CWE242_Use_of_Inherently_Dangerous_Function__basic_12_bad" file="CWE242_Use_of_Inherently_Dangerous_Function__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

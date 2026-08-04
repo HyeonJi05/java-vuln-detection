@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12.c">
+      <comment_flaw line="45" code="printFloatLine((float)doubleNumber);" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12_bad" />
+      <comment_fix line="68" code="if (doubleNumber &gt; FLT_MAX || doubleNumber &lt; FLT_MIN)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12_bad" />
+      <comment_fix line="107" code="if (doubleNumber &gt; FLT_MAX || doubleNumber &lt; FLT_MIN)" function="good1" />
+      <comment_fix line="137" code="if (doubleNumber &gt; FLT_MAX || doubleNumber &lt; FLT_MIN)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="printFloatLine((float)doubleNumber);" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="68" code="if (doubleNumber &gt; FLT_MAX || doubleNumber &lt; FLT_MIN)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12.c">
+      <comment_flaw line="40" code="printIntLine((int)doubleNumber);" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12_bad" />
+      <comment_fix line="63" code="if (doubleNumber &gt; INT_MAX || doubleNumber &lt; INT_MIN)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12_bad" />
+      <comment_fix line="102" code="if (doubleNumber &gt; INT_MAX || doubleNumber &lt; INT_MIN)" function="good1" />
+      <comment_fix line="132" code="if (doubleNumber &gt; INT_MAX || doubleNumber &lt; INT_MIN)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="40" code="printIntLine((int)doubleNumber);" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (doubleNumber &gt; INT_MAX || doubleNumber &lt; INT_MIN)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12.c">
+      <comment_flaw line="44" code="printIntLine((int)(sqrt(doubleNumber)));" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12_bad" />
+      <comment_fix line="67" code="if (doubleNumber &lt; 0)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12_bad" />
+      <comment_fix line="106" code="if (doubleNumber &lt; 0)" function="good1" />
+      <comment_fix line="136" code="if (doubleNumber &lt; 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="printIntLine((int)(sqrt(doubleNumber)));" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="67" code="if (doubleNumber &lt; 0)" function="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12_bad" file="CWE681_Incorrect_Conversion_Between_Numeric_Types__doubleNaN2int_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

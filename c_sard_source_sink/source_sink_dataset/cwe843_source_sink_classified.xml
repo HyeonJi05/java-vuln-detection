@@ -1,0 +1,1527 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="1">
+    <file path="CWE843_Type_Confusion__char_01.c">
+      <comment_flaw line="28" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_01_bad" />
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_01_bad" />
+      <comment_fix line="47" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="51" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_01_bad" file="CWE843_Type_Confusion__char_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_01_bad" file="CWE843_Type_Confusion__char_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="47" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_01.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="2">
+    <file path="CWE843_Type_Confusion__char_02.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_02_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_02_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_02_bad" file="CWE843_Type_Confusion__char_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_02_bad" file="CWE843_Type_Confusion__char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="3">
+    <file path="CWE843_Type_Confusion__char_03.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_03_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_03_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_03_bad" file="CWE843_Type_Confusion__char_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_03_bad" file="CWE843_Type_Confusion__char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="4">
+    <file path="CWE843_Type_Confusion__char_04.c">
+      <comment_flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_04_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_04_bad" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="82" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_04_bad" file="CWE843_Type_Confusion__char_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_04_bad" file="CWE843_Type_Confusion__char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="82" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="5">
+    <file path="CWE843_Type_Confusion__char_05.c">
+      <comment_flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_05_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_05_bad" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="82" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_05_bad" file="CWE843_Type_Confusion__char_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_05_bad" file="CWE843_Type_Confusion__char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="82" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="6">
+    <file path="CWE843_Type_Confusion__char_06.c">
+      <comment_flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_06_bad" />
+      <comment_flaw line="39" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_06_bad" />
+      <comment_fix line="61" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="79" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="84" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_06_bad" file="CWE843_Type_Confusion__char_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="39" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_06_bad" file="CWE843_Type_Confusion__char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="61" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="79" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="84" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="7">
+    <file path="CWE843_Type_Confusion__char_07.c">
+      <comment_flaw line="36" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_07_bad" />
+      <comment_flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_07_bad" />
+      <comment_fix line="63" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="81" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="86" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_07_bad" file="CWE843_Type_Confusion__char_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_07_bad" file="CWE843_Type_Confusion__char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="63" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="81" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="86" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="8">
+    <file path="CWE843_Type_Confusion__char_08.c">
+      <comment_flaw line="44" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_08_bad" />
+      <comment_flaw line="49" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_08_bad" />
+      <comment_fix line="71" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="76" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="89" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="94" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_08_bad" file="CWE843_Type_Confusion__char_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_08_bad" file="CWE843_Type_Confusion__char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="71" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="76" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="89" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="94" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="9">
+    <file path="CWE843_Type_Confusion__char_09.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_09_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_09_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_09_bad" file="CWE843_Type_Confusion__char_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_09_bad" file="CWE843_Type_Confusion__char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="10">
+    <file path="CWE843_Type_Confusion__char_10.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_10_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_10_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_10_bad" file="CWE843_Type_Confusion__char_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_10_bad" file="CWE843_Type_Confusion__char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="11">
+    <file path="CWE843_Type_Confusion__char_11.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_11_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_11_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_11_bad" file="CWE843_Type_Confusion__char_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_11_bad" file="CWE843_Type_Confusion__char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="12">
+    <file path="CWE843_Type_Confusion__char_12.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_12_bad" />
+      <comment_fix line="38" code="int intBuffer = 8;" function="CWE843_Type_Confusion__char_12_bad" />
+      <comment_flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_12_bad" />
+      <comment_fix line="61" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_fix line="69" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="74" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_12_bad" file="CWE843_Type_Confusion__char_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="int intBuffer = 8;" function="CWE843_Type_Confusion__char_12_bad" file="CWE843_Type_Confusion__char_12.c" origin="comment_fix" />
+      <flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_12_bad" file="CWE843_Type_Confusion__char_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="multi_comment_line_extrema">
+      <fix line="61" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_12.c" origin="comment_fix" role="source" safety="good" />
+      <fix line="69" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_12.c" origin="comment_fix" />
+      <flaw line="74" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="13">
+    <file path="CWE843_Type_Confusion__char_13.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_13_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_13_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_13_bad" file="CWE843_Type_Confusion__char_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_13_bad" file="CWE843_Type_Confusion__char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="14">
+    <file path="CWE843_Type_Confusion__char_14.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_14_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_14_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_14_bad" file="CWE843_Type_Confusion__char_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_14_bad" file="CWE843_Type_Confusion__char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="15">
+    <file path="CWE843_Type_Confusion__char_15.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_15_bad" />
+      <comment_flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_15_bad" />
+      <comment_fix line="63" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="83" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="93" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_15_bad" file="CWE843_Type_Confusion__char_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_15_bad" file="CWE843_Type_Confusion__char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="63" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__char_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="83" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__char_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="93" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__char_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="16">
+    <file path="CWE843_Type_Confusion__char_16.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_16_bad" />
+      <comment_flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_16_bad" />
+      <comment_fix line="53" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_16_bad" file="CWE843_Type_Confusion__char_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_16_bad" file="CWE843_Type_Confusion__char_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="53" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_16.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="17">
+    <file path="CWE843_Type_Confusion__char_17.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_17_bad" />
+      <comment_flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_17_bad" />
+      <comment_fix line="54" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_17_bad" file="CWE843_Type_Confusion__char_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_17_bad" file="CWE843_Type_Confusion__char_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="54" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_17.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="18">
+    <file path="CWE843_Type_Confusion__char_18.c">
+      <comment_flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_18_bad" />
+      <comment_flaw line="34" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_18_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="55" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_18_bad" file="CWE843_Type_Confusion__char_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="34" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_18_bad" file="CWE843_Type_Confusion__char_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_18.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="55" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="19">
+    <file path="CWE843_Type_Confusion__char_31.c">
+      <comment_flaw line="28" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_31_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_31_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="58" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_31_bad" file="CWE843_Type_Confusion__char_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_31_bad" file="CWE843_Type_Confusion__char_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_31.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="58" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="20">
+    <file path="CWE843_Type_Confusion__char_32.c">
+      <comment_flaw line="32" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_32_bad" />
+      <comment_flaw line="40" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_32_bad" />
+      <comment_fix line="60" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_32_bad" file="CWE843_Type_Confusion__char_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_32_bad" file="CWE843_Type_Confusion__char_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="60" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_32.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="21">
+    <file path="CWE843_Type_Confusion__char_33.cpp">
+      <comment_flaw line="32" code="char charBuffer = 'a';" function="bad" />
+      <comment_flaw line="38" code="printIntLine(*((int*)data));" function="bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="61" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="38" code="printIntLine(*((int*)data));" function="bad" file="CWE843_Type_Confusion__char_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_33.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="61" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="22">
+    <file path="CWE843_Type_Confusion__char_34.c">
+      <comment_flaw line="35" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_34_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_34_bad" />
+      <comment_fix line="59" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_34_bad" file="CWE843_Type_Confusion__char_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_34_bad" file="CWE843_Type_Confusion__char_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="59" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_34.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__char_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="23">
+    <file path="CWE843_Type_Confusion__char_41.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_41_badSink" />
+      <comment_flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_41_bad" />
+      <comment_flaw line="47" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_41_goodG2BSink" />
+      <comment_fix line="58" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_41_badSink" file="CWE843_Type_Confusion__char_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_41_bad" file="CWE843_Type_Confusion__char_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="47" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_41_goodG2BSink" file="CWE843_Type_Confusion__char_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="58" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_41.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="24">
+    <file path="CWE843_Type_Confusion__char_44.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="36" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_44_bad" />
+      <comment_flaw line="51" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+      <comment_fix line="62" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="24" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__char_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="36" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_44_bad" file="CWE843_Type_Confusion__char_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="51" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__char_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="62" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_44.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="25">
+    <file path="CWE843_Type_Confusion__char_45.c">
+      <comment_flaw line="28" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="38" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_45_bad" />
+      <comment_flaw line="54" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="28" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__char_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="38" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_45_bad" file="CWE843_Type_Confusion__char_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="54" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__char_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_45.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="26">
+    <file path="CWE843_Type_Confusion__char_51a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_51_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_51b.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_51b_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_51b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_51_bad" file="CWE843_Type_Confusion__char_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_51b_badSink" file="CWE843_Type_Confusion__char_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_51a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_51b_goodG2BSink" file="CWE843_Type_Confusion__char_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="27">
+    <file path="CWE843_Type_Confusion__char_52a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_52_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_52b.c" />
+    <file path="CWE843_Type_Confusion__char_52c.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_52c_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_52c_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_52_bad" file="CWE843_Type_Confusion__char_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_52c_badSink" file="CWE843_Type_Confusion__char_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_52a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_52c_goodG2BSink" file="CWE843_Type_Confusion__char_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="28">
+    <file path="CWE843_Type_Confusion__char_53a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_53_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_53b.c" />
+    <file path="CWE843_Type_Confusion__char_53c.c" />
+    <file path="CWE843_Type_Confusion__char_53d.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_53d_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_53d_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_53_bad" file="CWE843_Type_Confusion__char_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_53d_badSink" file="CWE843_Type_Confusion__char_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_53a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_53d_goodG2BSink" file="CWE843_Type_Confusion__char_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE843_Type_Confusion__char_54a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_54_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_54b.c" />
+    <file path="CWE843_Type_Confusion__char_54c.c" />
+    <file path="CWE843_Type_Confusion__char_54d.c" />
+    <file path="CWE843_Type_Confusion__char_54e.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_54e_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_54e_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_54_bad" file="CWE843_Type_Confusion__char_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_54e_badSink" file="CWE843_Type_Confusion__char_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_54a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_54e_goodG2BSink" file="CWE843_Type_Confusion__char_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE843_Type_Confusion__char_63a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_63_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_63b.c">
+      <comment_flaw line="25" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_63b_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_63b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_63_bad" file="CWE843_Type_Confusion__char_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="25" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_63b_badSink" file="CWE843_Type_Confusion__char_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_63a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_63b_goodG2BSink" file="CWE843_Type_Confusion__char_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="31">
+    <file path="CWE843_Type_Confusion__char_64a.c">
+      <comment_flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_64_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_64b.c">
+      <comment_flaw line="28" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_64b_badSink" />
+      <comment_flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_64b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_64_bad" file="CWE843_Type_Confusion__char_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="28" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_64b_badSink" file="CWE843_Type_Confusion__char_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_64a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_64b_goodG2BSink" file="CWE843_Type_Confusion__char_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="32">
+    <file path="CWE843_Type_Confusion__char_65a.c">
+      <comment_flaw line="33" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_65_bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_65b.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_65b_badSink" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_65b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="33" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_65_bad" file="CWE843_Type_Confusion__char_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_65b_badSink" file="CWE843_Type_Confusion__char_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_65a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_65b_goodG2BSink" file="CWE843_Type_Confusion__char_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="33">
+    <file path="CWE843_Type_Confusion__char_66a.c">
+      <comment_flaw line="32" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_66_bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_66b.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_66b_badSink" />
+      <comment_flaw line="38" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_66b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="32" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_66_bad" file="CWE843_Type_Confusion__char_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_66b_badSink" file="CWE843_Type_Confusion__char_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_66a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="38" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_66b_goodG2BSink" file="CWE843_Type_Confusion__char_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="34">
+    <file path="CWE843_Type_Confusion__char_67a.c">
+      <comment_flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_67_bad" />
+      <comment_fix line="59" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_67b.c">
+      <comment_flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_67b_badSink" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_67b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_67_bad" file="CWE843_Type_Confusion__char_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_67b_badSink" file="CWE843_Type_Confusion__char_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="59" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_67a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_67b_goodG2BSink" file="CWE843_Type_Confusion__char_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="35">
+    <file path="CWE843_Type_Confusion__char_68a.c">
+      <comment_flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_68_bad" />
+      <comment_fix line="56" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_68b.c">
+      <comment_flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_68b_badSink" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_68b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="char charBuffer = 'a';" function="CWE843_Type_Confusion__char_68_bad" file="CWE843_Type_Confusion__char_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_68b_badSink" file="CWE843_Type_Confusion__char_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_68a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_68b_goodG2BSink" file="CWE843_Type_Confusion__char_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="36">
+    <file path="CWE843_Type_Confusion__char_72a.cpp">
+      <comment_flaw line="38" code="char charBuffer = 'a';" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_72b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__char_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_72a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__char_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="37">
+    <file path="CWE843_Type_Confusion__char_73a.cpp">
+      <comment_flaw line="38" code="char charBuffer = 'a';" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_73b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__char_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_73a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__char_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="38">
+    <file path="CWE843_Type_Confusion__char_74a.cpp">
+      <comment_flaw line="38" code="char charBuffer = 'a';" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_74b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__char_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_74a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__char_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="39">
+    <file path="CWE843_Type_Confusion__char_81_bad.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_81_bad::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_81_goodG2B.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_81_goodG2B::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_81a.cpp">
+      <comment_flaw line="32" code="char charBuffer = 'a';" function="bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_81_bad::action" file="CWE843_Type_Confusion__char_81_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_81_goodG2B::action" file="CWE843_Type_Confusion__char_81_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_81a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="40">
+    <file path="CWE843_Type_Confusion__char_82_bad.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_82_bad::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_82_goodG2B.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_82_goodG2B::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__char_82a.cpp">
+      <comment_flaw line="32" code="char charBuffer = 'a';" function="bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_82_bad::action" file="CWE843_Type_Confusion__char_82_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="char charBuffer = 'a';" function="bad" file="CWE843_Type_Confusion__char_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__char_82_goodG2B::action" file="CWE843_Type_Confusion__char_82_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__char_82a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="41">
+    <file path="CWE843_Type_Confusion__short_01.c">
+      <comment_flaw line="28" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_01_bad" />
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_01_bad" />
+      <comment_fix line="47" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="51" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_01_bad" file="CWE843_Type_Confusion__short_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_01_bad" file="CWE843_Type_Confusion__short_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="47" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_01.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="42">
+    <file path="CWE843_Type_Confusion__short_02.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_02_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_02_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_02_bad" file="CWE843_Type_Confusion__short_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_02_bad" file="CWE843_Type_Confusion__short_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="43">
+    <file path="CWE843_Type_Confusion__short_03.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_03_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_03_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_03_bad" file="CWE843_Type_Confusion__short_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_03_bad" file="CWE843_Type_Confusion__short_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="44">
+    <file path="CWE843_Type_Confusion__short_04.c">
+      <comment_flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_04_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_04_bad" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="82" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_04_bad" file="CWE843_Type_Confusion__short_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_04_bad" file="CWE843_Type_Confusion__short_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="82" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="45">
+    <file path="CWE843_Type_Confusion__short_05.c">
+      <comment_flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_05_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_05_bad" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="82" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_05_bad" file="CWE843_Type_Confusion__short_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_05_bad" file="CWE843_Type_Confusion__short_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="82" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="87" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE843_Type_Confusion__short_06.c">
+      <comment_flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_06_bad" />
+      <comment_flaw line="39" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_06_bad" />
+      <comment_fix line="61" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="79" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="84" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_06_bad" file="CWE843_Type_Confusion__short_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="39" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_06_bad" file="CWE843_Type_Confusion__short_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="61" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="79" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="84" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="47">
+    <file path="CWE843_Type_Confusion__short_07.c">
+      <comment_flaw line="36" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_07_bad" />
+      <comment_flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_07_bad" />
+      <comment_fix line="63" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="81" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="86" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_07_bad" file="CWE843_Type_Confusion__short_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_07_bad" file="CWE843_Type_Confusion__short_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="63" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="81" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="86" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE843_Type_Confusion__short_08.c">
+      <comment_flaw line="44" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_08_bad" />
+      <comment_flaw line="49" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_08_bad" />
+      <comment_fix line="71" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="76" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="89" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="94" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="44" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_08_bad" file="CWE843_Type_Confusion__short_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="49" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_08_bad" file="CWE843_Type_Confusion__short_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="71" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="76" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="89" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="94" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="49">
+    <file path="CWE843_Type_Confusion__short_09.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_09_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_09_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_09_bad" file="CWE843_Type_Confusion__short_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_09_bad" file="CWE843_Type_Confusion__short_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="50">
+    <file path="CWE843_Type_Confusion__short_10.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_10_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_10_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_10_bad" file="CWE843_Type_Confusion__short_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_10_bad" file="CWE843_Type_Confusion__short_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="51">
+    <file path="CWE843_Type_Confusion__short_11.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_11_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_11_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_11_bad" file="CWE843_Type_Confusion__short_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_11_bad" file="CWE843_Type_Confusion__short_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="52">
+    <file path="CWE843_Type_Confusion__short_12.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_12_bad" />
+      <comment_fix line="38" code="int intBuffer = 8;" function="CWE843_Type_Confusion__short_12_bad" />
+      <comment_flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_12_bad" />
+      <comment_fix line="61" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_fix line="69" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="74" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_12_bad" file="CWE843_Type_Confusion__short_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="int intBuffer = 8;" function="CWE843_Type_Confusion__short_12_bad" file="CWE843_Type_Confusion__short_12.c" origin="comment_fix" />
+      <flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_12_bad" file="CWE843_Type_Confusion__short_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="multi_comment_line_extrema">
+      <fix line="61" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_12.c" origin="comment_fix" role="source" safety="good" />
+      <fix line="69" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_12.c" origin="comment_fix" />
+      <flaw line="74" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="53">
+    <file path="CWE843_Type_Confusion__short_13.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_13_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_13_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_13_bad" file="CWE843_Type_Confusion__short_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_13_bad" file="CWE843_Type_Confusion__short_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="54">
+    <file path="CWE843_Type_Confusion__short_14.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_14_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_14_bad" />
+      <comment_fix line="57" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="75" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_14_bad" file="CWE843_Type_Confusion__short_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_14_bad" file="CWE843_Type_Confusion__short_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="57" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="62" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="75" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="80" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="55">
+    <file path="CWE843_Type_Confusion__short_15.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_15_bad" />
+      <comment_flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_15_bad" />
+      <comment_fix line="63" code="int intBuffer = 8;" function="goodG2B1" />
+      <comment_flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" />
+      <comment_fix line="83" code="int intBuffer = 8;" function="goodG2B2" />
+      <comment_flaw line="93" code="printIntLine(*((int*)data));" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_15_bad" file="CWE843_Type_Confusion__short_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_15_bad" file="CWE843_Type_Confusion__short_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b1" flow_index="2" classification_method="same_function_line_order">
+      <fix line="63" code="int intBuffer = 8;" function="goodG2B1" file="CWE843_Type_Confusion__short_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="69" code="printIntLine(*((int*)data));" function="goodG2B1" file="CWE843_Type_Confusion__short_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="3" classification_method="same_function_line_order">
+      <fix line="83" code="int intBuffer = 8;" function="goodG2B2" file="CWE843_Type_Confusion__short_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="93" code="printIntLine(*((int*)data));" function="goodG2B2" file="CWE843_Type_Confusion__short_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="56">
+    <file path="CWE843_Type_Confusion__short_16.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_16_bad" />
+      <comment_flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_16_bad" />
+      <comment_fix line="53" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_16_bad" file="CWE843_Type_Confusion__short_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_16_bad" file="CWE843_Type_Confusion__short_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="53" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_16.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="57">
+    <file path="CWE843_Type_Confusion__short_17.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_17_bad" />
+      <comment_flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_17_bad" />
+      <comment_fix line="54" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_17_bad" file="CWE843_Type_Confusion__short_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_17_bad" file="CWE843_Type_Confusion__short_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="54" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_17.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="59" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="58">
+    <file path="CWE843_Type_Confusion__short_18.c">
+      <comment_flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_18_bad" />
+      <comment_flaw line="34" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_18_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="55" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_18_bad" file="CWE843_Type_Confusion__short_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="34" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_18_bad" file="CWE843_Type_Confusion__short_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_18.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="55" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="59">
+    <file path="CWE843_Type_Confusion__short_31.c">
+      <comment_flaw line="28" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_31_bad" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_31_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="58" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="28" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_31_bad" file="CWE843_Type_Confusion__short_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_31_bad" file="CWE843_Type_Confusion__short_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_31.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="58" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="60">
+    <file path="CWE843_Type_Confusion__short_32.c">
+      <comment_flaw line="32" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_32_bad" />
+      <comment_flaw line="40" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_32_bad" />
+      <comment_fix line="60" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_32_bad" file="CWE843_Type_Confusion__short_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_32_bad" file="CWE843_Type_Confusion__short_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="60" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_32.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="61">
+    <file path="CWE843_Type_Confusion__short_33.cpp">
+      <comment_flaw line="32" code="short shortBuffer = 8;" function="bad" />
+      <comment_flaw line="38" code="printIntLine(*((int*)data));" function="bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="61" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="38" code="printIntLine(*((int*)data));" function="bad" file="CWE843_Type_Confusion__short_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_33.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="61" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="62">
+    <file path="CWE843_Type_Confusion__short_34.c">
+      <comment_flaw line="35" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_34_bad" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_34_bad" />
+      <comment_fix line="59" code="int intBuffer = 8;" function="goodG2B" />
+      <comment_flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_34_bad" file="CWE843_Type_Confusion__short_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_34_bad" file="CWE843_Type_Confusion__short_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="same_function_line_order">
+      <fix line="59" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_34.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="66" code="printIntLine(*((int*)data));" function="goodG2B" file="CWE843_Type_Confusion__short_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="63">
+    <file path="CWE843_Type_Confusion__short_41.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_41_badSink" />
+      <comment_flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_41_bad" />
+      <comment_flaw line="47" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_41_goodG2BSink" />
+      <comment_fix line="58" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_41_badSink" file="CWE843_Type_Confusion__short_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_41_bad" file="CWE843_Type_Confusion__short_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="47" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_41_goodG2BSink" file="CWE843_Type_Confusion__short_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="58" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_41.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="64">
+    <file path="CWE843_Type_Confusion__short_44.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="36" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_44_bad" />
+      <comment_flaw line="51" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+      <comment_fix line="62" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="24" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__short_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="36" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_44_bad" file="CWE843_Type_Confusion__short_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="51" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__short_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="62" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_44.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="65">
+    <file path="CWE843_Type_Confusion__short_45.c">
+      <comment_flaw line="28" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="38" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_45_bad" />
+      <comment_flaw line="54" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+      <comment_fix line="64" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="28" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__short_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="38" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_45_bad" file="CWE843_Type_Confusion__short_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="54" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__short_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="64" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_45.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE843_Type_Confusion__short_51a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_51_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_51b.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_51b_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_51b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_51_bad" file="CWE843_Type_Confusion__short_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_51b_badSink" file="CWE843_Type_Confusion__short_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_51a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_51b_goodG2BSink" file="CWE843_Type_Confusion__short_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="67">
+    <file path="CWE843_Type_Confusion__short_52a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_52_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_52b.c" />
+    <file path="CWE843_Type_Confusion__short_52c.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_52c_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_52c_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_52_bad" file="CWE843_Type_Confusion__short_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_52c_badSink" file="CWE843_Type_Confusion__short_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_52a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_52c_goodG2BSink" file="CWE843_Type_Confusion__short_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="68">
+    <file path="CWE843_Type_Confusion__short_53a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_53_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_53b.c" />
+    <file path="CWE843_Type_Confusion__short_53c.c" />
+    <file path="CWE843_Type_Confusion__short_53d.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_53d_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_53d_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_53_bad" file="CWE843_Type_Confusion__short_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_53d_badSink" file="CWE843_Type_Confusion__short_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_53a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_53d_goodG2BSink" file="CWE843_Type_Confusion__short_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="69">
+    <file path="CWE843_Type_Confusion__short_54a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_54_bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_54b.c" />
+    <file path="CWE843_Type_Confusion__short_54c.c" />
+    <file path="CWE843_Type_Confusion__short_54d.c" />
+    <file path="CWE843_Type_Confusion__short_54e.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_54e_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_54e_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_54_bad" file="CWE843_Type_Confusion__short_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_54e_badSink" file="CWE843_Type_Confusion__short_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_54a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_54e_goodG2BSink" file="CWE843_Type_Confusion__short_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="70">
+    <file path="CWE843_Type_Confusion__short_63a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_63_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_63b.c">
+      <comment_flaw line="25" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_63b_badSink" />
+      <comment_flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_63b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_63_bad" file="CWE843_Type_Confusion__short_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="25" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_63b_badSink" file="CWE843_Type_Confusion__short_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_63a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="37" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_63b_goodG2BSink" file="CWE843_Type_Confusion__short_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="71">
+    <file path="CWE843_Type_Confusion__short_64a.c">
+      <comment_flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_64_bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_64b.c">
+      <comment_flaw line="28" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_64b_badSink" />
+      <comment_flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_64b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_64_bad" file="CWE843_Type_Confusion__short_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="28" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_64b_badSink" file="CWE843_Type_Confusion__short_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_64a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="43" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_64b_goodG2BSink" file="CWE843_Type_Confusion__short_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="72">
+    <file path="CWE843_Type_Confusion__short_65a.c">
+      <comment_flaw line="33" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_65_bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_65b.c">
+      <comment_flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_65b_badSink" />
+      <comment_flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_65b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="33" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_65_bad" file="CWE843_Type_Confusion__short_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="24" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_65b_badSink" file="CWE843_Type_Confusion__short_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_65a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="35" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_65b_goodG2BSink" file="CWE843_Type_Confusion__short_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="73">
+    <file path="CWE843_Type_Confusion__short_66a.c">
+      <comment_flaw line="32" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_66_bad" />
+      <comment_fix line="55" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_66b.c">
+      <comment_flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_66b_badSink" />
+      <comment_flaw line="38" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_66b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="32" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_66_bad" file="CWE843_Type_Confusion__short_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="26" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_66b_badSink" file="CWE843_Type_Confusion__short_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="55" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_66a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="38" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_66b_goodG2BSink" file="CWE843_Type_Confusion__short_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="74">
+    <file path="CWE843_Type_Confusion__short_67a.c">
+      <comment_flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_67_bad" />
+      <comment_fix line="59" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_67b.c">
+      <comment_flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_67b_badSink" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_67b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_67_bad" file="CWE843_Type_Confusion__short_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_67b_badSink" file="CWE843_Type_Confusion__short_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="59" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_67a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_67b_goodG2BSink" file="CWE843_Type_Confusion__short_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="75">
+    <file path="CWE843_Type_Confusion__short_68a.c">
+      <comment_flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_68_bad" />
+      <comment_fix line="56" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_68b.c">
+      <comment_flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_68b_badSink" />
+      <comment_flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_68b_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="short shortBuffer = 8;" function="CWE843_Type_Confusion__short_68_bad" file="CWE843_Type_Confusion__short_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="30" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_68b_badSink" file="CWE843_Type_Confusion__short_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="56" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_68a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="42" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_68b_goodG2BSink" file="CWE843_Type_Confusion__short_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="76">
+    <file path="CWE843_Type_Confusion__short_72a.cpp">
+      <comment_flaw line="38" code="short shortBuffer = 8;" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_72b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__short_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_72a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__short_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="77">
+    <file path="CWE843_Type_Confusion__short_73a.cpp">
+      <comment_flaw line="38" code="short shortBuffer = 8;" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_73b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__short_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_73a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__short_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="78">
+    <file path="CWE843_Type_Confusion__short_74a.cpp">
+      <comment_flaw line="38" code="short shortBuffer = 8;" function="bad" />
+      <comment_fix line="65" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_74b.cpp">
+      <comment_flaw line="32" code="printIntLine(*((int*)data));" function="badSink" />
+      <comment_flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="32" code="printIntLine(*((int*)data));" function="badSink" file="CWE843_Type_Confusion__short_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <fix line="65" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_74a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="44" code="printIntLine(*((int*)data));" function="goodG2BSink" file="CWE843_Type_Confusion__short_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="79">
+    <file path="CWE843_Type_Confusion__short_81_bad.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_81_bad::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_81_goodG2B.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_81_goodG2B::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_81a.cpp">
+      <comment_flaw line="32" code="short shortBuffer = 8;" function="bad" />
+      <comment_fix line="51" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_81_bad::action" file="CWE843_Type_Confusion__short_81_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_81_goodG2B::action" file="CWE843_Type_Confusion__short_81_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="51" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_81a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="80">
+    <file path="CWE843_Type_Confusion__short_82_bad.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_82_bad::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_82_goodG2B.cpp">
+      <comment_flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_82_goodG2B::action" />
+    </file>
+    <file path="CWE843_Type_Confusion__short_82a.cpp">
+      <comment_flaw line="32" code="short shortBuffer = 8;" function="bad" />
+      <comment_fix line="52" code="int intBuffer = 8;" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_82_bad::action" file="CWE843_Type_Confusion__short_82_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="short shortBuffer = 8;" function="bad" file="CWE843_Type_Confusion__short_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="2" classification_method="function_name_rule">
+      <flaw line="27" code="printIntLine(*((int*)data));" function="CWE843_Type_Confusion__short_82_goodG2B::action" file="CWE843_Type_Confusion__short_82_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="52" code="int intBuffer = 8;" function="goodG2B" file="CWE843_Type_Confusion__short_82a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+</container>

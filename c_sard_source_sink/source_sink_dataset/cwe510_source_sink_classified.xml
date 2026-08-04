@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE510_Trapdoor__hostname_based_logic_12.c">
+      <comment_flaw line="105" code="if (strcmp(&quot;admin.google.com&quot;, hostname) == 0)" function="CWE510_Trapdoor__hostname_based_logic_12_bad" />
+      <comment_fix line="180" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="CWE510_Trapdoor__hostname_based_logic_12_bad" />
+      <comment_fix line="253" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="317" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="105" code="if (strcmp(&quot;admin.google.com&quot;, hostname) == 0)" function="CWE510_Trapdoor__hostname_based_logic_12_bad" file="CWE510_Trapdoor__hostname_based_logic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="180" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="CWE510_Trapdoor__hostname_based_logic_12_bad" file="CWE510_Trapdoor__hostname_based_logic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE510_Trapdoor__ip_based_logic_12.c">
+      <comment_flaw line="90" code="if (strcmp(&quot;192.168.30.123&quot;, inet_ntoa(acceptService.sin_addr)) == 0)" function="CWE510_Trapdoor__ip_based_logic_12_bad" />
+      <comment_fix line="165" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="CWE510_Trapdoor__ip_based_logic_12_bad" />
+      <comment_fix line="238" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="good1" />
+      <comment_fix line="302" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="90" code="if (strcmp(&quot;192.168.30.123&quot;, inet_ntoa(acceptService.sin_addr)) == 0)" function="CWE510_Trapdoor__ip_based_logic_12_bad" file="CWE510_Trapdoor__ip_based_logic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="165" code="if (send(acceptSocket, DEFAULT_MESSAGE, strlen(DEFAULT_MESSAGE), 0) == SOCKET_ERROR)" function="CWE510_Trapdoor__ip_based_logic_12_bad" file="CWE510_Trapdoor__ip_based_logic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

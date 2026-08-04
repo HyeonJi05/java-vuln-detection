@@ -1,0 +1,1299 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="1">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c">
+      <comment_flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01_bad" />
+      <comment_flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01_bad" />
+      <comment_fix line="55" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="61" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="72" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="78" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="72" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="78" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="55" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="61" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_01.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="2">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_02.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="3">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_03.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="4">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c">
+      <comment_flaw line="42" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04_bad" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04_bad" />
+      <comment_flaw line="69" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="83" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="104" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="139" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="148" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="162" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="171" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="69" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="83" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="104" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="139" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="162" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="171" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_04.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="5">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c">
+      <comment_flaw line="42" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05_bad" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05_bad" />
+      <comment_flaw line="69" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="83" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="104" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="139" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="148" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="162" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="171" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="69" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="83" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="104" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="139" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="148" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="162" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="171" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_05.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="6">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c">
+      <comment_flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06_bad" />
+      <comment_flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06_bad" />
+      <comment_flaw line="68" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="103" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="112" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="138" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="147" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="161" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="170" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="68" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="103" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="112" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="138" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="147" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="161" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="170" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_06.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="7">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c">
+      <comment_flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07_bad" />
+      <comment_flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07_bad" />
+      <comment_flaw line="68" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="103" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="112" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="138" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="147" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="161" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="170" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="68" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="103" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="112" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="138" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="147" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="161" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="170" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_07.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="8">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c">
+      <comment_flaw line="49" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08_bad" />
+      <comment_flaw line="58" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08_bad" />
+      <comment_flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="90" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="111" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="120" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="146" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="155" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="169" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="178" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="49" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="58" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="90" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="111" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="120" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="146" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="155" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="169" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="178" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_08.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="9">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_09.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="10">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_10.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="11">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_11.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="12">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" />
+      <comment_fix line="41" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" />
+      <comment_flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" />
+      <comment_fix line="60" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" />
+      <comment_flaw line="87" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_flaw line="92" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="101" code="if (requiredSize &lt; 10)" function="goodB2G" />
+      <comment_fix line="118" code="if (requiredSize &lt; 10)" function="goodB2G" />
+      <comment_fix line="141" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_fix line="146" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="155" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="multi_comment_line_extrema">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="41" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" />
+      <flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" />
+      <fix line="60" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="multi_comment_line_extrema">
+      <flaw line="87" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="92" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" />
+      <fix line="101" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" />
+      <fix line="118" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="multi_comment_line_extrema">
+      <fix line="141" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" role="source" safety="good" />
+      <fix line="146" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_fix" />
+      <flaw line="155" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_12.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="13">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_13.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="14">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14_bad" />
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14_bad" />
+      <comment_flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="63" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="77" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="133" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="142" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="156" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="165" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_14.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="15">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15_bad" />
+      <comment_flaw line="52" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15_bad" />
+      <comment_flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="95" code="if (requiredSize &lt; 10)" function="goodB2G1" />
+      <comment_flaw line="118" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="133" code="if (requiredSize &lt; 10)" function="goodB2G2" />
+      <comment_fix line="164" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" />
+      <comment_flaw line="175" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" />
+      <comment_fix line="195" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" />
+      <comment_flaw line="210" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="52" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="95" code="if (requiredSize &lt; 10)" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="same_function_line_order">
+      <flaw line="118" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="133" code="if (requiredSize &lt; 10)" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b1" flow_index="4" classification_method="same_function_line_order">
+      <fix line="164" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="175" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="g2b2" flow_index="5" classification_method="same_function_line_order">
+      <fix line="195" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="210" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_15.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="16">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16_bad" />
+      <comment_flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16_bad" />
+      <comment_flaw line="65" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="75" code="if (requiredSize &lt; 10)" function="goodB2G" />
+      <comment_fix line="97" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="107" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="65" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="75" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="97" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="107" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_16.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="17">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17_bad" />
+      <comment_flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17_bad" />
+      <comment_flaw line="65" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="74" code="if (requiredSize &lt; 10)" function="goodB2G" />
+      <comment_fix line="96" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="105" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="65" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="74" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="96" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="105" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_17.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="18">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c">
+      <comment_flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18_bad" />
+      <comment_flaw line="44" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18_bad" />
+      <comment_flaw line="61" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="69" code="if (requiredSize &lt; 10)" function="goodB2G" />
+      <comment_fix line="89" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="97" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="44" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="61" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="69" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="89" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="97" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_18.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="19">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c">
+      <comment_flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="51" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21_bad" />
+      <comment_fix line="80" code="if (requiredSize &lt; 10)" function="goodB2G1Sink" />
+      <comment_flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2Sink" />
+      <comment_flaw line="131" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_flaw line="146" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="157" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="51" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="function_name_rule">
+      <fix line="80" code="if (requiredSize &lt; 10)" function="goodB2G1Sink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="98" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="function_name_rule">
+      <fix line="113" code="if (requiredSize &lt; 10)" function="goodB2G2Sink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="131" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="4" classification_method="function_name_rule">
+      <flaw line="146" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="157" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_21.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="20">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22a.c">
+      <comment_flaw line="39" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_bad" />
+      <comment_flaw line="62" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" />
+      <comment_flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" />
+      <comment_fix line="90" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22b.c">
+      <comment_flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_badSink" />
+      <comment_fix line="69" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodB2G1Sink" />
+      <comment_fix line="91" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodB2G2Sink" />
+      <comment_flaw line="113" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodG2BSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g1" flow_index="2" classification_method="function_name_rule">
+      <flaw line="62" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G1" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="69" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodB2G1Sink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="b2g2" flow_index="3" classification_method="function_name_rule">
+      <flaw line="76" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G2" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="91" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodB2G2Sink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="4" classification_method="function_name_rule">
+      <fix line="90" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="113" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_22b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="21">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c">
+      <comment_flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31_bad" />
+      <comment_flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31_bad" />
+      <comment_fix line="59" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="68" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="80" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="89" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="80" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="89" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="59" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="68" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_31.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="22">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c">
+      <comment_flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32_bad" />
+      <comment_flaw line="48" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32_bad" />
+      <comment_fix line="68" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="78" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="94" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="104" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="94" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="104" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="68" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="78" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_32.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="23">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp">
+      <comment_flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" />
+      <comment_fix line="63" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="71" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="92" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="92" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="63" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="71" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_33.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="24">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c">
+      <comment_flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34_bad" />
+      <comment_flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34_bad" />
+      <comment_fix line="67" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="76" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="89" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+      <comment_fix line="98" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="50" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="same_function_line_order">
+      <flaw line="89" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="98" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="same_function_line_order">
+      <fix line="67" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="76" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_34.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="25">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="45" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41_bad" />
+      <comment_flaw line="61" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="71" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_fix line="83" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+      <comment_flaw line="100" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="45" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="83" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="100" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="61" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="71" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_41.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="26">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c">
+      <comment_flaw line="31" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" />
+      <comment_flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42_bad" />
+      <comment_fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" />
+      <comment_flaw line="73" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="81" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" />
+      <comment_fix line="96" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="31" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="46" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="81" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="96" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="73" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_42.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="27">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp">
+      <comment_flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" />
+      <comment_flaw line="48" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" />
+      <comment_fix line="60" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" />
+      <comment_flaw line="74" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_flaw line="82" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" />
+      <comment_fix line="96" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="48" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="82" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="96" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="60" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="74" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_43.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="28">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="47" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44_bad" />
+      <comment_flaw line="64" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="75" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_fix line="87" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+      <comment_flaw line="105" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="47" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="87" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="105" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="64" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="75" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_44.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="29">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c">
+      <comment_flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="50" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45_bad" />
+      <comment_flaw line="68" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="78" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_fix line="92" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+      <comment_flaw line="109" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="50" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="92" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="109" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="68" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="78" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_45.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_badSink" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_goodG2BSink" />
+      <comment_fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_51b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="31">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52b.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_badSink" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_goodG2BSink" />
+      <comment_fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_52c.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="32">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53b.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53c.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_badSink" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_goodG2BSink" />
+      <comment_fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_53d.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="33">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54b.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54c.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54d.c" />
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_badSink" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_goodG2BSink" />
+      <comment_fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_54e.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="34">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61a.c">
+      <comment_flaw line="42" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61_bad" />
+      <comment_flaw line="64" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b.c">
+      <comment_flaw line="31" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_badSource" />
+      <comment_fix line="43" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_goodG2BSource" />
+      <comment_flaw line="51" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="42" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="31" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_badSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="82" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61a.c" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="51" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_goodB2GSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b.c" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="64" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61a.c" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="43" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b_goodG2BSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_61b.c" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="35">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62a.cpp">
+      <comment_flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" />
+      <comment_flaw line="67" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" />
+      <comment_fix line="85" code="if (requiredSize &lt; 10)" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62b.cpp">
+      <comment_flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" />
+      <comment_fix line="45" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" />
+      <comment_flaw line="52" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="45" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="34" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="badSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62b.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="85" code="if (requiredSize &lt; 10)" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62a.cpp" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="52" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2GSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62b.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="67" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62a.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="45" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2BSource" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_62b.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="36">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b.c">
+      <comment_flaw line="36" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_badSink" />
+      <comment_flaw line="53" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_goodG2BSink" />
+      <comment_fix line="66" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="36" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="66" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="53" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_63b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="37">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64a.c">
+      <comment_flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64_bad" />
+      <comment_fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b.c">
+      <comment_flaw line="39" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_badSink" />
+      <comment_flaw line="59" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_goodG2BSink" />
+      <comment_fix line="75" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="37" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="39" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="67" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="75" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="54" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="59" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_64b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="38">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65a.c">
+      <comment_flaw line="39" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65_bad" />
+      <comment_fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="72" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b.c">
+      <comment_flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_badSink" />
+      <comment_flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_goodG2BSink" />
+      <comment_fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="39" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="35" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="72" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="63" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="51" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_65b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="39">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66a.c">
+      <comment_flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66_bad" />
+      <comment_fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="73" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b.c">
+      <comment_flaw line="37" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_badSink" />
+      <comment_flaw line="54" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_goodG2BSink" />
+      <comment_fix line="67" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="38" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="37" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="73" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="67" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="58" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="54" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_66b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="40">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67a.c">
+      <comment_flaw line="43" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67_bad" />
+      <comment_fix line="62" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="77" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b.c">
+      <comment_flaw line="41" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_badSink" />
+      <comment_flaw line="58" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_goodG2BSink" />
+      <comment_fix line="71" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="43" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="41" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="77" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="71" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="62" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="58" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_67b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="41">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68a.c">
+      <comment_flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68_bad" />
+      <comment_fix line="61" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="73" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b.c">
+      <comment_flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_badSink" />
+      <comment_flaw line="57" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_goodG2BSink" />
+      <comment_fix line="70" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="41" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="40" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="73" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68a.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="70" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b.c" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="61" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68a.c" origin="comment_fix" role="source" safety="good" />
+      <flaw line="57" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b_goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_68b.c" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="42">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72a.cpp">
+      <comment_flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72b.cpp">
+      <comment_flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72b.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_72b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="43">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73a.cpp">
+      <comment_flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73b.cpp">
+      <comment_flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73b.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_73b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="44">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74a.cpp">
+      <comment_flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74b.cpp">
+      <comment_flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" />
+      <comment_flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" />
+      <comment_fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="44" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="43" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="badSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <flaw line="84" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74a.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="73" code="if (requiredSize &lt; 10)" function="goodB2GSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74b.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <fix line="66" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74a.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="60" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="goodG2BSink" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_74b.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="45">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_bad.cpp">
+      <comment_flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_bad::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodB2G.cpp">
+      <comment_fix line="32" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodB2G::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodG2B.cpp">
+      <comment_flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodG2B::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81a.cpp">
+      <comment_flaw line="32" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_fix line="48" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="60" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_bad::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="32" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodB2G::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodB2G.cpp" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="60" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodG2B::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="48" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_81a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="46">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_bad.cpp">
+      <comment_flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_bad::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodB2G.cpp">
+      <comment_fix line="32" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodB2G::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodG2B.cpp">
+      <comment_flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodG2B::action" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82a.cpp">
+      <comment_flaw line="32" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" />
+      <comment_fix line="49" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" />
+      <comment_flaw line="62" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="function_name_rule">
+      <flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_bad::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <flaw line="32" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="function_name_rule">
+      <fix line="32" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodB2G::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodB2G.cpp" origin="comment_fix" role="sink" safety="good" />
+      <flaw line="62" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82a.cpp" origin="comment_flaw" role="source" safety="bad" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="function_name_rule">
+      <flaw line="32" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodG2B::action" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+      <fix line="49" code="wcscpy(data, L&quot;\\u9580&quot;);" function="goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_82a.cpp" origin="comment_fix" role="source" safety="good" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="47">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad.cpp">
+      <comment_flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad" />
+      <comment_flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G.cpp">
+      <comment_flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G" />
+      <comment_fix line="38" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B.cpp">
+      <comment_fix line="28" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B" />
+      <comment_flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="ctor_dtor_rule">
+      <flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodB2G.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="ctor_dtor_rule">
+      <fix line="28" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B::CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_83_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad.cpp">
+      <comment_flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad" />
+      <comment_flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G.cpp">
+      <comment_flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G" />
+      <comment_fix line="38" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B.cpp">
+      <comment_fix line="28" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B" />
+      <comment_flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B" />
+    </file>
+    <file path="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84a.cpp" />
+    <flow type="b2b" flow_index="1" classification_method="ctor_dtor_rule">
+      <flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_bad.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+    <flow type="b2g" flow_index="2" classification_method="ctor_dtor_rule">
+      <flaw line="28" code="wcscpy(data, L&quot;\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644\\u9580\\u961c\\u9640\\u963f\\u963b\\u9644&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (requiredSize &lt; 10)" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodB2G.cpp" origin="comment_fix" role="sink" safety="good" />
+    </flow>
+    <flow type="g2b" flow_index="3" classification_method="ctor_dtor_rule">
+      <fix line="28" code="wcscpy(data, L&quot;\\u9580&quot;);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B::CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B.cpp" origin="comment_fix" role="source" safety="good" />
+      <flaw line="38" code="WideCharToMultiByte(CP_ACP, WC_COMPOSITECHECK, data, -1, convertedText, requiredSize , 0, 0);" function="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B::~CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B" file="CWE176_Improper_Handling_of_Unicode_Encoding__w32_84_goodG2B.cpp" origin="comment_flaw" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

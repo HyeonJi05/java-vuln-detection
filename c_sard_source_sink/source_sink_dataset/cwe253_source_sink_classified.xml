@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12.c">
+      <comment_flaw line="36" code="if (fgets(data, 100, stdin) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12_bad" />
+      <comment_fix line="53" code="if (fgets(data, 100, stdin) == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12_bad" />
+      <comment_fix line="79" code="if (fgets(data, 100, stdin) == NULL)" function="good1" />
+      <comment_fix line="96" code="if (fgets(data, 100, stdin) == NULL)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (fgets(data, 100, stdin) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="53" code="if (fgets(data, 100, stdin) == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12.c">
+      <comment_flaw line="30" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12_bad" />
+      <comment_fix line="38" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12_bad" />
+      <comment_fix line="55" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) &lt; 0)" function="good1" />
+      <comment_fix line="63" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) &lt; 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fprintf(stdout, &quot;%s\n&quot;, &quot;string&quot;) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12.c">
+      <comment_flaw line="30" code="if (fputc((int)'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12_bad" />
+      <comment_fix line="38" code="if (fputc((int)'A', stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12_bad" />
+      <comment_fix line="55" code="if (fputc((int)'A', stdout) == EOF)" function="good1" />
+      <comment_fix line="63" code="if (fputc((int)'A', stdout) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fputc((int)'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fputc((int)'A', stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12.c">
+      <comment_flaw line="30" code="if (fputs(&quot;string&quot;, stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12_bad" />
+      <comment_fix line="38" code="if (fputs(&quot;string&quot;, stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12_bad" />
+      <comment_fix line="55" code="if (fputs(&quot;string&quot;, stdout) == EOF)" function="good1" />
+      <comment_fix line="63" code="if (fputs(&quot;string&quot;, stdout) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fputs(&quot;string&quot;, stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fputs(&quot;string&quot;, stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fputs_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="84">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12.c">
+      <comment_flaw line="35" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12_bad" />
+      <comment_fix line="49" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) != 100-1)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12_bad" />
+      <comment_fix line="72" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) != 100-1)" function="good1" />
+      <comment_fix line="86" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) != 100-1)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (fread((char *)data, sizeof(char), (size_t)(100-1), stdin) != 100-1)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fread_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="102">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12.c">
+      <comment_flaw line="35" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12_bad" />
+      <comment_fix line="49" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12_bad" />
+      <comment_fix line="72" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="86" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (fscanf(stdin, &quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fscanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="120">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12.c">
+      <comment_flaw line="30" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12_bad" />
+      <comment_fix line="38" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) != strlen(&quot;string&quot;))" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12_bad" />
+      <comment_fix line="55" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) != strlen(&quot;string&quot;))" function="good1" />
+      <comment_fix line="63" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) != strlen(&quot;string&quot;))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fwrite((char *)&quot;string&quot;, sizeof(char), strlen(&quot;string&quot;), stdout) != strlen(&quot;string&quot;))" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_fwrite_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="138">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12.c">
+      <comment_flaw line="30" code="if (putc((int)'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12_bad" />
+      <comment_fix line="38" code="if (putc((int)'A', stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12_bad" />
+      <comment_fix line="55" code="if (putc((int)'A', stdout) == EOF)" function="good1" />
+      <comment_fix line="63" code="if (putc((int)'A', stdout) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (putc((int)'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (putc((int)'A', stdout) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_putc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="156">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12.c">
+      <comment_flaw line="30" code="if (putchar((int)'A') == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12_bad" />
+      <comment_fix line="38" code="if (putchar((int)'A') == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12_bad" />
+      <comment_fix line="55" code="if (putchar((int)'A') == EOF)" function="good1" />
+      <comment_fix line="63" code="if (putchar((int)'A') == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (putchar((int)'A') == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (putchar((int)'A') == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_putchar_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="174">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12.c">
+      <comment_flaw line="36" code="if (PUTS(&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12_bad" />
+      <comment_fix line="44" code="if (PUTS(&quot;string&quot;) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12_bad" />
+      <comment_fix line="61" code="if (PUTS(&quot;string&quot;) == EOF)" function="good1" />
+      <comment_fix line="69" code="if (PUTS(&quot;string&quot;) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (PUTS(&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="if (PUTS(&quot;string&quot;) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_puts_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="192">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12.c">
+      <comment_flaw line="36" code="if (REMOVE(&quot;removemebad.txt&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12_bad" />
+      <comment_fix line="44" code="if (REMOVE(&quot;removemegood.txt&quot;) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12_bad" />
+      <comment_fix line="61" code="if (REMOVE(&quot;removemegood.txt&quot;) != 0)" function="good1" />
+      <comment_fix line="69" code="if (REMOVE(&quot;removemegood.txt&quot;) != 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (REMOVE(&quot;removemebad.txt&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="if (REMOVE(&quot;removemegood.txt&quot;) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_remove_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="210">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12.c">
+      <comment_flaw line="41" code="if (RENAME(OLD_BAD_FILE_NAME, NEW_BAD_FILE_NAME) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12_bad" />
+      <comment_fix line="49" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12_bad" />
+      <comment_fix line="66" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="good1" />
+      <comment_fix line="74" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="if (RENAME(OLD_BAD_FILE_NAME, NEW_BAD_FILE_NAME) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_rename_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="228">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12.c">
+      <comment_flaw line="35" code="if (scanf(&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12_bad" />
+      <comment_fix line="49" code="if (scanf(&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12_bad" />
+      <comment_fix line="72" code="if (scanf(&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="86" code="if (scanf(&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (scanf(&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (scanf(&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_scanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="246">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12.c">
+      <comment_flaw line="43" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12_bad" />
+      <comment_fix line="57" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12_bad" />
+      <comment_fix line="80" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="good1" />
+      <comment_fix line="94" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="57" code="if (SNPRINTF(data,100-strlen(SRC_STRING)-1, &quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_snprintf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="264">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12.c">
+      <comment_flaw line="37" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12_bad" />
+      <comment_fix line="51" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12_bad" />
+      <comment_fix line="74" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="88" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="if (sscanf(SRC_STRING, &quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_sscanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="282">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12.c">
+      <comment_flaw line="36" code="if (hMutex == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12_bad" />
+      <comment_fix line="51" code="if (hMutex == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12_bad" />
+      <comment_fix line="75" code="if (hMutex == NULL)" function="good1" />
+      <comment_fix line="90" code="if (hMutex == NULL)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (hMutex == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="if (hMutex == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateMutex_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="300">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12.c">
+      <comment_flaw line="48" code="if (hPipe == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12_bad" />
+      <comment_fix line="76" code="if (hPipe == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12_bad" />
+      <comment_fix line="113" code="if (hPipe == INVALID_HANDLE_VALUE)" function="good1" />
+      <comment_fix line="141" code="if (hPipe == INVALID_HANDLE_VALUE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="48" code="if (hPipe == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="76" code="if (hPipe == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32CreateNamedPipe_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="318">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12.c">
+      <comment_flaw line="52" code="if (ImpersonateNamedPipeClient(hPipe) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="80" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="117" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+      <comment_fix line="145" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="52" code="if (ImpersonateNamedPipeClient(hPipe) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="80" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__char_w32ImpersonateNamedPipeClient_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="336">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12.c">
+      <comment_flaw line="29" code="if (ImpersonateSelf(SecurityImpersonation) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12_bad" />
+      <comment_fix line="37" code="if (!ImpersonateSelf(SecurityImpersonation))" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12_bad" />
+      <comment_fix line="54" code="if (!ImpersonateSelf(SecurityImpersonation))" function="good1" />
+      <comment_fix line="62" code="if (!ImpersonateSelf(SecurityImpersonation))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="29" code="if (ImpersonateSelf(SecurityImpersonation) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="37" code="if (!ImpersonateSelf(SecurityImpersonation))" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__w32_ImpersonateSelf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="354">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12.c">
+      <comment_flaw line="30" code="if (RpcImpersonateClient(0) == RPC_S_OK)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12_bad" />
+      <comment_fix line="40" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12_bad" />
+      <comment_fix line="59" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="good1" />
+      <comment_fix line="69" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (RpcImpersonateClient(0) == RPC_S_OK)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="if (RpcImpersonateClient(0) != RPC_S_OK)" function="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__w32_RpcImpersonateClient_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="372">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12.c">
+      <comment_flaw line="36" code="if (fgetws(data, 100, stdin) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12_bad" />
+      <comment_fix line="53" code="if (fgetws(data, 100, stdin) == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12_bad" />
+      <comment_fix line="79" code="if (fgetws(data, 100, stdin) == NULL)" function="good1" />
+      <comment_fix line="96" code="if (fgetws(data, 100, stdin) == NULL)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (fgetws(data, 100, stdin) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="53" code="if (fgetws(data, 100, stdin) == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fgets_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="390">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12.c">
+      <comment_flaw line="30" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12_bad" />
+      <comment_fix line="38" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12_bad" />
+      <comment_fix line="55" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) &lt; 0)" function="good1" />
+      <comment_fix line="63" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) &lt; 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fwprintf(stdout, L&quot;%s\n&quot;, L&quot;string&quot;) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fprintf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="408">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12.c">
+      <comment_flaw line="30" code="if (fputwc((wchar_t)L'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12_bad" />
+      <comment_fix line="38" code="if (fputwc((wchar_t)L'A', stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12_bad" />
+      <comment_fix line="55" code="if (fputwc((wchar_t)L'A', stdout) == WEOF)" function="good1" />
+      <comment_fix line="63" code="if (fputwc((wchar_t)L'A', stdout) == WEOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fputwc((wchar_t)L'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fputwc((wchar_t)L'A', stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="426">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12.c">
+      <comment_flaw line="30" code="if (fputws(L&quot;string&quot;, stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12_bad" />
+      <comment_fix line="38" code="if (fputws(L&quot;string&quot;, stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12_bad" />
+      <comment_fix line="55" code="if (fputws(L&quot;string&quot;, stdout) == WEOF)" function="good1" />
+      <comment_fix line="63" code="if (fputws(L&quot;string&quot;, stdout) == WEOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fputws(L&quot;string&quot;, stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fputws(L&quot;string&quot;, stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fputs_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="444">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12.c">
+      <comment_flaw line="35" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12_bad" />
+      <comment_fix line="49" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) != 100-1)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12_bad" />
+      <comment_fix line="72" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) != 100-1)" function="good1" />
+      <comment_fix line="86" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) != 100-1)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (fread((wchar_t *)data, sizeof(wchar_t), (size_t)(100-1), stdin) != 100-1)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fread_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="462">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12.c">
+      <comment_flaw line="35" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12_bad" />
+      <comment_fix line="49" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12_bad" />
+      <comment_fix line="72" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="86" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (fwscanf(stdin, L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="480">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12.c">
+      <comment_flaw line="30" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12_bad" />
+      <comment_fix line="38" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) != wcslen(L&quot;string&quot;))" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12_bad" />
+      <comment_fix line="55" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) != wcslen(L&quot;string&quot;))" function="good1" />
+      <comment_fix line="63" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) != wcslen(L&quot;string&quot;))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (fwrite((wchar_t *)L&quot;string&quot;, sizeof(wchar_t), wcslen(L&quot;string&quot;), stdout) != wcslen(L&quot;string&quot;))" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fwrite_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="498">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12.c">
+      <comment_flaw line="30" code="if (putwc((wchar_t)L'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12_bad" />
+      <comment_fix line="38" code="if (putwc((wchar_t)L'A', stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12_bad" />
+      <comment_fix line="55" code="if (putwc((wchar_t)L'A', stdout) == WEOF)" function="good1" />
+      <comment_fix line="63" code="if (putwc((wchar_t)L'A', stdout) == WEOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (putwc((wchar_t)L'A', stdout) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (putwc((wchar_t)L'A', stdout) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putc_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="516">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12.c">
+      <comment_flaw line="30" code="if (putwchar((wchar_t)L'A') == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12_bad" />
+      <comment_fix line="38" code="if (putwchar((wchar_t)L'A') == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12_bad" />
+      <comment_fix line="55" code="if (putwchar((wchar_t)L'A') == WEOF)" function="good1" />
+      <comment_fix line="63" code="if (putwchar((wchar_t)L'A') == WEOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="if (putwchar((wchar_t)L'A') == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="38" code="if (putwchar((wchar_t)L'A') == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_putchar_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="534">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12.c">
+      <comment_flaw line="36" code="if (PUTS(L&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12_bad" />
+      <comment_fix line="44" code="if (PUTS(L&quot;string&quot;) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12_bad" />
+      <comment_fix line="61" code="if (PUTS(L&quot;string&quot;) == WEOF)" function="good1" />
+      <comment_fix line="69" code="if (PUTS(L&quot;string&quot;) == WEOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (PUTS(L&quot;string&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="if (PUTS(L&quot;string&quot;) == WEOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_puts_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="552">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12.c">
+      <comment_flaw line="36" code="if (REMOVE(L&quot;removemebad.txt&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12_bad" />
+      <comment_fix line="44" code="if (REMOVE(L&quot;removemegood.txt&quot;) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12_bad" />
+      <comment_fix line="61" code="if (REMOVE(L&quot;removemegood.txt&quot;) != 0)" function="good1" />
+      <comment_fix line="69" code="if (REMOVE(L&quot;removemegood.txt&quot;) != 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (REMOVE(L&quot;removemebad.txt&quot;) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="44" code="if (REMOVE(L&quot;removemegood.txt&quot;) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_remove_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="570">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12.c">
+      <comment_flaw line="41" code="if (RENAME(OLD_BAD_FILE_NAME, NEW_BAD_FILE_NAME) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12_bad" />
+      <comment_fix line="49" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12_bad" />
+      <comment_fix line="66" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="good1" />
+      <comment_fix line="74" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="41" code="if (RENAME(OLD_BAD_FILE_NAME, NEW_BAD_FILE_NAME) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (RENAME(OLD_GOOD_FILE_NAME, NEW_GOOD_FILE_NAME) != 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_rename_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="588">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12.c">
+      <comment_flaw line="35" code="if (wscanf(L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12_bad" />
+      <comment_fix line="49" code="if (wscanf(L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12_bad" />
+      <comment_fix line="72" code="if (wscanf(L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="86" code="if (wscanf(L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="35" code="if (wscanf(L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="49" code="if (wscanf(L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_scanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="606">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12.c">
+      <comment_flaw line="43" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12_bad" />
+      <comment_fix line="57" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12_bad" />
+      <comment_fix line="80" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="good1" />
+      <comment_fix line="94" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="43" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="57" code="if (SNPRINTF(data,100-wcslen(SRC_STRING)-1, L&quot;%s\n&quot;, SRC_STRING) &lt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_snprintf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="624">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12.c">
+      <comment_flaw line="37" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12_bad" />
+      <comment_fix line="51" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12_bad" />
+      <comment_fix line="74" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+      <comment_fix line="88" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == EOF)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="37" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="if (swscanf(SRC_STRING, L&quot;%99s\0&quot;, data) == EOF)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_sscanf_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="642">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12.c">
+      <comment_flaw line="36" code="if (hMutex == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12_bad" />
+      <comment_fix line="51" code="if (hMutex == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12_bad" />
+      <comment_fix line="75" code="if (hMutex == NULL)" function="good1" />
+      <comment_fix line="90" code="if (hMutex == NULL)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="36" code="if (hMutex == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="51" code="if (hMutex == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateMutex_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="660">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12.c">
+      <comment_flaw line="48" code="if (hPipe == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12_bad" />
+      <comment_fix line="76" code="if (hPipe == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12_bad" />
+      <comment_fix line="113" code="if (hPipe == INVALID_HANDLE_VALUE)" function="good1" />
+      <comment_fix line="141" code="if (hPipe == INVALID_HANDLE_VALUE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="48" code="if (hPipe == NULL)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="76" code="if (hPipe == INVALID_HANDLE_VALUE)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32CreateNamedPipe_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="678">
+    <file path="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12.c">
+      <comment_flaw line="52" code="if (ImpersonateNamedPipeClient(hPipe) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="80" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12_bad" />
+      <comment_fix line="117" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+      <comment_fix line="145" code="if (!ImpersonateNamedPipeClient(hPipe))" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="52" code="if (ImpersonateNamedPipeClient(hPipe) &gt; 0)" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="80" code="if (!ImpersonateNamedPipeClient(hPipe))" function="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12_bad" file="CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_w32ImpersonateNamedPipeClient_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE391_Unchecked_Error_Condition__sqrt_12.c">
+      <comment_flaw line="32" code="printDoubleLine(doubleNumber);" function="CWE391_Unchecked_Error_Condition__sqrt_12_bad" />
+      <comment_fix line="42" code="if (errno == EDOM)" function="CWE391_Unchecked_Error_Condition__sqrt_12_bad" />
+      <comment_fix line="66" code="if (errno == EDOM)" function="good1" />
+      <comment_fix line="81" code="if (errno == EDOM)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="printDoubleLine(doubleNumber);" function="CWE391_Unchecked_Error_Condition__sqrt_12_bad" file="CWE391_Unchecked_Error_Condition__sqrt_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="42" code="if (errno == EDOM)" function="CWE391_Unchecked_Error_Condition__sqrt_12_bad" file="CWE391_Unchecked_Error_Condition__sqrt_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE391_Unchecked_Error_Condition__strtol_12.c">
+      <comment_flaw line="30" code="printf(&quot;%li\n&quot;, longNumber);" function="CWE391_Unchecked_Error_Condition__strtol_12_bad" />
+      <comment_fix line="40" code="if (errno == ERANGE)" function="CWE391_Unchecked_Error_Condition__strtol_12_bad" />
+      <comment_fix line="64" code="if (errno == ERANGE)" function="good1" />
+      <comment_fix line="79" code="if (errno == ERANGE)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="30" code="printf(&quot;%li\n&quot;, longNumber);" function="CWE391_Unchecked_Error_Condition__strtol_12_bad" file="CWE391_Unchecked_Error_Condition__strtol_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="40" code="if (errno == ERANGE)" function="CWE391_Unchecked_Error_Condition__strtol_12_bad" file="CWE391_Unchecked_Error_Condition__strtol_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE391_Unchecked_Error_Condition__wcstombs_12.c">
+      <comment_flaw line="32" code="printUnsignedLine(bytesTranslated);" function="CWE391_Unchecked_Error_Condition__wcstombs_12_bad" />
+      <comment_fix line="45" code="if (errno == EILSEQ)" function="CWE391_Unchecked_Error_Condition__wcstombs_12_bad" />
+      <comment_fix line="72" code="if (errno == EILSEQ)" function="good1" />
+      <comment_fix line="90" code="if (errno == EILSEQ)" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="32" code="printUnsignedLine(bytesTranslated);" function="CWE391_Unchecked_Error_Condition__wcstombs_12_bad" file="CWE391_Unchecked_Error_Condition__wcstombs_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="45" code="if (errno == EILSEQ)" function="CWE391_Unchecked_Error_Condition__wcstombs_12_bad" file="CWE391_Unchecked_Error_Condition__wcstombs_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

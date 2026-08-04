@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12.c">
+      <comment_flaw line="42" code="if (!PathAppendA(path, &quot;AAAAAAAAAAAA&quot;))" function="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12_bad" />
+      <comment_fix line="55" code="char path[MAX_PATH];" function="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12_bad" />
+      <comment_fix line="82" code="char path[MAX_PATH];" function="good1" />
+      <comment_fix line="100" code="char path[MAX_PATH];" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="42" code="if (!PathAppendA(path, &quot;AAAAAAAAAAAA&quot;))" function="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12_bad" file="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="55" code="char path[MAX_PATH];" function="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12_bad" file="CWE785_Path_Manipulation_Function_Without_Max_Sized_Buffer__w32_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

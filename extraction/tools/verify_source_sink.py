@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-r"""Verify extracted source/sink line numbers against the original .java sources.
+r"""Verify extracted source/sink line numbers against the original sources
+(Java or C/C++, selected via --language).
 
 For every source/sink item in a classified XML, this checks that the code text
-recorded in the XML matches the actual line in the original .java file. This
+recorded in the XML matches the actual line in the original source file. This
 guarantees the extracted line numbers did not drift.
 
 Known false positives:
@@ -56,17 +57,17 @@ def normalize_code(text: str) -> str:
     return t
 
 
-def build_source_index(source_root: Path) -> dict[str, str]:
-    """Map each .java file name -> its full path under source_root."""
+def build_source_index(source_root: Path, suffixes: tuple[str, ...]) -> dict[str, str]:
+    """Map each source file name -> its full path under source_root."""
     index = {}
     for root, _, files in os.walk(source_root):
         for fn in files:
-            if fn.endswith(".java"):
+            if fn.endswith(suffixes):
                 index[fn] = os.path.join(root, fn)
     return index
 
 
-def verify_one(xml_path: Path, source_root: Path) -> dict:
+def verify_one(xml_path: Path, source_root: Path, suffixes: tuple[str, ...]) -> dict:
     """Verify a single classified XML against its source root. Returns a result dict."""
     result = {
         "xml": str(xml_path), "source_root": str(source_root),
@@ -74,7 +75,7 @@ def verify_one(xml_path: Path, source_root: Path) -> dict:
         "known_warning": 0, "missing_file": 0,
         "mismatches": [],  # list of (file, line, expected, actual)
     }
-    index = build_source_index(source_root)
+    index = build_source_index(source_root, suffixes)
     cache: dict[str, list[str]] = {}
 
     def get_lines(path: str) -> list[str]:
@@ -118,14 +119,23 @@ def cwe_from_xml_name(name: str) -> str | None:
     return m.group(1) if m else None
 
 
+def resolve_c_cwe_source_root(dataset_root: Path, cwe: str) -> Path | None:
+    """C/C++ Juliet layout: <root>/testcases/CWE{N}_{Name}/."""
+    testcases_root = dataset_root / "testcases"
+    matches = sorted(testcases_root.glob(f"CWE{cwe}_*"))
+    return matches[0] if matches else None
+
+
 def main():
-    ap = argparse.ArgumentParser(description="Verify source/sink line numbers against original .java.")
-    ap.add_argument("--output-dir", default="java_sard_source_sink/source_sink_dataset",
-                    help="Folder of classified XMLs (default: batch output folder)")
-    ap.add_argument("--dataset-root", default="juliet-java-test-suite",
-                    help="Root of the Java SARD dataset")
-    ap.add_argument("--log-dir", default="java_sard_source_sink/logs",
-                    help="Folder to write verification logs")
+    ap = argparse.ArgumentParser(description="Verify source/sink line numbers against original sources.")
+    ap.add_argument("--language", choices=("java", "c"), default="java",
+                    help="Source language (default: java).")
+    ap.add_argument("--output-dir", default=None,
+                    help="Folder of classified XMLs (default depends on --language)")
+    ap.add_argument("--dataset-root", default=None,
+                    help="Root of the SARD dataset (default depends on --language)")
+    ap.add_argument("--log-dir", default=None,
+                    help="Folder to write verification logs (default depends on --language)")
     ap.add_argument("--cwe", type=int, nargs="*", default=None,
                     help="Verify only these CWE numbers (default: all found in output-dir)")
     ap.add_argument("--xml", default=None,
@@ -134,6 +144,13 @@ def main():
                     help="Single-file mode: explicit source root for --xml")
     args = ap.parse_args()
 
+    suffixes = (".java",) if args.language == "java" else (".c", ".cpp", ".h")
+    default_out_base = "java_sard_source_sink" if args.language == "java" else "c_sard_source_sink"
+    default_dataset_root = "juliet-java-test-suite" if args.language == "java" else "juliet-test-suite-c"
+    output_dir_arg = args.output_dir or f"{default_out_base}/source_sink_dataset"
+    log_dir_arg = args.log_dir or f"{default_out_base}/logs"
+    dataset_root_arg = args.dataset_root or default_dataset_root
+
     results = []
 
     # --- single-file mode ---
@@ -141,11 +158,11 @@ def main():
         if not (args.xml and args.source_root):
             print("ERROR: --xml and --source-root must be given together.")
             sys.exit(1)
-        results.append(verify_one(Path(args.xml), Path(args.source_root)))
+        results.append(verify_one(Path(args.xml), Path(args.source_root), suffixes))
     else:
         # --- batch mode: iterate XMLs in output-dir ---
-        out_dir = Path(args.output_dir)
-        dataset_root = Path(args.dataset_root)
+        out_dir = Path(output_dir_arg)
+        dataset_root = Path(dataset_root_arg)
         xmls = sorted(out_dir.glob("cwe*_source_sink_classified.xml"))
         if not xmls:
             print(f"No classified XMLs found in {out_dir}")
@@ -156,18 +173,21 @@ def main():
                 continue
             if args.cwe and int(cwe) not in args.cwe:
                 continue
-            src = dataset_root / f"juliet-cwe{cwe}" / "src" / "main" / "java"
-            if not src.is_dir():
+            if args.language == "java":
+                src = dataset_root / f"juliet-cwe{cwe}" / "src" / "main" / "java"
+            else:
+                src = resolve_c_cwe_source_root(dataset_root, cwe)
+            if src is None or not src.is_dir():
                 print(f"CWE-{cwe}: source root not found ({src}), skipping")
                 continue
-            r = verify_one(xml, src)
+            r = verify_one(xml, src, suffixes)
             r["cwe"] = cwe
             results.append(r)
 
     # --- report: screen shows table + real errors; details go to log files ---
     import csv as _csv
 
-    log_dir = Path(args.log_dir)
+    log_dir = Path(log_dir_arg)
     log_dir.mkdir(parents=True, exist_ok=True)
 
     # screen: per-CWE table

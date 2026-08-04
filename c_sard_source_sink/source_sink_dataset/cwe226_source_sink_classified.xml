@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12.c">
+      <comment_flaw line="64" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12_bad" />
+      <comment_fix line="107" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12_bad" />
+      <comment_fix line="159" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+      <comment_fix line="202" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_alloca_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12.c">
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12_bad" />
+      <comment_fix line="103" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12_bad" />
+      <comment_fix line="153" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+      <comment_fix line="194" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="62" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="103" code="SecureZeroMemory(password, passwordLen * sizeof(char));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_char_declare_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12.c">
+      <comment_flaw line="64" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12_bad" />
+      <comment_fix line="107" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12_bad" />
+      <comment_fix line="159" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+      <comment_fix line="202" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="64" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="107" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_alloca_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="66">
+    <file path="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12.c">
+      <comment_flaw line="62" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12_bad" />
+      <comment_fix line="103" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12_bad" />
+      <comment_fix line="153" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+      <comment_fix line="194" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="62" code="WARNING_NOT_FOUND" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="103" code="SecureZeroMemory(password, passwordLen * sizeof(wchar_t));" function="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12_bad" file="CWE226_Sensitive_Information_Uncleared_Before_Release__w32_wchar_t_declare_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

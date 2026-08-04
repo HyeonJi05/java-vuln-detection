@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE396_Catch_Generic_Exception__dotdotdot_12.cpp">
+      <comment_flaw line="45" code="printLine(&quot;exception&quot;);" function="bad" />
+      <comment_fix line="65" code="printLine(&quot;out_of_range&quot;);" function="bad" />
+      <comment_fix line="99" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+      <comment_fix line="124" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="printLine(&quot;exception&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__dotdotdot_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="65" code="printLine(&quot;out_of_range&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__dotdotdot_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="30">
+    <file path="CWE396_Catch_Generic_Exception__exception_12.cpp">
+      <comment_flaw line="45" code="printLine(&quot;exception&quot;);" function="bad" />
+      <comment_fix line="65" code="printLine(&quot;out_of_range&quot;);" function="bad" />
+      <comment_fix line="99" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+      <comment_fix line="124" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="45" code="printLine(&quot;exception&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__exception_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="65" code="printLine(&quot;out_of_range&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__exception_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="48">
+    <file path="CWE396_Catch_Generic_Exception__exception_and_domain_error_12.cpp">
+      <comment_flaw line="46" code="printLine(&quot;exception&quot;);" function="bad" />
+      <comment_fix line="72" code="printLine(&quot;out_of_range&quot;);" function="bad" />
+      <comment_fix line="106" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+      <comment_fix line="131" code="printLine(&quot;out_of_range&quot;);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="46" code="printLine(&quot;exception&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__exception_and_domain_error_12.cpp" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="72" code="printLine(&quot;out_of_range&quot;);" function="bad" file="CWE396_Catch_Generic_Exception__exception_and_domain_error_12.cpp" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

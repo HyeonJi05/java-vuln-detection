@@ -1,3 +1,7 @@
 [submodule "juliet-java-test-suite"]
 	path = juliet-java-test-suite
 	url = https://github.com/UnitTestBot/juliet-java-test-suite
+
+[submodule "juliet-test-suite-c"]
+	path = juliet-test-suite-c
+	url = https://github.com/arichardson/juliet-test-suite-c.git

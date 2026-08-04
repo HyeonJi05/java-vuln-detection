@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="12">
+    <file path="CWE364_Signal_Handler_Race_Condition__basic_12.c">
+      <comment_flaw line="79" code="if (CWE364_Signal_Handler_Race_Condition__basic_12StructSigAtomicBad != NULL)" function="CWE364_Signal_Handler_Race_Condition__basic_12_bad" />
+      <comment_fix line="113" code="signal(SIGINT, SIG_DFL);" function="CWE364_Signal_Handler_Race_Condition__basic_12_bad" />
+      <comment_fix line="158" code="signal(SIGINT, SIG_DFL);" function="good1" />
+      <comment_fix line="194" code="signal(SIGINT, SIG_DFL);" function="good1" />
+    </file>
+    <flow type="b2b" flow_index="1" classification_method="same_function_line_order">
+      <flaw line="79" code="if (CWE364_Signal_Handler_Race_Condition__basic_12StructSigAtomicBad != NULL)" function="CWE364_Signal_Handler_Race_Condition__basic_12_bad" file="CWE364_Signal_Handler_Race_Condition__basic_12.c" origin="comment_flaw" role="source" safety="bad" />
+      <fix line="113" code="signal(SIGINT, SIG_DFL);" function="CWE364_Signal_Handler_Race_Condition__basic_12_bad" file="CWE364_Signal_Handler_Race_Condition__basic_12.c" origin="comment_fix" role="sink" safety="bad" />
+    </flow>
+  </testcase>
+</container>

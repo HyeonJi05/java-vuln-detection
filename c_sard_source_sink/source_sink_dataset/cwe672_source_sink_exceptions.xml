@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<container>
+  <testcase testcase_index="46">
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad.cpp">
+      <comment_flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad" />
+      <comment_flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G.cpp">
+      <comment_flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G" />
+      <comment_fix line="40" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B.cpp">
+      <comment_fix line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B" />
+      <comment_flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad.cpp" origin="comment_flaw" />
+      <flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="40" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_83_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+  <testcase testcase_index="47">
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad.cpp">
+      <comment_flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad" />
+      <comment_flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G.cpp">
+      <comment_flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G" />
+      <comment_fix line="40" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B.cpp">
+      <comment_fix line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B" />
+      <comment_flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B" />
+    </file>
+    <file path="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84a.cpp" />
+    <flow type="b2b" flow_index="1" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad.cpp" origin="comment_flaw" />
+      <flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_bad.cpp" origin="comment_flaw" />
+    </flow>
+    <flow type="b2g" flow_index="2" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <flaw line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G.cpp" origin="comment_flaw" />
+      <fix line="40" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodB2G.cpp" origin="comment_fix" />
+    </flow>
+    <flow type="g2b" flow_index="3" skip_reason="unhandled_function_name_pattern" comment_tag_count="2">
+      <fix line="28" code="data.push_back(100);" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B::CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B.cpp" origin="comment_fix" />
+      <flaw line="44" code="cout &lt;&lt; &quot; &quot; &lt;&lt; *i;" function="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B::~CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B" file="CWE672_Operation_on_Resource_After_Expiration_or_Release__list_int_84_goodG2B.cpp" origin="comment_flaw" />
+    </flow>
+  </testcase>
+</container>
