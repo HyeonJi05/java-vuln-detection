@@ -53,7 +53,7 @@ from pathlib import Path
 SLICING_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SLICING_DIR.parent
 JAVA_JULIET_DIR = REPO_ROOT / "juliet-java-test-suite"
-C_JULIET_DIR = REPO_ROOT / "juliet-test-suite-v1.3" / "C"
+C_JULIET_DIR = REPO_ROOT / "juliet-test-suite-c"
 JAVA_EXTRACTION_OUT = REPO_ROOT / "java_sard_source_sink" / "source_sink_dataset"
 C_EXTRACTION_OUT = REPO_ROOT / "c_sard_source_sink" / "source_sink_dataset"
 
@@ -267,10 +267,7 @@ def run_batch(
         else:
             testcases = all_tc[:per_cwe]        # first N in XML order
         job_lines = []
-        cpg_dir_name = (
-            f"cwe{cwe}_cpg" if language == "java" else f"cwe{cwe}_c_cpg"
-        )
-        cpg_dir = CPG_DIR / cpg_dir_name
+        cpg_dir = CPG_DIR / language / f"cwe{cwe}_cpg"
         cpg_paths = {
             tc.get("testcase_index"): (
                 cpg_dir / f"cwe{cwe}-{tc.get('testcase_index')}-cpg-resolved.bin"
@@ -370,20 +367,22 @@ def main():
                          "(default: reuse them)")
     ap.add_argument("--output-dir", default=None,
                     help="Directory to write results into. If omitted, a new "
-                         "timestamped folder output/slice_results_YYMMDD_HHMMSS/ "
-                         "is created (never overwrites previous runs).")
+                         "timestamped folder output/slice_results/{language}/"
+                         "slice_results_YYMMDD_HHMMSS/ is created (never overwrites "
+                         "previous runs).")
     args = ap.parse_args()
     if args.cpg_workers < 1:
         ap.error("--cpg-workers must be at least 1")
 
-    # Decide result directory: explicit --output-dir, else timestamped folder.
+    # Decide result directory: explicit --output-dir, else a language-scoped
+    # timestamped folder (mirrors CPG_DIR/{language}/... so java/c runs never mix).
     if args.output_dir:
         result_dir = Path(args.output_dir)
         if not result_dir.is_absolute():
             result_dir = SLICING_DIR / result_dir
     else:
         stamp = datetime.now().strftime("%y%m%d_%H%M%S")
-        result_dir = OUTPUT_DIR / f"slice_results_{stamp}"
+        result_dir = OUTPUT_DIR / "slice_results" / args.language / f"slice_results_{stamp}"
 
     print("== java-vuln-detection slicing runner ==")
     joern_cli = find_joern(args.joern)

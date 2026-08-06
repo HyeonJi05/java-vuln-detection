@@ -469,13 +469,10 @@ def build_cpgs(args: argparse.Namespace) -> None:
 
     source_root = source_root_for_cwe(juliet_dir, number, args.language)
     source_index = build_source_index(source_root, testcases, suffixes)
-    cpg_dir_name = (
-        f"cwe{number}_cpg" if args.language == "java" else f"cwe{number}_c_cpg"
-    )
     output_dir = (
         args.output_dir.expanduser().resolve()
         if args.output_dir
-        else PROJECT_ROOT / "output" / "CPG" / cpg_dir_name
+        else PROJECT_ROOT / "output" / "CPG" / args.language / f"cwe{number}_cpg"
     )
     flow_count = sum(testcase.flow_count for testcase in testcases)
     source_count = len(source_index)

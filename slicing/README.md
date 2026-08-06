@@ -193,12 +193,20 @@ slicing/
 │   │                           #   (SAN2G1의 pdg_slice.sc 로직을 그대로 사용)
 │   └── run_pdg_slice_batch.sh  # 목록 파일 하나로 joern을 한 번 실행
 └── output/
-    └── slice_results/          # 슬라이싱 결과 (커밋)
-        ├── cwe{번호}.txt        # 배치 방식 결과
-        └── test/               # 원본 방식으로 뽑은 결과 (비교용)
+    ├── CPG/
+    │   ├── java/cwe{번호}_cpg/
+    │   └── c/cwe{번호}_cpg/
+    └── slice_results/          # 슬라이싱 결과 (커밋), 언어별 하위 폴더
+        ├── java/
+        │   └── slice_results_{시각}/cwe{번호}.txt
+        └── c/
+            └── slice_results_{시각}/cwe{번호}.txt
 ```
 
-Java CPG는 `output/CPG/cwe{번호}_cpg/`, C/C++ CPG는
-`output/CPG/cwe{번호}_c_cpg/`에 저장하여 캐시 충돌을 방지합니다. `deps/`,
+CPG와 슬라이싱 결과 모두 언어별 하위 폴더로 나눠 저장하여 캐시 충돌을
+방지합니다: CPG는 Java `output/CPG/java/cwe{번호}_cpg/`, C/C++
+`output/CPG/c/cwe{번호}_cpg/`. 슬라이싱 결과는(`--output-dir` 미지정 시)
+Java `output/slice_results/java/slice_results_{시각}/`, C/C++
+`output/slice_results/c/slice_results_{시각}/`에 저장됩니다. `deps/`,
 `.env`, `output/CPG/`, `output/jobs/` 등 재생성되는 파일과 환경 파일은 저장소에
 포함하지 않습니다(`.gitignore`).
