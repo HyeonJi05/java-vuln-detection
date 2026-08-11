@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import csv
 import re
-import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import NamedTuple
@@ -36,6 +35,17 @@ BACKWARD_SLICE_END_PREFIXES = ("=== PDG Slice Summary ===", "=== Summary ===")
 SLICE_LINE_RE = re.compile(r"^(?P<path>.*?)\s*\|\s*line=(?P<line>\d+),\s*col=(?P<col>\d+)\s*\|\s*(?P<code>.*)$")
 
 
+def function_indicates_bad(function_name: str) -> bool:
+    """True if a flow's function marks it vulnerable ("bad").
+
+    Java names are scoped ("Class::bad"); C names are flat
+    ("CWE15_..._w32_01_bad"), so only the "::" case can be checked with
+    equality -- the flat case needs a suffix check instead.
+    """
+    tail = function_name.rsplit("::", 1)[-1]
+    return tail == "bad" or tail.endswith("_bad")
+
+
 class FlowLabel(NamedTuple):
     target: int
     source_line: int | None
@@ -46,25 +56,38 @@ class FlowLabel(NamedTuple):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--txt", required=True, type=Path, help="Slicing result txt file (e.g. cwe369.txt).")
+    parser.add_argument("--language", choices=("java", "c"), default="java",
+                    help="Source language (default: java).")
+    parser.add_argument("--txt", required=True, type=Path,
+                    help="Slicing result txt file (e.g. cwe369.txt), or a directory "
+                         "containing cwe*.txt files (batch mode: one CSV per file, "
+                         "named cwe{N}.csv, written under --output).")
     parser.add_argument(
         "--xml",
         type=Path,
         default=None,
         help=(
             "source_sink_classified.xml for the same CWE. Defaults to "
-            "java_sard_source_sink/source_sink_dataset/cwe{N}_source_sink_classified.xml "
-            "where N is read from the txt file's '# CWE-N:' header."
+            "{java_sard_source_sink,c_sard_source_sink}/source_sink_dataset/"
+            "cwe{N}_source_sink_classified.xml (per --language) where N is read "
+            "from the txt file's '# CWE-N:' header."
         ),
     )
     parser.add_argument(
         "--juliet-root",
         type=Path,
-        default=REPO_ROOT / "juliet-java-test-suite",
-        help="Root of the juliet-java-test-suite checkout (default: repo's juliet-java-test-suite/).",
+        default=None,
+        help="Root of the Juliet checkout. Default: juliet-java-test-suite/ (java) "
+             "or juliet-test-suite-c/ (c).",
     )
-    parser.add_argument("--output", required=True, type=Path, help="Output CSV path.")
-    parser.add_argument("--project", default="Juliet-Java", help="Value for the 'project' column.")
+    parser.add_argument("--output", required=True, type=Path,
+                    help="Output CSV path (single-file mode), or output directory "
+                         "(batch mode, i.e. when --txt is a directory).")
+    parser.add_argument("--combined-output", type=Path, default=None,
+                    help="Batch mode only: also write every row from every "
+                         "cwe*.txt into a single merged CSV at this path.")
+    parser.add_argument("--project", default=None,
+                    help="Value for the 'project' column. Default: Juliet-Java or Juliet-C (per --language).")
     parser.add_argument("--dataset-type", default="test", help="Value for the 'dataset_type' column.")
     return parser.parse_args()
 
@@ -100,7 +123,7 @@ def load_flow_labels(xml_path: Path) -> dict[tuple[int, int], FlowLabel]:
                     sink_line = int(line)
                     sink_file = node.get("file", "")
                 function_name = function_name or node.get("function", "")
-            target = 1 if function_name.rsplit("::", 1)[-1] == "bad" else 0
+            target = 1 if function_indicates_bad(function_name) else 0
             labels[(testcase_index, flow_index)] = FlowLabel(
                 target=target,
                 source_line=source_line,
@@ -168,8 +191,24 @@ def group_slice_lines_by_file(slice_lines: list[tuple[str, int]]) -> list[tuple[
     return [(path, sorted(lines_by_path[path])) for path in order]
 
 
-def read_source_lines(java_root: Path, cwe_number: int, relative_path: str, line_numbers: list[int]) -> list[str] | None:
-    source_path = java_root / f"juliet-cwe{cwe_number}" / relative_path
+def resolve_c_cwe_dir(juliet_root: Path, cwe_number: int) -> Path | None:
+    """C/C++ Juliet layout: <root>/testcases/CWE{N}_{Name}/."""
+    matches = sorted((juliet_root / "testcases").glob(f"CWE{cwe_number}_*"))
+    return matches[0] if matches else None
+
+
+def read_source_lines(
+    juliet_root: Path, cwe_number: int, relative_path: str, line_numbers: list[int], language: str
+) -> list[str] | None:
+    if language == "java":
+        source_path = juliet_root / f"juliet-cwe{cwe_number}" / relative_path
+    else:
+        cwe_dir = resolve_c_cwe_dir(juliet_root, cwe_number)
+        if cwe_dir is None:
+            return None
+        source_path = cwe_dir / relative_path
+        if not source_path.is_file():
+            source_path = juliet_root / "testcasesupport" / relative_path
     if not source_path.is_file():
         return None
     file_lines = source_path.read_text(encoding="utf-8", errors="replace").splitlines()
@@ -181,18 +220,25 @@ def read_source_lines(java_root: Path, cwe_number: int, relative_path: str, line
     return code_lines
 
 
-def main() -> None:
-    args = parse_args()
-
-    cwe_number = detect_cwe_number(args.txt)
+def convert_file(
+    txt_path: Path, output_path: Path, args: argparse.Namespace
+) -> tuple[dict[str, int], list[dict[str, str]]]:
+    """Convert one slicing-result txt file into one CSV. Returns (row/skip counts, rows)."""
+    cwe_number = detect_cwe_number(txt_path)
+    sard_dir = "java_sard_source_sink" if args.language == "java" else "c_sard_source_sink"
     xml_path = args.xml or (
-        REPO_ROOT / "java_sard_source_sink" / "source_sink_dataset" / f"cwe{cwe_number}_source_sink_classified.xml"
+        REPO_ROOT / sard_dir / "source_sink_dataset" / f"cwe{cwe_number}_source_sink_classified.xml"
     )
     if not xml_path.is_file():
         raise FileNotFoundError(f"source_sink_classified.xml not found: {xml_path}")
 
+    juliet_root = args.juliet_root or (
+        REPO_ROOT / ("juliet-java-test-suite" if args.language == "java" else "juliet-test-suite-c")
+    )
+    project = args.project or ("Juliet-Java" if args.language == "java" else "Juliet-C")
+
     flow_labels = load_flow_labels(xml_path)
-    flow_blocks = iter_flow_blocks(args.txt)
+    flow_blocks = iter_flow_blocks(txt_path)
 
     rows = []
     skipped_no_label = 0
@@ -213,7 +259,7 @@ def main() -> None:
 
         file_blocks = []
         for relative_path, line_numbers in files:
-            code_lines = read_source_lines(args.juliet_root, cwe_number, relative_path, line_numbers)
+            code_lines = read_source_lines(juliet_root, cwe_number, relative_path, line_numbers, args.language)
             if code_lines is None:
                 file_blocks = None
                 break
@@ -233,14 +279,14 @@ def main() -> None:
                 "target": str(label.target),
                 "source_line": source_line,
                 "sink_line": sink_line,
-                "project": args.project,
+                "project": project,
                 "dataset_type": args.dataset_type,
                 "processed_func": processed_func,
             }
         )
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("w", encoding="utf-8", newline="") as handle:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=CSV_FIELDNAMES, quoting=csv.QUOTE_MINIMAL)
         writer.writeheader()
         writer.writerows(rows)
@@ -252,7 +298,52 @@ def main() -> None:
     print(f"Skipped (no XML label match): {skipped_no_label}")
     print(f"Skipped (no backward slice / trace): {skipped_no_trace}")
     print(f"Skipped (source file unreadable): {skipped_no_source}")
-    print(f"Output: {args.output}")
+    print(f"Output: {output_path}")
+
+    stats = {
+        "flows": total_flows,
+        "written": len(rows),
+        "skipped_no_label": skipped_no_label,
+        "skipped_no_trace": skipped_no_trace,
+        "skipped_no_source": skipped_no_source,
+    }
+    return stats, rows
+
+
+def main() -> None:
+    args = parse_args()
+
+    if not args.txt.exists():
+        raise FileNotFoundError(f"--txt path does not exist: {args.txt}")
+
+    if args.txt.is_dir():
+        txt_files = sorted(args.txt.glob("cwe*.txt"))
+        if not txt_files:
+            raise FileNotFoundError(f"No cwe*.txt files found in {args.txt}")
+        totals = {"flows": 0, "written": 0, "skipped_no_label": 0, "skipped_no_trace": 0, "skipped_no_source": 0}
+        all_rows: list[dict[str, str]] = []
+        for txt_path in txt_files:
+            print(f"=== {txt_path.name} ===")
+            output_path = args.output / f"{txt_path.stem}.csv"
+            stats, rows = convert_file(txt_path, output_path, args)
+            for key in totals:
+                totals[key] += stats[key]
+            all_rows.extend(rows)
+            print()
+        print("=== batch summary ===")
+        print(f"Files processed: {len(txt_files)}")
+        for key, value in totals.items():
+            print(f"{key}: {value}")
+
+        if args.combined_output:
+            args.combined_output.parent.mkdir(parents=True, exist_ok=True)
+            with args.combined_output.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=CSV_FIELDNAMES, quoting=csv.QUOTE_MINIMAL)
+                writer.writeheader()
+                writer.writerows(all_rows)
+            print(f"Combined output ({len(all_rows)} rows): {args.combined_output}")
+    else:
+        convert_file(args.txt, args.output, args)
 
 
 if __name__ == "__main__":
