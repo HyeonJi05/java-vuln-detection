@@ -35,17 +35,6 @@ BACKWARD_SLICE_END_PREFIXES = ("=== PDG Slice Summary ===", "=== Summary ===")
 SLICE_LINE_RE = re.compile(r"^(?P<path>.*?)\s*\|\s*line=(?P<line>\d+),\s*col=(?P<col>\d+)\s*\|\s*(?P<code>.*)$")
 
 
-def function_indicates_bad(function_name: str) -> bool:
-    """True if a flow's function marks it vulnerable ("bad").
-
-    Java names are scoped ("Class::bad"); C names are flat
-    ("CWE15_..._w32_01_bad"), so only the "::" case can be checked with
-    equality -- the flat case needs a suffix check instead.
-    """
-    tail = function_name.rsplit("::", 1)[-1]
-    return tail == "bad" or tail.endswith("_bad")
-
-
 class FlowLabel(NamedTuple):
     target: int
     source_line: int | None
@@ -112,7 +101,6 @@ def load_flow_labels(xml_path: Path) -> dict[tuple[int, int], FlowLabel]:
             sink_line = None
             source_file = ""
             sink_file = ""
-            function_name = ""
             for node in list(flow):
                 role = node.get("role")
                 line = node.get("line")
@@ -122,8 +110,8 @@ def load_flow_labels(xml_path: Path) -> dict[tuple[int, int], FlowLabel]:
                 elif role == "sink" and line is not None:
                     sink_line = int(line)
                     sink_file = node.get("file", "")
-                function_name = function_name or node.get("function", "")
-            target = 1 if function_indicates_bad(function_name) else 0
+            # `type` is already computed upstream (stage02b_flow.py); only b2b is Vulnerable.
+            target = 1 if flow.get("type") == "b2b" else 0
             labels[(testcase_index, flow_index)] = FlowLabel(
                 target=target,
                 source_line=source_line,
